@@ -1,7 +1,42 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "c4de3d34-1ab1-4679-8ad1-e625c5496c0e"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ngx-editorjs": {
+      "projectType": "library",
+      "root": "projects/ngx-editorjs",
+      "sourceRoot": "projects/ngx-editorjs/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-editorjs/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-editorjs/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-editorjs/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-editorjs/src/test.ts",
+            "tsConfig": "projects/ngx-editorjs/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-editorjs/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-editorjs"
 }
