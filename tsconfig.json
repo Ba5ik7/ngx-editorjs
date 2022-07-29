@@ -12,7 +12,7 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
-      "ngx-editorjs": [
+      "@tmdjr/ngx-editorjs": [
         "dist/ngx-editorjs/ngx-editorjs",
         "dist/ngx-editorjs"
       ]

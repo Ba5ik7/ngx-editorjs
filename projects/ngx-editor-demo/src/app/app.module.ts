@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatCardModule } from '@angular/material/card';
+import { NgxEditorjsModule } from '@tmdjr/ngx-editorjs';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { MatCardModule } from '@angular/material/card';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatCardModule
+    MatCardModule,
+    NgxEditorjsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
