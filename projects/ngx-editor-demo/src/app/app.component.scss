@@ -1,0 +1,13 @@
+:host {
+  .page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  mat-card {
+    min-width: 600px;
+    color: #fff;
+    background-color: #424242;
+    padding: 30px 50px;
+  }
+}

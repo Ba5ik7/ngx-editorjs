@@ -65,7 +65,10 @@
               "projects/ngx-editor-demo/src/assets"
             ],
             "styles": [
-              "projects/ngx-editor-demo/src/styles.scss"
+              "projects/ngx-editor-demo/src/styles.scss",
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              }
             ],
             "scripts": []
           },
@@ -133,7 +136,10 @@
               "projects/ngx-editor-demo/src/assets"
             ],
             "styles": [
-              "projects/ngx-editor-demo/src/styles.scss"
+              "projects/ngx-editor-demo/src/styles.scss",
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              }
             ],
             "scripts": []
           }
