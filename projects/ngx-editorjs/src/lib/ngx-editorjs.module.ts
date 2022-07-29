@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgxEditorjsComponent } from './ngx-editorjs.component';
+import { ContenteditableComponent } from './contenteditable/contenteditable.component';
 
 
 
 @NgModule({
   declarations: [
-    NgxEditorjsComponent
+    NgxEditorjsComponent,
+    ContenteditableComponent
   ],
   imports: [
+    ReactiveFormsModule
   ],
   exports: [
     NgxEditorjsComponent

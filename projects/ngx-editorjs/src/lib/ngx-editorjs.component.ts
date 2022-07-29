@@ -1,20 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'ngx-editorjs',
-  template: `
-    <p>
-      ngx-editorjs works!
-    </p>
-  `,
+  template: `<form [formGroup]="formGroup"><contenteditable></contenteditable></form>`,
   styles: [
   ]
 })
+
 export class NgxEditorjsComponent implements OnInit {
 
-  constructor() { }
+  formGroup: FormGroup = this.formBuilder.group({
+    init: ['', []]
+  })
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.formGroup.valueChanges.subscribe((data) => {
+      console.log({
+        data
+      });      
+    });
   }
-
 }
