@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ContenteditableValueAccessor } from './contenteditable-value-accessor/contenteditable-value-accessor.directive';
 import { NgxEditorjsComponent } from './ngx-editorjs.component';
-import { ContenteditableComponent } from './contenteditable/contenteditable.component';
 
 
 
 @NgModule({
   declarations: [
     NgxEditorjsComponent,
-    ContenteditableComponent
+    ContenteditableValueAccessor
   ],
   imports: [
     ReactiveFormsModule
