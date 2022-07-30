@@ -1,5 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+<<<<<<< HEAD
 
 body {
   background-color: black;
+=======
+[contenteditable="true"].single-line {
+  white-space: nowrap;
+  width:200px;
+  overflow: hidden;
+} 
+[contenteditable="true"].single-line br {
+  display:none;
+
+}
+[contenteditable="true"].single-line * {
+  display:inline;
+  white-space:nowrap;
+>>>>>>> e050d8210e0dd0abce1ec1285aeeffae8318e254
 }
