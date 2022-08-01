@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'ngx-editorjs',
-  template: `<form [formGroup]="formGroup"><p formControlName="init" contenteditable ></p></form>`
+  template: `<form [formGroup]="formGroup"><span formControlName="init" header > NG CONTENT</span></form>`
 })
 
 export class NgxEditorjsComponent implements OnInit {

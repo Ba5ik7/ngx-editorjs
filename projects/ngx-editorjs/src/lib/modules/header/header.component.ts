@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { BaseBlockComponent } from '../../base-block/base-block.component';
 
 @Component({
   selector: '[header]',
@@ -6,11 +7,17 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./header.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent extends BaseBlockComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    super();
+    console.log('Hello sub');
+  }
 
-  ngOnInit(): void {
+  override ngOnInit(): void {
+    console.log({
+      sub: 'SUB'
+    });
   }
 
 }

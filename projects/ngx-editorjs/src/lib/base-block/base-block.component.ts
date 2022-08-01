@@ -8,9 +8,14 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class BaseBlockComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log('con parent');
+    
+  }
 
   ngOnInit(): void {
+    console.log('PARENT');
+    
   }
 
 }
