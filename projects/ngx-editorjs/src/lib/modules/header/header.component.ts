@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { BaseBlockComponent } from '../../base-block/base-block.component';
 
 @Component({
@@ -9,6 +9,7 @@ import { BaseBlockComponent } from '../../base-block/base-block.component';
 })
 export class HeaderComponent extends BaseBlockComponent implements OnInit {
 
+  @Input('formControlName') formControlName!: string
   constructor() {
     super();
     console.log('Hello sub');
