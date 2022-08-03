@@ -1,5 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { BaseBlockComponent } from '../../base-block/base-block.component';
+import { Component, OnInit, ChangeDetectionStrategy, ElementRef, Renderer2 } from '@angular/core';
+// import { BaseBlockComponent } from '../../base-block/base-block.component';
+import { ContenteditableValueAccessor } from '../../contenteditable-value-accessor/contenteditable-value-accessor.directive';
 
 @Component({
   selector: '[header]',
@@ -7,18 +8,15 @@ import { BaseBlockComponent } from '../../base-block/base-block.component';
   styleUrls: ['./header.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent extends BaseBlockComponent implements OnInit {
+export class HeaderComponent extends ContenteditableValueAccessor implements OnInit {
 
-  @Input('formControlName') formControlName!: string
-  constructor() {
-    super();
-    console.log('Hello sub');
+  constructor(elementRef: ElementRef, renderer: Renderer2) {
+    super(elementRef, renderer);
   }
 
-  override ngOnInit(): void {
+  ngOnInit(): void {
     console.log({
       sub: 'SUB'
     });
   }
-
 }
