@@ -1,18 +1,19 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { NgControl } from '@angular/forms';
+import { BaseBlockComponent } from '../../base-block/base-block.component';
 
 @Component({
-  selector: 'header',
+  selector: 'ejs-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent extends BaseBlockComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+  override ngOnInitReady() {
     console.log({
-      sub: 'SUB'
+      hook: 'ngOnInitReady'
     });
   }
 }

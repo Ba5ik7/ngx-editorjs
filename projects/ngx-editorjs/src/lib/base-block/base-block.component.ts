@@ -1,21 +1,73 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Self, HostListener, ElementRef } from '@angular/core';
+import { ControlValueAccessor, NgControl } from '@angular/forms';
 
-@Component({
-  selector: 'lib-base-block',
-  templateUrl: './base-block.component.html',
-  styleUrls: ['./base-block.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
-})
-export class BaseBlockComponent implements OnInit {
+@Component({ template: '' })
+export class BaseBlockComponent implements ControlValueAccessor, OnInit {
 
-  constructor() {
-    console.log('con parent');
+  isActive: boolean = false;
+  error: string = '';
+  escalateMsg: boolean = true;
+  value: string = '';
+  disabled: boolean = false;
+  valid: boolean = true;
+
+  constructor(
+    @Self() public controlDir: NgControl,
+    private readonly elementRef: ElementRef
+    ) {
+    this.controlDir.valueAccessor = this;
+  }
+
+  ngOnInit() {
+    this.controlDir.valueChanges?.subscribe((val) => this.valueChange(val));
+    this.ngOnInitReady();
+  }
+
+  ngOnInitReady() { }
+
+  valueChange(value: string): void {
+    this.valid = this.controlDir.control?.status !== 'INVALID';
+    if(this.valid === false) {
+      console.log('NOT VALID');
+    }
+  }
+
+  writeValue(value: string): void {
+    console.log(this.value);
+    this.value = value ? value : '';
+    console.log(this.value);
     
   }
 
-  ngOnInit(): void {
-    console.log('PARENT');
-    
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
   }
 
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  onBlur(event: InputEvent) {
+    this.isActive = event.data !== '';
+    this.escalateMsg = this.valid === false;
+    this.onTouched();
+  }
+
+  onFocus() {
+    this.isActive = true;
+    this.escalateMsg = false;
+  }
+
+  setDisabledState?(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
+  @HostListener('input')
+  onInput() {
+    this.onChange(this.elementRef.nativeElement.innerHTML);
+  }
+
+  onTouched = () => {};
+
+  onChange: (value: string) => void = () => {};
 }
