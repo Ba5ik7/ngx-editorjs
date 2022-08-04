@@ -10,16 +10,7 @@ import { BaseBlockComponent } from '../../base-block/base-block.component';
 })
 export class HeaderComponent extends BaseBlockComponent implements OnInit {
 
-
-  // override ngOnInitReady() {
-  //   console.log({
-  //     hook: 'ngOnInitReady'
-  //   });
-  // }
-
   override ngOnInit() {
-    // this.controlDir.valueChanges?.subscribe((val) => this.valueChange(val));
-    // // this.ngOnInitReady();
     super.ngOnInit();
   }
 }
