@@ -1,5 +1,4 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { NgControl } from '@angular/forms';
 import { BaseBlockComponent } from '../../base-block/base-block.component';
 
 @Component({
