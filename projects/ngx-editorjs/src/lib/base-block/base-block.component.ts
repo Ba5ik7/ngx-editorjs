@@ -19,13 +19,8 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
   }
 
   ngOnInit() {
-    this.controlDir.valueChanges?.subscribe((val) => this.valueChange(val));
-    // this.ngOnInitReady();
-    console.log('WORKS');
-    
+    this.controlDir.valueChanges?.subscribe((val) => this.valueChange(val));    
   }
-
-  // ngOnInitReady() { }
 
   valueChange(value: string): void {
     this.valid = this.controlDir.control?.status !== 'INVALID';
