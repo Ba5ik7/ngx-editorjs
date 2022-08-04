@@ -20,10 +20,12 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
 
   ngOnInit() {
     this.controlDir.valueChanges?.subscribe((val) => this.valueChange(val));
-    this.ngOnInitReady();
+    // this.ngOnInitReady();
+    console.log('WORKS');
+    
   }
 
-  ngOnInitReady() { }
+  // ngOnInitReady() { }
 
   valueChange(value: string): void {
     this.valid = this.controlDir.control?.status !== 'INVALID';
@@ -36,7 +38,6 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
     console.log(this.value);
     this.value = value ? value : '';
     console.log(this.value);
-    
   }
 
   registerOnChange(fn: any): void {
