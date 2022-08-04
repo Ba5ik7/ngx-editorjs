@@ -1,10 +1,9 @@
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ContenteditableValueAccessor } from './contenteditable-value-accessor/contenteditable-value-accessor.directive';
 
 @Component({
   selector: 'ngx-editorjs',
-  template: `<form [formGroup]="formGroup"><div header formControlName="init" >NG CONTENT</div></form>`
+  template: `<form [formGroup]="formGroup"><header formControlName="init" contenteditable >NG CONTENT</header></form>`
 })
 
 export class NgxEditorjsComponent implements OnInit {

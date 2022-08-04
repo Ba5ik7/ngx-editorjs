@@ -1,18 +1,14 @@
-import { Component, OnInit, ChangeDetectionStrategy, ElementRef, Renderer2 } from '@angular/core';
-// import { BaseBlockComponent } from '../../base-block/base-block.component';
-import { ContenteditableValueAccessor } from '../../contenteditable-value-accessor/contenteditable-value-accessor.directive';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: '[header]',
+  selector: 'header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent extends ContenteditableValueAccessor implements OnInit {
+export class HeaderComponent implements OnInit {
 
-  constructor(elementRef: ElementRef, renderer: Renderer2) {
-    super(elementRef, renderer);
-  }
+  constructor() { }
 
   ngOnInit(): void {
     console.log({
