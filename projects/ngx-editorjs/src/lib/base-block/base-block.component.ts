@@ -11,10 +11,9 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
   disabled: boolean = false;
   valid: boolean = true;
 
-  constructor(
-    @Self() public controlDir: NgControl,
-    private readonly elementRef: ElementRef
-    ) {
+  viewChild!: ElementRef;
+
+  constructor(@Self() public controlDir: NgControl) {
     this.controlDir.valueAccessor = this;
   }
 
@@ -60,7 +59,7 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
 
   @HostListener('input')
   onInput() {
-    this.onChange(this.elementRef.nativeElement.innerHTML);
+    this.onChange(this.viewChild.nativeElement.innerHTML);
   }
 
   onTouched = () => {};

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { BaseBlockComponent } from '../../base-block/base-block.component';
 
 @Component({
@@ -7,9 +7,16 @@ import { BaseBlockComponent } from '../../base-block/base-block.component';
   styleUrls: ['./header.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent extends BaseBlockComponent implements OnInit {
+export class HeaderComponent extends BaseBlockComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('header') element!: ElementRef;
 
   override ngOnInit() {
     super.ngOnInit();
   }
+
+  ngAfterViewInit(): void {
+    super.viewChild = this.element;
+  }
+
 }
