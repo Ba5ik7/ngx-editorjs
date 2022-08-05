@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
-import { BaseBlockComponent } from '../../base-block/base-block.component';
+import { BaseBlockComponent } from './base-block/base-block.component';
 
 @Component({
   selector: 'ejs-header',
