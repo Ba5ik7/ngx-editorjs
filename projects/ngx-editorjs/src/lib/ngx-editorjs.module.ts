@@ -3,7 +3,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 // import { ContenteditableValueAccessor } from './contenteditable-value-accessor/contenteditable-value-accessor.directive';
 import { NgxEditorjsComponent } from './ngx-editorjs.component';
 import { HeaderModule } from './blocks/header/header.module';
-import { BaseBlockComponent } from './blocks/base-block/base-block.component';
+// import { BaseBlockComponent } from './blocks/base-block/base-block.component';
+import { ToolbarBlockModule } from './blocks/toolbar-block/toolbar-block.module';
 
 
 
@@ -11,11 +12,12 @@ import { BaseBlockComponent } from './blocks/base-block/base-block.component';
   declarations: [
     NgxEditorjsComponent,
     // ContenteditableValueAccessor,
-    BaseBlockComponent
+    // BaseBlockComponent
   ],
   imports: [
     ReactiveFormsModule,
-    HeaderModule
+    HeaderModule,
+    ToolbarBlockModule
   ],
   exports: [
     NgxEditorjsComponent
