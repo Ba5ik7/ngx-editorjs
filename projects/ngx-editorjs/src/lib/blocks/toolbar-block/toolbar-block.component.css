@@ -4,7 +4,7 @@
 
 .material-symbols-outlined {
   color: white;
-  background-color: red;
+  opacity: .5;
   font-variation-settings:
   'FILL' 0,
   'wght' 400,
@@ -16,4 +16,5 @@ svg {
   position: relative;
   top: 0;
   right: 50px;
+  fill: white;
 }
