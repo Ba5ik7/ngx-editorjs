@@ -19,8 +19,11 @@
       <div class="blocks-list-item">H</div>
     </div>
   </div> -->
-  <div class="add material-symbols-outlined-button" (click)="openBlocksList()">
+  <div class="toolbar-buttons mat-elevation-z4" (click)="openBlocksList()">
     <span class="material-icons">add</span>
+  </div>
+  <div class="toolbar-buttons mat-elevation-z4" (click)="openBlocksList()">
+    <span class="material-icons">drag_indicator</span>
   </div>
   <form [formGroup]="stateForm" class="block-list-container mat-elevation-z4">
     <mat-form-field>

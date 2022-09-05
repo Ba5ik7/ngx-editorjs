@@ -8,6 +8,17 @@
   right: 50px;
 }
 
+.toolbar-buttons {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+
 .block-list-container {
   background-color: white;
   height: 45px;
@@ -15,9 +26,10 @@
   border-top-right-radius: 4px;
 }
 
-
-
-
+.mat-input-element {
+  width: 91%;
+  padding-left: 9%;
+}
 
 
 
