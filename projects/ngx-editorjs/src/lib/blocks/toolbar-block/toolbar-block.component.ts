@@ -1,4 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { map, Observable, startWith } from 'rxjs';
+
 
 @Component({
   selector: 'toolbar-block',
@@ -7,10 +10,30 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ToolbarBlockComponent implements OnInit {
+  stateForm = this._formBuilder.group({
+    stateGroup: '',
+  });
 
-  constructor() { }
+  stateGroups: string[] = ['One', 'Two', 'Three', 'One', 'Two', 'Three', 'One', 'Two', 'Three', 'One', 'Two', 'Three', 'One', 'Two', 'Three'];
+  filteredOptions!: Observable<string[]>;
 
-  ngOnInit(): void {
+  constructor(private _formBuilder: FormBuilder) {}
+
+  ngOnInit() {
+    this.filteredOptions = this.stateForm.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value || '')),
+    );
   }
 
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.stateGroups.filter(option => option.toLowerCase().includes(filterValue));
+  }
+
+  showBlocksList: boolean = false;
+  openBlocksList() {
+    this.showBlocksList = true;
+  }
 }

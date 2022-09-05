@@ -2,17 +2,80 @@
   position: absolute;
 }
 
-.material-symbols-outlined-button {
+.toolbar-container {
   position: relative;
   top: 0;
   right: 50px;
 }
 
-.material-symbols-outlined-button .material-symbols-outlined-icon {
-  opacity: .5;
-  fill: white;
+.block-list-container {
+  background-color: white;
+  height: 45px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
-.material-symbols-outlined-button:hover .material-symbols-outlined-icon {
-  opacity: 1;
+
+
+
+
+
+
+
+
+
+/* 
+.material-symbols-outlined-button {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  background-color: darkblue;
 }
+
+.material-symbols-outlined-button .material-symbols-outlined-icon { opacity: .5; fill: white; }
+
+.material-symbols-outlined-button:hover .material-symbols-outlined-icon { opacity: 1; }
+
+.blocks-list-container {
+  position: relative;
+  right: 41px;
+  top: 16px;
+  background-color: red;
+  border-radius: 4px;
+}
+
+.blocks-list-container::after {
+  position: absolute;
+  content: "Hello";
+  left: 41px;
+  top: -10px;
+  background-color: white;
+  border-top-left-radius: 41px;
+  width: 40px;
+  border-top-right-radius: 41px;
+}
+
+.blocks-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  width: 122px;
+  height: 122px;
+  overflow: scroll;
+}
+
+.blocks-list-item {
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center; 
+  width: 40px;
+  height: 40px;
+  background-color: green;
+  border-radius: 4px;
+} */

@@ -1,3 +1,39 @@
-<button class="material-symbols-outlined-button" mat-button>
-  <svg class="material-symbols-outlined-icon" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M22.5 38V25.5H10v-3h12.5V10h3v12.5H38v3H25.5V38Z"/></svg>
-</button>
+<div class="toolbar-container">
+  <!-- <div class="blocks-list-container">
+    <div class="blocks-list">
+      <div class="blocks-list-item">A</div>
+      <div class="blocks-list-item">B</div>
+      <div class="blocks-list-item">C</div>
+      <div class="blocks-list-item">D</div>
+      <div class="blocks-list-item">E</div>
+      <div class="blocks-list-item">F</div>
+      <div class="blocks-list-item">G</div>
+      <div class="blocks-list-item">H</div>
+      <div class="blocks-list-item">A</div>
+      <div class="blocks-list-item">B</div>
+      <div class="blocks-list-item">C</div>
+      <div class="blocks-list-item">D</div>
+      <div class="blocks-list-item">E</div>
+      <div class="blocks-list-item">F</div>
+      <div class="blocks-list-item">G</div>
+      <div class="blocks-list-item">H</div>
+    </div>
+  </div> -->
+  <div class="add material-symbols-outlined-button" (click)="openBlocksList()">
+    <span class="material-icons">add</span>
+  </div>
+  <form [formGroup]="stateForm" class="block-list-container mat-elevation-z4">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input type="text"
+        matInput
+        formControlName="stateGroup"
+        [matAutocomplete]="autoGroup">
+      <mat-autocomplete #autoGroup="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+</div>
