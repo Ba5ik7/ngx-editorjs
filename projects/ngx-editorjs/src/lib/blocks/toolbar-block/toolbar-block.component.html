@@ -19,24 +19,30 @@
       <div class="blocks-list-item">H</div>
     </div>
   </div> -->
-  <div class="toolbar-buttons mat-elevation-z4" (click)="openBlocksList()">
-    <span class="material-icons">add</span>
+  <div class="toolbar-buttons-container">
+    <div class="toolbar-buttons mat-elevation-z4" (click)="openBlocksList()">
+      <span class="material-icons">add</span>
+    </div>
+    <div class="toolbar-buttons mat-elevation-z4" (click)="openBlocksList()">
+      <span class="material-icons">drag_indicator</span>
+    </div>
   </div>
-  <div class="toolbar-buttons mat-elevation-z4" (click)="openBlocksList()">
-    <span class="material-icons">drag_indicator</span>
-  </div>
-  <form [formGroup]="stateForm" class="block-list-container mat-elevation-z4">
-    <mat-form-field>
-      <mat-label>Filter</mat-label>
-      <input type="text"
-        matInput
-        formControlName="stateGroup"
-        [matAutocomplete]="autoGroup">
-      <mat-autocomplete #autoGroup="matAutocomplete">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-          {{option}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
-  </form>
+  
+  <ng-container *ngIf="showBlocksList">
+    <form [formGroup]="stateForm" class="block-list-container mat-elevation-z4">
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input type="text"
+          matInput
+          autofocus
+          formControlName="stateGroup"
+          [matAutocomplete]="autoGroup">
+        <mat-autocomplete #autoGroup="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </ng-container>
 </div>

@@ -5,7 +5,12 @@
 .toolbar-container {
   position: relative;
   top: 0;
-  right: 50px;
+  right: 85px;
+}
+
+.toolbar-buttons-container {
+  display: flex;
+  gap: 10px;
 }
 
 .toolbar-buttons {
