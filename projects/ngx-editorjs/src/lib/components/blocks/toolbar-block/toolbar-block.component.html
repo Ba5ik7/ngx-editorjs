@@ -38,12 +38,13 @@
   [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'">
   <div class="block-list-container">
     <input type="text" [autofocus]="true">
-    <ul cdkListbox [formControl]="signCtrl" class="block-list-option-container">
-      <li *ngFor="let sign of signs"
+    <div cdkListbox [formControl]="signCtrl" class="block-list-panel">
+      <div *ngFor="let sign of signs"
+          [cdkOption]="sign"
           class="block-list-option">
-        {{sign}}
-      </li>
-    </ul>
+        <span class="block-list-option-text">{{sign}}</span>
+      </div>
+    </div>
   </div>
 </ng-template>
 

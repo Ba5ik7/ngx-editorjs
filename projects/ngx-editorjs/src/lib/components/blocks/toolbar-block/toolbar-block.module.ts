@@ -4,16 +4,17 @@ import { ToolbarBlockComponent } from './toolbar-block.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { AutofocusModule } from '../../../directives/autofocus/autofocus.module';
-
+import { CdkListboxModule } from '@angular/cdk/listbox';
 @NgModule({
   declarations: [
     ToolbarBlockComponent
   ],
   imports: [
-    ReactiveFormsModule,
     CommonModule,
+    ReactiveFormsModule,
     OverlayModule,
-    AutofocusModule
+    AutofocusModule,
+    CdkListboxModule
   ],
   exports: [
     ToolbarBlockComponent
