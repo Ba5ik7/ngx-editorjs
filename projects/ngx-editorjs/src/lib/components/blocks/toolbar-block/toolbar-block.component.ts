@@ -10,10 +10,9 @@ import { map, Observable, startWith } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ToolbarBlockComponent implements OnInit {
-  stateForm = this._formBuilder.group({
-    stateGroup: '',
-  });
+  isOpen = false;
 
+  stateForm = this._formBuilder.group({ stateGroup: '' });
   stateGroups: string[] = ['One', 'Two', 'Three', 'One', 'Two', 'Three', 'One', 'Two', 'Three', 'One', 'Two', 'Three', 'One', 'Two', 'Three'];
   filteredOptions!: Observable<string[]>;
 
@@ -28,12 +27,10 @@ export class ToolbarBlockComponent implements OnInit {
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-
     return this.stateGroups.filter(option => option.toLowerCase().includes(filterValue));
   }
 
-  showBlocksList: boolean = false;
   openBlocksList() {
-    this.showBlocksList = true;
+    this.isOpen = !this.isOpen;
   }
 }
