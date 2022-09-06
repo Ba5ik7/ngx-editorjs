@@ -5,12 +5,10 @@ import { NgxEditorjsComponent } from './ngx-editorjs.component';
 import { HeaderModule } from './components/blocks/header/header.module';
 // import { BaseBlockComponent } from './blocks/base-block/base-block.component';
 import { ToolbarBlockModule } from './components/blocks/toolbar-block/toolbar-block.module';
-import { AutofocusDirective } from './directives/autofocus/autofocus.directive';
 
 @NgModule({
   declarations: [
-    NgxEditorjsComponent,
-    AutofocusDirective,
+    NgxEditorjsComponent
     // ContenteditableValueAccessor,
     // BaseBlockComponent
   ],

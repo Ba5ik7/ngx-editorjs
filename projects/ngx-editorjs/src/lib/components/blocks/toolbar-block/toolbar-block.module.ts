@@ -7,6 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { AutofocusDirective } from '../../../directives/autofocus/autofocus.directive';
+import { AutofocusModule } from '../../../directives/autofocus/autofocus.module';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { OverlayModule } from '@angular/cdk/overlay';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    OverlayModule
+    OverlayModule,
+    AutofocusModule
   ],
   exports: [
     ToolbarBlockComponent

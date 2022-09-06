@@ -42,9 +42,9 @@
       <mat-label>Filter</mat-label>
       <input type="text"
         matInput
-        autofocus
         formControlName="stateGroup"
-        [matAutocomplete]="autoGroup">
+        [matAutocomplete]="autoGroup"
+        [autofocus]="true">
       <mat-autocomplete #autoGroup="matAutocomplete">
         <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
           {{option}}
