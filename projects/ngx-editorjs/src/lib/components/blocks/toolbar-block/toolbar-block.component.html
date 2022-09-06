@@ -35,21 +35,17 @@
   [cdkConnectedOverlayOrigin]="blockListTigger"
   [cdkConnectedOverlayOpen]="isOpen"
   [cdkConnectedOverlayHasBackdrop]="true"
-  [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'"
->
-  <form [formGroup]="stateForm" class="block-list-container mat-elevation-z4">
-    <mat-form-field>
-      <mat-label>Filter</mat-label>
-      <input type="text"
-        matInput
-        formControlName="stateGroup"
-        [matAutocomplete]="autoGroup"
-        [autofocus]="true">
-      <mat-autocomplete #autoGroup="matAutocomplete">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-          {{option}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
-  </form>
+  [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'">
+  <div class="block-list-container">
+    <input type="text" [autofocus]="true">
+    <ul cdkListbox [formControl]="signCtrl" class="block-list-option-container">
+      <li *ngFor="let sign of signs"
+          class="block-list-option">
+        {{sign}}
+      </li>
+    </ul>
+  </div>
 </ng-template>
+
+
+

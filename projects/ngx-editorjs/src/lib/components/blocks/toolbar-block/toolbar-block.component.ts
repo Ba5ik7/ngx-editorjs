@@ -1,7 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { map, Observable, startWith } from 'rxjs';
-
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'toolbar-block',
@@ -10,25 +8,26 @@ import { map, Observable, startWith } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ToolbarBlockComponent implements OnInit {
+  signCtrl = new FormControl([]);
   isOpen = false;
+  signs = [
+    'Rat',
+    'Ox',
+    'Tiger',
+    'Rabbit',
+    'Dragon',
+    'Snake',
+    'Horse',
+    'Goat',
+    'Monkey',
+    'Rooster',
+    'Dog',
+    'Pig',
+  ];
 
-  stateForm = this._formBuilder.group({ stateGroup: '' });
-  stateGroups: string[] = ['One', 'Two', 'Three', 'One', 'Two', 'Three', 'One', 'Two', 'Three', 'One', 'Two', 'Three', 'One', 'Two', 'Three'];
-  filteredOptions!: Observable<string[]>;
+  constructor() {}
 
-  constructor(private _formBuilder: FormBuilder) {}
-
-  ngOnInit() {
-    this.filteredOptions = this.stateForm.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value || '')),
-    );
-  }
-
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-    return this.stateGroups.filter(option => option.toLowerCase().includes(filterValue));
-  }
+  ngOnInit() { }
 
   openBlocksList() {
     this.isOpen = !this.isOpen;
