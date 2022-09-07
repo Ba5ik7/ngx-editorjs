@@ -7,6 +7,7 @@
 .header-background::before {
   content: '';
   position: absolute;
+  background-image: url('../../../assets/img/text_fields.svg');
   background-size: 400px;
   top: 0;
   bottom: 0;
@@ -62,3 +63,4 @@
     margin-top: 40px;
   }
 }
+
