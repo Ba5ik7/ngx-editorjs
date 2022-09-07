@@ -4,7 +4,7 @@ import { BaseBlockComponent } from '../base-block/base-block.component';
 @Component({
   selector: 'ejs-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
+  styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent extends BaseBlockComponent implements OnInit, AfterViewInit {

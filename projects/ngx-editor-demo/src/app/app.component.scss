@@ -1,11 +1,13 @@
-:host {
-  .page {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  mat-card {
-    min-width: 600px;
-    padding: 30px 50px;
-  }
+demo-app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
 }

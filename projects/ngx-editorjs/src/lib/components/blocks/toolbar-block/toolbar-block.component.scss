@@ -1,0 +1,121 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($config-or-theme) {
+  $config: theming.get-color-config($config-or-theme);
+  @include mdc-helpers.using-mdc-theme($config) {
+    @include mdc-menu-surface.core-styles(mdc-helpers.$mdc-theme-styles-query);
+    @include mdc-list.without-ripple(mdc-helpers.$mdc-theme-styles-query);
+  }
+}
+
+@mixin typography($config-or-theme) {
+  $config: typography.private-typography-to-2018-config(
+      theming.get-typography-config($config-or-theme));
+  @include mdc-helpers.using-mdc-typography($config) {
+    @include mdc-menu-surface.core-styles(mdc-helpers.$mdc-typography-styles-query);
+
+    .mat-mdc-autocomplete-panel {
+      // Note that we include this private mixin, because the public one adds
+      // a bunch of styles that we aren't using for the autocomplete panel.
+      @include mdc-list.list-base(mdc-helpers.$mdc-typography-styles-query);
+    }
+  }
+}
+
+@mixin density($config-or-theme) {}
+
+@mixin theme($theme-or-color-config) {
+  $theme: theming.private-legacy-get-theme($theme-or-color-config);
+  @include theming.private-check-duplicate-theme-styles($theme, 'mat-autocomplete') {
+    $color: theming.get-color-config($theme);
+    $density: theming.get-density-config($theme);
+    $typography: theming.get-typography-config($theme);
+
+    @if $color != null {
+      @include color($color);
+    }
+    @if $density != null {
+      @include density($density);
+    }
+    @if $typography != null {
+      @include typography($typography);
+    }
+  }
+}
+
+:host {
+  position: absolute;
+}
+
+.toolbar-container {
+  position: relative;
+  top: 0;
+  right: 85px;
+}
+
+.toolbar-buttons-container {
+  display: flex;
+  gap: 10px;
+}
+
+.toolbar-buttons {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+
+.block-list-container {
+  background-color: white;
+  height: 45px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+
+.block-list-panel {
+  min-width: 112px;
+  max-width: 280px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: none;
+  max-height: 256px;
+  position: relative;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.block-list-option {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  line-height: 48px;
+  height: 48px;
+  padding: 0 16px;
+  text-align: left;
+  text-decoration: none;
+  max-width: 100%;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.block-list-option-text {
+  display: inline-block;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

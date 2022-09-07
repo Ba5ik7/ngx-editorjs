@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'ngx-editorjs',
   templateUrl: './ngx-editorjs.component.html',
-  styleUrls: ['ngx-editorjs.component.css']
+  styleUrls: ['ngx-editorjs.component.scss']
 })
 
 export class NgxEditorjsComponent implements OnInit {

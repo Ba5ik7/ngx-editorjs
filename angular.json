@@ -5,6 +5,11 @@
   },
   "version": 1,
   "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
   "projects": {
     "ngx-editorjs": {
       "projectType": "library",
@@ -60,14 +65,36 @@
             "polyfills": "projects/ngx-editor-demo/src/polyfills.ts",
             "tsConfig": "projects/ngx-editor-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/shared-styles"]
+            },
             "assets": [
               "projects/ngx-editor-demo/src/favicon.ico",
               "projects/ngx-editor-demo/src/assets"
             ],
             "styles": [
-              "projects/ngx-editor-demo/src/styles.scss",
               {
-                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+                "input": "projects/ngx-editor-demo/src/styles.scss"
+              },
+              {
+                "inject": false,
+                "input": "projects/ngx-editor-demo/src/styles/custom-themes/pink-bluegrey.scss",
+                "bundleName": "pink-bluegrey"
+              },
+              {
+                "inject": false,
+                "input": "projects/ngx-editor-demo/src/styles/custom-themes/deeppurple-amber.scss",
+                "bundleName": "deeppurple-amber"
+              },
+              {
+                "inject": false,
+                "input": "projects/ngx-editor-demo/src/styles/custom-themes/indigo-pink.scss",
+                "bundleName": "indigo-pink"
+              },
+              {
+                "inject": false,
+                "input": "projects/ngx-editor-demo/src/styles/custom-themes/purple-green.scss",
+                "bundleName": "purple-green"
               }
             ],
             "scripts": []
@@ -136,9 +163,28 @@
               "projects/ngx-editor-demo/src/assets"
             ],
             "styles": [
-              "projects/ngx-editor-demo/src/styles.scss",
               {
-                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+                "input": "projects/ngx-editor-demo/src/styles.scss"
+              },
+              {
+                "inject": false,
+                "input": "projects/ngx-editor-demo/src/styles/custom-themes/pink-bluegrey.scss",
+                "bundleName": "pink-bluegrey"
+              },
+              {
+                "inject": false,
+                "input": "projects/ngx-editor-demo/src/styles/custom-themes/deeppurple-amber.scss",
+                "bundleName": "deeppurple-amber"
+              },
+              {
+                "inject": false,
+                "input": "projects/ngx-editor-demo/src/styles/custom-themes/indigo-pink.scss",
+                "bundleName": "indigo-pink"
+              },
+              {
+                "inject": false,
+                "input": "projects/ngx-editor-demo/src/styles/custom-themes/purple-green.scss",
+                "bundleName": "purple-green"
               }
             ],
             "scripts": []

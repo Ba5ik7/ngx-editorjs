@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 @Component({
   selector: 'toolbar-block',
   templateUrl: './toolbar-block.component.html',
-  styleUrls: ['./toolbar-block.component.css'],
+  styleUrls: ['./toolbar-block.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ToolbarBlockComponent implements OnInit {
