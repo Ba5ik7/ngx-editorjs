@@ -1,0 +1,5 @@
+@use 'src/lib/ngx-editorjs.theme' as ngx-editorjs;
+
+@mixin theme($ngx-editorjs-theme) {
+  @include ngx-editorjs.theme($ngx-editorjs-theme);
+}

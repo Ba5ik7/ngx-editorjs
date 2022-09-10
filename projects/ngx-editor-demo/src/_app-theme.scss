@@ -1,8 +1,14 @@
 @use '@angular/material' as mat;
+// @use '@angular/material' as legacy-tooltip-theme;
+// @use '../../../dist/ngx-editorjs/ngx-editorjs';
 
 @use 'sass:map';
 @use './app/pages/home/home-theme';
 @use './app/components/navbar/navbar-theme';
+
+// @include test-lib-theme($theme);
+// @import '@tmdjr/ngx-editor/ngx-editor-theme';
+// @include test-lib-theme($theme);
 
 // Styles for the docs app that are based on the current theme.
 @mixin theme($theme) {
