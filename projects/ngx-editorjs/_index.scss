@@ -1,5 +1,7 @@
 @use 'src/lib/ngx-editorjs.theme' as ngx-editorjs;
+@use 'src/lib/components/blocks/toolbar-block/toolbar-block.theme' as toolbar-block;
 
-@mixin theme($ngx-editorjs-theme) {
-  @include ngx-editorjs.theme($ngx-editorjs-theme);
+@mixin theme($theme) {
+  @include ngx-editorjs.theme($theme);
+  @include toolbar-block.theme($theme);
 }

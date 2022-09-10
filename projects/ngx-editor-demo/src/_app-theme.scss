@@ -6,6 +6,8 @@
 @use './app/pages/home/home-theme';
 @use './app/components/navbar/navbar-theme';
 
+@use 'ngx-editorjs' as ngx-editorjs;
+
 // @include test-lib-theme($theme);
 // @import '@tmdjr/ngx-editor/ngx-editor-theme';
 // @include test-lib-theme($theme);
@@ -37,4 +39,5 @@
 
   @include home-theme.theme($theme);
   @include navbar-theme.theme($theme);
+  @include ngx-editorjs.theme($theme);
 }

@@ -1,10 +1,9 @@
 @use 'sass:map';
-@use '@angular/material/theming';
+@use '@angular/material';
 
 @mixin theme($theme) {
   $primary: map-get($theme, foreground);
-  body {
-    // background: mat-color($primary);
-    background: red;
-  }
+  // .whatever {
+  //   background: mat-color($primary);
+  // }
 }

@@ -1,0 +1,15 @@
+@use '@angular/material' as mat;
+
+@use 'sass:color';
+@use 'sass:map';
+
+@mixin theme($theme) {
+  $primary: map.get($theme, primary);
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
+  $is-dark-theme: map.get($theme, is-dark);
+
+  .block-list-container {
+    background: mat.get-color-from-palette($primary, default);
+  }
+}
