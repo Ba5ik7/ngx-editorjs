@@ -2,7 +2,7 @@
 @use './app-theme';
 @use './styles/general';
 
-@use '@tmdjr/ngx-editorjs/_index.scss';
+@use 'ngx-editorjs' as ngx-editorjs; // CAN NOT DO THIS IN THE SAME PROJECT AS THE LIB USE THE DEMO APP REPO
 
 // Define the light theme.
 $_primary: mat.define-palette(mat.$indigo-palette);
@@ -14,6 +14,7 @@ $_theme: mat.define-light-theme($_primary, $_accent);
 
 @include mat.all-component-themes($_theme);
 @include app-theme.theme($_theme);
+@include ngx-editorjs.theme($_theme);
 
 // It's only been a week since IE has die and now this on Edge
 input:-webkit-autofill,
