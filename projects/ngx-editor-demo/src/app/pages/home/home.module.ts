@@ -19,7 +19,7 @@ import { NgxEditorjsModule } from '@tmdjr/ngx-editorjs';
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
-    NgxEditorjsModule
+    NgxEditorjsModule,
   ]
 })
 export class HomeModule { }

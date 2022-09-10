@@ -10,6 +10,13 @@
   $is-dark-theme: map.get($theme, is-dark);
 
   .block-list-container {
-    background: mat.get-color-from-palette($primary, default);
+    color: map.get($foreground, secondary-text);
+    background: mat.get-color-from-palette($background, background);
+  }
+
+  .block-list-option {
+    &:hover, &:focus {
+      background: mat.get-color-from-palette($primary, if($is-dark-theme, 300, 100));
+    }
   }
 }
