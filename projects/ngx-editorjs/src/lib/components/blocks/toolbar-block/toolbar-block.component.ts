@@ -10,7 +10,8 @@ import { combineLatest, map, Observable, of, startWith, Subject, takeUntil } fro
 })
 export class ToolbarBlockComponent implements OnInit {
   signCtrl = new FormControl([]);
-  isOpen = false;
+  openBlocks = false;
+  openBlocksOption = false;
   signs = [
     'Rat',
     'Ox',
@@ -55,6 +56,11 @@ export class ToolbarBlockComponent implements OnInit {
   }
   
   openBlocksList() {
-    this.isOpen = !this.isOpen;
+    this.openBlocks = !this.openBlocks;
+  }
+  
+  openBlocksOptionList() {
+    this.openBlocksOption = !this.openBlocksOption;
+
   }
 }

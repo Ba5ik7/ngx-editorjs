@@ -1,39 +1,22 @@
 <div class="toolbar-container">
-  <!-- <div class="blocks-list-container">
-    <div class="blocks-list">
-      <div class="blocks-list-item">A</div>
-      <div class="blocks-list-item">B</div>
-      <div class="blocks-list-item">C</div>
-      <div class="blocks-list-item">D</div>
-      <div class="blocks-list-item">E</div>
-      <div class="blocks-list-item">F</div>
-      <div class="blocks-list-item">G</div>
-      <div class="blocks-list-item">H</div>
-      <div class="blocks-list-item">A</div>
-      <div class="blocks-list-item">B</div>
-      <div class="blocks-list-item">C</div>
-      <div class="blocks-list-item">D</div>
-      <div class="blocks-list-item">E</div>
-      <div class="blocks-list-item">F</div>
-      <div class="blocks-list-item">G</div>
-      <div class="blocks-list-item">H</div>
-    </div>
-  </div> -->
   <div class="toolbar-buttons-container">
     <div class="toolbar-buttons mat-elevation-z4" (click)="openBlocksList()" cdkOverlayOrigin #blockListTigger="cdkOverlayOrigin">
       <span class="material-icons">add</span>
     </div>
-    <div class="toolbar-buttons mat-elevation-z4" (click)="openBlocksList()">
+    <div class="toolbar-buttons mat-elevation-z4" (click)="openBlocksOptionList()" cdkOverlayOrigin #blockOptionListTigger="cdkOverlayOrigin">
       <span class="material-icons">drag_indicator</span>
     </div>
+
   </div>
 </div>
 
+
+
 <ng-template
   cdkConnectedOverlay
-  (overlayOutsideClick)="isOpen = false"
+  (overlayOutsideClick)="openBlocks = false"
   [cdkConnectedOverlayOrigin]="blockListTigger"
-  [cdkConnectedOverlayOpen]="isOpen"
+  [cdkConnectedOverlayOpen]="openBlocks"
   [cdkConnectedOverlayHasBackdrop]="true"
   [cdkConnectedOverlayOffsetY]="15"
   [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'">
@@ -44,6 +27,24 @@
     </mat-form-field>
     <mat-list class="block-list-panel">
       <mat-list-item mat-list-item *ngFor="let sign of filteredSigns$ | async"
+          class="block-list-option">
+        <span class="block-list-option-text">{{sign}}</span>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</ng-template>
+
+<ng-template
+  cdkConnectedOverlay
+  (overlayOutsideClick)="openBlocksOption = false"
+  [cdkConnectedOverlayOrigin]="blockOptionListTigger"
+  [cdkConnectedOverlayOpen]="openBlocksOption"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  [cdkConnectedOverlayOffsetY]="15"
+  [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'">
+  <div class="block-list-container mat-elevation-z8">
+    <mat-list class="block-list-panel">
+      <mat-list-item mat-list-item *ngFor="let sign of signs"
           class="block-list-option">
         <span class="block-list-option-text">{{sign}}</span>
       </mat-list-item>
