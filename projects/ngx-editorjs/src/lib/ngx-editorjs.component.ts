@@ -10,7 +10,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class NgxEditorjsComponent implements OnInit {
 
   formGroup: FormGroup = this.formBuilder.group({
-    init: ['', []]
+    init: ['', []],
+    one: ['', []],
+    two: ['', []],
+    three: ['', []]
   })
 
   constructor(private formBuilder: FormBuilder) { }

@@ -1,6 +1,8 @@
 import { BasePortalOutlet, ComponentPortal, DomPortalOutlet } from '@angular/cdk/portal';
 import { Component, OnInit, ChangeDetectionStrategy, Self, HostListener, ElementRef, ApplicationRef, Injector, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { take, takeUntil } from 'rxjs';
+import { NgxEditorjsService } from '../../../ngx-editorjs.service';
 import { ToolbarBlockComponent } from '../toolbar-block/toolbar-block.component';
 
 @Component({ template: '' })
@@ -23,6 +25,7 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
     private injector: Injector,
     private viewContainerRef: ViewContainerRef,
     private componentFactoryResolver: ComponentFactoryResolver,
+    private ngxEdotorjsService: NgxEditorjsService
   ) {
     this.controlDir.valueAccessor = this;
   }
@@ -77,19 +80,21 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
   @HostListener('mouseenter', ['$event.target'])
   onMouseEnter(event: Event) {
     console.log('Base onMouseEnter');
-    this.toolbarBlockPortal = new ComponentPortal(ToolbarBlockComponent);
-    const nextPageViewer = this.basePortalOutlet.attach(this.toolbarBlockPortal);
-  }
-
-  // detach
-  @HostListener('mouseleave', ['$event.target'])
-  onMouseLeave(event: Event) {
-    console.log('Base onMouseLeave');
-    // this.toolbarBlockPortal = new ComponentPortal(ToolbarBlockComponent);
-    // this.basePortalOutlet.detach();
+    if(!this.basePortalOutlet.hasAttached()) {
+      this.ngxEdotorjsService.toolbarComponentDetachSubject.next(true);
+      this.toolbarBlockPortal = new ComponentPortal(ToolbarBlockComponent);
+      this.basePortalOutlet.attach(this.toolbarBlockPortal);
+      this.ngxEdotorjsService.toolbarComponentDetach$
+      .pipe(take(1))
+      .subscribe(() => this.detachToolbarComponent())
+    }
   }
 
   onTouched = () => {};
 
   onChange: (value: string) => void = () => {};
+
+  detachToolbarComponent() {
+    this.basePortalOutlet.detach();
+  }
 }
