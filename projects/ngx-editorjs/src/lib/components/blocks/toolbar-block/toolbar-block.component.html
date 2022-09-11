@@ -27,8 +27,7 @@
     </mat-form-field>
     <mat-list class="block-list-panel">
       <mat-list-item mat-list-item *ngFor="let sign of filteredSigns$ | async"
-          class="block-list-option">
-        <span class="block-list-option-text">{{sign}}</span>
+          class="block-list-item">{{sign}}
       </mat-list-item>
     </mat-list>
   </div>
@@ -40,15 +39,25 @@
   [cdkConnectedOverlayOrigin]="blockOptionListTigger"
   [cdkConnectedOverlayOpen]="openBlocksOption"
   [cdkConnectedOverlayHasBackdrop]="true"
+  [cdkConnectedOverlayOffsetX]="-49"
   [cdkConnectedOverlayOffsetY]="15"
   [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'">
   <div class="block-list-container mat-elevation-z8">
-    <mat-list class="block-list-panel">
-      <mat-list-item mat-list-item *ngFor="let sign of signs"
-          class="block-list-option">
-        <span class="block-list-option-text">{{sign}}</span>
-      </mat-list-item>
-    </mat-list>
+    <div class="block-option-list-panel">
+      <div class="block-option-list-item">
+        <mat-icon>arrow_upward</mat-icon>
+      </div>
+      <div class="block-option-list-item">
+        <mat-icon>delete</mat-icon>
+      </div>
+      <div class="block-option-list-item">
+        <mat-icon>arrow_downward</mat-icon>
+      </div>
+      <div *ngFor="let option of options" class="block-option-list-item">
+        <!-- <mat-icon>title</mat-icon> -->
+        <span class="block-option-list-item-text">H{{option}}</span>
+      </div>
+    </div>
   </div>
 </ng-template>
 

@@ -5,27 +5,40 @@
 
 @mixin theme($theme) {
   $primary: map.get($theme, primary);
+  $accent: map.get($theme, accent);
   $background: map.get($theme, background);
   $foreground: map.get($theme, foreground);
   $is-dark-theme: map.get($theme, is-dark);
 
   .block-list-container {
-    color: map.get($foreground, secondary-text);
-    background: mat.get-color-from-palette($background, background);
+    // color: map.get($foreground, secondary-text);
+    background: mat.get-color-from-palette($background, card);
   }
 
-  .block-list-option {
+  .block-list-item, .block-option-list-item, .toolbar-buttons {
     &:hover, &:focus {
-      background: mat.get-color-from-palette($primary, if($is-dark-theme, 300, 100));
+      background: mat.get-color-from-palette($accent, if($is-dark-theme, 300, 100));
     }
   }
 
   .toolbar-buttons {
-    color: mat.get-color-from-palette($primary, if($is-dark-theme, 300, 100));
-    background-color: if($is-dark-theme, #323, #323232);
-    &:hover, &:focus {
-      color: map.get($foreground, secondary-text);
-      background: mat.get-color-from-palette($primary, if($is-dark-theme, 600, 100));
-    }
+    background: mat.get-color-from-palette($background, card);
+    // color: mat.get-color-from-palette($primary, if($is-dark-theme, 300, 100));
+    // background-color: if($is-dark-theme, #323, #323232);
+    // &:hover, &:focus {
+      // color: map.get($foreground, secondary-text);
+      // background: mat.get-color-from-palette($primary, if($is-dark-theme, 600, 100));
+    // }
+  }
+  
+  .block-option-list-item {
+    color: map.get($foreground, text);
+    // background: mat.get-color-from-palette($primary, if($is-dark-theme, 600, 100));
+    // background: mat.get-color-from-palette($background, secondary);
+    
+    // &:hover, &:focus {
+      // color: if($is-dark-theme, #323, #323232);
+      // background: mat.get-color-from-palette($background, secondary);
+    // }
   }
 }

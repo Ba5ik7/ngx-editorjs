@@ -27,6 +27,15 @@ export class ToolbarBlockComponent implements OnInit {
     'Pig',
   ];
 
+  options = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6'
+  ];
+
   filter$ = this.signCtrl.valueChanges.pipe(startWith(''));
   filteredSigns$!: Observable<string[]>;
   destory: Subject<boolean> = new Subject();
