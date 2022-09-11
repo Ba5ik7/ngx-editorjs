@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { combineLatest, map, Observable, of, startWith, Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'toolbar-block',
@@ -25,10 +26,34 @@ export class ToolbarBlockComponent implements OnInit {
     'Pig',
   ];
 
+  filter$ = this.signCtrl.valueChanges.pipe(startWith(''));
+  filteredSigns$!: Observable<string[]>;
+  destory: Subject<boolean> = new Subject();
+
   constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.filteredSigns$ = combineLatest([ of(this.signs), this.filter$ ])
+    .pipe(
+      takeUntil(this.destory),
+      map(([signs, filterString]) => {
+        if(typeof filterString !== 'string') filterString = '';
+        filterString = filterString.replace(/\\/g, '');
+        const pattern = filterString?.split('').map((v: string) => `(?=.*${v})`).join('');
+        const regex = new RegExp(`${pattern}`, 'gi');
 
+        // return signs.filter(sign => regex.exec(sign));
+        return signs.filter(sign => sign.match(regex));
+      })
+    );
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.destory.next(true);
+  }
+  
   openBlocksList() {
     this.isOpen = !this.isOpen;
   }

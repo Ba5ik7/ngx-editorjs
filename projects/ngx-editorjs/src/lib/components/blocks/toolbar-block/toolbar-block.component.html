@@ -40,10 +40,10 @@
   <div class="block-list-container mat-elevation-z8">
     <mat-form-field appearance="fill">
       <mat-label>Input</mat-label>
-      <input matInput>
+      <input matInput [formControl]="signCtrl">
     </mat-form-field>
     <mat-list class="block-list-panel">
-      <mat-list-item mat-list-item *ngFor="let sign of signs"
+      <mat-list-item mat-list-item *ngFor="let sign of filteredSigns$ | async"
           class="block-list-option">
         <span class="block-list-option-text">{{sign}}</span>
       </mat-list-item>
