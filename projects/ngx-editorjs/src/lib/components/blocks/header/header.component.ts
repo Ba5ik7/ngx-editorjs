@@ -20,7 +20,6 @@ export class HeaderComponent extends BaseBlockComponent implements OnInit, After
   }
 
   override onMouseEnter(event: Event) {
-    console.log('Child onMouseEnter');
     super.onMouseEnter(event);
   }
 }

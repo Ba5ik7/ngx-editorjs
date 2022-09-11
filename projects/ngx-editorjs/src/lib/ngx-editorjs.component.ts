@@ -22,7 +22,7 @@ export class NgxEditorjsComponent implements OnInit {
     this.formGroup.valueChanges.subscribe((data) => {
       console.log({
         data
-      });      
+      });
     });
   }
 }

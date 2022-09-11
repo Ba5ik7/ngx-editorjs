@@ -36,15 +36,10 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
 
   valueChange(value: string): void {
     this.valid = this.controlDir.control?.status !== 'INVALID';
-    if(this.valid === false) {
-      console.log('NOT VALID');
-    }
   }
 
   writeValue(value: string): void {
-    console.log(this.value);
-    this.value = value ? value : '';
-    console.log(this.value);
+    this.value = value ?? '';
   }
 
   registerOnChange(fn: any): void {
@@ -55,8 +50,8 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
     this.onTouched = fn;
   }
 
-  onBlur(event: InputEvent) {
-    this.isActive = event.data !== '';
+  onBlur(event?: InputEvent) {
+    this.isActive = event?.data !== '';
     this.escalateMsg = this.valid === false;
     this.onTouched();
   }
@@ -78,8 +73,7 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
 
   toolbarBlockPortal!: ComponentPortal<ToolbarBlockComponent>;
   @HostListener('mouseenter', ['$event.target'])
-  onMouseEnter(event: Event) {
-    console.log('Base onMouseEnter');
+  onMouseEnter(event?: Event) {
     if(!this.basePortalOutlet.hasAttached()) {
       this.ngxEdotorjsService.toolbarComponentDetachSubject.next(true);
       this.toolbarBlockPortal = new ComponentPortal(ToolbarBlockComponent);
