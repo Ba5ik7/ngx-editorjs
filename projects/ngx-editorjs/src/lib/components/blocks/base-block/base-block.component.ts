@@ -1,5 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy, Self, HostListener, ElementRef } from '@angular/core';
+import { BasePortalOutlet, ComponentPortal, DomPortalOutlet } from '@angular/cdk/portal';
+import { Component, OnInit, ChangeDetectionStrategy, Self, HostListener, ElementRef, ApplicationRef, Injector, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { ToolbarBlockComponent } from '../toolbar-block/toolbar-block.component';
 
 @Component({ template: '' })
 export class BaseBlockComponent implements ControlValueAccessor, OnInit {
@@ -11,9 +13,17 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
   disabled: boolean = false;
   valid: boolean = true;
 
+  basePortalOutlet = new DomPortalOutlet(this.viewContainerRef.element.nativeElement, this.componentFactoryResolver, this.appRef, this.injector);
+
   viewChild!: ElementRef;
 
-  constructor(@Self() public controlDir: NgControl) {
+  constructor(
+    @Self() public controlDir: NgControl,
+    private appRef: ApplicationRef,
+    private injector: Injector,
+    private viewContainerRef: ViewContainerRef,
+    private componentFactoryResolver: ComponentFactoryResolver,
+  ) {
     this.controlDir.valueAccessor = this;
   }
 
@@ -60,6 +70,23 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
   @HostListener('input')
   onInput() {
     this.onChange(this.viewChild.nativeElement.innerHTML);
+  }
+
+
+  toolbarBlockPortal!: ComponentPortal<ToolbarBlockComponent>;
+  @HostListener('mouseenter', ['$event.target'])
+  onMouseEnter(event: Event) {
+    console.log('Base onMouseEnter');
+    this.toolbarBlockPortal = new ComponentPortal(ToolbarBlockComponent);
+    const nextPageViewer = this.basePortalOutlet.attach(this.toolbarBlockPortal);
+  }
+
+  // detach
+  @HostListener('mouseleave', ['$event.target'])
+  onMouseLeave(event: Event) {
+    console.log('Base onMouseLeave');
+    this.toolbarBlockPortal = new ComponentPortal(ToolbarBlockComponent);
+    this.basePortalOutlet.detach();
   }
 
   onTouched = () => {};

@@ -19,4 +19,8 @@ export class HeaderComponent extends BaseBlockComponent implements OnInit, After
     super.viewChild = this.element;
   }
 
+  override onMouseEnter(event: Event) {
+    console.log('Child onMouseEnter');
+    super.onMouseEnter(event);
+  }
 }
