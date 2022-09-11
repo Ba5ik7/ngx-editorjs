@@ -85,8 +85,8 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
   @HostListener('mouseleave', ['$event.target'])
   onMouseLeave(event: Event) {
     console.log('Base onMouseLeave');
-    this.toolbarBlockPortal = new ComponentPortal(ToolbarBlockComponent);
-    this.basePortalOutlet.detach();
+    // this.toolbarBlockPortal = new ComponentPortal(ToolbarBlockComponent);
+    // this.basePortalOutlet.detach();
   }
 
   onTouched = () => {};
