@@ -1,5 +1,6 @@
-import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AdjustBlockPostionActions, NgxEditorjsService } from './ngx-editorjs.service';
 
 @Component({
   selector: 'ngx-editorjs',
@@ -16,13 +17,15 @@ export class NgxEditorjsComponent implements OnInit {
     three: ['', []]
   })
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private ngxEditorjsService: NgxEditorjsService
+  ) { }
 
   ngOnInit(): void {
-    this.formGroup.valueChanges.subscribe((data) => {
-      console.log({
-        data
-      });
-    });
+    this.formGroup.valueChanges.subscribe(data => console.log({ data }));
+
+    this.ngxEditorjsService.adjustBlockPostion$
+    .subscribe((direction: AdjustBlockPostionActions) => console.log({ direction }));
   }
 }

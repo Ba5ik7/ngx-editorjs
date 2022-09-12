@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { AdjustBlockPostionActions, NgxEditorjsService } from '../../../../ngx-editorjs.service';
 
 @Component({
   selector: 'block-options-list',
@@ -6,20 +7,21 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   styleUrls: ['./block-options-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BlockOptionsListComponent implements OnInit {
+export class BlockOptionsListComponent {
 
-  options = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6'
-  ];
+  options = ['1','2','3','4','5','6'];
 
-  constructor() { }
+  constructor(private ngxEdotorjsService: NgxEditorjsService) { }
 
-  ngOnInit(): void {
+  adjustBlockPostionUp() {
+    this.ngxEdotorjsService.adjustBlockPostionSubject.next(AdjustBlockPostionActions.UP);
   }
 
+  adjustBlockPostionDelete() {
+    this.ngxEdotorjsService.adjustBlockPostionSubject.next(AdjustBlockPostionActions.DELETE);
+  }
+
+  adjustBlockPostionDown() {
+    this.ngxEdotorjsService.adjustBlockPostionSubject.next(AdjustBlockPostionActions.DOWN);
+  }
 }

@@ -1,12 +1,18 @@
 <div class="block-list-container mat-elevation-z8">
   <div class="block-option-list-panel">
-    <div matRipple class="block-option-list-item">
+    <div class="block-option-list-item"
+      matRipple
+      (click)="adjustBlockPostionUp()">
       <mat-icon>arrow_upward</mat-icon>
     </div>
-    <div matRipple class="block-option-list-item">
+    <div class="block-option-list-item"
+      matRipple
+      (click)="adjustBlockPostionDelete()">
       <mat-icon>delete</mat-icon>
     </div>
-    <div matRipple class="block-option-list-item">
+    <div class="block-option-list-item"
+      matRipple
+      (click)="adjustBlockPostionDown()">
       <mat-icon>arrow_downward</mat-icon>
     </div>
     <div class="block-option-list-item"
