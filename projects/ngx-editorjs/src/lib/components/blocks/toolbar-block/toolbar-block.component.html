@@ -1,19 +1,24 @@
 <div class="toolbar-container">
   <div class="toolbar-buttons-container">
-    <div class="toolbar-buttons mat-elevation-z4" (click)="openBlocksList()" cdkOverlayOrigin #blockListTigger="cdkOverlayOrigin">
+    <div class="toolbar-buttons mat-elevation-z4"
+      #blockListTigger="cdkOverlayOrigin"
+      cdkOverlayOrigin
+      matRipple 
+      (click)="openBlocksList()">
       <span class="material-icons">add</span>
     </div>
-    <div class="toolbar-buttons mat-elevation-z4" (click)="openBlocksOptionList()" cdkOverlayOrigin #blockOptionListTigger="cdkOverlayOrigin">
+    <div class="toolbar-buttons mat-elevation-z4"
+      cdkOverlayOrigin
+      #blockOptionListTigger="cdkOverlayOrigin"
+      matRipple
+      (click)="openBlocksOptionList()">
       <span class="material-icons">drag_indicator</span>
     </div>
-
   </div>
 </div>
 
-
-
-<ng-template
-  cdkConnectedOverlay
+<!-- Block type search list -->
+<ng-template cdkConnectedOverlay
   (overlayOutsideClick)="openBlocks = false"
   [cdkConnectedOverlayOrigin]="blockListTigger"
   [cdkConnectedOverlayOpen]="openBlocks"
@@ -23,20 +28,23 @@
   <div class="block-list-container mat-elevation-z8">
     <mat-form-field appearance="fill">
       <mat-label>Filter</mat-label>
-      <input 
-      matInput
-      [formControl]="signCtrl"
-      [autofocus]="true"
-      class="filter-text">
+      <input class="filter-text"
+        matInput
+        [formControl]="signCtrl"
+        [autofocus]="true">
     </mat-form-field>
     <mat-list class="block-list-panel">
-      <mat-list-item mat-list-item *ngFor="let sign of filteredSigns$ | async"
-          class="block-list-item">{{sign}}
+      <mat-list-item class="block-list-item"
+        *ngFor="let sign of filteredSigns$ | async"
+        matRipple
+        mat-list-item>
+        {{sign}}
       </mat-list-item>
     </mat-list>
   </div>
 </ng-template>
 
+<!-- Options List-->
 <ng-template
   cdkConnectedOverlay
   (overlayOutsideClick)="openBlocksOption = false"
@@ -48,16 +56,18 @@
   [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'">
   <div class="block-list-container mat-elevation-z8">
     <div class="block-option-list-panel">
-      <div class="block-option-list-item">
+      <div matRipple class="block-option-list-item">
         <mat-icon>arrow_upward</mat-icon>
       </div>
-      <div class="block-option-list-item">
+      <div matRipple class="block-option-list-item">
         <mat-icon>delete</mat-icon>
       </div>
-      <div class="block-option-list-item">
+      <div matRipple class="block-option-list-item">
         <mat-icon>arrow_downward</mat-icon>
       </div>
-      <div *ngFor="let option of options" class="block-option-list-item">
+      <div class="block-option-list-item"
+        *ngFor="let option of options"
+        matRipple>
         <!-- <mat-icon>title</mat-icon> -->
         <span class="block-option-list-item-text">H{{option}}</span>
       </div>

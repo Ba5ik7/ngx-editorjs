@@ -64,3 +64,8 @@
   padding-top: 0px;
   margin-top: -14px;
 }
+
+
+.block-list-item, .block-option-list-item-text, .toolbar-buttons {
+  user-select: none
+}
