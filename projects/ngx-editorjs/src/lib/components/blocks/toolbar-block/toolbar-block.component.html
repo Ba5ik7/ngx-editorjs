@@ -25,24 +25,9 @@
   [cdkConnectedOverlayHasBackdrop]="true"
   [cdkConnectedOverlayOffsetY]="15"
   [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'">
-  <div class="block-list-container mat-elevation-z8">
-    <mat-form-field appearance="fill">
-      <mat-label>Filter</mat-label>
-      <input class="filter-text"
-        matInput
-        [formControl]="signCtrl"
-        [autofocus]="true">
-    </mat-form-field>
-    <mat-list class="block-list-panel">
-      <mat-list-item class="block-list-item"
-        *ngFor="let sign of filteredSigns$ | async"
-        matRipple
-        mat-list-item>
-        {{sign}}
-      </mat-list-item>
-    </mat-list>
-  </div>
+  <searchable-block-list></searchable-block-list>
 </ng-template>
+
 
 <!-- Options List-->
 <ng-template
