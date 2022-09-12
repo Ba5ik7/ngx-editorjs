@@ -1,0 +1,19 @@
+<div class="block-list-container mat-elevation-z8">
+  <div class="block-option-list-panel">
+    <div matRipple class="block-option-list-item">
+      <mat-icon>arrow_upward</mat-icon>
+    </div>
+    <div matRipple class="block-option-list-item">
+      <mat-icon>delete</mat-icon>
+    </div>
+    <div matRipple class="block-option-list-item">
+      <mat-icon>arrow_downward</mat-icon>
+    </div>
+    <div class="block-option-list-item"
+      *ngFor="let option of options"
+      matRipple>
+      <!-- <mat-icon>title</mat-icon> -->
+      <span class="block-option-list-item-text">H{{option}}</span>
+    </div>
+  </div>
+</div>

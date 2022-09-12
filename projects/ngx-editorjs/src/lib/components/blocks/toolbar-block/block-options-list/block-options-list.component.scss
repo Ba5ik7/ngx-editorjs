@@ -1,0 +1,33 @@
+.block-list-container {
+  border-radius: 4px;
+}
+
+.block-option-list-panel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1px;
+  width: 128px;
+  max-height: 128px;
+  border-radius: 4px;
+  overflow: auto;
+  
+}
+
+.block-option-list-item {
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.block-option-list-item-text {
+  font-size: 16px;
+}
+
+.block-option-list-item-text {
+  user-select: none
+}

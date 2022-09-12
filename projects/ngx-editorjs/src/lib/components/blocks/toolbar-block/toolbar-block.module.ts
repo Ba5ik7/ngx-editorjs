@@ -10,13 +10,15 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input'
 import { MatIconModule } from '@angular/material/icon'
 import { MatRippleModule } from '@angular/material/core';
-import { SearchableBlockListComponent } from './searchable-block-list/searchable-block-list.component'
+import { SearchableBlockListComponent } from './searchable-block-list/searchable-block-list.component';
+import { BlockOptionsListComponent } from './block-options-list/block-options-list.component'
 
 
 @NgModule({
   declarations: [
     ToolbarBlockComponent,
-    SearchableBlockListComponent
+    SearchableBlockListComponent,
+    BlockOptionsListComponent
   ],
   imports: [
     CommonModule,

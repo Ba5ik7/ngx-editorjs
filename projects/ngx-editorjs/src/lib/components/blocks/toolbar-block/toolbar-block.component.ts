@@ -9,15 +9,6 @@ export class ToolbarBlockComponent {
   openBlocks = false;
   openBlocksOption = false;
 
-  options = [
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6'
-  ];
-
   constructor() {}
   
   openBlocksList() {
