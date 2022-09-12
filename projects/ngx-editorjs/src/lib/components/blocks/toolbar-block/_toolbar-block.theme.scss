@@ -17,7 +17,7 @@
 
   .block-list-item, .block-option-list-item, .toolbar-buttons {
     &:hover, &:focus {
-      background: mat.get-color-from-palette($accent, if($is-dark-theme, 300, 100));
+      background: mat.get-color-from-palette($accent, if($is-dark-theme, 400, 100));
     }
   }
 
