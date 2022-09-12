@@ -6,9 +6,16 @@
       [formControl]="signCtrl"
       [autofocus]="true">
   </mat-form-field>
-  <mat-list class="block-list-panel">
+  <mat-list class="block-list-panel"
+    *ngIf="filteredSigns$ | async; let filteredSigns">
     <mat-list-item class="block-list-item"
-      *ngFor="let sign of filteredSigns$ | async"
+      *ngIf="filteredSigns.length <= 0"
+      matRipple
+      mat-list-item>
+      No Results
+    </mat-list-item>
+    <mat-list-item class="block-list-item"
+      *ngFor="let sign of filteredSigns"
       matRipple
       mat-list-item>
       {{sign}}
