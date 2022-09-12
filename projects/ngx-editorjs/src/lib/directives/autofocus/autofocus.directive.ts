@@ -13,7 +13,7 @@ export class AutofocusDirective implements AfterContentInit {
 
   ngAfterContentInit() {
     if (this._autofocus || typeof this._autofocus === 'undefined') {
-      setTimeout(() => this.elementRef.nativeElement.focus());
+      setTimeout(() => this.elementRef.nativeElement.select());
     }
   }
 }

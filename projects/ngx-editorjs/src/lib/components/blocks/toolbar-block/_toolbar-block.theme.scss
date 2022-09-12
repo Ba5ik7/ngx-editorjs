@@ -11,7 +11,7 @@
   $is-dark-theme: map.get($theme, is-dark);
 
   .block-list-container {
-    // color: map.get($foreground, secondary-text);
+    color: map.get($foreground, text);
     background: mat.get-color-from-palette($background, card);
   }
 
@@ -31,8 +31,8 @@
     // }
   }
   
-  .block-option-list-item {
-    color: map.get($foreground, text);
+  // .block-option-list-item {
+    // color: map.get($foreground, text);
     // background: mat.get-color-from-palette($primary, if($is-dark-theme, 600, 100));
     // background: mat.get-color-from-palette($background, secondary);
     
@@ -40,5 +40,5 @@
       // color: if($is-dark-theme, #323, #323232);
       // background: mat.get-color-from-palette($background, secondary);
     // }
-  }
+  // }
 }
