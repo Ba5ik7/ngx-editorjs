@@ -17,7 +17,8 @@
     <mat-list-item class="block-list-item"
       *ngFor="let sign of filteredSigns"
       matRipple
-      mat-list-item>
+      mat-list-item
+      (click)="addBlock()">
       {{sign}}
     </mat-list-item>
   </mat-list>

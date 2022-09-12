@@ -1,7 +1,8 @@
-import { CdkOverlayOrigin } from '@angular/cdk/overlay';
-import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { NgxEditorjsService } from '../../../../ngx-editorjs.service';
 import { combineLatest, map, Observable, of, startWith, Subject, takeUntil } from 'rxjs';
+import { HeaderComponent } from '../../header/header.component';
 
 @Component({
   selector: 'searchable-block-list',
@@ -34,7 +35,7 @@ export class SearchableBlockListComponent implements OnInit {
   @Output('closeEvent')
   closeEvent = new EventEmitter();
 
-  constructor() { }
+  constructor(private ngxEdotorjsService: NgxEditorjsService) { }
 
   ngOnInit(): void {
     this.filteredSigns$ = combineLatest([ of(this.signs), this.filter$ ])
@@ -60,5 +61,9 @@ export class SearchableBlockListComponent implements OnInit {
 
   closeSearchableBlockList() {
     this.closeEvent.emit('close');
+  }
+
+  addBlock() {
+    this.ngxEdotorjsService.addNewBlockSubject.next('')
   }
 }
