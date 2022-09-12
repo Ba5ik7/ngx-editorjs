@@ -12,6 +12,8 @@ import { HeaderComponent } from '../../header/header.component';
 })
 export class SearchableBlockListComponent implements OnInit {
 
+  @Output('closeLists') closeListsEmitter = new EventEmitter();
+
   signCtrl = new FormControl([]);
   signs = [
     'Rat',
@@ -31,9 +33,6 @@ export class SearchableBlockListComponent implements OnInit {
   filter$ = this.signCtrl.valueChanges.pipe(startWith(''));
   filteredSigns$!: Observable<string[]>;
   destory: Subject<boolean> = new Subject();
-
-  @Output('closeEvent')
-  closeEvent = new EventEmitter();
 
   constructor(private ngxEdotorjsService: NgxEditorjsService) { }
 
@@ -59,11 +58,12 @@ export class SearchableBlockListComponent implements OnInit {
     this.destory.next(true);
   }
 
-  closeSearchableBlockList() {
-    this.closeEvent.emit('close');
+  closeLists() {
+    this.closeListsEmitter.emit('close');
   }
 
   addBlock() {
+    this.closeLists();
     this.ngxEdotorjsService.addNewBlockSubject.next('')
   }
 }

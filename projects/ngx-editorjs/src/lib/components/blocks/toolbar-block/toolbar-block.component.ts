@@ -18,4 +18,9 @@ export class ToolbarBlockComponent {
   openBlocksOptionList() {
     this.openBlocksOption = !this.openBlocksOption;
   }
+  
+  closeLists() {
+    this.openBlocks = false;
+    this.openBlocksOption = false;
+  }
 }
