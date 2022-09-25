@@ -78,6 +78,7 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
       this.ngxEdotorjsService.toolbarComponentDetachSubject.next(true);
       this.toolbarBlockPortal = new ComponentPortal(ToolbarBlockComponent);
       this.basePortalOutlet.attach(this.toolbarBlockPortal);
+      this.ngxEdotorjsService.currentlyFocusBlockElemantRefSubject.next(this.viewContainerRef.element);
       this.ngxEdotorjsService.toolbarComponentDetach$
       .pipe(take(1))
       .subscribe(() => this.detachToolbarComponent())

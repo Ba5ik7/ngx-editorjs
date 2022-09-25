@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { ElementRef, Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { BaseBlockComponent } from './components/blocks/base-block/base-block.component';
 
@@ -13,6 +13,7 @@ export enum AdjustBlockPostionActions {
   providedIn: 'root'
 })
 export class NgxEditorjsService {
+  
 
   constructor() { }
 
@@ -28,4 +29,8 @@ export class NgxEditorjsService {
   // Lives here Just for now(debugging)
   addNewBlockSubject = new Subject<any>();
   addNewBlock$: Observable<any> = this.addNewBlockSubject.asObservable();
+
+  // Whatever at this point hahahah 
+  currentlyFocusBlockElemantRefSubject = new Subject<ElementRef>();
+  currentlyFocusBlockElemantRef$: Observable<ElementRef> = this.currentlyFocusBlockElemantRefSubject.asObservable();
 }
