@@ -9,6 +9,12 @@ export enum AdjustBlockPostionActions {
   DELETE = 'DELETE'
 }
 
+export interface SearchableBlock {
+  name: string;
+  type: string;
+  data?: any;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,6 +32,6 @@ export class NgxEditorjsService {
 
 
   // Lives here Just for now(debugging)
-  addNewBlockSubject = new Subject<any>();
-  addNewBlock$: Observable<any> = this.addNewBlockSubject.asObservable();
+  addNewBlockSubject = new Subject<SearchableBlock>();
+  addNewBlock$: Observable<SearchableBlock> = this.addNewBlockSubject.asObservable();
 }

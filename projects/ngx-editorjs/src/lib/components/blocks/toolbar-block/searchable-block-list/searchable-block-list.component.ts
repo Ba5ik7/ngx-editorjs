@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { NgxEditorjsService } from '../../../../ngx-editorjs.service';
+import { NgxEditorjsService, SearchableBlock } from '../../../../ngx-editorjs.service';
 import { combineLatest, map, Observable, of, startWith, Subject, takeUntil } from 'rxjs';
 import { HeaderComponent } from '../../header/header.component';
 
@@ -15,23 +15,13 @@ export class SearchableBlockListComponent implements OnInit {
   @Output('closeLists') closeListsEmitter = new EventEmitter();
 
   signCtrl = new FormControl([]);
-  signs = [
-    'Rat',
-    'Ox',
-    'Tiger',
-    'Rabbit',
-    'Dragon',
-    'Snake',
-    'Horse',
-    'Goat',
-    'Monkey',
-    'Rooster',
-    'Dog',
-    'Pig',
+  signs: SearchableBlock[] = [
+    { type: 'Header', name: 'Header' },
+    { type: 'Paragraph', name: 'Paragraph' }
   ];
 
   filter$ = this.signCtrl.valueChanges.pipe(startWith(''));
-  filteredSigns$!: Observable<string[]>;
+  filteredSigns$!: Observable<SearchableBlock[]>;
   destory: Subject<boolean> = new Subject();
 
   constructor(private ngxEdotorjsService: NgxEditorjsService) { }
@@ -47,7 +37,7 @@ export class SearchableBlockListComponent implements OnInit {
         const regex = new RegExp(`${pattern}`, 'gi');
 
         // return signs.filter(sign => regex.exec(sign));
-        return signs.filter(sign => sign.match(regex));
+        return signs.filter(sign => sign.type.match(regex));
       })
     );
   }
@@ -62,8 +52,8 @@ export class SearchableBlockListComponent implements OnInit {
     this.closeListsEmitter.emit('close');
   }
 
-  addBlock() {
+  addBlock(sign: SearchableBlock) {
     this.closeLists();
-    this.ngxEdotorjsService.addNewBlockSubject.next('')
+    this.ngxEdotorjsService.addNewBlockSubject.next(sign);
   }
 }

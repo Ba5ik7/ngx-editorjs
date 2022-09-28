@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CVAMediatorComponent, FormComponent } from './components/cvamediator/cvamediator.component';
-import { AdjustBlockPostionActions, NgxEditorjsService } from './ngx-editorjs.service';
+import { AdjustBlockPostionActions, NgxEditorjsService, SearchableBlock } from './ngx-editorjs.service';
 
 @Component({
   selector: 'ngx-editorjs',
@@ -30,10 +30,10 @@ export class NgxEditorjsComponent implements OnInit {
     .subscribe((direction: AdjustBlockPostionActions) => console.log({ direction }));
 
     this.ngxEditorjsService.addNewBlock$
-    .subscribe((block: any) => this.addNewBlock());
+    .subscribe((block) => this.addNewBlock(block));
   }
 
-  addNewBlock() {
+  addNewBlock(block: SearchableBlock): void {
     // Add control to form group
     this.controlName++;
     this.formGroup.addControl(
