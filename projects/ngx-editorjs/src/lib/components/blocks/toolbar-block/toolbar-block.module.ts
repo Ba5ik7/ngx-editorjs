@@ -28,7 +28,8 @@ import { BlockOptionsListComponent } from './block-options-list/block-options-li
     MatInputModule,
     MatListModule,
     MatIconModule,
-    MatRippleModule
+    MatRippleModule,
+    AutofocusModule
   ],
   exports: [
     ToolbarBlockComponent
