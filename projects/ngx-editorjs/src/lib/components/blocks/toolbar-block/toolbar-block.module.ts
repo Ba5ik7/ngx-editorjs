@@ -24,7 +24,6 @@ import { BlockOptionsListComponent } from './block-options-list/block-options-li
     CommonModule,
     ReactiveFormsModule,
     OverlayModule,
-    AutofocusModule,
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
