@@ -28,7 +28,6 @@ export class NgxEditorjsComponent implements OnInit {
     this.ngxEditorjsService.adjustBlockPostion$
     .subscribe((direction: AdjustBlockPostionActions) => console.log({ direction }));
 
-
     this.ngxEditorjsService.addNewBlock$
     .subscribe((block: any) => console.log({ block }));
   }

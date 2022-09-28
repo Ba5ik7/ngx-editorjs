@@ -5,10 +5,12 @@ import { NgxEditorjsComponent } from './ngx-editorjs.component';
 import { HeaderModule } from './components/blocks/header/header.module';
 // import { BaseBlockComponent } from './blocks/base-block/base-block.component';
 import { ToolbarBlockModule } from './components/blocks/toolbar-block/toolbar-block.module';
+import { CVAMediatorComponent } from './components/cvamediator/cvamediator.component';
 
 @NgModule({
   declarations: [
-    NgxEditorjsComponent
+    NgxEditorjsComponent,
+    CVAMediatorComponent
     // ContenteditableValueAccessor,
     // BaseBlockComponent
   ],
