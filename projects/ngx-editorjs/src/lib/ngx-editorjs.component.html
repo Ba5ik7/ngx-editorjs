@@ -1,7 +1,3 @@
-<form [formGroup]="formGroup">
-  <!-- <toolbar-block></toolbar-block> -->
-  <ejs-header formControlName="init" class="debug"></ejs-header>
-  <ejs-header formControlName="one" class="debug"></ejs-header>
-  <ejs-header formControlName="two" class="debug"></ejs-header>
-  <ejs-header formControlName="three" class="debug"></ejs-header>
+<form #ngxEditor [formGroup]="formGroup">
+  <ejs-header [formControlName]="'0'"></ejs-header>
 </form>
