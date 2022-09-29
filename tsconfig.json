@@ -15,6 +15,9 @@
       "@tmdjr/ngx-editorjs": [
         "dist/ngx-editorjs/ngx-editorjs",
         "dist/ngx-editorjs"
+      ],
+      "ngx-editor-paragraph-block": [
+        "dist/ngx-editor-paragraph-block"
       ]
     },
     "declaration": false,
