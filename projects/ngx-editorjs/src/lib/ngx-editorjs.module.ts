@@ -8,6 +8,7 @@ import { ToolbarBlockModule } from './components/blocks/toolbar-block/toolbar-bl
 import { CVAMediatorComponent } from './components/cvamediator/cvamediator.component';
 // import { AutofocusDirective } from './directives/autofocus/autofocus.directive';
 import { AutofocusModule } from './directives/autofocus/autofocus.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AutofocusModule } from './directives/autofocus/autofocus.module';
     // BaseBlockComponent
   ],
   imports: [
+    CommonModule,
     ReactiveFormsModule,
     HeaderModule,
     ToolbarBlockModule,
