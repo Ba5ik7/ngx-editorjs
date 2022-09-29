@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { NavbarModule } from './components/navbar/navbar.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NGX_EDITORJS_OPTIONS } from '@tmdjr/ngx-editorjs';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,14 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     NavbarModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: NGX_EDITORJS_OPTIONS,
+      useValue: {
+        blocks: [{ type: 'Paragraph', name: 'Paragraph' }]
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

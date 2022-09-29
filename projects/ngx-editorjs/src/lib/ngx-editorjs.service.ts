@@ -1,6 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, InjectionToken, Optional } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { BaseBlockComponent } from './components/blocks/base-block/base-block.component';
+// import { BaseBlockComponent } from './components/blocks/base-block/base-block.component';
+
+
+export const NGX_EDITORJS_OPTIONS = new InjectionToken<NgxEditorjsOptions>('NGX_EDITORJS_OPTIONS');
+export interface NgxEditorjsOptions {
+  blocks?: SearchableBlock[];
+}
 
 // Lives here Just for now(debugging)
 export enum AdjustBlockPostionActions {
@@ -20,7 +26,11 @@ export interface SearchableBlock {
 })
 export class NgxEditorjsService {
 
-  constructor() { }
+  blocks: SearchableBlock[];
+
+  constructor(@Optional() @Inject(NGX_EDITORJS_OPTIONS) options: NgxEditorjsOptions) {    
+    this.blocks = options?.blocks || [];
+  }
 
   // Lives here Just for now(debugging)
   toolbarComponentDetachSubject = new Subject<boolean>();

@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from
 import { FormControl } from '@angular/forms';
 import { NgxEditorjsService, SearchableBlock } from '../../../../ngx-editorjs.service';
 import { combineLatest, map, Observable, of, startWith, Subject, takeUntil } from 'rxjs';
-import { HeaderComponent } from '../../header/header.component';
 
 @Component({
   selector: 'searchable-block-list',
@@ -14,30 +13,32 @@ export class SearchableBlockListComponent implements OnInit {
 
   @Output('closeLists') closeListsEmitter = new EventEmitter();
 
-  signCtrl = new FormControl([]);
-  signs: SearchableBlock[] = [
+  blockCtrl = new FormControl([]);
+  blocks!: SearchableBlock[];
+  blocksDefaults: SearchableBlock[] = [
     { type: 'Header', name: 'Header' },
     { type: 'Paragraph', name: 'Paragraph' }
   ];
 
-  filter$ = this.signCtrl.valueChanges.pipe(startWith(''));
-  filteredSigns$!: Observable<SearchableBlock[]>;
+  filter$ = this.blockCtrl.valueChanges.pipe(startWith(''));
+  filteredBlocks$!: Observable<SearchableBlock[]>;
   destory: Subject<boolean> = new Subject();
 
   constructor(private ngxEdotorjsService: NgxEditorjsService) { }
 
   ngOnInit(): void {
-    this.filteredSigns$ = combineLatest([ of(this.signs), this.filter$ ])
+    this.blocks = this.blocksDefaults.concat(this.ngxEdotorjsService.blocks);
+    this.filteredBlocks$ = combineLatest([ of(this.blocks), this.filter$ ])
     .pipe(
       takeUntil(this.destory),
-      map(([signs, filterString]) => {
+      map(([blocks, filterString]) => {
         if(typeof filterString !== 'string') filterString = '';
         filterString = filterString.replace(/\\/g, '');
         const pattern = filterString?.split('').map((v: string) => `(?=.*${v})`).join('');
         const regex = new RegExp(`${pattern}`, 'gi');
 
-        // return signs.filter(sign => regex.exec(sign));
-        return signs.filter(sign => sign.type.match(regex));
+        // return blocks.filter(block => regex.exec(block));
+        return blocks.filter(block => block.type.match(regex));
       })
     );
   }
@@ -52,8 +53,8 @@ export class SearchableBlockListComponent implements OnInit {
     this.closeListsEmitter.emit('close');
   }
 
-  addBlock(sign: SearchableBlock) {
+  addBlock(block: SearchableBlock) {
     this.closeLists();
-    this.ngxEdotorjsService.addNewBlockSubject.next(sign);
+    this.ngxEdotorjsService.addNewBlockSubject.next(block);
   }
 }

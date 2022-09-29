@@ -3,23 +3,23 @@
     <mat-label>Filter</mat-label>
     <input class="filter-text"
       matInput
-      [formControl]="signCtrl"
+      [formControl]="blockCtrl"
       [autofocus]="true">
   </mat-form-field>
   <mat-list class="block-list-panel"
-    *ngIf="filteredSigns$ | async; let filteredSigns">
+    *ngIf="filteredBlocks$ | async; let filteredBlocks">
     <mat-list-item class="block-list-item"
-      *ngIf="filteredSigns.length <= 0"
+      *ngIf="filteredBlocks.length <= 0"
       matRipple
       mat-list-item>
       No Results
     </mat-list-item>
     <mat-list-item class="block-list-item"
-      *ngFor="let sign of filteredSigns"
+      *ngFor="let block of filteredBlocks"
       matRipple
       mat-list-item
-      (click)="addBlock(sign)">
-      {{sign.name}}
+      (click)="addBlock(block)">
+      {{block.name}}
     </mat-list-item>
   </mat-list>
 </div>
