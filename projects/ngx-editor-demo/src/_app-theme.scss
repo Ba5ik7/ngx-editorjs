@@ -6,7 +6,7 @@
 @use './app/pages/home/home-theme';
 @use './app/components/navbar/navbar-theme';
 
-@use 'ngx-editorjs' as ngx-editorjs;
+@use '@tmdjr/ngx-editorjs' as ngx-editorjs;
 
 // @include test-lib-theme($theme);
 // @import '@tmdjr/ngx-editor/ngx-editor-theme';

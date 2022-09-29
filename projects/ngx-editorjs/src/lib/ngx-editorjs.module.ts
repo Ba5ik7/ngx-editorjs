@@ -6,7 +6,7 @@ import { HeaderModule } from './components/blocks/header/header.module';
 // import { BaseBlockComponent } from './blocks/base-block/base-block.component';
 import { ToolbarBlockModule } from './components/blocks/toolbar-block/toolbar-block.module';
 import { CVAMediatorComponent } from './components/cvamediator/cvamediator.component';
-import { AutofocusDirective } from './directives/autofocus/autofocus.directive';
+// import { AutofocusDirective } from './directives/autofocus/autofocus.directive';
 import { AutofocusModule } from './directives/autofocus/autofocus.module';
 
 @NgModule({
@@ -20,7 +20,7 @@ import { AutofocusModule } from './directives/autofocus/autofocus.module';
     ReactiveFormsModule,
     HeaderModule,
     ToolbarBlockModule,
-    AutofocusModule
+    AutofocusModule,
   ],
   exports: [
     NgxEditorjsComponent
