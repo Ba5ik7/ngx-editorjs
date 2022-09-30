@@ -55,7 +55,7 @@ export class NgxEditorjsComponent implements OnInit {
     // Import modules here
     const moduleExports: any = await import(
       /* webpackExclude: /\.map$/ */
-    '@tmdjr/ngx-editor-paragraph-block/esm2020/' + this.ngxEditorjsService.blocks[0].type);
+    `@tmdjr/ngx-editor-paragraph-block/esm2020/${this.ngxEditorjsService.blocks[0].type}`);
 
     console.log({
       typeof: typeof moduleExports,

@@ -9,6 +9,10 @@ import { BaseBlockComponent } from '@tmdjr/ngx-editorjs';
     </p>
   `,
   styles: [
+  ],
+  providers: [
+  ],
+  imports: [
   ]
 })
 export class NgxEditorParagraphBlockComponent extends BaseBlockComponent implements OnInit, AfterViewInit {
