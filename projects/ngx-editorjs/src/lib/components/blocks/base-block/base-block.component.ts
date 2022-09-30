@@ -84,6 +84,13 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
     }
   }
 
+  @HostListener('paste', ['$event'])
+  onPaste(event?: Event) {
+    event?.preventDefault();
+    const text = (event as ClipboardEvent).clipboardData?.getData('text/plain');
+    document.execCommand('insertHTML', false, text);
+  }
+
   onTouched = () => {};
 
   onChange: (value: string) => void = () => {};
