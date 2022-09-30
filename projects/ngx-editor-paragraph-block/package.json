@@ -3,7 +3,8 @@
   "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "~14.2.0",
-    "@angular/core": "~14.2.0"
+    "@angular/core": "~14.2.0",
+    "@tmdjr/ngx-editor": "^0.0.2"
   },
   "dependencies": {
     "tslib": "^2.3.0"

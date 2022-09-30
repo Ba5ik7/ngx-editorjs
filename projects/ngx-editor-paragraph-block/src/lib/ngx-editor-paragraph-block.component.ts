@@ -1,20 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { BaseBlockComponent } from '@tmdjr/ngx-editorjs';
 @Component({
-  selector: 'lib-ngx-editor-paragraph-block',
+  standalone: true,
+  selector: 'ngx-editor-paragraph-block',
   template: `
-    <p>
+    <p #paragraph contenteditable (focus)="onMouseEnter($event)">
       ngx-editor-paragraph-block works!
     </p>
   `,
   styles: [
   ]
 })
-export class NgxEditorParagraphBlockComponent implements OnInit {
+export class NgxEditorParagraphBlockComponent extends BaseBlockComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  @ViewChild('paragraph') element!: ElementRef;
 
-  ngOnInit(): void {
+  override ngOnInit() {
+    super.ngOnInit();
   }
 
+  ngAfterViewInit(): void {
+    super.viewChild = this.element;
+  }
+
+  override onMouseEnter(event: Event) {
+    super.onMouseEnter(event);
+  }
 }

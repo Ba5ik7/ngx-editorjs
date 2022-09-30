@@ -29,7 +29,7 @@ import { NGX_EDITORJS_OPTIONS } from '@tmdjr/ngx-editorjs';
     {
       provide: NGX_EDITORJS_OPTIONS,
       useValue: {
-        blocks: [{ type: 'lib/ngx-editor-paragraph-block.component', name: 'Paragraph' }]
+        blocks: [{ type: 'lib/ngx-editor-paragraph-block.mediator', name: 'Paragraph' }]
       }
     }
   ],

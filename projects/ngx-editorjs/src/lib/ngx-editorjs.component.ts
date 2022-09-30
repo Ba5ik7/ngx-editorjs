@@ -33,23 +33,22 @@ export class NgxEditorjsComponent implements OnInit {
 
     this.ngxEditorjsService.addNewBlock$
     .subscribe((block) => this.addNewBlock(block));
-
-    this.loadBlockModules();
   }
 
   addNewBlock(block: SearchableBlock): void {
-    // Add control to form group
-    this.controlName++;
-    this.formGroup.addControl(
-      this.controlName.toString(),
-      this.formBuilder.control('', [])
-    );
-    // Create component
-    const componentRef = this.ngxEditor.createComponent(CVAMediatorComponent);
+    // // Add control to form group
+    // this.controlName++;
+    // this.formGroup.addControl(
+    //   this.controlName.toString(),
+    //   this.formBuilder.control('', [])
+    // );
+    // // Create component
+    // const componentRef = this.ngxEditor.createComponent(CVAMediatorComponent);
 
-    const fieldComponent = componentRef.instance as FormComponent;
-    fieldComponent.formControlName = this.controlName.toString();
-    fieldComponent.form = this.formGroup;
+    // const fieldComponent = componentRef.instance as FormComponent;
+    // fieldComponent.formControlName = this.controlName.toString();
+    // fieldComponent.form = this.formGroup;
+    this.loadBlockModules();
   }
 
   async loadBlockModules(): Promise<void> {
@@ -63,8 +62,18 @@ export class NgxEditorjsComponent implements OnInit {
       moduleExports
     });
     
-    this.exampleComponentType = moduleExports['NgxEditorParagraphBlockComponent'];
+
+    this.controlName++;
+    this.formGroup.addControl(
+      this.controlName.toString(),
+      this.formBuilder.control('', [])
+    );
+
+    this.exampleComponentType = moduleExports['NgxEditorParagraphBlockMediator'];
     const componentRef = this.ngxEditor.createComponent(this.exampleComponentType as Type<unknown>);
+    const fieldComponent = componentRef.instance as FormComponent;
+    fieldComponent.formControlName = this.controlName.toString();
+    fieldComponent.form = this.formGroup;
     // this.exampleModuleFactory = new ɵNgModuleFactory(moduleExports['NgxEditorParagraphBlockComponent']);
     // console.log({ exampleModuleFactory: this.exampleModuleFactory, exampleComponentType: this.exampleComponentType });
     
