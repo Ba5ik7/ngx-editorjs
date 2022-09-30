@@ -17,7 +17,9 @@ export enum AdjustBlockPostionActions {
 
 export interface SearchableBlock {
   name: string;
-  type: string;
+  componentName?: string;
+  esm2020Path?: string;
+  type?: string;
   data?: any;
 }
 

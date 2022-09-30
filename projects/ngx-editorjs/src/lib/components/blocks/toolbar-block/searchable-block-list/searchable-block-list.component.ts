@@ -16,8 +16,7 @@ export class SearchableBlockListComponent implements OnInit {
   blockCtrl = new FormControl([]);
   blocks!: SearchableBlock[];
   blocksDefaults: SearchableBlock[] = [
-    { type: 'Header', name: 'Header' },
-    { type: 'Paragraph', name: 'Paragraph' }
+    { type: 'HEADER', name: 'Header' },
   ];
 
   filter$ = this.blockCtrl.valueChanges.pipe(startWith(''));
@@ -38,7 +37,7 @@ export class SearchableBlockListComponent implements OnInit {
         const regex = new RegExp(`${pattern}`, 'gi');
 
         // return blocks.filter(block => regex.exec(block));
-        return blocks.filter(block => block.type.match(regex));
+        return blocks.filter(block => block.name.match(regex));
       })
     );
   }

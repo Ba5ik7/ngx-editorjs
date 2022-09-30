@@ -32,50 +32,30 @@ export class NgxEditorjsComponent implements OnInit {
     .subscribe((direction: AdjustBlockPostionActions) => console.log({ direction }));
 
     this.ngxEditorjsService.addNewBlock$
-    .subscribe((block) => this.addNewBlock(block));
+    .subscribe((block) => block.type === 'HEADER' ? this.addNewBlock(block) : this.loadBlockModules());
+  }
+
+  addNewControl(): void {
+    this.controlName++;
+    this.formGroup.addControl(this.controlName.toString(), this.formBuilder.control('', []));
   }
 
   addNewBlock(block: SearchableBlock): void {
-    // // Add control to form group
-    // this.controlName++;
-    // this.formGroup.addControl(
-    //   this.controlName.toString(),
-    //   this.formBuilder.control('', [])
-    // );
-    // // Create component
-    // const componentRef = this.ngxEditor.createComponent(CVAMediatorComponent);
-
-    // const fieldComponent = componentRef.instance as FormComponent;
-    // fieldComponent.formControlName = this.controlName.toString();
-    // fieldComponent.form = this.formGroup;
-    this.loadBlockModules();
-  }
-
-  async loadBlockModules(): Promise<void> {
-    // Import modules here
-    const moduleExports: any = await import(
-      /* webpackExclude: /\.map$/ */
-    `@tmdjr/ngx-editor-paragraph-block/esm2020/${this.ngxEditorjsService.blocks[0].type}`);
-
-    console.log({
-      typeof: typeof moduleExports,
-      moduleExports
-    });
-    
-
-    this.controlName++;
-    this.formGroup.addControl(
-      this.controlName.toString(),
-      this.formBuilder.control('', [])
-    );
-
-    this.exampleComponentType = moduleExports['NgxEditorParagraphBlockMediator'];
-    const componentRef = this.ngxEditor.createComponent(this.exampleComponentType as Type<unknown>);
+    const componentRef = this.ngxEditor.createComponent(CVAMediatorComponent);
     const fieldComponent = componentRef.instance as FormComponent;
     fieldComponent.formControlName = this.controlName.toString();
     fieldComponent.form = this.formGroup;
-    // this.exampleModuleFactory = new ɵNgModuleFactory(moduleExports['NgxEditorParagraphBlockComponent']);
-    // console.log({ exampleModuleFactory: this.exampleModuleFactory, exampleComponentType: this.exampleComponentType });
-    
+  }
+
+  async loadBlockModules(): Promise<void> {
+    const moduleExports: any = await import(
+      /* webpackExclude: /\.map$/ */
+    `@tmdjr/ngx-editor-paragraph-block/esm2020/${this.ngxEditorjsService.blocks[0].esm2020Path}`);
+
+    this.exampleComponentType = moduleExports[this.ngxEditorjsService.blocks[0].componentName ?? ''];
+    const componentRef = this.ngxEditor.createComponent(this.exampleComponentType as Type<unknown>);
+    const fieldComponent = componentRef.instance as FormComponent;
+    fieldComponent.formControlName = this.controlName.toString();
+    fieldComponent.form = this.formGroup; 
   }
 }
