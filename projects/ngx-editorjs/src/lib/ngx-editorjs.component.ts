@@ -17,9 +17,6 @@ export class NgxEditorjsComponent implements OnInit {
     [this.controlName.toString()]: this.formBuilder.control('', [])
   });
 
-  exampleModuleFactory: ɵNgModuleFactory<any> | null = null;
-  exampleComponentType: Type<any> | null = null;
-
   constructor(
     private formBuilder: FormBuilder,
     private ngxEditorjsService: NgxEditorjsService
@@ -32,7 +29,7 @@ export class NgxEditorjsComponent implements OnInit {
     .subscribe((direction: AdjustBlockPostionActions) => console.log({ direction }));
 
     this.ngxEditorjsService.addNewBlock$
-    .subscribe((block) => block.type === 'HEADER' ? this.addNewBlock(block) : this.loadBlockModules());
+    .subscribe((block) => block.type === 'HEADER' ? this.addHeaderBlock() : this.loadBlockModules(block));
   }
 
   addNewControl(): void {
@@ -40,20 +37,20 @@ export class NgxEditorjsComponent implements OnInit {
     this.formGroup.addControl(this.controlName.toString(), this.formBuilder.control('', []));
   }
 
-  addNewBlock(block: SearchableBlock): void {
+  addHeaderBlock(): void {
     const componentRef = this.ngxEditor.createComponent(CVAMediatorComponent);
     const fieldComponent = componentRef.instance as FormComponent;
     fieldComponent.formControlName = this.controlName.toString();
     fieldComponent.form = this.formGroup;
   }
 
-  async loadBlockModules(): Promise<void> {
-    const moduleExports: any = await import(
+  async loadBlockModules({ esm2020Path, componentName }: SearchableBlock): Promise<void> {
+    const moduleExports: { [key: string]: unknown } = await import(
       /* webpackExclude: /\.map$/ */
-    `@tmdjr/ngx-editor-paragraph-block/esm2020/${this.ngxEditorjsService.blocks[0].esm2020Path}`);
+    `@tmdjr/ngx-editor-paragraph-block/esm2020/${esm2020Path}`);
 
-    this.exampleComponentType = moduleExports[this.ngxEditorjsService.blocks[0].componentName ?? ''];
-    const componentRef = this.ngxEditor.createComponent(this.exampleComponentType as Type<unknown>);
+    const blockComponentType = moduleExports[componentName!];
+    const componentRef = this.ngxEditor.createComponent(blockComponentType as Type<unknown>);
     const fieldComponent = componentRef.instance as FormComponent;
     fieldComponent.formControlName = this.controlName.toString();
     fieldComponent.form = this.formGroup; 
