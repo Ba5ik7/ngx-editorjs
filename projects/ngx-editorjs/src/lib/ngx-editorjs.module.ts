@@ -21,7 +21,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     ReactiveFormsModule,
     HeaderModule,
-    // ToolbarBlockModule,
+    ToolbarBlockModule,
     AutofocusModule,
   ],
   exports: [
