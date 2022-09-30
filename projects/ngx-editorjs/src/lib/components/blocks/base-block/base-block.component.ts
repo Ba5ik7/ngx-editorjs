@@ -1,7 +1,17 @@
-import { BasePortalOutlet, ComponentPortal, DomPortalOutlet } from '@angular/cdk/portal';
-import { Component, OnInit, ChangeDetectionStrategy, Self, HostListener, ElementRef, ApplicationRef, Injector, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
+import { ComponentPortal, DomPortalOutlet } from '@angular/cdk/portal';
+import {
+  Component,
+  OnInit,
+  Self,
+  HostListener,
+  ElementRef,
+  ApplicationRef,
+  Injector,
+  ViewContainerRef,
+  ComponentFactoryResolver
+} from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
-import { take, takeUntil } from 'rxjs';
+import { take } from 'rxjs';
 import { NgxEditorjsService } from '../../../ngx-editorjs.service';
 import { ToolbarBlockComponent } from '../toolbar-block/toolbar-block.component';
 
@@ -15,9 +25,16 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
   disabled: boolean = false;
   valid: boolean = true;
 
-  basePortalOutlet = new DomPortalOutlet(this.viewContainerRef.element.nativeElement, this.componentFactoryResolver, this.appRef, this.injector);
+  basePortalOutlet = new DomPortalOutlet(
+    this.viewContainerRef.element.nativeElement,
+    this.componentFactoryResolver,
+    this.appRef,
+    this.injector
+  );
 
   viewChild!: ElementRef;
+
+  toolbarBlockPortal!: ComponentPortal<ToolbarBlockComponent>;
 
   constructor(
     @Self() public controlDir: NgControl,
@@ -65,13 +82,15 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
     this.disabled = isDisabled;
   }
 
+  onTouched = () => {};
+
+  onChange: (value: string) => void = () => {};
+
   @HostListener('input')
   onInput() {
     this.onChange(this.viewChild.nativeElement.innerHTML);
   }
 
-
-  toolbarBlockPortal!: ComponentPortal<ToolbarBlockComponent>;
   @HostListener('mouseenter', ['$event.target'])
   onMouseEnter(event?: Event) {
     if(!this.basePortalOutlet.hasAttached()) {
@@ -84,6 +103,10 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
     }
   }
 
+  detachToolbarComponent() {
+    this.basePortalOutlet.detach();
+  }
+
   @HostListener('paste', ['$event'])
   onPaste(event?: Event) {
     event?.preventDefault();
@@ -91,11 +114,4 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
     document.execCommand('insertHTML', false, text);
   }
 
-  onTouched = () => {};
-
-  onChange: (value: string) => void = () => {};
-
-  detachToolbarComponent() {
-    this.basePortalOutlet.detach();
-  }
 }
