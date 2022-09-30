@@ -4,12 +4,11 @@ import { BaseBlockComponent } from '@tmdjr/ngx-editorjs';
   standalone: true,
   selector: 'ngx-editor-paragraph-block',
   template: `
-    <p #paragraph contenteditable (focus)="onMouseEnter($event)">
+    <p #paragraph contenteditable (focus)="onMouseEnter($event)" class="flex-spacer">
       ngx-editor-paragraph-block works!
     </p>
   `,
-  styles: [
-  ],
+  styles: [`:host { display: flex; }`],
   providers: [
   ],
   imports: [
