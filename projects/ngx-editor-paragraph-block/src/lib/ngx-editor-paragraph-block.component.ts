@@ -1,10 +1,11 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { BaseBlockComponent } from '@tmdjr/ngx-editorjs';
+import { BaseBlockComponent, AutofocusDirective } from '@tmdjr/ngx-editorjs';
+
 @Component({
   standalone: true,
   selector: 'ngx-editor-paragraph-block',
   template: `
-    <p #paragraph contenteditable (focus)="onMouseEnter($event)" class="flex-spacer">
+    <p class="flex-spacer" #paragraph contenteditable [autofocus]="true" (focus)="onMouseEnter($event)">
       ngx-editor-paragraph-block works!
     </p>
   `,
@@ -12,6 +13,7 @@ import { BaseBlockComponent } from '@tmdjr/ngx-editorjs';
   providers: [
   ],
   imports: [
+    AutofocusDirective
   ]
 })
 export class NgxEditorParagraphBlockComponent extends BaseBlockComponent implements OnInit, AfterViewInit {

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header.component';
 import { AutofocusModule } from '../../../directives/autofocus/autofocus.module';
+import { AutofocusDirective } from '@tmdjr/ngx-editorjs';
 
 
 
@@ -11,7 +12,8 @@ import { AutofocusModule } from '../../../directives/autofocus/autofocus.module'
   ],
   imports: [
     CommonModule,
-    AutofocusModule
+    AutofocusModule,
+    AutofocusDirective
   ],
   exports: [
     HeaderComponent
