@@ -11,6 +11,9 @@
   "exports": {
     "./esm2020": {
       "default": "./esm2020"
+    },
+    ".": {
+      "sass": "./_index.scss"
     }
   }
 }

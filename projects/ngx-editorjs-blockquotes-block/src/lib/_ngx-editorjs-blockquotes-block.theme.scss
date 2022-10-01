@@ -1,5 +1,5 @@
+@use '@angular/material' as mat;
 @use 'sass:map';
-@use '@angular/material';
 
 @mixin theme($theme) {
   $accent: map.get($theme, accent);

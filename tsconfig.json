@@ -13,7 +13,6 @@
     "sourceMap": true,
     "paths": {
       "@tmdjr/ngx-editorjs": [
-        "dist/ngx-editorjs/ngx-editorjs",
         "dist/ngx-editorjs"
       ],
       "ngx-editorjs-blockquotes-block": [

@@ -12,7 +12,6 @@ import { BaseBlockComponent, AutofocusDirective } from '@tmdjr/ngx-editorjs';
     blockquote {
       margin: 20px 0;
       padding-left: 1.5rem;
-      border-left: 5px solid #ee6e73;
     }
   `],
   providers: [
