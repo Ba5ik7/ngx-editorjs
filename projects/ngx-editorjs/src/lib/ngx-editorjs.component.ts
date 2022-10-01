@@ -47,7 +47,7 @@ export class NgxEditorjsComponent implements OnInit {
   async loadBlockModules({ esm2020Path, componentName }: SearchableBlock): Promise<void> {
     const moduleExports: { [key: string]: unknown } = await import(
       /* webpackExclude: /\.map$/ */
-    `@tmdjr/ngx-editor-paragraph-block/esm2020/${esm2020Path}`);
+    `@tmdjr/ngx-editorjs-paragraph-block/esm2020/${esm2020Path}`);
 
     const blockComponentType = moduleExports[componentName!];
     const componentRef = this.ngxEditor.createComponent(blockComponentType as Type<unknown>);

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxEditorParagraphBlockComponent } from './ngx-editor-paragraph-block.component';
+import { NgxEditorParagraphBlockComponent } from './ngx-editorjs-paragraph-block.component';
 
 describe('NgxEditorParagraphBlockComponent', () => {
   let component: NgxEditorParagraphBlockComponent;

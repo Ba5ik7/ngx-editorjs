@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgxEditorParagraphBlockComponent } from './ngx-editor-paragraph-block.component';
+import { NgxEditorParagraphBlockComponent } from './ngx-editorjs-paragraph-block.component';
 
 @Component({
   standalone: true,
@@ -8,7 +8,7 @@ import { NgxEditorParagraphBlockComponent } from './ngx-editor-paragraph-block.c
   template: `
     <div [formGroup]="form">
       <!-- <input [formControlName]="formControlName" /> -->
-      <ngx-editor-paragraph-block [formControlName]="formControlName"></ngx-editor-paragraph-block>
+      <ngx-editorjs-paragraph-block [formControlName]="formControlName"></ngx-editorjs-paragraph-block>
     </div>
   `,
   imports: [

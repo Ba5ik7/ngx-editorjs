@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NgxEditorParagraphBlockService } from './ngx-editor-paragraph-block.service';
+import { NgxEditorParagraphBlockService } from './ngx-editorjs-paragraph-block.service';
 
 describe('NgxEditorParagraphBlockService', () => {
   let service: NgxEditorParagraphBlockService;

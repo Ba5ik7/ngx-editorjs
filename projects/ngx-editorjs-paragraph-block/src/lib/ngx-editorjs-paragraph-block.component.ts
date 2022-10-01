@@ -3,7 +3,7 @@ import { BaseBlockComponent, AutofocusDirective } from '@tmdjr/ngx-editorjs';
 
 @Component({
   standalone: true,
-  selector: 'ngx-editor-paragraph-block',
+  selector: 'ngx-editorjs-paragraph-block',
   template: `
     <p class="flex-spacer" #paragraph contenteditable [autofocus]="true" (focus)="onMouseEnter($event)"></p>
   `,

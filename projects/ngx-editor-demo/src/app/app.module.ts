@@ -32,7 +32,7 @@ import { NGX_EDITORJS_OPTIONS } from '@tmdjr/ngx-editorjs';
         blocks: [
           {
             componentName: 'NgxEditorParagraphBlockMediator',
-            esm2020Path: 'lib/ngx-editor-paragraph-block.mediator',
+            esm2020Path: 'lib/ngx-editorjs-paragraph-block.mediator',
             name: 'Paragraph'
           }
         ]
