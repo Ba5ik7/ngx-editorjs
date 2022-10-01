@@ -1,6 +1,6 @@
-import { Component, OnInit, Type, ViewChild, ViewContainerRef, ɵNgModuleFactory } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { CVAMediatorComponent, FormComponent } from './components/cvamediator/cvamediator.component';
+import { FormComponent } from './components/cvamediator/cvamediator.component';
 import { AdjustBlockPostionActions, NgxEditorjsService, SearchableBlock } from './ngx-editorjs.service';
 
 @Component({
@@ -29,7 +29,10 @@ export class NgxEditorjsComponent implements OnInit {
     .subscribe((direction: AdjustBlockPostionActions) => console.log({ direction }));
 
     this.ngxEditorjsService.addNewBlock$
-    .subscribe((block) => block.type === 'HEADER' ? this.addHeaderBlock() : this.loadBlockModules(block));
+    .subscribe((block) => {
+      this.addNewControl();
+      this.createComponent(block);
+    });
   }
 
   addNewControl(): void {
@@ -37,22 +40,10 @@ export class NgxEditorjsComponent implements OnInit {
     this.formGroup.addControl(this.controlName.toString(), this.formBuilder.control('', []));
   }
 
-  addHeaderBlock(): void {
-    const componentRef = this.ngxEditor.createComponent(CVAMediatorComponent);
+  createComponent({ component }: SearchableBlock): void {
+    const componentRef = this.ngxEditor.createComponent(component!);
     const fieldComponent = componentRef.instance as FormComponent;
     fieldComponent.formControlName = this.controlName.toString();
     fieldComponent.form = this.formGroup;
-  }
-
-  async loadBlockModules({ esm2020Path, componentName }: SearchableBlock): Promise<void> {
-    const moduleExports: { [key: string]: unknown } = await import(
-      /* webpackExclude: /\.map$/ */
-    `@tmdjr/ngx-editorjs-paragraph-block/esm2020/${esm2020Path}`);
-
-    const blockComponentType = moduleExports[componentName!];
-    const componentRef = this.ngxEditor.createComponent(blockComponentType as Type<unknown>);
-    const fieldComponent = componentRef.instance as FormComponent;
-    fieldComponent.formControlName = this.controlName.toString();
-    fieldComponent.form = this.formGroup; 
   }
 }

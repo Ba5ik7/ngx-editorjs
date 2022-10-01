@@ -1,4 +1,4 @@
-import { Inject, Injectable, InjectionToken, Optional } from '@angular/core';
+import { Inject, Injectable, InjectionToken, Optional, Type } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 // import { BaseBlockComponent } from './components/blocks/base-block/base-block.component';
 
@@ -16,9 +16,8 @@ export enum AdjustBlockPostionActions {
 }
 
 export interface SearchableBlock {
+  component: Type<unknown>;
   name: string;
-  componentName?: string;
-  esm2020Path?: string;
   type?: string;
   data?: any;
 }

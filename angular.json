@@ -223,23 +223,23 @@
         }
       }
     },
-    "ngx-editor-blockquotes-block": {
+    "ngx-editorjs-blockquotes-block": {
       "projectType": "library",
-      "root": "projects/ngx-editor-blockquotes-block",
-      "sourceRoot": "projects/ngx-editor-blockquotes-block/src",
+      "root": "projects/ngx-editorjs-blockquotes-block",
+      "sourceRoot": "projects/ngx-editorjs-blockquotes-block/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/ngx-editor-blockquotes-block/ng-package.json"
+            "project": "projects/ngx-editorjs-blockquotes-block/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ngx-editor-blockquotes-block/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ngx-editorjs-blockquotes-block/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ngx-editor-blockquotes-block/tsconfig.lib.json"
+              "tsConfig": "projects/ngx-editorjs-blockquotes-block/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -247,9 +247,9 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ngx-editor-blockquotes-block/src/test.ts",
-            "tsConfig": "projects/ngx-editor-blockquotes-block/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-editor-blockquotes-block/karma.conf.js"
+            "main": "projects/ngx-editorjs-blockquotes-block/src/test.ts",
+            "tsConfig": "projects/ngx-editorjs-blockquotes-block/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-editorjs-blockquotes-block/karma.conf.js"
           }
         }
       }

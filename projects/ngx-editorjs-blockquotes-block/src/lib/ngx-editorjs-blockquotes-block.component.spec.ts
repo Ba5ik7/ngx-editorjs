@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxEditorBlockquotesBlockComponent } from './ngx-editor-blockquotes-block.component';
+import { NgxEditorBlockquotesBlockComponent } from './ngx-editorjs-blockquotes-block.component';
 
 describe('NgxEditorBlockquotesBlockComponent', () => {
   let component: NgxEditorBlockquotesBlockComponent;

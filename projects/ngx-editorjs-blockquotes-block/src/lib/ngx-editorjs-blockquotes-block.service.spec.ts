@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NgxEditorBlockquotesBlockService } from './ngx-editor-blockquotes-block.service';
+import { NgxEditorBlockquotesBlockService } from './ngx-editorjs-blockquotes-block.service';
 
 describe('NgxEditorBlockquotesBlockService', () => {
   let service: NgxEditorBlockquotesBlockService;

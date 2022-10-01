@@ -1,22 +1,22 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgxEditorjsParagraphBlockComponent } from './ngx-editorjs-paragraph-block.component';
+import { NgxEditorjsBlockquotesBlockComponent } from './ngx-editorjs-blockquotes-block.component';
 
 @Component({
   standalone: true,
-  selector: 'ngx-editorjs-meditator-paragraph-block',
+  selector: 'ngx-editorjs-meditator-blockquotes-block',
   template: `
     <div [formGroup]="form">
       <!-- <input [formControlName]="formControlName" /> -->
-      <ngx-editorjs-paragraph-block [formControlName]="formControlName"></ngx-editorjs-paragraph-block>
+      <ngx-editorjs-blockquotes-block [formControlName]="formControlName"></ngx-editorjs-blockquotes-block>
     </div>
   `,
   imports: [
     ReactiveFormsModule,
-    NgxEditorjsParagraphBlockComponent
+    NgxEditorjsBlockquotesBlockComponent
   ],
 })
-export class NgxEditorjsParagraphBlockMediator {
+export class NgxEditorjsBlockquotesBlockMediator {
   @Input() form!: FormGroup;
   @Input() formControlName!: string;
 }

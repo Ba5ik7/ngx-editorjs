@@ -10,7 +10,10 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { NavbarModule } from './components/navbar/navbar.module';
 import { HttpClientModule } from '@angular/common/http';
+
 import { NGX_EDITORJS_OPTIONS } from '@tmdjr/ngx-editorjs';
+import { NgxEditorjsParagraphBlockMediator } from '@tmdjr/ngx-editorjs-paragraph-block';
+import { NgxEditorjsBlockquotesBlockMediator } from '@tmdjr/ngx-editorjs-blockquotes-block';
 
 @NgModule({
   declarations: [
@@ -31,9 +34,12 @@ import { NGX_EDITORJS_OPTIONS } from '@tmdjr/ngx-editorjs';
       useValue: {
         blocks: [
           {
-            componentName: 'NgxEditorParagraphBlockMediator',
-            esm2020Path: 'lib/ngx-editorjs-paragraph-block.mediator',
-            name: 'Paragraph'
+            name: 'Paragraph',
+            component: NgxEditorjsParagraphBlockMediator
+          },
+          {
+            name: 'Blockquotes',
+            component: NgxEditorjsBlockquotesBlockMediator
           }
         ]
       }
@@ -42,3 +48,4 @@ import { NGX_EDITORJS_OPTIONS } from '@tmdjr/ngx-editorjs';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, '../../coverage/ngx-editor-blockquotes-block'),
+      dir: require('path').join(__dirname, '../../coverage/ngx-editorjs-blockquotes-block'),
       subdir: '.',
       reporters: [
         { type: 'html' },
