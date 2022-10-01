@@ -16,6 +16,9 @@
         "dist/ngx-editorjs/ngx-editorjs",
         "dist/ngx-editorjs"
       ],
+      "ngx-editor-blockquotes-block": [
+        "dist/ngx-editor-blockquotes-block"
+      ],
       "ngx-editorjs-paragraph-block": [
         "dist/ngx-editorjs-paragraph-block"
       ]
