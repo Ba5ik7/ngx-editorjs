@@ -8,7 +8,8 @@
     "watch": "ng build ngx-editorjs --watch --configuration development",
     "watch2": "ng build ngx-editorjs-paragraph-block --watch --configuration development",
     "watch3": "ng build ngx-editorjs-blockquotes-block --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "link": "npm link @tmdjr/ngx-editorjs @tmdjr/ngx-editorjs-paragraph-block @tmdjr/ngx-editorjs-blockquotes-block"
   },
   "private": false,
   "dependencies": {

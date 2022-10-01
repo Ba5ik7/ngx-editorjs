@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxEditorBlockquotesBlockComponent } from './ngx-editorjs-blockquotes-block.component';
+import { NgxEditorjsBlockquotesBlockComponent } from './ngx-editorjs-blockquotes-block.component';
 
-describe('NgxEditorBlockquotesBlockComponent', () => {
-  let component: NgxEditorBlockquotesBlockComponent;
-  let fixture: ComponentFixture<NgxEditorBlockquotesBlockComponent>;
+describe('NgxEditorjsBlockquotesBlockComponent', () => {
+  let component: NgxEditorjsBlockquotesBlockComponent;
+  let fixture: ComponentFixture<NgxEditorjsBlockquotesBlockComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgxEditorBlockquotesBlockComponent ]
+      declarations: [ NgxEditorjsBlockquotesBlockComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NgxEditorBlockquotesBlockComponent);
+    fixture = TestBed.createComponent(NgxEditorjsBlockquotesBlockComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
