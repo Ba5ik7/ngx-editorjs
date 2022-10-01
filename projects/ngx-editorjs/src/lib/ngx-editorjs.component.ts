@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { FormComponent } from './components/cvamediator/cvamediator.component';
+import { CVAMediatorComponent, FormComponent } from './components/cvamediator/cvamediator.component';
 import { AdjustBlockPostionActions, NgxEditorjsService, SearchableBlock } from './ngx-editorjs.service';
 
 @Component({
@@ -41,7 +41,7 @@ export class NgxEditorjsComponent implements OnInit {
   }
 
   createComponent({ component }: SearchableBlock): void {
-    const componentRef = this.ngxEditor.createComponent(component!);
+    const componentRef = this.ngxEditor.createComponent(component ?? CVAMediatorComponent);
     const fieldComponent = componentRef.instance as FormComponent;
     fieldComponent.formControlName = this.controlName.toString();
     fieldComponent.form = this.formGroup;

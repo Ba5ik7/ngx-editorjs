@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from
 import { FormControl } from '@angular/forms';
 import { NgxEditorjsService, SearchableBlock } from '../../../../ngx-editorjs.service';
 import { combineLatest, map, Observable, of, startWith, Subject, takeUntil } from 'rxjs';
-import { CVAMediatorComponent } from '../../../cvamediator/cvamediator.component';
 
 @Component({
   selector: 'searchable-block-list',
@@ -17,7 +16,7 @@ export class SearchableBlockListComponent implements OnInit {
   blockCtrl = new FormControl([]);
   blocks!: SearchableBlock[];
   blocksDefaults: SearchableBlock[] = [
-    { type: 'HEADER', name: 'Header', component: CVAMediatorComponent },
+    { type: 'HeaderBlockMediator', name: 'Header', component: null },
   ];
 
   filter$ = this.blockCtrl.valueChanges.pipe(startWith(''));

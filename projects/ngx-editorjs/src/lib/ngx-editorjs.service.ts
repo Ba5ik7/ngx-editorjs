@@ -16,10 +16,9 @@ export enum AdjustBlockPostionActions {
 }
 
 export interface SearchableBlock {
-  component: Type<unknown>;
   name: string;
+  component: Type<unknown> | null;
   type?: string;
-  data?: any;
 }
 
 @Injectable({
