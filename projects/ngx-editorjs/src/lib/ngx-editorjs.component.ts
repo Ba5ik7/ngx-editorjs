@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Observable, Subject } from 'rxjs';
 import { CVAMediatorComponent, FormComponent } from './components/cvamediator/cvamediator.component';
 import { AdjustBlockPostionActions, NgxEditorjsService, SearchableBlock } from './ngx-editorjs.service';
 
@@ -8,8 +9,15 @@ import { AdjustBlockPostionActions, NgxEditorjsService, SearchableBlock } from '
   templateUrl: './ngx-editorjs.component.html',
   styleUrls: ['ngx-editorjs.component.scss']
 })
-
 export class NgxEditorjsComponent implements OnInit {
+
+  @Output('ngxOnInitForm') ngxOnInitForm = new EventEmitter<FormGroup>();
+  // @Input('shouldEmitCurrentBlocks') set shouldEmitCurrentBlocks(value: boolean) {
+  //   this.ngxOnInitForm.emit(this.formGroup);
+  // }
+
+  @Input() getBlocks!: Subject<boolean>;
+  @Output() sizeChange = new EventEmitter();
 
   @ViewChild('ngxEditor', { read: ViewContainerRef }) ngxEditor!: ViewContainerRef;
   controlName: number = 0;
@@ -23,7 +31,8 @@ export class NgxEditorjsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.formGroup.valueChanges.subscribe(data => console.log({ data }));
+    // this.formGroup.valueChanges.subscribe(data => console.log({ data }));
+    this.ngxOnInitForm.emit(this.formGroup);
 
     this.ngxEditorjsService.adjustBlockPostion$
     .subscribe((direction: AdjustBlockPostionActions) => console.log({ direction }));

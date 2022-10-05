@@ -1,16 +1,14 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  @HostBinding('class.main-content') readonly mainContentClass = true;
-  
-  constructor() { }
-
-  ngOnInit(): void {
+export class HomeComponent {
+  ngxOnInitForm(ngxEditorjsFormGroup: any): void {
+    ngxEditorjsFormGroup.valueChanges
+    .subscribe((value: FormGroup) => console.log({ value }));
   }
-
 }
