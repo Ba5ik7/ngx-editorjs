@@ -8,7 +8,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class HomeComponent {
   ngxOnInitForm(ngxEditorjsFormGroup: any): void {
-    ngxEditorjsFormGroup.valueChanges
-    .subscribe((value: FormGroup) => console.log({ value }));
+    // ngxEditorjsFormGroup.valueChanges
+    // .subscribe((value: FormGroup) => console.log({ value }));
   }
 }
