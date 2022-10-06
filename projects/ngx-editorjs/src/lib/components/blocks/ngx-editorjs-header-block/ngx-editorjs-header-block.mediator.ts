@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { HeaderComponent } from './header.component';
+import { HeaderComponent } from './ngx-editorjs-header-block.component';
 
 @Component({
   standalone: true,
