@@ -1,11 +1,17 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import { AutofocusDirective } from '../../../directives/autofocus/autofocus.directive';
 import { BaseBlockComponent } from '../base-block/base-block.component';
 
 @Component({
-  selector: 'ejs-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  standalone: true,
+  selector: 'ngx-editorjs-header-block',
+  template: `<h1 class="flex-spacer" #header contenteditable [autofocus]="true" (focus)="onMouseEnter($event)"></h1>`,
+  styles: [`:host { display: flex; }`],
+  providers: [
+  ],
+  imports: [
+    AutofocusDirective
+  ]
 })
 export class HeaderComponent extends BaseBlockComponent implements OnInit, AfterViewInit {
 

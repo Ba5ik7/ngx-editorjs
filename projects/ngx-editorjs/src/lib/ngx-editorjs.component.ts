@@ -1,8 +1,13 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { filter, Observable, pipe, Subject, tap } from 'rxjs';
-import { CVAMediatorComponent, FormComponent } from './components/cvamediator/cvamediator.component';
+import { NgxEditorjsHeaderBlockMediator } from './components/blocks/header/header.mediator';
 import { AdjustBlockPostionActions, NgxEditorjsService, SearchableBlock } from './ngx-editorjs.service';
+
+export interface FormComponent {
+  form: FormGroup;
+  formControlName: string;
+}
 
 @Component({
   selector: 'ngx-editorjs',
@@ -33,6 +38,10 @@ export class NgxEditorjsComponent implements OnInit {
   ngOnInit(): void {
     // this.formGroup.valueChanges.subscribe(data => console.log({ data }));
     this.ngxOnInitForm.emit(this.formGroup);
+    setTimeout(() => {
+      this.addNewControl();
+      this.createBlock({ name: 'header', component: null });
+    }, 3000);
 
     this.ngxEditorjsService.adjustBlockPostion$
     .subscribe((action: AdjustBlockPostionActions) => {
@@ -64,7 +73,7 @@ export class NgxEditorjsComponent implements OnInit {
   }
 
   createBlock({ component }: SearchableBlock): void {
-    const componentRef = this.ngxEditor.createComponent(component ?? CVAMediatorComponent);
+    const componentRef = this.ngxEditor.createComponent(component ?? NgxEditorjsHeaderBlockMediator);
     const fieldComponent = componentRef.instance as FormComponent;
     fieldComponent.formControlName = this.controlName.toString();
     fieldComponent.form = this.formGroup;
