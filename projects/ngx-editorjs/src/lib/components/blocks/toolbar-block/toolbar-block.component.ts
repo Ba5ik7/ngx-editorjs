@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input, ViewRef } from '@angular/core';
-import { AdjustBlockPositionActions, NgxEditorjsService } from '../../../ngx-editorjs.service';
+import { AdjustBlockPositionActions, NgxEditorjsService, SearchableBlock } from '../../../ngx-editorjs.service';
 @Component({
   selector: 'toolbar-block',
   templateUrl: './toolbar-block.component.html',
@@ -25,6 +25,11 @@ export class ToolbarBlockComponent {
   
   adjustBlockPosition(action: AdjustBlockPositionActions) {
     this.ngxEdotorjsService.adjustBlockPositionSubject.next({ viewRef: this.viewRef, action });
+    this.closeLists();
+  }
+
+  addBlock({ component }: SearchableBlock) {
+    this.ngxEdotorjsService.addNewBlockSubject.next({ viewRef: this.viewRef, component });
     this.closeLists();
   }
 

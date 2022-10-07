@@ -11,7 +11,7 @@ import { combineLatest, map, Observable, of, startWith, Subject, takeUntil } fro
 })
 export class SearchableBlockListComponent implements OnInit {
 
-  @Output('closeLists') closeListsEmitter = new EventEmitter();
+  @Output('addBlock') addBlockEmitter = new EventEmitter();
 
   blockCtrl = new FormControl([]);
   blocks!: SearchableBlock[];
@@ -43,17 +43,10 @@ export class SearchableBlockListComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
     this.destory.next(true);
   }
 
-  closeLists() {
-    this.closeListsEmitter.emit('close');
-  }
-
   addBlock(block: SearchableBlock) {
-    this.closeLists();
-    this.ngxEdotorjsService.addNewBlockSubject.next(block);
+    this.addBlockEmitter.emit(block);
   }
 }

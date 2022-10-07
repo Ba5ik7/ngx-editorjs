@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NgxEditorjsHeaderBlockMediator } from './components/blocks/ngx-editorjs-header-block/ngx-editorjs-header-block.mediator';
-import { AdjustBlockPosition, AdjustBlockPositionActions, BlockMediatorComponent, NgxEditorjsService, SearchableBlock } from './ngx-editorjs.service';
+import { AdjustBlockPosition, AdjustBlockPositionActions, BlockMediatorComponent, CreateBlockAction, NgxEditorjsService, SearchableBlock } from './ngx-editorjs.service';
 
 @Component({
   selector: 'ngx-editorjs',
@@ -37,20 +37,20 @@ export class NgxEditorjsComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     requestAnimationFrame(() => {
-      this.createNgxEditorjsBlock({ name: 'Header', component: null });
+      this.createNgxEditorjsBlock({ viewRef: null, component: null });
     });
   }
 
-  createNgxEditorjsBlock({ component }: SearchableBlock): void {
+  createNgxEditorjsBlock({ viewRef, component }: CreateBlockAction): void {
     this.controlName++;
     this.formGroup.addControl(this.controlName.toString(), this.formBuilder.control('', []));
 
     const componentRef = this.ngxEditor.createComponent(component ?? NgxEditorjsHeaderBlockMediator);
-    const fieldComponent = componentRef.instance as BlockMediatorComponent;
+    this.ngxEditor.move(componentRef.hostView, viewRef ? this.ngxEditor.indexOf(viewRef) + 1 : 0);
 
+    const fieldComponent = componentRef.instance as BlockMediatorComponent;
     fieldComponent.id = 'wes';
     fieldComponent.sortIndex = 1;
-
     fieldComponent.viewRef = componentRef.hostView;
     fieldComponent.form = this.formGroup;
     fieldComponent.formControlName = this.controlName.toString();

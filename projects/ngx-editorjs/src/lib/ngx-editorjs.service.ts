@@ -32,6 +32,11 @@ export interface SearchableBlock {
   type?: string;
 }
 
+export interface CreateBlockAction {
+  component: Type<unknown> | null;
+  viewRef: ViewRef | null;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -49,6 +54,6 @@ export class NgxEditorjsService {
   adjustBlockPositionSubject = new Subject<AdjustBlockPosition>();
   adjustBlockPosition$: Observable<AdjustBlockPosition> = this.adjustBlockPositionSubject.asObservable();
 
-  addNewBlockSubject = new Subject<SearchableBlock>();
-  addNewBlock$: Observable<SearchableBlock> = this.addNewBlockSubject.asObservable();
+  addNewBlockSubject = new Subject<CreateBlockAction>();
+  addNewBlock$: Observable<CreateBlockAction> = this.addNewBlockSubject.asObservable();
 }

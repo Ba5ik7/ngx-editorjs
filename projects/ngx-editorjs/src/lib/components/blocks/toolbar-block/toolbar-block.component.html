@@ -25,7 +25,7 @@
   [cdkConnectedOverlayHasBackdrop]="true"
   [cdkConnectedOverlayOffsetY]="15"
   [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'">
-  <searchable-block-list (closeLists)="closeLists()"></searchable-block-list>
+  <searchable-block-list (addBlock)="addBlock($event)"></searchable-block-list>
 </ng-template>
 
 
