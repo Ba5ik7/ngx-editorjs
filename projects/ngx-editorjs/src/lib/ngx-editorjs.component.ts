@@ -1,6 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { filter, Observable, pipe, Subject, tap } from 'rxjs';
 import { NgxEditorjsHeaderBlockMediator } from './components/blocks/ngx-editorjs-header-block/ngx-editorjs-header-block.mediator';
 import { AdjustBlockPostionActions, NgxEditorjsService, SearchableBlock } from './ngx-editorjs.service';
 
@@ -14,7 +13,7 @@ export interface FormComponent {
   templateUrl: './ngx-editorjs.component.html',
   styleUrls: ['ngx-editorjs.component.scss']
 })
-export class NgxEditorjsComponent implements OnInit {
+export class NgxEditorjsComponent implements OnInit, AfterViewInit {
 
   @Output('ngxOnInitForm') ngxOnInitForm = new EventEmitter<FormGroup>();
 
@@ -36,26 +35,15 @@ export class NgxEditorjsComponent implements OnInit {
 
     this.ngxEditorjsService.addNewBlock$
     .subscribe((block) => this.createNgxEditorjsBlock(block));
-
-    // this.ngxEditorjsService.addNewBlockSubject
-    // .next({ name: 'Header', component: null });
   }
 
   ngAfterViewInit(): void {
-    // All block set viewref of ng control element
-    // on thr ngAfterViewInit hook.
-    console.log({ ngxEditor: this.ngxEditor });
     requestAnimationFrame(() => {
-      // this.ngxEditorjsService.addNewBlockSubject
-      // .next({ name: 'Header', component: null });
       this.createNgxEditorjsBlock({ name: 'Header', component: null });
     });
-
   }
 
   createNgxEditorjsBlock({ component }: SearchableBlock): void {
-    console.log('ngxEditor create', this.ngxEditor);
-    
     this.controlName++;
     this.formGroup.addControl(this.controlName.toString(), this.formBuilder.control('', []));
 

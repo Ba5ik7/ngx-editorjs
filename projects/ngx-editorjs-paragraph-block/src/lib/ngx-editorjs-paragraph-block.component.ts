@@ -7,9 +7,7 @@ import { BaseBlockComponent, AutofocusDirective } from '@tmdjr/ngx-editorjs';
   template: `
     <p class="flex-spacer" #paragraph contenteditable [autofocus]="true" (focus)="onMouseEnter($event)"></p>
   `,
-  styles: [`:host { display: flex; }`],
-  providers: [
-  ],
+  styles: [`:host { display: flex; flex-direction: column; }`],
   imports: [
     AutofocusDirective
   ]

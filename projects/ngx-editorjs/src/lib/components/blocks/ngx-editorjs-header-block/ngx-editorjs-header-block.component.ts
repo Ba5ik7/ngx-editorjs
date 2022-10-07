@@ -4,7 +4,7 @@ import { BaseBlockComponent } from '../base-block/base-block.component';
 @Component({
   selector: 'ngx-editorjs-header-block',
   template: `<h1 class="flex-spacer" #header contenteditable [autofocus]="true" (focus)="onMouseEnter($event)"></h1>`,
-  styles: [`:host { display: flex; }`]
+  styles: [`:host { display: flex; flex-direction: column; }`]
 })
 export class NgxEditorjsHeaderBlockComponent extends BaseBlockComponent implements OnInit, AfterViewInit {
 

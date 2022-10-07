@@ -8,14 +8,12 @@ import { BaseBlockComponent, AutofocusDirective } from '@tmdjr/ngx-editorjs';
     <blockquote class="flex-spacer" #blockquotes contenteditable [autofocus]="true" (focus)="onMouseEnter($event)"></blockquote>
   `,
   styles: [`
-    :host { display: flex; }
+    :host { display: flex; flex-direction: column; }
     blockquote {
       margin: 20px 0;
       padding-left: 1.5rem;
     }
   `],
-  providers: [
-  ],
   imports: [
     AutofocusDirective
   ]

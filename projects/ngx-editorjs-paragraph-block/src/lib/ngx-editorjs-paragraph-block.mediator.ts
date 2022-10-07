@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NgxEditorjsParagraphBlockComponent } from './ngx-editorjs-paragraph-block.component';
 
 @Component({
@@ -7,7 +7,6 @@ import { NgxEditorjsParagraphBlockComponent } from './ngx-editorjs-paragraph-blo
   selector: 'ngx-editorjs-meditator-paragraph-block',
   template: `
     <div [formGroup]="form">
-      <!-- <input [formControlName]="formControlName" /> -->
       <ngx-editorjs-paragraph-block [formControlName]="formControlName"></ngx-editorjs-paragraph-block>
     </div>
   `,
@@ -19,9 +18,4 @@ import { NgxEditorjsParagraphBlockComponent } from './ngx-editorjs-paragraph-blo
 export class NgxEditorjsParagraphBlockMediator {
   @Input() form!: FormGroup;
   @Input() formControlName!: string;
-}
-
-export interface FormComponent {
-  form: FormGroup;
-  formControlName: string;
 }
