@@ -17,18 +17,11 @@ export interface FormComponent {
 export class NgxEditorjsComponent implements OnInit {
 
   @Output('ngxOnInitForm') ngxOnInitForm = new EventEmitter<FormGroup>();
-  // @Input('shouldEmitCurrentBlocks') set shouldEmitCurrentBlocks(value: boolean) {
-  //   this.ngxOnInitForm.emit(this.formGroup);
-  // }
-
-  @Input() getBlocks!: Subject<boolean>;
-  @Output() sizeChange = new EventEmitter();
 
   @ViewChild('ngxEditor', { read: ViewContainerRef }) ngxEditor!: ViewContainerRef;
+
   controlName: number = 0;
-  formGroup: FormGroup = this.formBuilder.group({
-    [this.controlName.toString()]: this.formBuilder.control('', [])
-  });
+  formGroup: FormGroup = this.formBuilder.group({});
 
   constructor(
     private formBuilder: FormBuilder,
@@ -36,58 +29,39 @@ export class NgxEditorjsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.formGroup.valueChanges.subscribe(data => console.log({ data }));
     this.ngxOnInitForm.emit(this.formGroup);
-    setTimeout(() => {
-      this.addNewControl();
-      this.createBlock({ name: 'header', component: null });
-    }, 3000);
 
     this.ngxEditorjsService.adjustBlockPostion$
-    .subscribe((action: AdjustBlockPostionActions) => {
-      switch (action) {
-        case AdjustBlockPostionActions.UP:
-          this.moveBlockUp();
-          break;
-        case AdjustBlockPostionActions.DOWN:
-          this.moveBlockDown();
-          break;
-        case AdjustBlockPostionActions.DELETE:
-          this.deleteBlock();
-          break;
-        default:
-          break;
-      }
-    });
+    .subscribe((action: AdjustBlockPostionActions) => { });
 
     this.ngxEditorjsService.addNewBlock$
-    .subscribe((block) => {
-      this.addNewControl();
-      this.createBlock(block);
-    });
+    .subscribe((block) => this.createNgxEditorjsBlock(block));
+
+    // this.ngxEditorjsService.addNewBlockSubject
+    // .next({ name: 'Header', component: null });
   }
 
-  addNewControl(): void {
+  ngAfterViewInit(): void {
+    // All block set viewref of ng control element
+    // on thr ngAfterViewInit hook.
+    console.log({ ngxEditor: this.ngxEditor });
+    requestAnimationFrame(() => {
+      // this.ngxEditorjsService.addNewBlockSubject
+      // .next({ name: 'Header', component: null });
+      this.createNgxEditorjsBlock({ name: 'Header', component: null });
+    });
+
+  }
+
+  createNgxEditorjsBlock({ component }: SearchableBlock): void {
+    console.log('ngxEditor create', this.ngxEditor);
+    
     this.controlName++;
     this.formGroup.addControl(this.controlName.toString(), this.formBuilder.control('', []));
-  }
 
-  createBlock({ component }: SearchableBlock): void {
     const componentRef = this.ngxEditor.createComponent(component ?? NgxEditorjsHeaderBlockMediator);
     const fieldComponent = componentRef.instance as FormComponent;
     fieldComponent.formControlName = this.controlName.toString();
     fieldComponent.form = this.formGroup;
-  }
-
-  deleteBlock() {
-    throw new Error('Method not implemented.');
-  }
-
-  moveBlockDown() {
-    throw new Error('Method not implemented.');
-  }
-
-  moveBlockUp() {
-    throw new Error('Method not implemented.');
   }
 }
