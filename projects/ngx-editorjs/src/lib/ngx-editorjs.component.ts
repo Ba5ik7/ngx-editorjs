@@ -66,7 +66,7 @@ export class NgxEditorjsComponent implements OnInit, AfterViewInit {
 
   deleteNgxEditorjsBlock({ viewRef }: AdjustBlockPosition): void {
     const index = this.ngxEditor.indexOf(viewRef);    
-    if (index !== 0) {
+    if (this.ngxEditor.length - 1 !== 0) {
       this.ngxEditor.remove(index);
     }
   }
