@@ -55,12 +55,16 @@
 .home-main {
   padding: 16px;
   width: 75%;
-  max-width: 1080px;
+  max-width: 900px;
   margin: auto;
 
-  ngx-editorjs {
-    display: block;
-    margin-top: 40px;
+  .mat-card {
+    padding: 40px;
   }
+
+  // ngx-editorjs {
+  //   display: block;
+  //   margin-top: 40px;
+  // }
 }
 
