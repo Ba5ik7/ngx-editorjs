@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Subject } from 'rxjs';
 import { NgxEditorjsHeaderBlockMediator } from './components/blocks/ngx-editorjs-header-block/ngx-editorjs-header-block.mediator';
 import { AdjustBlockPosition, AdjustBlockPositionActions, BlockMediatorComponent, CreateBlockAction, NgxEditorjsService, SearchableBlock } from './ngx-editorjs.service';
 
@@ -10,7 +11,10 @@ import { AdjustBlockPosition, AdjustBlockPositionActions, BlockMediatorComponent
 })
 export class NgxEditorjsComponent implements OnInit, AfterViewInit {
 
-  @Output('ngxOnInitForm') ngxOnInitForm = new EventEmitter<FormGroup>();
+  @Input() requestValue!: Subject<boolean>;
+  @Output() valueRequested = new EventEmitter<number>();
+
+  // @Output('ngxOnInitForm') ngxOnInitForm = new EventEmitter<FormGroup>();
 
   @ViewChild('ngxEditor', { read: ViewContainerRef }) ngxEditor!: ViewContainerRef;
 
@@ -23,7 +27,8 @@ export class NgxEditorjsComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit(): void {
-    this.ngxOnInitForm.emit(this.formGroup);
+    // this.ngxOnInitForm.emit(this.formGroup);
+    this.requestValue.subscribe(() => this.parentRequestCurrentValue());
 
     this.ngxEditorjsService.adjustBlockPosition$
     .subscribe((adjustBlockPosition: AdjustBlockPosition) => {
@@ -69,5 +74,9 @@ export class NgxEditorjsComponent implements OnInit, AfterViewInit {
     if (this.ngxEditor.length - 1 !== 0) {
       this.ngxEditor.remove(index);
     }
+  }
+
+  parentRequestCurrentValue(): void {
+    this.valueRequested.emit(this.formGroup.value);
   }
 }

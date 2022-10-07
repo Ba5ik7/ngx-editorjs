@@ -44,6 +44,8 @@ export class NgxEditorjsService {
 
   blocks: SearchableBlock[];
 
+  requestValue!: Subject<boolean>;
+
   constructor(@Optional() @Inject(NGX_EDITORJS_OPTIONS) options: NgxEditorjsOptions) {
     this.blocks = options?.blocks || [];
   }
