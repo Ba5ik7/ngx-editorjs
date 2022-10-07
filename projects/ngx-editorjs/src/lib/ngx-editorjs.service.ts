@@ -7,14 +7,14 @@ export interface NgxEditorjsOptions {
   blocks?: SearchableBlock[];
 }
 
-export enum AdjustBlockPostionActions {
+export enum AdjustBlockPositionActions {
   UP = 'UP',
   DOWN = 'DOWN',
   DELETE = 'DELETE'
 }
 
-export interface AdjustBlockPostion {
-  action: AdjustBlockPostionActions;
+export interface AdjustBlockPosition {
+  action: AdjustBlockPositionActions;
   viewRef: ViewRef;
 }
 
@@ -46,8 +46,8 @@ export class NgxEditorjsService {
   toolbarComponentDetachSubject = new Subject<boolean>();
   toolbarComponentDetach$: Observable<boolean> = this.toolbarComponentDetachSubject.asObservable();
 
-  adjustBlockPostionSubject = new Subject<AdjustBlockPostion>();
-  adjustBlockPostion$: Observable<AdjustBlockPostion> = this.adjustBlockPostionSubject.asObservable();
+  adjustBlockPositionSubject = new Subject<AdjustBlockPosition>();
+  adjustBlockPosition$: Observable<AdjustBlockPosition> = this.adjustBlockPositionSubject.asObservable();
 
   addNewBlockSubject = new Subject<SearchableBlock>();
   addNewBlock$: Observable<SearchableBlock> = this.addNewBlockSubject.asObservable();

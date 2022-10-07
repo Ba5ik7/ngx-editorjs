@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NgxEditorjsHeaderBlockMediator } from './components/blocks/ngx-editorjs-header-block/ngx-editorjs-header-block.mediator';
-import { AdjustBlockPostion, AdjustBlockPostionActions, BlockMediatorComponent, NgxEditorjsService, SearchableBlock } from './ngx-editorjs.service';
+import { AdjustBlockPosition, AdjustBlockPositionActions, BlockMediatorComponent, NgxEditorjsService, SearchableBlock } from './ngx-editorjs.service';
 
 @Component({
   selector: 'ngx-editorjs',
@@ -25,10 +25,10 @@ export class NgxEditorjsComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.ngxOnInitForm.emit(this.formGroup);
 
-    this.ngxEditorjsService.adjustBlockPostion$
-    .subscribe((adjustBlockPostion: AdjustBlockPostion) => {
-      adjustBlockPostion.action === AdjustBlockPostionActions.DELETE ? 
-      this.deleteNgxEditorjsBlock(adjustBlockPostion) : this.moveNgxEditorjsBlock(adjustBlockPostion);
+    this.ngxEditorjsService.adjustBlockPosition$
+    .subscribe((adjustBlockPosition: AdjustBlockPosition) => {
+      adjustBlockPosition.action === AdjustBlockPositionActions.DELETE ? 
+      this.deleteNgxEditorjsBlock(adjustBlockPosition) : this.moveNgxEditorjsBlock(adjustBlockPosition);
     });
 
     this.ngxEditorjsService.addNewBlock$
@@ -57,15 +57,17 @@ export class NgxEditorjsComponent implements OnInit, AfterViewInit {
   }
 
 
-  moveNgxEditorjsBlock({ viewRef, action }: AdjustBlockPostion): void {
+  moveNgxEditorjsBlock({ viewRef, action }: AdjustBlockPosition): void {
     const index = this.ngxEditor.indexOf(viewRef);
-    const newIndex = action === AdjustBlockPostionActions.UP ? index - 1 : index + 1;
+    const newIndex = action === AdjustBlockPositionActions.UP ? index - 1 : index + 1;
     const inRange =  newIndex >= 0 && newIndex <= this.ngxEditor.length - 1;
     this.ngxEditor.move(viewRef, inRange ? newIndex : index);
   }
 
-  deleteNgxEditorjsBlock({ viewRef }: AdjustBlockPostion): void {
-    const index = this.ngxEditor.indexOf(viewRef);
-    this.ngxEditor.remove(index);
+  deleteNgxEditorjsBlock({ viewRef }: AdjustBlockPosition): void {
+    const index = this.ngxEditor.indexOf(viewRef);    
+    if (index !== 0) {
+      this.ngxEditor.remove(index);
+    }
   }
 }
