@@ -8,7 +8,9 @@ import {
   ApplicationRef,
   Injector,
   ViewContainerRef,
-  ComponentFactoryResolver
+  ComponentFactoryResolver,
+  Input,
+  ViewRef
 } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { take } from 'rxjs';
@@ -18,6 +20,15 @@ import { ToolbarBlockComponent } from '../toolbar-block/toolbar-block.component'
 @Component({ template: '' })
 export class BaseBlockComponent implements ControlValueAccessor, OnInit {
 
+  _id = '';
+  @Input() set id(id: string) { this._id = id }
+
+  _sortIndex = 0;
+  @Input() set sortIndex(sortIndex: number) { this._sortIndex = sortIndex }
+   
+  _viewRef!: ViewRef;
+  @Input() set viewRef(viewRef: ViewRef) { this._viewRef = viewRef }
+   
   isActive: boolean = false;
   error: string = '';
   escalateMsg: boolean = true;
@@ -96,7 +107,8 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
     if(!this.basePortalOutlet.hasAttached()) {
       this.ngxEdotorjsService.toolbarComponentDetachSubject.next(true);
       this.toolbarBlockPortal = new ComponentPortal(ToolbarBlockComponent);
-      this.basePortalOutlet.attach(this.toolbarBlockPortal);
+      const toolbarComponent = this.basePortalOutlet.attach(this.toolbarBlockPortal);
+      toolbarComponent.instance.viewRef = this._viewRef;
       this.ngxEdotorjsService.toolbarComponentDetach$
       .pipe(take(1))
       .subscribe(() => this.detachToolbarComponent())

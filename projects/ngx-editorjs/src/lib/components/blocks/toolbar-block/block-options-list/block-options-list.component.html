@@ -2,17 +2,17 @@
   <div class="block-option-list-panel">
     <div class="block-option-list-item"
       matRipple
-      (click)="adjustBlockPostionUp()">
+      (click)="adjustBlockPostion(AdjustBlockPostionActions.UP)">
       <mat-icon>arrow_upward</mat-icon>
     </div>
     <div class="block-option-list-item"
       matRipple
-      (click)="adjustBlockPostionDelete()">
+      (click)="adjustBlockPostion(AdjustBlockPostionActions.DELETE)">
       <mat-icon>delete</mat-icon>
     </div>
     <div class="block-option-list-item"
       matRipple
-      (click)="adjustBlockPostionDown()">
+      (click)="adjustBlockPostion(AdjustBlockPostionActions.DOWN)">
       <mat-icon>arrow_downward</mat-icon>
     </div>
     <div class="block-option-list-item"

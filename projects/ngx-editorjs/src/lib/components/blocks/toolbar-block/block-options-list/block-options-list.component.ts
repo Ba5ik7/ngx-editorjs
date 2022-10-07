@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
-import { AdjustBlockPostionActions, NgxEditorjsService } from '../../../../ngx-editorjs.service';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewRef } from '@angular/core';
+import { AdjustBlockPostionActions } from '../../../../ngx-editorjs.service';
 
 @Component({
   selector: 'block-options-list',
@@ -9,28 +9,15 @@ import { AdjustBlockPostionActions, NgxEditorjsService } from '../../../../ngx-e
 })
 export class BlockOptionsListComponent {
 
-  @Output('closeLists') closeListsEmitter = new EventEmitter();
+  readonly AdjustBlockPostionActions = AdjustBlockPostionActions;
+
+  @Output('adjustBlockPostion') adjustBlockPostionEmitter = new EventEmitter();
 
   options = ['1','2','3','4','5','6'];
 
-  constructor(private ngxEdotorjsService: NgxEditorjsService) { }
+  constructor() { }
 
-  adjustBlockPostionUp() {
-    this.closeLists();
-    this.ngxEdotorjsService.adjustBlockPostionSubject.next(AdjustBlockPostionActions.UP);
-  }
-
-  adjustBlockPostionDelete() {
-    this.closeLists();
-    this.ngxEdotorjsService.adjustBlockPostionSubject.next(AdjustBlockPostionActions.DELETE);
-  }
-
-  adjustBlockPostionDown() {
-    this.closeLists();
-    this.ngxEdotorjsService.adjustBlockPostionSubject.next(AdjustBlockPostionActions.DOWN);
-  }
-
-  closeLists() {
-    this.closeListsEmitter.emit();
+  adjustBlockPostion(action: AdjustBlockPostionActions) {
+    this.adjustBlockPostionEmitter.emit(action);
   }
 }

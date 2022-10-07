@@ -1,4 +1,5 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, ViewRef } from '@angular/core';
+import { AdjustBlockPostionActions, NgxEditorjsService } from '../../../ngx-editorjs.service';
 @Component({
   selector: 'toolbar-block',
   templateUrl: './toolbar-block.component.html',
@@ -6,10 +7,13 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ToolbarBlockComponent {
+
+  @Input() viewRef!: ViewRef;
+
   openBlocks = false;
   openBlocksOption = false;
 
-  constructor() {}
+  constructor(private ngxEdotorjsService: NgxEditorjsService) {}
   
   openBlocksList() {
     this.openBlocks = !this.openBlocks;
@@ -19,6 +23,11 @@ export class ToolbarBlockComponent {
     this.openBlocksOption = !this.openBlocksOption;
   }
   
+  adjustBlockPostion(action: AdjustBlockPostionActions) {
+    this.ngxEdotorjsService.adjustBlockPostionSubject.next({ viewRef: this.viewRef, action });
+    this.closeLists();
+  }
+
   closeLists() {
     this.openBlocks = false;
     this.openBlocksOption = false;

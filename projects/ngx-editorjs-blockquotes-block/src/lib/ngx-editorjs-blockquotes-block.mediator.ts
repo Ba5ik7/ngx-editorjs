@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewRef } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NgxEditorjsBlockquotesBlockComponent } from './ngx-editorjs-blockquotes-block.component';
 
@@ -7,7 +7,7 @@ import { NgxEditorjsBlockquotesBlockComponent } from './ngx-editorjs-blockquotes
   selector: 'ngx-editorjs-meditator-blockquotes-block',
   template: `
     <div [formGroup]="form">
-      <ngx-editorjs-blockquotes-block [formControlName]="formControlName"></ngx-editorjs-blockquotes-block>
+      <ngx-editorjs-blockquotes-block [id]="id" [sortIndex]="sortIndex" [formControlName]="formControlName" [viewRef]="viewRef"></ngx-editorjs-blockquotes-block>
     </div>
   `,
   imports: [
@@ -16,6 +16,9 @@ import { NgxEditorjsBlockquotesBlockComponent } from './ngx-editorjs-blockquotes
   ],
 })
 export class NgxEditorjsBlockquotesBlockMediator {
+  @Input() id!: string;
+  @Input() sortIndex!: number;
+  @Input() viewRef!: ViewRef;
   @Input() form!: FormGroup;
   @Input() formControlName!: string;
 }
