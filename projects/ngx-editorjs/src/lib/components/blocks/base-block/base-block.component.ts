@@ -108,6 +108,7 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
       this.ngxEdotorjsService.toolbarComponentDetachSubject.next(true);
       this.toolbarBlockPortal = new ComponentPortal(ToolbarBlockComponent);
       const toolbarComponent = this.basePortalOutlet.attach(this.toolbarBlockPortal);
+      toolbarComponent.instance.id = this._id;
       toolbarComponent.instance.viewRef = this._viewRef;
       this.ngxEdotorjsService.toolbarComponentDetach$
       .pipe(take(1))

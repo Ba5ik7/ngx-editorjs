@@ -8,6 +8,7 @@ import { AdjustBlockPositionActions, NgxEditorjsService, SearchableBlock } from 
 })
 export class ToolbarBlockComponent {
 
+  @Input() id!: string;
   @Input() viewRef!: ViewRef;
 
   openBlocks = false;
@@ -24,7 +25,7 @@ export class ToolbarBlockComponent {
   }
   
   adjustBlockPosition(action: AdjustBlockPositionActions) {
-    this.ngxEdotorjsService.adjustBlockPositionSubject.next({ viewRef: this.viewRef, action });
+    this.ngxEdotorjsService.adjustBlockPositionSubject.next({ id: this.id, viewRef: this.viewRef, action });
     this.closeLists();
   }
 
