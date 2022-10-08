@@ -6,8 +6,12 @@ import { AdjustBlockPosition, AdjustBlockPositionActions, BlockMediatorComponent
 
 @Component({
   selector: 'ngx-editorjs',
-  templateUrl: './ngx-editorjs.component.html',
-  styleUrls: ['ngx-editorjs.component.scss']
+  template: `
+    <form [formGroup]="formGroup">
+      <ng-container #ngxEditor></ng-container>
+    </form>
+  `,
+  styles: []
 })
 export class NgxEditorjsComponent implements OnInit, AfterViewInit {
 
