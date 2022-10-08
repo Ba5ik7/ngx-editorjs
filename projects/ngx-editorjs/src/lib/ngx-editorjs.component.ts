@@ -1,8 +1,8 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewContainerRef, ViewRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { combineLatest, concatMap, forkJoin, from, map, of, Subject, tap } from 'rxjs';
 import { NgxEditorjsHeaderBlockMediator } from './components/blocks/ngx-editorjs-header-block/ngx-editorjs-header-block.mediator';
-import { AdjustBlockPosition, AdjustBlockPositionActions, Block, BlockMediatorComponent, CreateBlockAction, NgxEditorjsService, NgxEditorjsValue } from './ngx-editorjs.service';
+import { AdjustBlockPosition, AdjustBlockPositionActions, Block, BlockMediatorComponent, CreateBlockAction, NgxEditorjsService, NgxEditorjsOutputBlock } from './ngx-editorjs.service';
 
 @Component({
   selector: 'ngx-editorjs',
@@ -16,7 +16,7 @@ import { AdjustBlockPosition, AdjustBlockPositionActions, Block, BlockMediatorCo
 export class NgxEditorjsComponent implements OnInit, AfterViewInit {
 
   @Input() requestValue!: Subject<boolean>;
-  @Output() valueRequested = new EventEmitter<number>();
+  @Output() valueRequested = new EventEmitter<NgxEditorjsOutputBlock[]>();
 
   // @Output('ngxOnInitForm') ngxOnInitForm = new EventEmitter<FormGroup>();
 
@@ -45,7 +45,7 @@ export class NgxEditorjsComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     requestAnimationFrame(() => {
-      this.createNgxEditorjsBlock({ viewRef: null, component: NgxEditorjsHeaderBlockMediator });
+      this.createNgxEditorjsBlock({ blockId: null, component: null });
     });
   }
 
@@ -69,104 +69,60 @@ export class NgxEditorjsComponent implements OnInit, AfterViewInit {
       // ['delimiter', { type: 'delimiter', dataClean: '' }],
     ]);
 
-  createNgxEditorjsBlock({ viewRef, component }: CreateBlockAction): void {
+  createNgxEditorjsBlock({ blockId, component }: CreateBlockAction): void {
+    const block = component ?? NgxEditorjsHeaderBlockMediator;
     const controlName = Math.random().toString(36).slice(2);
+    
+    let viewRef: ViewRef | undefined;
+    if(blockId) viewRef = this.blockControlMap.get(blockId)!.componentRef.hostView;
     const sortIndex = viewRef ? this.ngxEditor.indexOf(viewRef) + 1 : 0;
 
     this.formGroup.addControl(controlName, this.formBuilder.control('', []));
     
-    const componentRef = this.ngxEditor.createComponent(component!);
-    this.ngxEditor.move(componentRef.hostView, sortIndex);
-
+    const componentRef = this.ngxEditor.createComponent(block, { index: sortIndex });
     const fieldComponent = componentRef.instance as BlockMediatorComponent;
-    fieldComponent.id = controlName;
-    fieldComponent.sortIndex = sortIndex;
-    fieldComponent.viewRef = componentRef.hostView;
+    fieldComponent.blockId = controlName;
     fieldComponent.form = this.formGroup;
     fieldComponent.formControlName = controlName;
 
     this.blockControlMap.set(controlName, { sortIndex, componentRef: componentRef, dataClean: '' });
-    console.log({
-      blockControlMap: this.blockControlMap,
-    });
   }
 
-  moveNgxEditorjsBlock({ id, viewRef, action }: AdjustBlockPosition): void {
+  moveNgxEditorjsBlock({ blockId, action }: AdjustBlockPosition): void {
+    const viewRef = this.blockControlMap.get(blockId)!.componentRef.hostView;
     const sortIndex = this.ngxEditor.indexOf(viewRef);
     const newSortIndex = action === AdjustBlockPositionActions.UP ? sortIndex - 1 : sortIndex + 1;
-    const inRange =  newSortIndex >= 0 && newSortIndex <= this.ngxEditor.length - 1;
+    const inRange = newSortIndex >= 0 && newSortIndex <= this.ngxEditor.length - 1;
     this.ngxEditor.move(viewRef, inRange ? newSortIndex : sortIndex);
-    this.blockControlMap.get(id)!.sortIndex = newSortIndex;
-    console.log({
-      blockControlMap: this.blockControlMap,
+
+    this.blockControlMap.forEach((block) => {
+      if(block.sortIndex === sortIndex) block.sortIndex = newSortIndex;
+      else if(block.sortIndex === newSortIndex) block.sortIndex = sortIndex;
     });
   }
 
-  deleteNgxEditorjsBlock({ id, viewRef }: AdjustBlockPosition): void {
-    const index = this.ngxEditor.indexOf(viewRef);    
+  deleteNgxEditorjsBlock({ blockId }: AdjustBlockPosition): void {
+    const viewRef = this.blockControlMap.get(blockId)!.componentRef.hostView;
+    const index = this.ngxEditor.indexOf(viewRef);
     if (this.ngxEditor.length - 1 !== 0) {
-      this.blockControlMap.delete(id);
+      this.blockControlMap.delete(blockId);
       this.ngxEditor.remove(index);
+      this.blockControlMap.forEach((block) => {
+        if(block.sortIndex > index) block.sortIndex--;
+      });
     }
   }
 
   parentRequestCurrentValue(): void {
-    console.log({
-      test: this.ngxEditor.get(0)
+    const blocks: NgxEditorjsOutputBlock[] = [];
+    this.blockControlMap.forEach((block, key) => {
+      blocks.push({
+        blockId: key,
+        sortIndex: block.sortIndex,
+        name: block.componentRef.componentType.name,
+        dataClean: this.formGroup.get(key)?.value
+      })
     });
-    
-    from(Array(this.ngxEditor.length))
-    .pipe(
-      tap((value) => { console.log(value) }),
-      map((_, index) => ({
-        type: this.ngxEditor.get(index),
-        name: this.ngxEditor.get(index)
-      }))
-    )
-    .subscribe((block: any) => {
-      console.log({
-        block
-      });
-    });
-
-
-
-    // Array(this.ngxEditor.length).forEach((_, index) => {
-    //   const block = this.ngxEditor.get(index);
-    //   console.log({
-    //     block
-    //   });
-    // });
-
-    // Loop over all ViewRefs in ngxEditorjs VeiwcontainerRef
-    // Create a new Block object for each ViewRef
-    // Push Block object to blocks array
-    // Emit blocks array
-    // const blocks: any[] = [];
-    // this.ngxEditor.forEach((viewRef) => {
-    //   const block = {
-    //     id: viewRef.context.id,
-    //     sortIndex: viewRef.context.sortIndex,
-    //     formControlName: viewRef.context.formControlName,
-    //     form: viewRef.context.form
-    //   };
-    //   blocks.push(block);
-    // });
-
-    // Get current formGroup value and pipe into NgxEditorjsValue
-  //   const value = this.formGroup.value;
-  //   const ngxEditorjsValue = {
-  //     time: Date.now(),
-  //     blocks: Object.keys(value).map((key) => {
-  //       return {
-  //         type: 'header',
-  //         dataClean: value[key]
-  //       }
-  //     }),
-  //     version: '0.0.1'
-  //   };
-  //   this.valueRequested.emit(ngxEditorjsValue);
-  // }
-    this.valueRequested.emit(this.formGroup.value);
+    this.valueRequested.emit(blocks);
   }
 }

@@ -28,10 +28,11 @@ export class NgxEditorjsService {
 }
 
 // Create interface for NgxEditorjsValue
-export interface NgxEditorjsValue {
-  time: number;
-  blocks: Block[];
-  version: string;
+export interface NgxEditorjsOutputBlock {
+  blockId: string;
+  sortIndex: number;
+  name: string;
+  dataClean: string;
 }
 
 // Create interface for Block
@@ -52,15 +53,12 @@ export enum AdjustBlockPositionActions {
 }
 
 export interface AdjustBlockPosition {
-  id: string;
+  blockId: string;
   action: AdjustBlockPositionActions;
-  viewRef: ViewRef;
 }
 
 export interface BlockMediatorComponent {
-  id: string;
-  sortIndex: number;
-  viewRef: ViewRef;
+  blockId: string;
   form: FormGroup;
   formControlName: string;
 }
@@ -72,6 +70,6 @@ export interface SearchableBlock {
 }
 
 export interface CreateBlockAction {
+  blockId: string | null
   component: Type<unknown> | null;
-  viewRef: ViewRef | null;
 }
