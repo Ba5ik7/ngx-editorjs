@@ -4,14 +4,12 @@ import { FormGroup } from '@angular/forms';
   selector: 'ngx-editorjs-meditator-header-block',
   template: `
     <div [formGroup]="form">
-      <ngx-editorjs-header-block [id]="id" [sortIndex]="sortIndex" [formControlName]="formControlName" [viewRef]="viewRef"></ngx-editorjs-header-block>
+      <ngx-editorjs-header-block [blockId]="blockId" [formControlName]="formControlName"></ngx-editorjs-header-block>
     </div>
   `,
 })
 export class NgxEditorjsHeaderBlockMediator {
-  @Input() id!: string;
-  @Input() sortIndex!: number;
-  @Input() viewRef!: ViewRef;
+  @Input() blockId!: string;
   @Input() form!: FormGroup;
   @Input() formControlName!: string;
 }

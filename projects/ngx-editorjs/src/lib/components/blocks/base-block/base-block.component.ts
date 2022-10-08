@@ -20,14 +20,8 @@ import { ToolbarBlockComponent } from '../toolbar-block/toolbar-block.component'
 @Component({ template: '' })
 export class BaseBlockComponent implements ControlValueAccessor, OnInit {
 
-  _id = '';
-  @Input() set id(id: string) { this._id = id }
-
-  _sortIndex = 0;
-  @Input() set sortIndex(sortIndex: number) { this._sortIndex = sortIndex }
-   
-  _viewRef!: ViewRef;
-  @Input() set viewRef(viewRef: ViewRef) { this._viewRef = viewRef }
+  _blockId = '';
+  @Input() set blockId(blockId: string) { this._blockId = blockId }
    
   isActive: boolean = false;
   error: string = '';
@@ -108,7 +102,7 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
       this.ngxEdotorjsService.toolbarComponentDetachSubject.next(true);
       this.toolbarBlockPortal = new ComponentPortal(ToolbarBlockComponent);
       const toolbarComponent = this.basePortalOutlet.attach(this.toolbarBlockPortal);
-      toolbarComponent.instance.viewRef = this._viewRef;
+      toolbarComponent.instance.blockId = this._blockId;
       this.ngxEdotorjsService.toolbarComponentDetach$
       .pipe(take(1))
       .subscribe(() => this.detachToolbarComponent())
