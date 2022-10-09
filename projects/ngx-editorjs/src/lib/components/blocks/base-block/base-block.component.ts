@@ -21,7 +21,7 @@ import { ToolbarBlockComponent } from '../toolbar-block/toolbar-block.component'
 export class BaseBlockComponent implements ControlValueAccessor, OnInit {
 
   _blockId = '';
-  @Input() set blockId(blockId: string) { this._blockId = blockId }
+  @Input() blockId!: string;
    
   isActive: boolean = false;
   error: string = '';
@@ -97,12 +97,14 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
   }
 
   @HostListener('mouseenter', ['$event.target'])
-  onMouseEnter(event?: Event) {
+  onMouseEnter(event?: Event) {    
     if(!this.basePortalOutlet.hasAttached()) {
       this.ngxEdotorjsService.toolbarComponentDetachSubject.next(true);
+
       this.toolbarBlockPortal = new ComponentPortal(ToolbarBlockComponent);
       const toolbarComponent = this.basePortalOutlet.attach(this.toolbarBlockPortal);
-      toolbarComponent.instance.blockId = this._blockId;
+      toolbarComponent.instance.blockId = this.blockId;
+
       this.ngxEdotorjsService.toolbarComponentDetach$
       .pipe(take(1))
       .subscribe(() => this.detachToolbarComponent())

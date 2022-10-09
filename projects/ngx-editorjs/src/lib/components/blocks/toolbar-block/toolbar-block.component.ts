@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input, ViewRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { AdjustBlockPositionActions, NgxEditorjsService, SearchableBlock } from '../../../ngx-editorjs.service';
 @Component({
   selector: 'toolbar-block',
@@ -9,7 +9,6 @@ import { AdjustBlockPositionActions, NgxEditorjsService, SearchableBlock } from 
 export class ToolbarBlockComponent {
 
   @Input() blockId!: string;
-  @Input() viewRef!: ViewRef;
 
   openBlocks = false;
   openBlocksOption = false;

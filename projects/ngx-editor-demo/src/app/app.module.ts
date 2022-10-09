@@ -35,11 +35,13 @@ import { NgxEditorjsBlockquotesBlockMediator } from '@tmdjr/ngx-editorjs-blockqu
         blocks: [
           {
             name: 'Paragraph',
-            component: NgxEditorjsParagraphBlockMediator
+            component: NgxEditorjsParagraphBlockMediator,
+            componentInstanceName: 'NgxEditorjsParagraphBlockMediator'
           },
           {
             name: 'Blockquotes',
-            component: NgxEditorjsBlockquotesBlockMediator
+            component: NgxEditorjsBlockquotesBlockMediator,
+            componentInstanceName: 'NgxEditorjsBlockquotesBlockMediator'
           }
         ]
       }

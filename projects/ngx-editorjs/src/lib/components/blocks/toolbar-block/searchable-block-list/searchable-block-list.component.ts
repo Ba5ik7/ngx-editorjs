@@ -15,9 +15,9 @@ export class SearchableBlockListComponent implements OnInit {
 
   blockCtrl = new FormControl([]);
   blocks!: SearchableBlock[];
-  blocksDefaults: SearchableBlock[] = [
-    { type: 'HeaderBlockMediator', name: 'Header', component: null },
-  ];
+  // blocksDefaults: SearchableBlock[] = [
+  //   { type: 'HeaderBlockMediator', name: 'Header', component: null },
+  // ];
 
   filter$ = this.blockCtrl.valueChanges.pipe(startWith(''));
   filteredBlocks$!: Observable<SearchableBlock[]>;
@@ -26,7 +26,8 @@ export class SearchableBlockListComponent implements OnInit {
   constructor(private ngxEdotorjsService: NgxEditorjsService) { }
 
   ngOnInit(): void {
-    this.blocks = this.blocksDefaults.concat(this.ngxEdotorjsService.blocks);
+    // this.blocks = this.blocksDefaults.concat(this.ngxEdotorjsService.blocks);
+    this.blocks = this.ngxEdotorjsService.blocks;
     this.filteredBlocks$ = combineLatest([ of(this.blocks), this.filter$ ])
     .pipe(
       takeUntil(this.destory),

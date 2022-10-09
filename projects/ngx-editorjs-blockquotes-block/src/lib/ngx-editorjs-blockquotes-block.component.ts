@@ -5,7 +5,7 @@ import { BaseBlockComponent, AutofocusDirective } from '@tmdjr/ngx-editorjs';
   standalone: true,
   selector: 'ngx-editorjs-blockquotes-block',
   template: `
-    <blockquote class="flex-spacer" #blockquotes contenteditable [autofocus]="true" (focus)="onMouseEnter($event)"></blockquote>
+    <blockquote class="flex-spacer" #blockquotes contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></blockquote>
   `,
   styles: [`
     :host { display: flex; flex-direction: column; }

@@ -66,10 +66,13 @@ export interface BlockMediatorComponent {
 export interface SearchableBlock {
   name: string;
   component: Type<unknown> | null;
+  componentInstanceName?: string;
   type?: string;
 }
 
 export interface CreateBlockAction {
   blockId: string | null
   component: Type<unknown> | null;
+  value?: string;
+  componentSortIndex?: number;
 }
