@@ -4,6 +4,22 @@ import { combineLatest, concatMap, forkJoin, from, map, of, Subject, tap } from 
 import { NgxEditorjsHeaderBlockMediator } from './components/blocks/ngx-editorjs-header-block/ngx-editorjs-header-block.mediator';
 import { AdjustBlockPosition, AdjustBlockPositionActions, Block, BlockMediatorComponent, CreateBlockAction, NgxEditorjsService, NgxEditorjsOutputBlock, SearchableBlock } from './ngx-editorjs.service';
 
+// ['header', { type: 'header', dataClean: '' }],
+// ['paragraph', { type: 'paragraph', dataClean: '' }],
+// ['list', { type: 'list', dataClean: '' }],
+// ['image', { type: 'image', dataClean: '' }],
+// ['quote', { type: 'quote', dataClean: '' }],
+// ['code', { type: 'code', dataClean: '' }],
+// ['delimiter', { type: 'delimiter', dataClean: '' }],
+// ['raw', { type: 'raw', dataClean: '' }],
+// ['table', { type: 'table', dataClean: '' }],
+// ['linkTool', { type: 'linkTool', dataClean: '' }],
+// ['embed', { type: 'embed', dataClean: '' }],
+// ['marker', { type: 'marker', dataClean: '' }],
+// ['warning', { type: 'warning', dataClean: '' }],
+// ['checklist', { type: 'checklist', dataClean: '' }],
+// ['inlineCode', { type: 'inlineCode', dataClean: '' }],
+// ['delimiter', { type: 'delimiter', dataClean: '' }],
 
 export const HeaderSearchableBlock: SearchableBlock = {
   name: 'Header',
@@ -32,6 +48,7 @@ export class NgxEditorjsComponent implements OnInit, AfterViewInit {
   @ViewChild('ngxEditor', { read: ViewContainerRef }) ngxEditor!: ViewContainerRef;
 
   formGroup: FormGroup = this.formBuilder.group({});
+  blockControlMap: Map<string, Block> = new Map();
 
   constructor(
     private formBuilder: FormBuilder,
@@ -75,8 +92,6 @@ export class NgxEditorjsComponent implements OnInit, AfterViewInit {
       }
     });
   }
-
-  blockControlMap: Map<string, Block> = new Map();
 
   createNgxEditorjsBlock({ blockId, component, value, componentSortIndex }: CreateBlockAction): void {
     const block = component ?? NgxEditorjsHeaderBlockMediator;
