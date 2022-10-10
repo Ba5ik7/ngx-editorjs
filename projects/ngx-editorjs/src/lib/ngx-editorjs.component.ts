@@ -69,11 +69,11 @@ export class NgxEditorjsComponent implements OnInit, AfterViewInit {
   constructor(
     private formBuilder: FormBuilder,
     private ngxEditorjsService: NgxEditorjsService
-  ) { }
+  ) {
+    this.ngxEditorjsService.blocks.unshift(HeaderSearchableBlock);
+  }
 
   ngOnInit(): void {
-    this.ngxEditorjsService.blocks.unshift(HeaderSearchableBlock);
-
     // this.ngxOnInitForm.emit(this.formGroup);
     this.requestValue.subscribe(() => this.parentRequestCurrentValue());
 
