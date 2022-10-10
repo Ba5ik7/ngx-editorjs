@@ -40,7 +40,8 @@ export class NgxEditorjsComponent implements OnInit, AfterViewInit {
 
   @Input() 
   set inputData(blocks: NgxEditorjsOutputBlock[]) {
-    this.ngxEditor.clear();
+    if(this.ngxEditor?.length >= 0) this.ngxEditor.clear();
+
     blocks.forEach((block) => {
       const componentInstanceObject = 
         this.ngxEditorjsService.blocks.find((b) => b.componentInstanceName === block.name)
