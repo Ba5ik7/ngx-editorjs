@@ -45,7 +45,9 @@ export class HomeComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-    this.inputData = InputData;
+    setTimeout(() => {
+      this.inputData = InputData;
+    }, 3000);
   }
 
   getValue(): void {

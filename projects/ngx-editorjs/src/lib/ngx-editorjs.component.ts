@@ -38,7 +38,23 @@ export const HeaderSearchableBlock: SearchableBlock = {
 })
 export class NgxEditorjsComponent implements OnInit, AfterViewInit {
 
-  @Input() inputData!: NgxEditorjsOutputBlock[] | undefined;
+  @Input() 
+  set inputData(blocks: NgxEditorjsOutputBlock[]) {
+    this.ngxEditor.clear();
+    blocks.forEach((block) => {
+      const componentInstanceObject = 
+        this.ngxEditorjsService.blocks.find((b) => b.componentInstanceName === block.name)
+          ?? this.ngxEditorjsService.blocks[0];
+
+      const createBlockAction: CreateBlockAction = { 
+        blockId: block.blockId,
+        component: componentInstanceObject?.component,
+        value: block.dataClean,
+        componentSortIndex: block.sortIndex
+      };
+      this.createNgxEditorjsBlock(createBlockAction);
+    });
+  }
 
   @Input() requestValue!: Subject<boolean>;
   @Output() valueRequested = new EventEmitter<NgxEditorjsOutputBlock[]>();
@@ -73,23 +89,7 @@ export class NgxEditorjsComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     requestAnimationFrame(() => {
-      if(this.inputData) {
-        this.inputData.forEach((block) => {
-          const componentInstanceObject = 
-            this.ngxEditorjsService.blocks.find((b) => b.componentInstanceName === block.name)
-              ?? this.ngxEditorjsService.blocks[0];
-  
-          const createBlockAction: CreateBlockAction = { 
-            blockId: block.blockId,
-            component: componentInstanceObject?.component,
-            value: block.dataClean,
-            componentSortIndex: block.sortIndex
-          };
-          this.createNgxEditorjsBlock(createBlockAction);
-        });
-      } else {
-        this.createNgxEditorjsBlock({ blockId: null, component: null });
-      }
+      this.createNgxEditorjsBlock({ blockId: null, component: null });
     });
   }
 
