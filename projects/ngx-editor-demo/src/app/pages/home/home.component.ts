@@ -30,7 +30,7 @@ export const InputData: NgxEditorjsOutputBlock[] = [
   }
 ];
 
-export const InputData2: NgxEditorjsOutputBlock[] = [{"blockId":"ywvqvzaa98e","sortIndex":4,"name":"NgxEditorjsHeaderBlockMediator","dataClean":""},{"blockId":"eftkta822ke","sortIndex":4,"name":"NgxEditorjsHeaderBlockMediator","dataClean":"Property binding best practices"},{"blockId":"3apa0n490qe","sortIndex":4,"name":"NgxEditorjsParagraphBlockMediator","dataClean":"By following a few guidelines, you can use property binding in a way that helps you minimize bugs and keep your code readable."},{"blockId":"9mpb872e7cc","sortIndex":4,"name":"NgxEditorjsBlockquotesBlockMediator","dataClean":"See the live example / download example for a working example containing the code snippets in this guide."},{"blockId":"iovlbzgosf","sortIndex":4,"name":"NgxEditorjsHeaderBlockMediator","dataClean":"Avoid side effects"},{"blockId":"bu23hwyltwl","sortIndex":4,"name":"NgxEditorjsParagraphBlockMediator","dataClean":"Evaluation of a template expression should have no visible side effects. Use the syntax for template expressions to help avoid side effects. In general, the correct syntax prevents you from assigning a value to anything in a property binding expression. The syntax also prevents you from using increment and decrement operators."}];
+export const InputData2: NgxEditorjsOutputBlock[] = [{"blockId":"eftkta822ke","sortIndex":4,"name":"NgxEditorjsHeaderBlockMediator","dataClean":"Property binding best practices"},{"blockId":"3apa0n490qe","sortIndex":4,"name":"NgxEditorjsParagraphBlockMediator","dataClean":"By following a few guidelines, you can use property binding in a way that helps you minimize bugs and keep your code readable."},{"blockId":"9mpb872e7cc","sortIndex":4,"name":"NgxEditorjsBlockquotesBlockMediator","dataClean":"See the live example / download example for a working example containing the code snippets in this guide."},{"blockId":"iovlbzgosf","sortIndex":4,"name":"NgxEditorjsHeaderBlockMediator","dataClean":"Avoid side effects"},{"blockId":"bu23hwyltwl","sortIndex":4,"name":"NgxEditorjsParagraphBlockMediator","dataClean":"Evaluation of a template expression should have no visible side effects. Use the syntax for template expressions to help avoid side effects. In general, the correct syntax prevents you from assigning a value to anything in a property binding expression. The syntax also prevents you from using increment and decrement operators."}];
 
 @Component({
   selector: 'app-home',
@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.inputData = InputData2;
-    }, 3000);
+    }, 1000);
   }
 
   getValue(): void {

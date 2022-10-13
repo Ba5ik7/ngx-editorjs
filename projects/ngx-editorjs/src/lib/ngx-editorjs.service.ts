@@ -76,3 +76,9 @@ export interface CreateBlockAction {
   value?: string;
   componentSortIndex?: number;
 }
+
+export interface BlockOptionAction {
+  action: string;
+  icon?: string;
+  text?: string;
+}

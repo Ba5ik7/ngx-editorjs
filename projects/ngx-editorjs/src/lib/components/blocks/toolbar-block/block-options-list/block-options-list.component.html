@@ -16,10 +16,11 @@
       <mat-icon>arrow_downward</mat-icon>
     </div>
     <div class="block-option-list-item"
-      *ngFor="let option of options"
+      *ngFor="let blockOptionAction of blockOptionActions"
+      (click)="handleBlockOptionAction(blockOptionAction.action)"
       matRipple>
       <!-- <mat-icon>title</mat-icon> -->
-      <span class="block-option-list-item-text">H{{option}}</span>
+      <span class="block-option-list-item-text">{{blockOptionAction.text}}</span>
     </div>
   </div>
 </div>

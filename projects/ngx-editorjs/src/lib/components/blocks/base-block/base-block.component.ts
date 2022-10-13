@@ -10,18 +10,21 @@ import {
   ViewContainerRef,
   ComponentFactoryResolver,
   Input,
-  ViewRef
+  ViewRef,
+  OnDestroy
 } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
-import { take } from 'rxjs';
-import { NgxEditorjsService } from '../../../ngx-editorjs.service';
+import { Subject, take, takeUntil } from 'rxjs';
+import { BlockOptionAction, NgxEditorjsService } from '../../../ngx-editorjs.service';
 import { ToolbarBlockComponent } from '../toolbar-block/toolbar-block.component';
 
 @Component({ template: '' })
-export class BaseBlockComponent implements ControlValueAccessor, OnInit {
+export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestroy {
+  destory: Subject<boolean> = new Subject();
 
-  _blockId = '';
   @Input() blockId!: string;
+
+  blockOptionActions: BlockOptionAction[] | undefined;
    
   isActive: boolean = false;
   error: string = '';
@@ -54,6 +57,10 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
 
   ngOnInit() {
     this.controlDir.valueChanges?.subscribe((val) => this.valueChange(val));    
+  }
+
+  ngOnDestroy(): void {
+    this.destory.next(true);
   }
 
   valueChange(value: string): void {
@@ -104,6 +111,10 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
       this.toolbarBlockPortal = new ComponentPortal(ToolbarBlockComponent);
       const toolbarComponent = this.basePortalOutlet.attach(this.toolbarBlockPortal);
       toolbarComponent.instance.blockId = this.blockId;
+      toolbarComponent.instance.blockOptionActions = this.blockOptionActions;
+      toolbarComponent.instance.handleBlockOptionActionEmitter
+      .pipe(takeUntil(this.destory))
+      .subscribe((action: string) => this.handleBlockOptionAction(action));
 
       this.ngxEdotorjsService.toolbarComponentDetach$
       .pipe(take(1))
@@ -122,4 +133,5 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit {
     document.execCommand('insertHTML', false, text);
   }
 
+  handleBlockOptionAction(action: string) { }
 }

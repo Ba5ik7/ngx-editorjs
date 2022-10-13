@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewRef } from '@angular/core';
-import { AdjustBlockPositionActions } from '../../../../ngx-editorjs.service';
+import { AdjustBlockPositionActions, BlockOptionAction } from '../../../../ngx-editorjs.service';
 
 @Component({
   selector: 'block-options-list',
@@ -9,15 +9,20 @@ import { AdjustBlockPositionActions } from '../../../../ngx-editorjs.service';
 })
 export class BlockOptionsListComponent {
 
-  readonly AdjustBlockPositionActions = AdjustBlockPositionActions;
+  @Input() blockOptionActions: BlockOptionAction[] | undefined;
+  @Output('handleBlockOptionAction') handleBlockOptionActionEmitter = new EventEmitter();
 
+  readonly AdjustBlockPositionActions = AdjustBlockPositionActions; 
   @Output('adjustBlockPosition') adjustBlockPositionEmitter = new EventEmitter();
-
-  options = ['1','2','3','4','5','6'];
 
   constructor() { }
 
   adjustBlockPosition(action: AdjustBlockPositionActions) {
     this.adjustBlockPositionEmitter.emit(action);
+  }
+
+  handleBlockOptionAction(action: string) {
+    console.log('BlockOptionsListComponent handleBlockOptionAction', action);
+    this.handleBlockOptionActionEmitter.emit(action);
   }
 }

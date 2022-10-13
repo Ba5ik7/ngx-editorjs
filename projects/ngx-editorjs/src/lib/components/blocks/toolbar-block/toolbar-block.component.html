@@ -39,7 +39,10 @@
   [cdkConnectedOverlayOffsetX]="-49"
   [cdkConnectedOverlayOffsetY]="15"
   [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'">
-  <block-options-list (adjustBlockPosition)="adjustBlockPosition($event)"></block-options-list>
+  <block-options-list
+    [blockOptionActions]="blockOptionActions"
+    (handleBlockOptionAction)="handleBlockOptionAction($event)"
+    (adjustBlockPosition)="adjustBlockPosition($event)"></block-options-list>
 </ng-template>
 
 

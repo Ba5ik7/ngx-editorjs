@@ -1,5 +1,5 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { AdjustBlockPositionActions, NgxEditorjsService, SearchableBlock } from '../../../ngx-editorjs.service';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+import { AdjustBlockPositionActions, BlockOptionAction, NgxEditorjsService, SearchableBlock } from '../../../ngx-editorjs.service';
 @Component({
   selector: 'toolbar-block',
   templateUrl: './toolbar-block.component.html',
@@ -8,7 +8,10 @@ import { AdjustBlockPositionActions, NgxEditorjsService, SearchableBlock } from 
 })
 export class ToolbarBlockComponent {
 
+  @Output('handleBlockOptionAction') handleBlockOptionActionEmitter = new EventEmitter();
+
   @Input() blockId!: string;
+  @Input() blockOptionActions: BlockOptionAction[] | undefined;
 
   openBlocks = false;
   openBlocksOption = false;
@@ -36,5 +39,9 @@ export class ToolbarBlockComponent {
   closeLists() {
     this.openBlocks = false;
     this.openBlocksOption = false;
+  }
+
+  handleBlockOptionAction(action: string) {
+    this.handleBlockOptionActionEmitter.emit(action);
   }
 }

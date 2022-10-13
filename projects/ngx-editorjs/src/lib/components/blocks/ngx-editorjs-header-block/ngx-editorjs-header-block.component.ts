@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ElementRef, Input } from '@angular/core';
+import { BlockOptionAction } from '../../../ngx-editorjs.service';
 import { BaseBlockComponent } from '../base-block/base-block.component';
 
 @Component({
@@ -10,6 +11,15 @@ export class NgxEditorjsHeaderBlockComponent extends BaseBlockComponent implemen
 
   @ViewChild('header') element!: ElementRef;
 
+  override blockOptionActions: BlockOptionAction[] = [
+    { action: 'h1', text: 'H1' },
+    { action: 'h2', text: 'H2' },
+    { action: 'h3', text: 'H3' },
+    { action: 'h4', text: 'H4' },
+    { action: 'h5', text: 'H5' },
+    { action: 'h6', text: 'H6' }
+  ];
+
   override ngOnInit() {
     super.ngOnInit();
   }
@@ -20,5 +30,17 @@ export class NgxEditorjsHeaderBlockComponent extends BaseBlockComponent implemen
 
   override onMouseEnter(event: Event) {
     super.onMouseEnter(event);
+  }
+
+  override handleBlockOptionAction(action: string) {
+    console.log('NgxEditorjsHeaderBlockComponent handleBlockOptionAction', action);
+    switch (action) {
+      case 'h1':
+        console.log('h1 clicked');
+        break;
+    
+      default:
+        break;
+    }
   }
 }
