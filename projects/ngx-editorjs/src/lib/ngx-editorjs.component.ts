@@ -51,9 +51,7 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
   constructor(
     private formBuilder: FormBuilder,
     private ngxEditorjsService: NgxEditorjsService
-  ) {
-    this.ngxEditorjsService.blocks.unshift(HeaderSearchableBlock);
-  }
+  ) {}
 
   @Input() 
   set inputData(blocks: NgxEditorjsOutputBlock[]) {
@@ -74,6 +72,9 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
+    // @TODO: add a way only add on first load
+    this.ngxEditorjsService.blocks.unshift(HeaderSearchableBlock);
+    
     // this.ngxOnInitForm.emit(this.formGroup);
     this.requestValue
     .pipe(takeUntil(this.destroy))
@@ -98,6 +99,8 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    // @todo: add a way only add on first load
+    this.ngxEditorjsService.blocks.shift();
     this.destroy.next();
   }
 
