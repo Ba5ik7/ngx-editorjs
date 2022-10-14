@@ -4,12 +4,23 @@ import { BaseBlockComponent } from '../base-block/base-block.component';
 
 @Component({
   selector: 'ngx-editorjs-header-block',
-  template: `<h1 class="flex-spacer" #header contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h1>`,
+  template: `
+    <ng-container [ngSwitch]="whichHeader">
+        <h2 *ngSwitchCase="'h2'" class="flex-spacer" #header contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h2>
+        <h3 *ngSwitchCase="'h3'" class="flex-spacer" #header contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h3>
+        <h4 *ngSwitchCase="'h4'" class="flex-spacer" #header contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h4>
+        <h5 *ngSwitchCase="'h5'" class="flex-spacer" #header contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h5>
+        <h6 *ngSwitchCase="'h6'" class="flex-spacer" #header contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h6>
+        <h1 *ngSwitchDefault class="flex-spacer" #header contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h1>
+    </ng-container>
+  `,
   styles: [`:host { display: flex; flex-direction: column; }`]
 })
 export class NgxEditorjsHeaderBlockComponent extends BaseBlockComponent implements OnInit, AfterViewInit {
 
   @ViewChild('header') element!: ElementRef;
+
+  whichHeader!: string
 
   override blockOptionActions: BlockOptionAction[] = [
     { action: 'h1', text: 'H1' },
@@ -33,14 +44,7 @@ export class NgxEditorjsHeaderBlockComponent extends BaseBlockComponent implemen
   }
 
   override handleBlockOptionAction(action: string) {
-    console.log('NgxEditorjsHeaderBlockComponent handleBlockOptionAction', action);
-    switch (action) {
-      case 'h1':
-        console.log('h1 clicked');
-        break;
-    
-      default:
-        break;
-    }
+    this.whichHeader = action;
+    super.handleBlockOptionAction(action);
   }
 }

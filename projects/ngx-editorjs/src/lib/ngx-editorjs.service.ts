@@ -33,6 +33,7 @@ export interface NgxEditorjsOutputBlock {
   sortIndex: number;
   name: string;
   dataClean: string;
+  savedAction?: string;
 }
 
 // Create interface for Block
@@ -40,6 +41,7 @@ export interface Block {
   sortIndex: number;
   componentRef: ComponentRef<unknown>;
   dataClean: string;
+  savedAction?: string;
 }
 
 export interface NgxEditorjsOptions {
@@ -61,6 +63,7 @@ export interface BlockMediatorComponent {
   blockId: string;
   form: FormGroup;
   formControlName: string;
+  savedAction?: string;
 }
 
 export interface SearchableBlock {
@@ -75,6 +78,7 @@ export interface CreateBlockAction {
   component: Type<unknown> | null;
   value?: string;
   componentSortIndex?: number;
+  savedAction?: string;
 }
 
 export interface BlockOptionAction {

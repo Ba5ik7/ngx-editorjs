@@ -22,7 +22,6 @@ export class BlockOptionsListComponent {
   }
 
   handleBlockOptionAction(action: string) {
-    console.log('BlockOptionsListComponent handleBlockOptionAction', action);
     this.handleBlockOptionActionEmitter.emit(action);
   }
 }

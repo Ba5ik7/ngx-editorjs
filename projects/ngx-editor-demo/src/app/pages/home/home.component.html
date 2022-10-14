@@ -14,10 +14,11 @@
   <mat-card>
     <h2>Editor Js: <button mat-button (click)="getValue()">Get Value</button></h2>
     <!-- <mat-divider></mat-divider> -->
-    <ngx-editorjs 
-    [inputData]="inputData"
-    [requestValue]="requestValue"
-    (valueRequested)="valueRequested($event)"></ngx-editorjs>
+    <!-- <ngx-editorjs [config]="config" [data]="data" (ready)="onReady($event)" (change)="onChange($event)"></ngx-editorjs> -->
+    <ngx-editorjs
+      [inputData]="inputData"
+      [requestValue]="requestValue"
+      (valueRequested)="valueRequested($event)"></ngx-editorjs>
     <!-- (ngxOnInitForm)="ngxOnInitForm($event)"></ngx-editorjs> -->
   </mat-card>
 </main>

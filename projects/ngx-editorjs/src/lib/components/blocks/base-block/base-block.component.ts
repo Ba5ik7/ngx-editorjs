@@ -23,6 +23,10 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
   destory: Subject<boolean> = new Subject();
 
   @Input() blockId!: string;
+  @Input() 
+  set savedAction(action: string) {
+    this.handleBlockOptionAction(action);
+  }
 
   blockOptionActions: BlockOptionAction[] | undefined;
    
