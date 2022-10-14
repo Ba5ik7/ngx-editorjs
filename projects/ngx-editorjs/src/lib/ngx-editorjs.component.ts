@@ -2,9 +2,19 @@ import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Outpu
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { combineLatest, concatMap, forkJoin, from, map, of, Subject, takeUntil, tap } from 'rxjs';
 import { NgxEditorjsHeaderBlockMediator } from './components/blocks/ngx-editorjs-header-block/ngx-editorjs-header-block.mediator';
-import { AdjustBlockPosition, AdjustBlockPositionActions, Block, BlockMediatorComponent, CreateBlockAction, NgxEditorjsService, NgxEditorjsOutputBlock, SearchableBlock } from './ngx-editorjs.service';
+import { 
+  AdjustBlockPosition,
+  AdjustBlockPositionActions,
+  Block,
+  BlockMediatorComponent,
+  CreateBlockAction,
+  NgxEditorjsService,
+  NgxEditorjsOutputBlock,
+  SearchableBlock,
+  UpdateBlockOptionAction
+} from './ngx-editorjs.service';
 
-// ['header', { type: 'header', dataClean: '' }],
+// ['header',{ type: 'header', dataClean: '' }],
 // ['paragraph', { type: 'paragraph', dataClean: '' }],
 // ['list', { type: 'list', dataClean: '' }],
 // ['image', { type: 'image', dataClean: '' }],
@@ -80,6 +90,10 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
     .pipe(takeUntil(this.destroy))
     .subscribe((block) => this.createNgxEditorjsBlock(block));
 
+    this.ngxEditorjsService.updateBlockOptionAction$
+    .pipe(takeUntil(this.destroy))
+    .subscribe((block) => this.updateNgxEditorjsBlock(block));
+
     this.clearSortCreateNgxEditorjsBlocks([]);
   }
 
@@ -133,6 +147,12 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
     this.blockControlMap.forEach((block) => {
       if(block.sortIndex === sortIndex) block.sortIndex = newSortIndex;
       else if(block.sortIndex === newSortIndex) block.sortIndex = sortIndex;
+    });
+  }
+
+  updateNgxEditorjsBlock({ blockId, action }: UpdateBlockOptionAction): void {
+    this.blockControlMap.forEach((block, blockIdKey) => {
+      if(blockIdKey === blockId) block.savedAction = action;
     });
   }
 

@@ -116,9 +116,13 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
       const toolbarComponent = this.basePortalOutlet.attach(this.toolbarBlockPortal);
       toolbarComponent.instance.blockId = this.blockId;
       toolbarComponent.instance.blockOptionActions = this.blockOptionActions;
+
       toolbarComponent.instance.handleBlockOptionActionEmitter
       .pipe(takeUntil(this.destory))
-      .subscribe((action: string) => this.handleBlockOptionAction(action));
+      .subscribe((action: string) => {
+        this.ngxEdotorjsService.updateBlockOptionActionSubject.next({ blockId: this.blockId, action });
+        this.handleBlockOptionAction(action);
+      });
 
       this.ngxEdotorjsService.toolbarComponentDetach$
       .pipe(take(1))

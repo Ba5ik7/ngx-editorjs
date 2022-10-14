@@ -24,6 +24,9 @@ export class NgxEditorjsService {
 
   addNewBlockSubject = new Subject<CreateBlockAction>();
   addNewBlock$: Observable<CreateBlockAction> = this.addNewBlockSubject.asObservable();
+
+  updateBlockOptionActionSubject = new Subject<UpdateBlockOptionAction>();
+  updateBlockOptionAction$: Observable<UpdateBlockOptionAction> = this.updateBlockOptionActionSubject.asObservable();
   
 }
 
@@ -85,4 +88,9 @@ export interface BlockOptionAction {
   action: string;
   icon?: string;
   text?: string;
+}
+
+export interface UpdateBlockOptionAction {
+  blockId: string;
+  action: string;
 }
