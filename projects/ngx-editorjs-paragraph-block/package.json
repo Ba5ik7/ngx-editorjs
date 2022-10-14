@@ -1,16 +1,16 @@
 {
-  "name": "@tmdjr/ngx-editorjs-paragraph-block",
-  "version": "0.0.17",
-  "peerDependencies": {
-    "@angular/common": "~14.2.0",
-    "@angular/core": "~14.2.0"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
-  "exports": {
-    "./esm2020": {
-      "default": "./esm2020"
-    }
-  }
+   "name": "@tmdjr/ngx-editorjs-paragraph-block",
+   "version": "0.0.18",
+   "peerDependencies": {
+      "@angular/common": "~14.2.0",
+      "@angular/core": "~14.2.0"
+   },
+   "dependencies": {
+      "tslib": "^2.3.0"
+   },
+   "exports": {
+      "./esm2020": {
+         "default": "./esm2020"
+      }
+   }
 }
