@@ -107,6 +107,23 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
     this.onChange(this.viewChild.nativeElement.innerHTML);
   }
 
+  @HostListener('mouseup', ['$event.target'])
+  onMouseUp(event?: Event) {
+    // Get selection range replace with bold text
+    const selection = window.getSelection();
+    const range = selection?.getRangeAt(0);
+    const boldText = document.createElement('b');
+    boldText.innerHTML = range?.toString() ?? '';
+    range?.deleteContents();
+    range?.insertNode(boldText);
+    
+    const test = window.getSelection()
+    console.log(
+      { test: test?.toString() },
+    );
+    
+  }
+
   @HostListener('mouseenter', ['$event.target'])
   onMouseEnter(event?: Event) {    
     if(!this.basePortalOutlet.hasAttached()) {
