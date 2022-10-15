@@ -17,6 +17,8 @@ import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { Subject, take, takeUntil } from 'rxjs';
 import { BlockOptionAction, NgxEditorjsService } from '../../../ngx-editorjs.service';
 import { ToolbarBlockComponent } from '../toolbar-block/toolbar-block.component';
+import { InlineToolbarBlockComponent } from '../inline-toolbar-block/inline-toolbar-block.component';
+import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 
 @Component({ template: '' })
 export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestroy {
@@ -47,6 +49,7 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
   viewChild!: ElementRef;
 
   toolbarBlockPortal!: ComponentPortal<ToolbarBlockComponent>;
+  overlayRef!: OverlayRef;
 
   constructor(
     @Self() public controlDir: NgControl,
@@ -54,7 +57,8 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
     private injector: Injector,
     private viewContainerRef: ViewContainerRef,
     private componentFactoryResolver: ComponentFactoryResolver,
-    private ngxEdotorjsService: NgxEditorjsService
+    private ngxEdotorjsService: NgxEditorjsService,
+    private overlay: Overlay
   ) {
     this.controlDir.valueAccessor = this;
   }
@@ -109,19 +113,44 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
 
   @HostListener('mouseup', ['$event.target'])
   onMouseUp(event?: Event) {
-    // Get selection range replace with bold text
     const selection = window.getSelection();
-    const range = selection?.getRangeAt(0);
-    const boldText = document.createElement('b');
-    boldText.innerHTML = range?.toString() ?? '';
-    range?.deleteContents();
-    range?.insertNode(boldText);
-    
-    const test = window.getSelection()
-    console.log(
-      { test: test?.toString() },
-    );
-    
+    if(selection && selection.toString() !== '') {
+      const range = selection.getRangeAt(0);
+      const selectionRect = range.getBoundingClientRect();
+      // console.log({
+      //   event,
+      //   selection,
+      //   selectionText: selection?.toString(),
+      //   range,
+      //   selectionRect
+      // });
+  
+      this.overlayRef = this.overlay.create({
+        hasBackdrop: true,
+        backdropClass: 'cdk-overlay-transparent-backdrop',
+        positionStrategy: this.overlay.position()
+          .flexibleConnectedTo(selectionRect!)
+          .withPositions([{
+            offsetY: 8,
+            originX: 'start',
+            originY: 'bottom',
+            overlayX: 'start',
+            overlayY: 'top',
+          }])
+      });
+      this.overlayRef.attach(new ComponentPortal(InlineToolbarBlockComponent));
+      this.overlayRef.backdropClick()
+      .pipe(takeUntil(this.destory))
+      .subscribe(() => this.overlayRef.dispose());
+      
+      // Get selection range replace with bold text
+      // const boldText = document.createElement('b');
+      // boldText.innerHTML = range?.toString() ?? '';
+      // range?.deleteContents();
+      // range?.insertNode(boldText);
+      // console.log({ test: selection?.toString() });
+    }
+
   }
 
   @HostListener('mouseenter', ['$event.target'])
@@ -131,6 +160,7 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
 
       this.toolbarBlockPortal = new ComponentPortal(ToolbarBlockComponent);
       const toolbarComponent = this.basePortalOutlet.attach(this.toolbarBlockPortal);
+      
       toolbarComponent.instance.blockId = this.blockId;
       toolbarComponent.instance.blockOptionActions = this.blockOptionActions;
 
@@ -149,6 +179,7 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
 
   detachToolbarComponent() {
     this.basePortalOutlet.detach();
+    // this.viewContainerRef.remove(0);
   }
 
   @HostListener('paste', ['$event'])
