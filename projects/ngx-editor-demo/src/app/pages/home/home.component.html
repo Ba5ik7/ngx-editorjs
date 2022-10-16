@@ -5,14 +5,14 @@
       <h2>A Custom Themeable Angular Material Component</h2>
     </div>
     <div class="header-start">
-      <a mat-raised-button>Get started</a>
+      <a mat-raised-button (click)="getValue()" >Log Blocks</a>
     </div>
   </div>
 </header>
 <main class="home-main">
   
   <mat-card>
-    <h2>Editor Js: <button mat-button (click)="getValue()">Get Value</button></h2>
+    <!-- <h2>Editor Js: <button mat-button (click)="getValue()">Get Value</button></h2> -->
     <!-- <mat-divider></mat-divider> -->
     <!-- <ngx-editorjs [config]="config" [data]="data" (ready)="onReady($event)" (change)="onChange($event)"></ngx-editorjs> -->
     <ngx-editorjs

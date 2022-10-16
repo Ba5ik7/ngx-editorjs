@@ -104,21 +104,22 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
     this.destroy.next();
   }
 
-  loadNgxEditorjsBlock({ blockId, component, value, componentSortIndex, savedAction }: CreateBlockAction): void {
-    try {
-      if(componentSortIndex !== this.ngxEditor.length) console.warn('Component sort index is not equal to ngxEditor length');
-      this.formGroup.addControl(blockId!, this.formBuilder.control(value, []));
-      const componentRef = this.ngxEditor.createComponent(component!, { index: this.ngxEditor.length });
-      const blockMediator = componentRef.instance as BlockMediatorComponent;
-      blockMediator.blockId = blockId!;
-      blockMediator.form = this.formGroup;
-      blockMediator.formControlName = blockId!;      
-      blockMediator.savedAction = savedAction;
-  
-      this.blockControlMap.set(blockId!, { sortIndex: this.ngxEditor.length, componentRef: componentRef, dataClean: value!, savedAction });
-    } catch (error) {
-      console.warn({ error, blockId, component, value, componentSortIndex });
-    }
+  loadNgxEditorjsBlock({ blockId, component, value, savedAction }: CreateBlockAction): void {
+    this.formGroup.addControl(blockId!, this.formBuilder.control(value, []));
+
+    const componentRef = this.ngxEditor.createComponent(component!, { index: this.ngxEditor.length });
+    const blockMediator = componentRef.instance as BlockMediatorComponent;
+    blockMediator.blockId = blockId!;
+    blockMediator.form = this.formGroup;
+    blockMediator.formControlName = blockId!;      
+    blockMediator.savedAction = savedAction;
+
+    this.blockControlMap.set(blockId!, {
+      sortIndex: this.ngxEditor.length - 1,
+      componentRef: componentRef,
+      dataClean: value!,
+      savedAction
+    });
   };
 
   createNgxEditorjsBlock({ blockId, component }: CreateBlockAction): void {

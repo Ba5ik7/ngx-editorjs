@@ -14,7 +14,10 @@ import { BaseBlockComponent } from '../base-block/base-block.component';
         <h1 *ngSwitchDefault class="flex-spacer" #header contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h1>
     </ng-container>
   `,
-  styles: [`:host { display: flex; flex-direction: column; }`]
+  styles: [`
+    :host { display: flex; flex-direction: column; }
+
+  `]
 })
 export class NgxEditorjsHeaderBlockComponent extends BaseBlockComponent implements OnInit, AfterViewInit {
 
