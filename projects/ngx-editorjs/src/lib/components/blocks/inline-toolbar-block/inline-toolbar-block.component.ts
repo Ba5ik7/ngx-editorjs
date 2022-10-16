@@ -21,11 +21,12 @@ export class InlineToolbarBlockComponent implements OnInit {
     this.closeInlineToobarOverlayEmitter.emit();
   }
 
-  addInlineTag(tag: string) {
+  addInlineTag(tag: string, className?: string | null) {
     // console.log({ selection: this.selection });
     // Get selection range replace with bold text
     const range = this.selection.getRangeAt(0);
     const boldText = document.createElement(tag);
+    boldText.className = className ?? '';
     boldText.innerHTML = range.toString();
     range.deleteContents();
     range.insertNode(boldText);
