@@ -10,11 +10,10 @@ import {
   ViewContainerRef,
   ComponentFactoryResolver,
   Input,
-  ViewRef,
   OnDestroy
 } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
-import { Subject, take, takeUntil } from 'rxjs';
+import { merge, Subject, take, takeUntil } from 'rxjs';
 import { BlockOptionAction, NgxEditorjsService } from '../../../ngx-editorjs.service';
 import { ToolbarBlockComponent } from '../toolbar-block/toolbar-block.component';
 import { InlineToolbarBlockComponent } from '../inline-toolbar-block/inline-toolbar-block.component';
@@ -112,49 +111,23 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
   }
 
   @HostListener('mouseup', ['$event.target'])
-  onMouseUp(event?: Event) {
-    const selection = window.getSelection();
-    if(selection && selection.toString() !== '') {
-      const range = selection.getRangeAt(0);
-      const selectionRect = range.getBoundingClientRect();
-      // console.log({
-      //   event,
-      //   selection,
-      //   selectionText: selection?.toString(),
-      //   range,
-      //   selectionRect
-      // });
-  
-      this.overlayRef = this.overlay.create({
-        hasBackdrop: true,
-        backdropClass: 'cdk-overlay-transparent-backdrop',
-        positionStrategy: this.overlay.position()
-          .flexibleConnectedTo(selectionRect!)
-          .withPositions([{
-            offsetY: 8,
-            originX: 'start',
-            originY: 'bottom',
-            overlayX: 'start',
-            overlayY: 'top',
-          }])
-      });
-      this.overlayRef.attach(new ComponentPortal(InlineToolbarBlockComponent));
-      this.overlayRef.backdropClick()
-      .pipe(takeUntil(this.destory))
-      .subscribe(() => this.overlayRef.dispose());
-      
-      // Get selection range replace with bold text
-      // const boldText = document.createElement('b');
-      // boldText.innerHTML = range?.toString() ?? '';
-      // range?.deleteContents();
-      // range?.insertNode(boldText);
-      // console.log({ test: selection?.toString() });
-    }
-
+  onMouseUp(event: Event) {
+    this.checkToDisplayInlineToolbarBlock();
   }
 
   @HostListener('mouseenter', ['$event.target'])
-  onMouseEnter(event?: Event) {    
+  onMouseEnter(event: Event) {    
+    this.removeAndAddToolbarBlock();
+  }
+
+  @HostListener('paste', ['$event'])
+  onPaste(event: Event) {
+    event.preventDefault();
+    const text = (event as ClipboardEvent).clipboardData!.getData('text/plain');
+    document.execCommand('insertHTML', false, text);
+  }
+
+  removeAndAddToolbarBlock() {
     if(!this.basePortalOutlet.hasAttached()) {
       this.ngxEdotorjsService.toolbarComponentDetachSubject.next(true);
 
@@ -177,17 +150,46 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
     }
   }
 
+  // Override this method in child component
+  handleBlockOptionAction(action: string) { }
+
   detachToolbarComponent() {
     this.basePortalOutlet.detach();
     // this.viewContainerRef.remove(0);
   }
 
-  @HostListener('paste', ['$event'])
-  onPaste(event?: Event) {
-    event?.preventDefault();
-    const text = (event as ClipboardEvent).clipboardData?.getData('text/plain');
-    document.execCommand('insertHTML', false, text);
-  }
+  checkToDisplayInlineToolbarBlock() {
+    const selection = window.getSelection();
+    if(selection && selection.toString() !== '') {
+      const range = selection.getRangeAt(0);
+      const selectionRect = range.getBoundingClientRect();
+      // console.log({
+      //   event,
+      //   selection,
+      //   selectionText: selection?.toString(),
+      //   range,
+      //   selectionRect
+      // });
 
-  handleBlockOptionAction(action: string) { }
+      this.overlayRef = this.overlay.create({
+        hasBackdrop: true,
+        backdropClass: 'cdk-overlay-transparent-backdrop',
+        positionStrategy: this.overlay.position()
+          .flexibleConnectedTo(selectionRect!)
+          .withPositions([{
+            offsetY: 8,
+            originX: 'start',
+            originY: 'bottom',
+            overlayX: 'start',
+            overlayY: 'top',
+          }])
+      });
+      const inlineToolbar = this.overlayRef.attach(new ComponentPortal(InlineToolbarBlockComponent));
+      inlineToolbar.instance.selection = selection;
+
+      merge(this.overlayRef.backdropClick(), inlineToolbar.instance.closeInlineToobarOverlayEmitter)
+      .pipe(take(1))
+      .subscribe(() => this.overlayRef.dispose());
+    }
+  }
 }
