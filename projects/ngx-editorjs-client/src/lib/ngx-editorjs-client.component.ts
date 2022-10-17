@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-ngx-editorjs-client',
-  template: `
-    <p>
-      ngx-editorjs-client works!
-    </p>
-  `,
+  selector: 'ngx-editorjs-client',
+  template: ``,
   styles: [
   ]
 })

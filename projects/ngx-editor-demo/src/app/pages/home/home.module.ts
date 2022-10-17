@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { NgxEditorjsModule } from '@tmdjr/ngx-editorjs';
+import { NgxEditorjsClientModule } from '@tmdjr/ngx-editorjs-client';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { NgxEditorjsModule } from '@tmdjr/ngx-editorjs';
     MatCardModule,
     MatDividerModule,
     NgxEditorjsModule,
+    NgxEditorjsClientModule,
   ]
 })
 export class HomeModule { }

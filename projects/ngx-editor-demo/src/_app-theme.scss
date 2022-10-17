@@ -6,6 +6,8 @@
 @use './app/pages/home/home-theme';
 @use './app/components/navbar/navbar-theme';
 
+@use '@tmdjr/ngx-editorjs-client' as ngx-editorjs-client;
+
 @use '@tmdjr/ngx-editorjs' as ngx-editorjs;
 @use '@tmdjr/ngx-editorjs-blockquotes-block' as ngx-editorjs-blockquotes-block;
 
@@ -40,6 +42,7 @@
 
   @include home-theme.theme($theme);
   @include navbar-theme.theme($theme);
+  
   @include ngx-editorjs.theme($theme);
   @include ngx-editorjs-blockquotes-block.theme($theme);
 }
