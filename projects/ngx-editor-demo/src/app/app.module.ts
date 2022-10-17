@@ -12,10 +12,9 @@ import { NavbarModule } from './components/navbar/navbar.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { NGX_EDITORJS_OPTIONS } from '@tmdjr/ngx-editorjs';
-import { NgxEditorjsParagraphBlockMediator } from '@tmdjr/ngx-editorjs-paragraph-block';
+import { NgxEditorjsParagraphBlockMediator, NgxEditorjsParagraphClientBlockComponent } from '@tmdjr/ngx-editorjs-paragraph-block';
 import { NgxEditorjsBlockquotesBlockMediator } from '@tmdjr/ngx-editorjs-blockquotes-block';
 import { NGX_EDITORJS_CLIENT_OPTIONS } from '@tmdjr/ngx-editorjs-client';
-
 @NgModule({
   declarations: [
     AppComponent
@@ -53,7 +52,7 @@ import { NGX_EDITORJS_CLIENT_OPTIONS } from '@tmdjr/ngx-editorjs-client';
         blocks: [
           {
             name: 'Paragraph',
-            component: NgxEditorjsParagraphBlockMediator,
+            component: NgxEditorjsParagraphClientBlockComponent,
             componentInstanceName: 'NgxEditorjsParagraphBlockMediator'
           },
           {
