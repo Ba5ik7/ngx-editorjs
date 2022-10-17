@@ -2,33 +2,87 @@
   <div class="block-option-list-panel">
     <div class="block-option-list-item"
       matRipple
-      (click)="addInlineTag('b')">
+      (click)="addInlineTag('bold')">
       <mat-icon>format_bold</mat-icon>
     </div>
     <div class="block-option-list-item"
       matRipple
-      (click)="addInlineTag('i')">
+      (click)="addInlineTag('italic')">
       <mat-icon>format_italic</mat-icon>
     </div>
     <div class="block-option-list-item"
       matRipple
-      (click)="addInlineTag('s')">
-      <mat-icon>strikethrough_s</mat-icon>
+      (click)="addInlineTag('underlined')">
+      <mat-icon>format_underlined</mat-icon>
     </div>
     <div class="block-option-list-item"
       matRipple
-      (click)="addInlineTag('code', 'inline-code-example')">
+      (click)="addInlineTag('strikethrough')">
+      <mat-icon>strikethrough_s</mat-icon>
+    </div>
+    <!-- <div class="block-option-list-item"
+      matRipple
+      (click)="addInlineTag('hiliteColor', 'red')">
+      <mat-icon>highlight</mat-icon>
+    </div> -->
+    <div class="block-option-list-item"
+      matRipple
+      (click)="addCustomInlineTag('code', 'inline-code-example')">
       <mat-icon>code</mat-icon>
     </div>
     <div class="block-option-list-item"
       matRipple
-      (click)="closeInlineToobarOverlay()">
+      (click)="openUrlInput()">
       <mat-icon>insert_link</mat-icon>
     </div>
     <div class="block-option-list-item"
       matRipple
-      (click)="closeInlineToobarOverlay()">
+      (click)="clearTags()">
       <mat-icon>format_clear</mat-icon>
+    </div>
+
+    <div class="block-option-list-item"
+      matRipple
+      (click)="addInlineTag('justifyLeft')">
+      <mat-icon>format_align_left</mat-icon>
+    </div>
+    <div class="block-option-list-item"
+      matRipple
+      (click)="addInlineTag('justifyCenter')">
+      <mat-icon>format_align_center</mat-icon>
+    </div>
+    <div class="block-option-list-item"
+      matRipple
+      (click)="addInlineTag('justifyRight')">
+      <mat-icon>format_align_right</mat-icon>
+    </div>
+    <div class="block-option-list-item"
+      matRipple
+      (click)="addInlineTag('justifyFull')">
+      <mat-icon>format_align_justify</mat-icon>
+    </div>
+    <div class="block-option-list-item"
+      matRipple
+      (click)="addInlineTag('insertUnorderedList')">
+      <mat-icon>format_list_bulleted</mat-icon>
+    </div>
+    <div class="block-option-list-item"
+      matRipple
+      (click)="addInlineTag('insertOrderedList')">
+      <mat-icon>format_list_numbered</mat-icon>
+    </div>
+    <div class="block-option-list-item"
+      matRipple
+      (click)="addInlineTag('hiliteColor', 'yellow')">
+      <mat-icon>highlight</mat-icon>
+    </div>
+  </div>
+  <div *ngIf="showURLInputField" class="block-option-list-panel">
+    <input type="text" placeholder="Enter URL" class="block-option-input" [(ngModel)]="url" />
+    <div class="block-option-list-item"
+      matRipple
+      (click)="createLink()">
+      <mat-icon>add</mat-icon>
     </div>
   </div>
 </div>

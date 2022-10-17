@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'inline-toolbar-block',
@@ -12,7 +12,11 @@ export class InlineToolbarBlockComponent implements OnInit {
 
   @Output('closeInlineToobarOverlay') closeInlineToobarOverlayEmitter = new EventEmitter();
 
-  constructor() { }
+  url: string = '';
+  showURLInputField: boolean = false;
+  savedRanges: Range[] = [];
+
+  constructor(private readonly renderer: Renderer2) { }
 
   ngOnInit(): void {
   }
@@ -21,16 +25,37 @@ export class InlineToolbarBlockComponent implements OnInit {
     this.closeInlineToobarOverlayEmitter.emit();
   }
 
-  addInlineTag(tag: string, className?: string | null) {
-    // console.log({ selection: this.selection });
-    // Get selection range replace with bold text
+  addInlineTag(tag: string, optionValue?: string | null) {
+    // https://stackoverflow.com/questions/60581285/execcommand-is-now-obsolete-whats-the-alternative
+    document.execCommand(tag, true, optionValue!);
+    this.closeInlineToobarOverlay();
+  }
+
+  addCustomInlineTag(tag: string, className?: string | null) {
     const range = this.selection.getRangeAt(0);
-    const boldText = document.createElement(tag);
-    boldText.className = className ?? '';
-    boldText.innerHTML = range.toString();
+    const element = this.renderer.createElement(tag);
+    element.className = className ?? '';
+    element.innerHTML = range.toString();
     range.deleteContents();
-    range.insertNode(boldText);
-    // console.log({ test: this.selection?.toString() });
+    range.insertNode(element);
+    this.closeInlineToobarOverlay();
+  }
+
+  clearTags() {
+      document.execCommand('removeFormat');
+      document.execCommand('unlink');
+      this.closeInlineToobarOverlay();
+    }
+
+  openUrlInput() {
+    this.savedRanges.push(this.selection.getRangeAt(0));
+    this.showURLInputField = true;
+  }
+
+  createLink() {
+    this.selection.removeAllRanges();
+    this.selection.addRange(this.savedRanges.pop()!);
+    document.execCommand('createLink', false, this.url);
     this.closeInlineToobarOverlay();
   }
 }

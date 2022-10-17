@@ -4,6 +4,7 @@
 
 .block-option-list-panel {
   display: flex;
+  width: 230px;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1px;
@@ -20,6 +21,25 @@
   align-items: center;
   justify-content: center;
   border-radius: 4px;
+}
+
+.block-option-input {
+  // 165
+  width: 197px;
+  height: 32px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0 0 0 5px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .block-option-list-item-text {

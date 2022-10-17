@@ -112,7 +112,7 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
 
   @HostListener('mouseup', ['$event.target'])
   onMouseUp(event: Event) {
-    this.checkToDisplayInlineToolbarBlock();
+    requestAnimationFrame(() => this.checkToDisplayInlineToolbarBlock());
   }
 
   @HostListener('mouseenter', ['$event.target'])

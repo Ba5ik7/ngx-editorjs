@@ -8,10 +8,18 @@
   $foreground: map.get($theme, foreground);
   $is-dark-theme: map.get($theme, is-dark);
 
+  a {
+    color: mat.get-color-from-palette($primary, if($is-dark-theme, 400, 500));
+  }
+
   .inline-code-example {
     font-weight: 400;
-    background-color: mat.get-color-from-palette($primary, if($is-dark-theme, 900, 100));
+    background-color: mat.get-color-from-palette($primary, if($is-dark-theme, 200, 100));
     padding: 4px;
     border-radius: 4px;
+
+    a {
+      color: mat.get-color-from-palette($primary, 900);
+    }
   }
 }
