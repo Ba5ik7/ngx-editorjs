@@ -5,9 +5,10 @@
     "ng": "ng",
     "start": "ng serve ngx-editor-demo",
     "build": "ng build ngx-editor-demo --configuration development",
-    "watch": "ng build ngx-editorjs --watch --configuration development",
-    "watch2": "ng build ngx-editorjs-paragraph-block --watch --configuration development",
-    "watch3": "ng build ngx-editorjs-blockquotes-block --watch --configuration development",
+    "watch1": "ng build ngx-editorjs --watch --configuration development",
+    "watch2": "ng build ngx-editorjs-client --watch --configuration development",
+    "watch3": "ng build ngx-editorjs-paragraph-block --watch --configuration development",
+    "watch4": "ng build ngx-editorjs-blockquotes-block --watch --configuration development",
     "test": "ng test",
     "link": "npm link @tmdjr/ngx-editorjs @tmdjr/ngx-editorjs-paragraph-block @tmdjr/ngx-editorjs-blockquotes-block"
   },

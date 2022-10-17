@@ -18,6 +18,9 @@
       "ngx-editorjs-blockquotes-block": [
         "dist/ngx-editorjs-blockquotes-block"
       ],
+      "ngx-editorjs-client": [
+        "dist/ngx-editorjs-client"
+      ],
       "ngx-editorjs-paragraph-block": [
         "dist/ngx-editorjs-paragraph-block"
       ]
