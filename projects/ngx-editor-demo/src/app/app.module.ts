@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NGX_EDITORJS_OPTIONS } from '@tmdjr/ngx-editorjs';
 import { NgxEditorjsParagraphBlockMediator } from '@tmdjr/ngx-editorjs-paragraph-block';
 import { NgxEditorjsBlockquotesBlockMediator } from '@tmdjr/ngx-editorjs-blockquotes-block';
+import { NGX_EDITORJS_CLIENT_OPTIONS } from '@tmdjr/ngx-editorjs-client';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,24 @@ import { NgxEditorjsBlockquotesBlockMediator } from '@tmdjr/ngx-editorjs-blockqu
           }
         ]
       }
-    }
+    },
+    {
+      provide: NGX_EDITORJS_CLIENT_OPTIONS,
+      useValue: {
+        blocks: [
+          {
+            name: 'Paragraph',
+            component: NgxEditorjsParagraphBlockMediator,
+            componentInstanceName: 'NgxEditorjsParagraphBlockMediator'
+          },
+          {
+            name: 'Blockquotes',
+            component: NgxEditorjsBlockquotesBlockMediator,
+            componentInstanceName: 'NgxEditorjsBlockquotesBlockMediator'
+          }
+        ]
+      }
+    },
   ],
   bootstrap: [AppComponent]
 })
