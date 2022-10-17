@@ -1,6 +1,6 @@
 {
    "name": "@tmdjr/ngx-editorjs-paragraph-block",
-   "version": "0.0.18",
+   "version": "0.0.19",
    "peerDependencies": {
       "@angular/common": "~14.2.0",
       "@angular/core": "~14.2.0"
