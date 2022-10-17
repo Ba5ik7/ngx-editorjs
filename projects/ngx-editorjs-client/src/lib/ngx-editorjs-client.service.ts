@@ -42,3 +42,15 @@ export interface CreateBlockAction {
   componentSortIndex?: number;
   savedAction?: string;
 }
+
+export declare interface BaseClientBlock {
+  value: string;
+  savedAction: string;
+}
+
+export interface SearchableBlock {
+  name: string;
+  component: Type<unknown> | null;
+  componentInstanceName?: string;
+  type?: string;
+}

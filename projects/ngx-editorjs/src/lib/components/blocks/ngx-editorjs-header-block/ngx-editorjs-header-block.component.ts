@@ -16,7 +16,6 @@ import { BaseBlockComponent } from '../base-block/base-block.component';
   `,
   styles: [`
     :host { display: flex; flex-direction: column; }
-
   `]
 })
 export class NgxEditorjsHeaderBlockComponent extends BaseBlockComponent implements OnInit, AfterViewInit {

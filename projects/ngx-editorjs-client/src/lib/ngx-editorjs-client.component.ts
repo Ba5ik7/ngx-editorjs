@@ -1,9 +1,17 @@
 import { Component, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { CreateBlockAction, NgxEditorjsClientService, NgxEditorjsOutputBlock } from './ngx-editorjs-client.service';
+import { NgxEditorjsHeaderClientBlockComponent } from './components/ngx-editorjs-header-client-block/ngx-editorjs-header-client-block.component';
+import { BaseClientBlock, CreateBlockAction, NgxEditorjsClientService, NgxEditorjsOutputBlock, SearchableBlock } from './ngx-editorjs-client.service';
+
+
+export const HeaderSearchableBlock: SearchableBlock = {
+  name: 'Header',
+  component: NgxEditorjsHeaderClientBlockComponent,
+  componentInstanceName: 'ngxEditorjsHeaderBlockMediator',
+};
 
 @Component({
   selector: 'ngx-editorjs-client',
-  template: `Hello World!`,
+  template: `<ng-container #ngxEditorClient></ng-container>`,
   styles: [
   ]
 })
@@ -19,6 +27,7 @@ export class NgxEditorjsClientComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.ngxEditorjsClientService.blocks.unshift(HeaderSearchableBlock);
   }
 
   clearSortCreateNgxEditorjsBlocks(blocks: NgxEditorjsOutputBlock[]): void {
@@ -44,9 +53,9 @@ export class NgxEditorjsClientComponent implements OnInit {
 
   loadNgxEditorjsBlock({ component, value, savedAction }: CreateBlockAction): void {
     const componentRef = this.ngxEditorClient.createComponent(component!, { index: this.ngxEditorClient.length });
-    const blockMediator = componentRef.instance as any
+    const blockMediator = componentRef.instance as BaseClientBlock;
     blockMediator.value = value!;
-    blockMediator.savedAction = savedAction;
+    blockMediator.savedAction = savedAction!;
   };
 
 }
