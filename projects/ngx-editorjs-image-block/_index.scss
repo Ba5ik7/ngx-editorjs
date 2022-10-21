@@ -1,0 +1,5 @@
+@use 'src/lib/ngx-editorjs-image-block.theme' as ngx-editorjs-blockquotes-block;
+
+@mixin theme($theme) {
+  @include ngx-editorjs-image-block.theme($theme);
+}

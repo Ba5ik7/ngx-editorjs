@@ -5,12 +5,10 @@ import { NgxEditorjsImageBlockComponent } from './ngx-editorjs-image-block.compo
 
 @NgModule({
   declarations: [
-    NgxEditorjsImageBlockComponent
   ],
   imports: [
   ],
   exports: [
-    NgxEditorjsImageBlockComponent
   ]
 })
 export class NgxEditorjsImageBlockModule { }
