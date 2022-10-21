@@ -6,12 +6,11 @@ import { AutofocusDirective, BaseBlockComponent } from '@tmdjr/ngx-editorjs';
   standalone: true,
   selector: 'ngx-editorjs-image-block',
   template: `
-    <h1 class="flex-spacer" [autofocus]="true" [innerHTML]="value"></h1>
-    <img #image [src]="value" [autofocus]="true" />
+    <h1 #image class="flex-spacer" contenteditable [autofocus]="true" [innerHTML]="value"></h1>
+    <img [src]="_value" />
   `,
   styles: [`
   :host { display: flex; flex-direction: column; }
-
 `],
 imports: [
   CommonModule,
@@ -32,5 +31,11 @@ export class NgxEditorjsImageBlockComponent extends BaseBlockComponent implement
 
   override onMouseEnter(event: Event) {
     super.onMouseEnter(event);
+  }
+
+  _value!: string;
+  override valueChange(value: string) {
+    this._value = value;   
+    super.valueChange(value);
   }
 }

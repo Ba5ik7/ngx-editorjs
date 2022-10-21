@@ -85,6 +85,12 @@ export const InputData: NgxEditorjsOutputBlock[] = [
         "sortIndex": 12,
         "name": "NgxEditorjsParagraphBlockMediator",
         "dataClean": "The following component implements an input field for a single control, using reactive forms. In this example, the form model is the <code _ngcontent-jwe-c114=\"\" class=\"inline-code-example\"><a href=\"https://angular.io/api/forms/FormControl\">FormControl</a></code> instance."
+    },
+    {
+        "blockId": "mn11fvg3yup",
+        "sortIndex": 2,
+        "name": "NgxEditorjsImageBlockMediator",
+        "dataClean": "https://dummyimage.com/640x360/fff/aaa"
     }
   ];
 @Component({

@@ -15,7 +15,7 @@ import { NgxEditorjsImageBlockComponent } from './ngx-editorjs-image-block.compo
     NgxEditorjsImageBlockComponent
   ],
 })
-export class NgxEditorjsBlockquotesBlockMediator {
+export class NgxEditorjsImageBlockMediator {
   @Input() blockId!: string;
   @Input() form!: FormGroup;
   @Input() formControlName!: string;
