@@ -19,8 +19,8 @@
       *ngFor="let blockOptionAction of blockOptionActions"
       (click)="handleBlockOptionAction(blockOptionAction.action)"
       matRipple>
-      <!-- <mat-icon>title</mat-icon> -->
-      <span class="block-option-list-item-text">{{blockOptionAction.text}}</span>
+      <mat-icon *ngIf="blockOptionAction.icon">{{blockOptionAction.icon}}</mat-icon>
+      <span *ngIf="blockOptionAction.text" class="block-option-list-item-text">{{blockOptionAction.text}}</span>
     </div>
   </div>
 </div>

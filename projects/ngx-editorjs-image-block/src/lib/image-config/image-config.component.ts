@@ -42,7 +42,6 @@ import { Subject, takeUntil } from 'rxjs';
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 20px;
-    margin-bottom: 22px;
    }
 
    :host form {

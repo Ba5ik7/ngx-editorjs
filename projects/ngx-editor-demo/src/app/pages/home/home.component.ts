@@ -27,7 +27,8 @@ export const InputData: NgxEditorjsOutputBlock[] = [
         "blockId": "mn11fvg3yup",
         "sortIndex": 3,
         "name": "NgxEditorjsImageBlockMediator",
-        "dataClean": '{"url":"https://dummyimage.com/640x360/FFF/000","title":"Dummy Image"}'
+        "dataClean": "{\"url\":\"https://dummyimage.com/640x360/CCC/FFF\",\"title\":\"Dummy Image\"}",
+        "savedAction": "stretch"
     },
     {
         "blockId": "iovlbzgosf",
@@ -91,6 +92,13 @@ export const InputData: NgxEditorjsOutputBlock[] = [
         "sortIndex": 13,
         "name": "NgxEditorjsParagraphBlockMediator",
         "dataClean": "The following component implements an input field for a single control, using reactive forms. In this example, the form model is the <code _ngcontent-jwe-c114=\"\" class=\"inline-code-example\"><a href=\"https://angular.io/api/forms/FormControl\">FormControl</a></code> instance."
+    },
+    {
+        "blockId": "7lj3xcgtnnw",
+        "sortIndex": 14,
+        "name": "NgxEditorjsImageBlockMediator",
+        "dataClean": "{\"url\":\"https://picsum.photos/id/640/360/300\",\"title\":\"test\"}",
+        "savedAction": "flex-end"
     }
 ];
 @Component({

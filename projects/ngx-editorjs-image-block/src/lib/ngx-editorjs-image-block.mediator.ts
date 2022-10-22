@@ -7,7 +7,7 @@ import { NgxEditorjsImageBlockComponent } from './ngx-editorjs-image-block.compo
   selector: 'ngx-editorjs-image-blockquotes-block',
   template: `
     <div [formGroup]="form">
-      <ngx-editorjs-image-block [blockId]="blockId" [formControlName]="formControlName"></ngx-editorjs-image-block>
+      <ngx-editorjs-image-block [blockId]="blockId" [formControlName]="formControlName" [savedAction]="savedAction"></ngx-editorjs-image-block>
     </div>
   `,
   imports: [
@@ -19,4 +19,5 @@ export class NgxEditorjsImageBlockMediator {
   @Input() blockId!: string;
   @Input() form!: FormGroup;
   @Input() formControlName!: string;
+  @Input() savedAction!: string;
 }
