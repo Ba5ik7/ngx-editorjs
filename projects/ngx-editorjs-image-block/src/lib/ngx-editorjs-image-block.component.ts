@@ -63,6 +63,7 @@ import { ImageConfigComponent } from './image-config/image-config.component';
 
     ::ng-deep .image-block-button .mat-button-wrapper .mat-icon {
         font-size: 1.6rem;
+        vertical-align: baseline;
     }
   `]
 })
