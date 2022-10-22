@@ -123,6 +123,7 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
   };
 
   createNgxEditorjsBlock({ blockId, component }: CreateBlockAction): void {
+    if(!component || !blockId) return;
     const block = component ?? NgxEditorjsHeaderBlockMediator;
     const controlName = Math.random().toString(36).slice(2);
     
@@ -137,7 +138,15 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
     blockMediator.blockId = controlName;
     blockMediator.form = this.formGroup;
     blockMediator.formControlName = controlName;
-    
+
+
+    console.log({
+      component,
+      sortIndex,
+      find: this.ngxEditor.indexOf(viewRef!),
+    });
+
+    this.blockControlMap.forEach((block) => { if(block.sortIndex >= sortIndex) block.sortIndex++ });
     this.blockControlMap.set(controlName, { sortIndex, componentRef: componentRef, dataClean: '' });
   }
 
