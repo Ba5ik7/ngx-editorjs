@@ -4,7 +4,7 @@ import { NgxEditorjsImageBlockComponent } from './ngx-editorjs-image-block.compo
 
 @Component({
   standalone: true,
-  selector: 'ngx-editorjs-meditator-blockquotes-block',
+  selector: 'ngx-editorjs-image-blockquotes-block',
   template: `
     <div [formGroup]="form">
       <ngx-editorjs-image-block [blockId]="blockId" [formControlName]="formControlName"></ngx-editorjs-image-block>

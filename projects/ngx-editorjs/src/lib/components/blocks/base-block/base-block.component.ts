@@ -21,6 +21,18 @@ import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 
 @Component({ template: '' })
 export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestroy {
+  constructor(
+    @Self() public controlDir: NgControl,
+    private appRef: ApplicationRef,
+    private injector: Injector,
+    private viewContainerRef: ViewContainerRef,
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private ngxEdotorjsService: NgxEditorjsService,
+    private overlay: Overlay
+  ) {
+    this.controlDir.valueAccessor = this;
+  }
+
   destory: Subject<boolean> = new Subject();
 
   @Input() blockId!: string;
@@ -50,17 +62,8 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
   toolbarBlockPortal!: ComponentPortal<ToolbarBlockComponent>;
   overlayRef!: OverlayRef;
 
-  constructor(
-    @Self() public controlDir: NgControl,
-    private appRef: ApplicationRef,
-    private injector: Injector,
-    private viewContainerRef: ViewContainerRef,
-    private componentFactoryResolver: ComponentFactoryResolver,
-    private ngxEdotorjsService: NgxEditorjsService,
-    private overlay: Overlay
-  ) {
-    this.controlDir.valueAccessor = this;
-  }
+  useInlineToolbar: boolean = true;
+  useInputType: boolean = true;
 
   ngOnInit() {
     this.controlDir.valueChanges?.subscribe((val) => this.valueChange(val));    
@@ -105,9 +108,14 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
 
   onChange: (value: string) => void = () => {};
 
+  changeValue(value: string) {
+    this.value = value;
+    this.onChange(value);
+  }
+
   @HostListener('input')
   onInput() {
-    this.onChange(this.viewChild.nativeElement.innerHTML);
+    this.useInputType && this.onChange(this.viewChild.nativeElement.innerHTML);
   }
 
   @HostListener('mouseup', ['$event.target'])
@@ -160,7 +168,7 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
 
   checkToDisplayInlineToolbarBlock() {
     const selection = window.getSelection();
-    if(selection && selection.toString() !== '') {
+    if(this.useInlineToolbar && selection && selection.toString() !== '') {
       const range = selection.getRangeAt(0);
       const selectionRect = range.getBoundingClientRect();
       // console.log({
