@@ -315,6 +315,37 @@
           }
         }
       }
+    },
+    "ngx-editorjs-code-block": {
+      "projectType": "library",
+      "root": "projects/ngx-editorjs-code-block",
+      "sourceRoot": "projects/ngx-editorjs-code-block/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-editorjs-code-block/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-editorjs-code-block/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-editorjs-code-block/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-editorjs-code-block/src/test.ts",
+            "tsConfig": "projects/ngx-editorjs-code-block/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-editorjs-code-block/karma.conf.js"
+          }
+        }
+      }
     }
   }
 }

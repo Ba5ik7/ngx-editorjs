@@ -21,6 +21,9 @@
       "ngx-editorjs-client": [
         "dist/ngx-editorjs-client"
       ],
+      "ngx-editorjs-code-block": [
+        "dist/ngx-editorjs-code-block"
+      ],
       "ngx-editorjs-image-block": [
         "dist/ngx-editorjs-image-block"
       ],
