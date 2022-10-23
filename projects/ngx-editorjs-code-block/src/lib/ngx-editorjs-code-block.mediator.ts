@@ -15,7 +15,7 @@ import { NgxEditorjsCodeBlockComponent } from './ngx-editorjs-code-block.compone
     NgxEditorjsCodeBlockComponent
   ],
 })
-export class NgxEditorjsBlockquotesBlockMediator {
+export class NgxEditorjsCodeBlockMediator {
   @Input() blockId!: string;
   @Input() form!: FormGroup;
   @Input() formControlName!: string;

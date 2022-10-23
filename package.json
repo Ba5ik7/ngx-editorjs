@@ -11,8 +11,16 @@
     "watch4": "ng build ngx-editorjs-blockquotes-block --watch --configuration development",
     "watch5": "ng build ngx-editorjs-image-block --watch --configuration development",
     "watch6": "ng build ngx-editorjs-code-block --watch --configuration development",
+    "watch": "npm run watch1 & npm run watch3 & npm run watch4 & npm run watch5 & npm run watch6",
     "test": "ng test",
-    "link": "npm link @tmdjr/ngx-editorjs @tmdjr/ngx-editorjs-paragraph-block @tmdjr/ngx-editorjs-blockquotes-block"
+    "linkEditor": "cd dist/ngx-editorjs && npm link && cd ../../",
+    "linkEditorClient": "cd dist/ngx-editorjs-client && npm link && cd ../../",
+    "linkEditorParagraph": "cd dist/ngx-editorjs-paragraph-block && npm link && cd ../../",
+    "linkEditorBlockquotes": "cd dist/ngx-editorjs-blockquotes-block && npm link && cd ../../",
+    "linkEditorImage": "cd dist/ngx-editorjs-image-block && npm link && cd ../../",
+    "linkEditorCode": "cd dist/ngx-editorjs-code-block && npm link && cd ../../",
+    "linkAll": "npm run linkEditor && npm run linkEditorClient && npm run linkEditorParagraph && npm run linkEditorBlockquotes && npm run linkEditorImage && npm run linkEditorCode",
+    "link": "npm link @tmdjr/ngx-editorjs @tmdjr/ngx-editorjs-client @tmdjr/ngx-editorjs-paragraph-block @tmdjr/ngx-editorjs-blockquotes-block @tmdjr/ngx-editorjs-image-block @tmdjr/ngx-editorjs-code-block"
   },
   "private": false,
   "dependencies": {

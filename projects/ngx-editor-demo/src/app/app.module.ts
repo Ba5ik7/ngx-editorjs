@@ -12,10 +12,13 @@ import { NavbarModule } from './components/navbar/navbar.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { NGX_EDITORJS_OPTIONS } from '@tmdjr/ngx-editorjs';
+import { NGX_EDITORJS_CLIENT_OPTIONS } from '@tmdjr/ngx-editorjs-client';
+
 import { NgxEditorjsParagraphBlockMediator, NgxEditorjsParagraphClientBlockComponent } from '@tmdjr/ngx-editorjs-paragraph-block';
 import { NgxEditorjsBlockquotesBlockMediator, NgxEditorjsBlockquotesClientBlockComponent } from '@tmdjr/ngx-editorjs-blockquotes-block';
 import { NgxEditorjsImageBlockMediator, NgxEditorjsImageClientBlockComponent } from '@tmdjr/ngx-editorjs-image-block';
-import { NGX_EDITORJS_CLIENT_OPTIONS } from '@tmdjr/ngx-editorjs-client';
+import { NgxEditorjsCodeBlockMediator, NgxEditorjsCodeClientBlockComponent } from '@tmdjr/ngx-editorjs-code-block';
+
 
 @NgModule({
   declarations: [
@@ -49,6 +52,11 @@ import { NGX_EDITORJS_CLIENT_OPTIONS } from '@tmdjr/ngx-editorjs-client';
             name: 'Image',
             component: NgxEditorjsImageBlockMediator,
             componentInstanceName: 'NgxEditorjsImageBlockMediator'
+          },
+          {
+            name: 'Code',
+            component: NgxEditorjsCodeBlockMediator,
+            componentInstanceName: 'NgxEditorjsCodeBlockMediator'
           }
         ]
       }
@@ -71,6 +79,11 @@ import { NGX_EDITORJS_CLIENT_OPTIONS } from '@tmdjr/ngx-editorjs-client';
             name: 'Image',
             component: NgxEditorjsImageClientBlockComponent,
             componentInstanceName: 'NgxEditorjsImageBlockMediator'
+          },
+          {
+            name: 'Code',
+            component: NgxEditorjsCodeClientBlockComponent,
+            componentInstanceName: 'NgxEditorjsCodeBlockMediator'
           }
         ]
       }
