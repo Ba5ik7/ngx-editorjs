@@ -11,6 +11,7 @@ import { Component, Input } from '@angular/core';
         class="image-block"
         [src]="_value.url"
         [title]="_value.title"
+        (click)="onImageClick()"
         onerror="this.onerror=null;this.src='https://dummyimage.com/640x360/000/AAF'"/>
     </div>
   `,
@@ -19,7 +20,7 @@ import { Component, Input } from '@angular/core';
     :host .flex-start { justify-content: flex-start; }
     :host .flex-end { justify-content: flex-end; }
     :host .center { justify-content: center; }
-    :host .stretch img { width: 100%; }
+    :host .stretch img { width: 100%; cursor: pointer; }
     .image-conatiner {
       display: flex;
     }
@@ -40,5 +41,9 @@ export class NgxEditorjsImageClientBlockComponent {
   @Input()
   set savedAction(action: string) {
     this.activeImageClass = action ?? 'flex-start';
+  }
+
+  onImageClick() {
+    console.log('Image clicked');
   }
 }
