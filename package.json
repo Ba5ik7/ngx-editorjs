@@ -10,6 +10,7 @@
     "watch3": "ng build ngx-editorjs-paragraph-block --watch --configuration development",
     "watch4": "ng build ngx-editorjs-blockquotes-block --watch --configuration development",
     "watch5": "ng build ngx-editorjs-image-block --watch --configuration development",
+    "watch6": "ng build ngx-editorjs-code-block --watch --configuration development",
     "test": "ng test",
     "link": "npm link @tmdjr/ngx-editorjs @tmdjr/ngx-editorjs-paragraph-block @tmdjr/ngx-editorjs-blockquotes-block"
   },

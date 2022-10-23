@@ -1,20 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { BaseBlockComponent, AutofocusDirective } from '@tmdjr/ngx-editorjs';
 
 @Component({
-  selector: 'lib-ngx-editorjs-code-block',
+  standalone: true,
+  imports: [
+    AutofocusDirective
+  ],
+  selector: 'ngx-editorjs-code-block',
   template: `
-    <p>
-      ngx-editorjs-code-block works!
-    </p>
+    <code class="flex-spacer" #code contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></code>
   `,
-  styles: [
-  ]
+  styles: [`
+    :host { display: flex; flex-direction: column; }
+  `]
 })
-export class NgxEditorjsCodeBlockComponent implements OnInit {
+export class NgxEditorjsCodeBlockComponent extends BaseBlockComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  @ViewChild('code') element!: ElementRef;
 
-  ngOnInit(): void {
+  override ngOnInit() {
+    super.ngOnInit();
   }
 
+  ngAfterViewInit(): void {
+    super.viewChild = this.element;
+  }
+
+  override onMouseEnter(event: Event) {
+    super.onMouseEnter(event);
+  }
 }

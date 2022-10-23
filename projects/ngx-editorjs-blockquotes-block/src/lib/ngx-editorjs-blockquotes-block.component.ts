@@ -3,6 +3,9 @@ import { BaseBlockComponent, AutofocusDirective } from '@tmdjr/ngx-editorjs';
 
 @Component({
   standalone: true,
+  imports: [
+    AutofocusDirective
+  ],
   selector: 'ngx-editorjs-blockquotes-block',
   template: `
     <blockquote class="flex-spacer" #blockquotes contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></blockquote>
@@ -13,10 +16,7 @@ import { BaseBlockComponent, AutofocusDirective } from '@tmdjr/ngx-editorjs';
       margin: 20px 0;
       padding-left: 1.5rem;
     }
-  `],
-  imports: [
-    AutofocusDirective
-  ]
+  `]
 })
 export class NgxEditorjsBlockquotesBlockComponent extends BaseBlockComponent implements OnInit, AfterViewInit {
 
