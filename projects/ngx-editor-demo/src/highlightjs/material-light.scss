@@ -8,13 +8,13 @@
   -webkit-font-smoothing: antialiased;
   text-size-adjust: 100%;
   font: 300 100%/1 Roboto Mono,monospace;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
-.hljs > *::selection,
-.hljs-section {
-  background-color: #D6EDEA;
-}
+// .hljs > *::selection,
+// .hljs-section {
+//   background-color: #D6EDEA;
+// }
 
 .hljs-comment {
   color: #616161;
