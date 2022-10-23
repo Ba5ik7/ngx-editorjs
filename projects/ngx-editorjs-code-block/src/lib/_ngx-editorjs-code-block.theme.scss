@@ -5,7 +5,7 @@
   $accent: map.get($theme, accent);
   $is-dark-theme: map.get($theme, is-dark);
 
-  blockquote {
+  code {
     // border-left: 5px solid #ee6e73;
     border-left: 5px solid mat.get-color-from-palette($accent, if($is-dark-theme, 400, 100));
   }
