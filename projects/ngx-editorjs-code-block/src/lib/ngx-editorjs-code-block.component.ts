@@ -15,8 +15,8 @@ import { FormsModule } from '@angular/forms';
     <code #code contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></code>
   </pre> -->
     <ngx-codemirror
-      (ngModelChange)="changeValue(value)"
-      [(ngModel)]="value"
+      (ngModelChange)="changeValue($event)"
+      [ngModel]="value"
       [options]="codeMirrorOptions">
     </ngx-codemirror>
   `,
@@ -38,17 +38,17 @@ export class NgxEditorjsCodeBlockComponent extends BaseBlockComponent {
   override useOnPasteHTMLRemoval = false;
 
   override blockOptionActions: { action: string, icon: string }[] = [
-    { action: 'javascript', icon: 'javascript' },
+    { action: 'text/typescript', icon: 'javascript' },
     { action: 'css', icon: 'css' },
     { action: 'xml', icon: 'html' }
   ];
 
   _value!: string;
-  codeMirrorOptions: { lineNumbers: boolean, theme: string, mode: string } =
+  codeMirrorOptions =
     { 
       lineNumbers: true,
       theme: 'material-palenight',
-      mode: 'javascript',
+      mode: 'text/typescript',
     }
 
   override ngOnInit(): void {
@@ -60,7 +60,7 @@ export class NgxEditorjsCodeBlockComponent extends BaseBlockComponent {
     super.ngOnInit();
   }
 
-  override handleBlockOptionAction(action: string) {
+  override handleBlockOptionAction(action: any) {
     this.codeMirrorOptions.mode = action;
     super.handleBlockOptionAction(action);
   }
