@@ -1,16 +1,16 @@
+
 @use '@angular/material' as mat;
 @use 'sass:map';
-
 @mixin theme($theme) {
   $accent: map.get($theme, accent);
   $is-dark-theme: map.get($theme, is-dark);
 
-  ngx-editorjs-code-block {
+  // ngx-editorjs-code-block {
     // background-color: if($is-dark-theme, #333, #f1f1f133);
     // border: 1px solid if($is-dark-theme, #333, #DBDBDB);
     // color: if($is-dark-theme, #FFF, #000);
     // border-radius: 5px;
-    margin: 16px auto;
+    // margin: 16px auto;
 
     // .prettyprint {
     //   position: relative;
@@ -22,7 +22,7 @@
       // background-color: mat.get-color-from-palette($accent, default-contrast);
       // color: mat.get-color-from-palette($accent, default);
     // }
-  }
+  // }
 
   // code.hljs {    
   //   border-left: 5px solid #ee6e73;

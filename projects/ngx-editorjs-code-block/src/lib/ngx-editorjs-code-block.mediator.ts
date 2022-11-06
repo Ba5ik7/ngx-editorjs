@@ -7,7 +7,7 @@ import { NgxEditorjsCodeBlockComponent } from './ngx-editorjs-code-block.compone
   selector: 'ngx-editorjs-meditator-code-block',
   template: `
     <div [formGroup]="form">
-      <ngx-editorjs-code-block [blockId]="blockId" [formControlName]="formControlName"></ngx-editorjs-code-block>
+      <ngx-editorjs-code-block [blockId]="blockId" [formControlName]="formControlName" [savedAction]="savedAction"></ngx-editorjs-code-block>
     </div>
   `,
   imports: [
@@ -19,4 +19,5 @@ export class NgxEditorjsCodeBlockMediator {
   @Input() blockId!: string;
   @Input() form!: FormGroup;
   @Input() formControlName!: string;
+  @Input() savedAction!: string;
 }
