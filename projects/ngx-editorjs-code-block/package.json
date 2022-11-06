@@ -1,19 +1,19 @@
 {
-  "name": "@tmdjr/ngx-editorjs-code-block",
-  "version": "0.0.21",
-  "peerDependencies": {
-     "@angular/common": "~14.2.0",
-     "@angular/core": "~14.2.0"
-  },
-  "dependencies": {
-     "tslib": "^2.3.0"
-  },
-  "exports": {
-     "./esm2020": {
-        "default": "./esm2020"
-     },
-     ".": {
-      "sass": "./_index.scss"
+   "name": "@tmdjr/ngx-editorjs-code-block",
+   "version": "0.0.22",
+   "peerDependencies": {
+      "@angular/common": "~14.2.0",
+      "@angular/core": "~14.2.0"
+   },
+   "dependencies": {
+      "tslib": "^2.3.0"
+   },
+   "exports": {
+      "./esm2020": {
+         "default": "./esm2020"
+      },
+      ".": {
+         "sass": "./_index.scss"
+      }
    }
-  }
 }

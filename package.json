@@ -1,6 +1,6 @@
 {
   "name": "@tmdjr/ngx-editorjs-demo",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "scripts": {
     "ng": "ng",
     "start": "ng serve ngx-editor-demo",
@@ -20,7 +20,14 @@
     "linkEditorImage": "cd dist/ngx-editorjs-image-block && npm link && cd ../../",
     "linkEditorCode": "cd dist/ngx-editorjs-code-block && npm link && cd ../../",
     "linkAll": "npm run linkEditor && npm run linkEditorClient && npm run linkEditorParagraph && npm run linkEditorBlockquotes && npm run linkEditorImage && npm run linkEditorCode",
-    "link": "npm link @tmdjr/ngx-editorjs @tmdjr/ngx-editorjs-client @tmdjr/ngx-editorjs-paragraph-block @tmdjr/ngx-editorjs-blockquotes-block @tmdjr/ngx-editorjs-image-block @tmdjr/ngx-editorjs-code-block"
+    "link": "npm link @tmdjr/ngx-editorjs @tmdjr/ngx-editorjs-client @tmdjr/ngx-editorjs-paragraph-block @tmdjr/ngx-editorjs-blockquotes-block @tmdjr/ngx-editorjs-image-block @tmdjr/ngx-editorjs-code-block",
+    "publishEditor": "cd dist/ngx-editorjs && npm publish && cd ../../",
+    "publishEditorClient": "cd dist/ngx-editorjs-client && npm publish && cd ../../",
+    "publishEditorParagraph": "cd dist/ngx-editorjs-paragraph-block && npm publish && cd ../../",
+    "publishEditorBlockquotes": "cd dist/ngx-editorjs-blockquotes-block && npm publish && cd ../../",
+    "publishEditorImage": "cd dist/ngx-editorjs-image-block && npm publish && cd ../../",
+    "publishEditorCode": "cd dist/ngx-editorjs-code-block && npm publish && cd ../../",
+    "publishAll": "npm run publishEditor && npm run publishEditorClient && npm run publishEditorParagraph && npm run publishEditorBlockquotes && npm run publishEditorImage && npm run publishEditorCode"
   },
   "private": false,
   "dependencies": {
