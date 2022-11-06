@@ -8,7 +8,7 @@ export const InputData: NgxEditorjsOutputBlock[] = [
       "blockId": "o4zw2xfgze",
       "sortIndex": 0,
       "name": "NgxEditorjsCodeBlockMediator",
-      "dataClean": "import { Injectable } from '@angular/core';<div>@Injectable({\n  providedIn: 'root',\n})</div><div>export class HeroService {</div><div>&nbsp; constructor() {</div><div>&nbsp; }</div><div>}</div>"
+      "dataClean": "export class NgxEditorjsCodeBlockComponent extends BaseBlockComponent implements OnInit {\n\n  override useInlineToolbar = false;\n  override useInputType = false;\n\n  _value!: string;\n  theme = 'material';\n\n  override ngOnInit() {\n    this._value = this.value ?? '';\n    super.ngOnInit();\n  }\n\n  onModelChange(value: string): void {\n    this.value = value;\n    this.changeValue(value);\n  }\n}"
     },
     {
         "blockId": "eftkta822ke",

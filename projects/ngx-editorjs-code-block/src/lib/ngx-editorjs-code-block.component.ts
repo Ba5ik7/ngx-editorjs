@@ -1,32 +1,42 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { BaseBlockComponent, AutofocusDirective } from '@tmdjr/ngx-editorjs';
+import { CodemirrorModule } from '@ctrl/ngx-codemirror';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   standalone: true,
   imports: [
-    AutofocusDirective
+    AutofocusDirective,
+    CodemirrorModule,
+    FormsModule
   ],
   selector: 'ngx-editorjs-code-block',
   template: `
-    <code class="hljs" #code contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></code>
+  <!-- <pre class="prettyprint">
+    <code #code contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></code>
+  </pre> -->
+  <ngx-codemirror
+    (ngModelChange)="changeValue(value)"
+    [(ngModel)]="value"
+    [autoFocus]="true"
+    [options]="codeMirrorOptions">
+  </ngx-codemirror>
   `,
   styles: [`
-    :host { display: flex; flex-direction: column; }
+  :host { display: flex; flex-direction: column; border-radius: 5px; }
   `]
 })
-export class NgxEditorjsCodeBlockComponent extends BaseBlockComponent implements OnInit, AfterViewInit {
+export class NgxEditorjsCodeBlockComponent extends BaseBlockComponent {
 
-  @ViewChild('code') element!: ElementRef;
+  override useInlineToolbar = false;
+  override useInputType = false;
+  override useOnPasteHTMLRemoval = false;
 
-  override ngOnInit() {
-    super.ngOnInit();
-  }
-
-  ngAfterViewInit(): void {
-    super.viewChild = this.element;
-  }
-
-  override onMouseEnter(event: Event) {
-    super.onMouseEnter(event);
-  }
+  _value!: string;
+  codeMirrorOptions: { lineNumbers: boolean, theme: string, mode: string } =
+    { 
+      lineNumbers: true,
+      theme: 'material-palenight',
+      mode: 'javascript'
+    }
 }

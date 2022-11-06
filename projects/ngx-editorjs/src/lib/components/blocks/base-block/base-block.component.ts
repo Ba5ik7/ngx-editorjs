@@ -64,6 +64,7 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
 
   useInlineToolbar: boolean = true;
   useInputType: boolean = true;
+  useOnPasteHTMLRemoval: boolean = true;
 
   ngOnInit() {
     this.controlDir.valueChanges?.subscribe((val) => this.valueChange(val));    
@@ -130,9 +131,11 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
 
   @HostListener('paste', ['$event'])
   onPaste(event: Event) {
-    event.preventDefault();
-    const text = (event as ClipboardEvent).clipboardData!.getData('text/plain');
-    document.execCommand('insertHTML', false, text);
+    if(this.useOnPasteHTMLRemoval) {
+      event.preventDefault();
+      const text = (event as ClipboardEvent).clipboardData?.getData('text/plain');
+      document.execCommand('insertText', false, text);
+    }
   }
 
   removeAndAddToolbarBlock() {

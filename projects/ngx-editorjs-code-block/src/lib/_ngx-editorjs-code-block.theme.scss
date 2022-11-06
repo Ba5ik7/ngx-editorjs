@@ -5,8 +5,29 @@
   $accent: map.get($theme, accent);
   $is-dark-theme: map.get($theme, is-dark);
 
-  code {
-    // border-left: 5px solid #ee6e73;
-    // border-left: 5px solid mat.get-color-from-palette($accent, if($is-dark-theme, 400, 100));
+  ngx-editorjs-code-block {
+    // background-color: if($is-dark-theme, #333, #f1f1f133);
+    // border: 1px solid if($is-dark-theme, #333, #DBDBDB);
+    // color: if($is-dark-theme, #FFF, #000);
+    // border-radius: 5px;
+    margin: 16px auto;
+
+    // .prettyprint {
+    //   position: relative;
+    //   display: flex;
+    //   min-height: 32px;
+    //   margin: 16px 24px;
+    //   white-space: pre-wrap;
+    //   align-items: center;
+      // background-color: mat.get-color-from-palette($accent, default-contrast);
+      // color: mat.get-color-from-palette($accent, default);
+    // }
   }
+
+  // code.hljs {    
+  //   border-left: 5px solid #ee6e73;
+  //   border-left: 15px solid if($is-dark-theme, #162f43, #193549);
+  //   background: if($is-dark-theme, #193549, #FAFAFA);
+  //   border-left: 5px solid mat.get-color-from-palette($accent, if($is-dark-theme, 400, 100));
+  // }
 }
