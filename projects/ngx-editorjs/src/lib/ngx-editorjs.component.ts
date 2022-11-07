@@ -139,13 +139,6 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
     blockMediator.form = this.formGroup;
     blockMediator.formControlName = controlName;
 
-
-    console.log({
-      component,
-      sortIndex,
-      find: this.ngxEditor.indexOf(viewRef!),
-    });
-
     this.blockControlMap.forEach((block) => { if(block.sortIndex >= sortIndex) block.sortIndex++ });
     this.blockControlMap.set(controlName, { sortIndex, componentRef: componentRef, dataClean: '' });
   }
@@ -184,6 +177,7 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
   parentRequestCurrentValue(): void {
     const blocks: NgxEditorjsOutputBlock[] = [];
     this.blockControlMap.forEach((block, key) => {
+      console.log({ componentType: block.componentRef.componentType, block });
       blocks.push({
         blockId: key,
         sortIndex: block.sortIndex,
