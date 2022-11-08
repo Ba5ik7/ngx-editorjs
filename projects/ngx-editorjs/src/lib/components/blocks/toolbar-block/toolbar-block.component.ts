@@ -31,8 +31,8 @@ export class ToolbarBlockComponent {
     this.closeLists();
   }
 
-  addBlock({ component }: SearchableBlock) {
-    this.ngxEdotorjsService.addNewBlockSubject.next({ blockId: this.blockId, component });
+  addBlock({ componentInstanceName, component }: SearchableBlock) {
+    this.ngxEdotorjsService.addNewBlockSubject.next({ blockId: this.blockId, component, componentInstanceName: componentInstanceName ?? '' });
     this.closeLists();
   }
 

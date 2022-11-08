@@ -122,7 +122,8 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
     });
   };
 
-  createNgxEditorjsBlock({ blockId, component }: CreateBlockAction): void {
+  createNgxEditorjsBlock({ blockId, component, componentInstanceName }: CreateBlockAction): void {
+    
     if(!component || !blockId) return;
     const block = component ?? NgxEditorjsHeaderBlockMediator;
     const controlName = Math.random().toString(36).slice(2);
@@ -140,7 +141,7 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
     blockMediator.formControlName = controlName;
 
     this.blockControlMap.forEach((block) => { if(block.sortIndex >= sortIndex) block.sortIndex++ });
-    this.blockControlMap.set(controlName, { sortIndex, componentRef: componentRef, dataClean: '' });
+    this.blockControlMap.set(controlName, { sortIndex, dataClean: '', componentRef, componentInstanceName });
   }
 
   moveNgxEditorjsBlock({ blockId, action }: AdjustBlockPosition): void {
@@ -177,11 +178,10 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
   parentRequestCurrentValue(): void {
     const blocks: NgxEditorjsOutputBlock[] = [];
     this.blockControlMap.forEach((block, key) => {
-      console.log({ componentType: block.componentRef.componentType, block });
       blocks.push({
         blockId: key,
         sortIndex: block.sortIndex,
-        name: block.componentRef.componentType.name,
+        name: block.componentInstanceName!,
         dataClean: this.formGroup.get(key)?.value,
         savedAction: block.savedAction
       })
@@ -191,7 +191,7 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
 
   clearSortCreateNgxEditorjsBlocks(blocks: NgxEditorjsOutputBlock[]): void {
     if(blocks === undefined || blocks.length === 0 ) {
-      this.createNgxEditorjsBlock({ blockId: null, component: null });
+      this.createNgxEditorjsBlock({ blockId: null, component: null, componentInstanceName: '' });
       return;
     }
 
@@ -208,6 +208,7 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
         const createBlockAction: CreateBlockAction = { 
           blockId: block.blockId,
           component: componentInstanceObject?.component,
+          componentInstanceName: block.name,
           value: block.dataClean,
           componentSortIndex: block.sortIndex,
           savedAction: block.savedAction

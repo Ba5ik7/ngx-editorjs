@@ -1,6 +1,6 @@
 {
    "name": "@tmdjr/ngx-editorjs-blockquotes-block",
-   "version": "0.0.23",
+   "version": "0.0.24",
    "peerDependencies": {
       "@angular/common": "^14.0.0",
       "@angular/core": "^14.0.0"
