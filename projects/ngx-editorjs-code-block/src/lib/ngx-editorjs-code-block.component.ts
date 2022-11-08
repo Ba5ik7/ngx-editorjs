@@ -43,13 +43,11 @@ export class NgxEditorjsCodeBlockComponent extends BaseBlockComponent {
     { action: 'xml', icon: 'html' }
   ];
 
-  _value!: string;
-  codeMirrorOptions =
-    { 
-      lineNumbers: true,
-      theme: 'material-palenight',
-      mode: 'text/typescript',
-    }
+  codeMirrorOptions ={ 
+    lineNumbers: true,
+    theme: 'material-palenight',
+    mode: 'text/typescript',
+  }
 
   override ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
