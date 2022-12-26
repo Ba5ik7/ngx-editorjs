@@ -6,7 +6,7 @@ import { BaseClientBlock, CreateBlockAction, NgxEditorjsClientService, NgxEditor
 export const HeaderSearchableBlock: SearchableBlock = {
   name: 'Header',
   component: NgxEditorjsHeaderClientBlockComponent,
-  componentInstanceName: 'ngxEditorjsHeaderBlockMediator',
+  componentInstanceName: 'NgxEditorjsHeaderBlockMediator',
 };
 
 @Component({

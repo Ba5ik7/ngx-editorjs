@@ -34,7 +34,7 @@ import {
 export const HeaderSearchableBlock: SearchableBlock = {
   name: 'Header',
   component: NgxEditorjsHeaderBlockMediator,
-  componentInstanceName: 'ngxEditorjsHeaderBlockMediator',
+  componentInstanceName: 'NgxEditorjsHeaderBlockMediator',
 };
 
 @Component({
@@ -95,7 +95,7 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
     .pipe(takeUntil(this.destroy))
     .subscribe((block) => this.updateNgxEditorjsBlock(block));
 
-    this.clearSortCreateNgxEditorjsBlocks([]);
+    // this.clearSortCreateNgxEditorjsBlocks([]);
   }
 
   ngOnDestroy(): void {
@@ -104,7 +104,7 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
     this.destroy.next();
   }
 
-  loadNgxEditorjsBlock({ blockId, component, value, savedAction }: CreateBlockAction): void {
+  loadNgxEditorjsBlock({ blockId, component, value, savedAction, componentInstanceName }: CreateBlockAction): void {
     this.formGroup.addControl(blockId!, this.formBuilder.control(value, []));
 
     const componentRef = this.ngxEditor.createComponent(component!, { index: this.ngxEditor.length });
@@ -117,6 +117,7 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
     this.blockControlMap.set(blockId!, {
       sortIndex: this.ngxEditor.length - 1,
       componentRef: componentRef,
+      componentInstanceName: componentInstanceName,
       dataClean: value!,
       savedAction
     });
@@ -181,7 +182,7 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
       blocks.push({
         blockId: key,
         sortIndex: block.sortIndex,
-        name: block.componentInstanceName!,
+        componentInstanceName: block.componentInstanceName,
         dataClean: this.formGroup.get(key)?.value,
         savedAction: block.savedAction
       })
@@ -194,27 +195,27 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
       this.createNgxEditorjsBlock({ blockId: null, component: null, componentInstanceName: '' });
       return;
     }
-
+    // Clear
     this.ngxEditor.clear();
     this.blockControlMap.clear();
+    // Sort
+    blocks.sort((a, b) => a.sortIndex - b.sortIndex);
+    // Create
+    blocks.forEach((block) => {
+      const componentInstanceObject = 
+        this.ngxEditorjsService.blocks.find((b) => b.componentInstanceName === block.componentInstanceName)
+          ?? this.ngxEditorjsService.blocks[0];
 
-    if(blocks) {
-      blocks.sort((a, b) => a.sortIndex - b.sortIndex);
-      blocks.forEach((block) => {
-        const componentInstanceObject = 
-          this.ngxEditorjsService.blocks.find((b) => b.componentInstanceName === block.name)
-            ?? this.ngxEditorjsService.blocks[0];
-  
-        const createBlockAction: CreateBlockAction = { 
-          blockId: block.blockId,
-          component: componentInstanceObject?.component,
-          componentInstanceName: block.name,
-          value: block.dataClean,
-          componentSortIndex: block.sortIndex,
-          savedAction: block.savedAction
-        };
-        this.loadNgxEditorjsBlock(createBlockAction);
-      });
-    }
+      const createBlockAction: CreateBlockAction = { 
+        blockId: block.blockId,
+        component: componentInstanceObject?.component,
+        componentInstanceName: block.componentInstanceName,
+        value: block.dataClean,
+        componentSortIndex: block.sortIndex,
+        savedAction: block.savedAction
+      };
+      this.loadNgxEditorjsBlock(createBlockAction);
+    });
+
   }
 }

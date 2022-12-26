@@ -33,20 +33,11 @@ export class NgxEditorjsHeaderBlockComponent extends BaseBlockComponent implemen
     { action: 'h6', text: 'H6' }
   ];
 
-  override ngOnInit() {
-    super.ngOnInit();
-  }
-
   ngAfterViewInit(): void {
     super.viewChild = this.element;
   }
 
-  override onMouseEnter(event: Event) {
-    super.onMouseEnter(event);
-  }
-
   override handleBlockOptionAction(action: string) {
     this.whichHeader = action;
-    super.handleBlockOptionAction(action);
   }
 }

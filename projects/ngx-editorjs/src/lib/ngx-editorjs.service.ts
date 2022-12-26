@@ -34,7 +34,7 @@ export class NgxEditorjsService {
 export interface NgxEditorjsOutputBlock {
   blockId: string;
   sortIndex: number;
-  name: string;
+  componentInstanceName: string;
   dataClean: string;
   savedAction?: string;
 }
@@ -45,7 +45,7 @@ export interface Block {
   componentRef: ComponentRef<unknown>;
   dataClean: string;
   savedAction?: string;
-  componentInstanceName?: string;
+  componentInstanceName: string;
 }
 
 export interface NgxEditorjsOptions {
