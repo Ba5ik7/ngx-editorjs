@@ -36,12 +36,13 @@ export class NgxEditorjsClientComponent implements OnInit {
       blocks.sort((a, b) => a.sortIndex - b.sortIndex);
       blocks.forEach((block) => {
         const componentInstanceObject = 
-          this.ngxEditorjsClientService.blocks.find((b) => b.componentInstanceName === block.name)
+          this.ngxEditorjsClientService.blocks.find((b) => b.componentInstanceName === block.componentInstanceName)
             ?? this.ngxEditorjsClientService.blocks[0];
   
         const createBlockAction: CreateBlockAction = { 
           blockId: block.blockId,
           component: componentInstanceObject.component,
+          componentInstanceName: block.componentInstanceName,
           value: block.dataClean,
           componentSortIndex: block.sortIndex,
           savedAction: block.savedAction

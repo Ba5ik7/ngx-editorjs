@@ -30,13 +30,14 @@ export interface SearchableBlock {
 export interface NgxEditorjsOutputBlock {
   blockId: string;
   sortIndex: number;
-  name: string;
+  componentInstanceName: string;
   dataClean: string;
   savedAction?: string;
 }
 
 export interface CreateBlockAction {
-  blockId: string | null
+  blockId: string | null;
+  componentInstanceName: string;
   component: Type<unknown> | null;
   value?: string;
   componentSortIndex?: number;
