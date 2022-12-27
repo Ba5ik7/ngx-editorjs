@@ -16,20 +16,7 @@ export const InputData2: NgxEditorjsOutputBlock[] = [
         "sortIndex": 5,
         "componentInstanceName": "NgxEditorjsParagraphBlockMediator",
         "dataClean": "Evaluation of a template expression should have no visible side effects. Use the syntax for template expressions to help avoid side effects. In general, the correct syntax prevents you from assigning a value to anything in a property binding expression. The syntax also prevents you from using increment and decrement operators."
-    },
-    {
-        "blockId": "m34mev3wz4",
-        "sortIndex": 7,
-        "componentInstanceName": "NgxEditorjsHeaderBlockMediator",
-        "dataClean": "Angular's cross-site scripting security model",
-        "savedAction": "h2"
-    },
-    {
-        "blockId": "93v1smwlcor",
-        "sortIndex": 8,
-        "componentInstanceName": "NgxEditorjsParagraphBlockMediator",
-        "dataClean": "If forms are a central part of your application, scalability is very important. Being able to reuse form models across components is critical."
-    },
+    }
 ];
 
 export const InputData: NgxEditorjsOutputBlock[] = [

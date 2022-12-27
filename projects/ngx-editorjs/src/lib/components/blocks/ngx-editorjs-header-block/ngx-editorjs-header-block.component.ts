@@ -1,18 +1,18 @@
-import { Component, OnInit, ViewChild, AfterViewInit, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ElementRef, Input, ViewChildren, QueryList } from '@angular/core';
 import { BlockOptionAction } from '../../../ngx-editorjs.service';
 import { BaseBlockComponent } from '../base-block/base-block.component';
 
 @Component({
   selector: 'ngx-editorjs-header-block',
   template: `
-    <ng-container [ngSwitch]="whichHeader">
-        <h2 *ngSwitchCase="'h2'" class="flex-spacer" #header contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h2>
-        <h3 *ngSwitchCase="'h3'" class="flex-spacer" #header contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h3>
-        <h4 *ngSwitchCase="'h4'" class="flex-spacer" #header contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h4>
-        <h5 *ngSwitchCase="'h5'" class="flex-spacer" #header contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h5>
-        <h6 *ngSwitchCase="'h6'" class="flex-spacer" #header contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h6>
-        <h1 *ngSwitchDefault class="flex-spacer" #header contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h1>
-    </ng-container>
+    <span #header [ngSwitch]="whichHeader">
+        <h2 *ngSwitchCase="'h2'" class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h2>
+        <h3 *ngSwitchCase="'h3'" class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h3>
+        <h4 *ngSwitchCase="'h4'" class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h4>
+        <h5 *ngSwitchCase="'h5'" class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h5>
+        <h6 *ngSwitchCase="'h6'" class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h6>
+        <h1 *ngSwitchDefault class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h1>
+    </span>
   `,
   styles: [`
     :host { display: flex; flex-direction: column; }
@@ -20,7 +20,7 @@ import { BaseBlockComponent } from '../base-block/base-block.component';
 })
 export class NgxEditorjsHeaderBlockComponent extends BaseBlockComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('header') element!: ElementRef;
+  @ViewChild('header', { read: ElementRef }) element!: ElementRef<HTMLHeadingElement>;
 
   whichHeader!: string
 
@@ -34,10 +34,17 @@ export class NgxEditorjsHeaderBlockComponent extends BaseBlockComponent implemen
   ];
 
   ngAfterViewInit(): void {
-    super.viewChild = this.element;
+    super.viewChild = new ElementRef(this.element.nativeElement.firstElementChild);
   }
 
   override handleBlockOptionAction(action: string) {
     this.whichHeader = action;
+    // Have to wait for the next frame to get the new element
+    if (this.element) {
+      requestAnimationFrame(() => {
+        super.viewChild = new ElementRef(this.element.nativeElement.firstElementChild);
+        this.value = this.controlDir.control?.value ?? '';
+      });
+    }
   }
 }
