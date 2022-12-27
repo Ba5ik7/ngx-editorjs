@@ -1,6 +1,6 @@
 {
    "name": "@tmdjr/ngx-editorjs",
-   "version": "0.0.26",
+   "version": "0.0.27",
    "exports": {
       ".": {
          "sass": "./_index.scss"
