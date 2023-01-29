@@ -139,7 +139,7 @@ export class HomeComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-    this.inputData = InputData2;
+    this.inputData = InputData;
     // setTimeout(() => {
     //   this.inputData = InputData2;
     // }, 1000);

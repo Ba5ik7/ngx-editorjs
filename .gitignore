@@ -1,7 +1,12 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
-/dist
+/dist/ngx-editorjs
+/dist/ngx-editorjs-paragraph-block
+/dist/ngx-editorjs-image-block
+/dist/ngx-editorjs-code-block
+/dist/ngx-editorjs-client
+/dist/ngx-editorjs-blockquotes-block
 /tmp
 /out-tsc
 /bazel-out
