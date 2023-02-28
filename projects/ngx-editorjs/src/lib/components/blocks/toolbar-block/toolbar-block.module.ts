@@ -5,9 +5,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { AutofocusModule } from '../../../directives/autofocus/autofocus.module';
 
-import { MatListModule } from '@angular/material/list';
-import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatInputModule } from '@angular/material/input'
+import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
+import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field'
+import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input'
 import { MatIconModule } from '@angular/material/icon'
 import { MatRippleModule } from '@angular/material/core';
 import { SearchableBlockListComponent } from './searchable-block-list/searchable-block-list.component';
