@@ -1,6 +1,6 @@
 {
    "name": "@tmdjr/ngx-editorjs-image-block",
-   "version": "0.0.29",
+   "version": "0.0.30",
    "peerDependencies": {
       "@angular/common": "^15.0.0",
       "@angular/core": "^15.0.0"
