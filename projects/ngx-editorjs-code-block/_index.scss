@@ -1,8 +1,8 @@
 @use 'src/lib/ngx-editorjs-code-block.theme' as ngx-editorjs-code-block;
 
-@import '~codemirror/lib/codemirror';
-@import '~codemirror/theme/material-palenight';
-@import '~codemirror/theme/material';
+@import 'codemirror/lib/codemirror';
+@import 'codemirror/theme/material-palenight';
+@import 'codemirror/theme/material';
 
 @mixin theme($theme) {
   @include ngx-editorjs-code-block.theme($theme);
