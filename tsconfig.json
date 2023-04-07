@@ -29,6 +29,9 @@
       ],
       "ngx-editorjs-paragraph-block": [
         "dist/ngx-editorjs-paragraph-block"
+      ],
+      "ngx-editorjs-quiz-block": [
+        "dist/ngx-editorjs-quiz-block"
       ]
     },
     "declaration": false,
