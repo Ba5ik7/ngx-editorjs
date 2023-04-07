@@ -23,9 +23,9 @@ export const InputData: NgxEditorjsOutputBlock[] = [
     {
       "blockId": "o4zw2xfgze",
       "sortIndex": 0,
-      "componentInstanceName": "NgxEditorjsCodeBlockMediator",
-      "dataClean": "export class NgxEditorjsCodeBlockComponent extends BaseBlockComponent implements OnInit {\n\n  override useInlineToolbar = false;\n  override useInputType = false;\n\n  _value!: string;\n  theme = 'material';\n\n  override ngOnInit() {\n    this._value = this.value ?? '';\n    super.ngOnInit();\n  }\n\n  onModelChange(value: string): void {\n    this.value = value;\n    this.changeValue(value);\n  }\n}",
-      "savedAction": "javascript"
+      "componentInstanceName": "NgxEditorjsQuizBlockMediator",
+    "dataClean": "{\"question\":\"1st Question\",\"answer\":\"The Answer\"}",
+      "savedAction": "quiz-hard_o_O!"
     },
     // {
     //     "blockId": "eftkta822ke",
