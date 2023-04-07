@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
 import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
@@ -8,6 +8,19 @@ import { MatLegacyRadioModule as MatRatioModule } from '@angular/material/legacy
 import { MatLegacySelectModule as MatSelectModule} from '@angular/material/legacy-select';
 import { MatIconModule } from '@angular/material/icon';
 import { Subject, takeUntil } from 'rxjs';
+import { AbstractControl } from '@angular/forms';
+
+
+function validateRatioOptions(): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const optionsArray = control as FormArray;
+    if (optionsArray.controls.length < 2) {
+      return { 'notEnoughOptions': true };
+    }
+    return null;
+  };
+}
+
 
 @Component({
   selector: 'quiz-config',
@@ -16,46 +29,50 @@ import { Subject, takeUntil } from 'rxjs';
     <div class="image-block-modal" >
       <form [formGroup]="quizConfigForm">
 
-        <h2 mat-dialog-title>Quiz Configuration</h2>
+        <h1 mat-dialog-title>Quiz Configuration</h1>
 
-        <h3>1) Create a Question.</h3>
+        <h2>1) Create a Question.</h2>
         <mat-form-field appearance="outline" color="accent">
           <mat-label>Question</mat-label>
           <textarea #title matInput formControlName="question"></textarea>
           <mat-error *ngIf="quizConfigForm.get('question')?.errors">{{quizConfigFormErrorMessages['question']}}</mat-error>
         </mat-form-field>
 
-        <h3>2) Create the possible answers</h3>
-        <div formArrayName="ratioOptions">
-          <div *ngFor="let option of ratioOptions.controls; let i = index" [formGroupName]="i">
-            <div class="ratio-option">
-              <mat-radio-group formControlName="isCorrect">
-                <mat-radio-button value="{{i}}"></mat-radio-button>
-              </mat-radio-group>
-              <mat-form-field appearance="outline" color="accent" class="ratio-option-input">
-                <mat-label>Option {{i + 1}}</mat-label>
-                <input matInput type="text" formControlName="value"/>
-              </mat-form-field>
-              <button mat-icon-button color="warn" type="button" (click)="removeRatioOption(i)">
-                <mat-icon>delete</mat-icon>
-              </button>
+        <ng-container *ngIf="quizConfigForm.get('question')?.valid">
+          <h2>2) Create the possible answers <span>(Create at least 2 options)</span></h2>
+          <div formArrayName="ratioOptions">
+            <div *ngFor="let option of ratioOptions.controls; let i = index" [formGroupName]="i">
+              <div class="ratio-option">
+                <mat-radio-group formControlName="isCorrect">
+                  <mat-radio-button value="{{i}}"></mat-radio-button>
+                </mat-radio-group>
+                <mat-form-field appearance="outline" color="accent" class="ratio-option-input">
+                  <mat-label>Option {{i + 1}}</mat-label>
+                  <input matInput type="text" formControlName="value"/>
+                </mat-form-field>
+                <button mat-icon-button color="warn" type="button" (click)="removeRatioOption(i)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </div>
+            <div class="answers-action-group">
+              <button mat-raised-button color="accent" type="button" (click)="addRatioOption()">Add Answer</button>
             </div>
           </div>
-          <div class="answers-action-group">
-            <button mat-raised-button color="accent" type="button" (click)="addRatioOption()">Add Answer</button>
-          </div>
-        </div>
+        </ng-container>
 
-        <h3>3) Select correct answer</h3>
-        <mat-form-field appearance="outline" color="accent">
-          <mat-label>Answer</mat-label>
-          <mat-select formControlName="correctAnswer">
-            <mat-option *ngFor="let option of ratioOptions.controls; let i = index" [value]="option.get('value')?.value">
-              {{ option.get('value')?.value }}
-            </mat-option>
-          </mat-select>
-          <mat-error *ngIf="quizConfigForm.get('correctAnswer')?.errors">{{quizConfigFormErrorMessages['correctAnswer']}}</mat-error>
-        </mat-form-field>
+        <ng-container *ngIf="quizConfigForm.get('question')?.valid && quizConfigForm.get('ratioOptions')?.valid">
+          <h2>3) Select the correct answer</h2>
+          <mat-form-field appearance="outline" color="accent">
+            <mat-label>Answer</mat-label>
+            <mat-select formControlName="correctAnswer">
+              <mat-option *ngFor="let option of ratioOptions.controls; let i = index" [value]="option.get('value')?.value">
+                {{ option.get('value')?.value }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="quizConfigForm.get('correctAnswer')?.errors">{{quizConfigFormErrorMessages['correctAnswer']}}</mat-error>
+          </mat-form-field>
+        </ng-container>
 
         <div class="action-group">
           <button mat-flat-button color="accent" type="button" (click)="updateImage()" [disabled]="quizConfigForm.invalid">Save</button>
@@ -81,6 +98,10 @@ import { Subject, takeUntil } from 'rxjs';
     }
     .answers-action-group {
       padding-bottom: 20px;
+    }
+    :host h2 span{
+      font-size: 12px;
+      color: #f0ad4e;
     }
   `],
   imports: [
@@ -111,7 +132,7 @@ export class QuizConfigComponent implements OnInit {
     this.quizConfigForm = this.formBuilder.group({
       question: [this.value.question ?? '', [Validators.required]],
       correctAnswer: [this.value.correctAnswer ?? '', [Validators.required]],
-      ratioOptions: this.formBuilder.array([])
+      ratioOptions: this.formBuilder.array([], validateRatioOptions())
     });
 
     this.quizConfigForm.statusChanges
@@ -157,3 +178,5 @@ export class QuizConfigComponent implements OnInit {
     });
   }
 }
+
+
