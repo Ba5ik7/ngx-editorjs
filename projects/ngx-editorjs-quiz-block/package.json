@@ -1,12 +1,16 @@
 {
-  "name": "ngx-editorjs-quiz-block",
-  "version": "0.0.1",
+  "name": "@tmdjr/ngx-editorjs-quiz-block",
+  "version": "0.0.32",
   "peerDependencies": {
-    "@angular/common": "^15.2.0",
-    "@angular/core": "^15.2.0"
+    "@angular/common": ">=15.0.0",
+    "@angular/core": ">=15.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "exports": {
+    "./esm2020": {
+       "default": "./esm2020"
+    }
+ }
 }

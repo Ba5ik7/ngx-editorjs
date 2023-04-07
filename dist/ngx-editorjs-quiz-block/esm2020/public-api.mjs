@@ -1,0 +1,8 @@
+/*
+ * Public API Surface of ngx-editorjs-quiz-block
+ */
+export * from './lib/ngx-editorjs-quiz-block.service';
+export * from './lib/ngx-editorjs-quiz-block.component';
+// export * from './lib/ngx-editorjs-paragraph-client-block.component';
+export * from './lib/ngx-editorjs-quiz-block.mediator';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Byb2plY3RzL25neC1lZGl0b3Jqcy1xdWl6LWJsb2NrL3NyYy9wdWJsaWMtYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztHQUVHO0FBQ0gsY0FBYyx1Q0FBdUMsQ0FBQztBQUN0RCxjQUFjLHlDQUF5QyxDQUFDO0FBQ3hELHVFQUF1RTtBQUN2RSxjQUFjLHdDQUF3QyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLypcbiAqIFB1YmxpYyBBUEkgU3VyZmFjZSBvZiBuZ3gtZWRpdG9yanMtcXVpei1ibG9ja1xuICovXG5leHBvcnQgKiBmcm9tICcuL2xpYi9uZ3gtZWRpdG9yanMtcXVpei1ibG9jay5zZXJ2aWNlJztcbmV4cG9ydCAqIGZyb20gJy4vbGliL25neC1lZGl0b3Jqcy1xdWl6LWJsb2NrLmNvbXBvbmVudCc7XG4vLyBleHBvcnQgKiBmcm9tICcuL2xpYi9uZ3gtZWRpdG9yanMtcGFyYWdyYXBoLWNsaWVudC1ibG9jay5jb21wb25lbnQnO1xuZXhwb3J0ICogZnJvbSAnLi9saWIvbmd4LWVkaXRvcmpzLXF1aXotYmxvY2subWVkaWF0b3InOyJdfQ==
