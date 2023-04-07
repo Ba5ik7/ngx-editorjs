@@ -132,8 +132,8 @@ export class QuizConfigComponent implements OnInit {
     this.quizConfigForm = this.formBuilder.group({
       question: [this.value.question ?? '', [Validators.required]],
       correctAnswer: [this.value.correctAnswer ?? '', [Validators.required]],
-      // ratioOptions: this.formBuilder.array(this.value.ratioOptions ?? [], validateRatioOptions())
-      ratioOptions: this.formBuilder.array((this.value.ratioOptions ?? []).map(option => this.formBuilder.group({ value: [option.value, Validators.required] })), validateRatioOptions())
+      ratioOptions: this.formBuilder.array((this.value.ratioOptions ?? [])
+                    .map(option => this.formBuilder.group({ value: [option.value, Validators.required] })), validateRatioOptions())
 
     });
 

@@ -1,1 +1,1 @@
-{"version":3,"file":"public-api.d.ts","sourceRoot":"","sources":["../../projects/ngx-editorjs-quiz-block/src/public-api.ts"],"names":[],"mappings":"AAGA,cAAc,uCAAuC,CAAC;AACtD,cAAc,yCAAyC,CAAC;AAExD,cAAc,wCAAwC,CAAC"}
+{"version":3,"file":"public-api.d.ts","sourceRoot":"","sources":["../../projects/ngx-editorjs-quiz-block/src/public-api.ts"],"names":[],"mappings":"AAGA,cAAc,uCAAuC,CAAC;AACtD,cAAc,yCAAyC,CAAC;AACxD,cAAc,gDAAgD,CAAC;AAC/D,cAAc,wCAAwC,CAAC"}

@@ -1,8 +1,8 @@
 import * as i0 from '@angular/core';
 import { Injectable, EventEmitter, Component, Input, Output, ViewChild } from '@angular/core';
-import * as i2 from '@angular/common';
+import * as i1$1 from '@angular/common';
 import { CommonModule } from '@angular/common';
-import * as i5 from '@angular/material/legacy-button';
+import * as i2 from '@angular/material/legacy-button';
 import { MatLegacyButtonModule } from '@angular/material/legacy-button';
 import * as i3$1 from '@angular/material/legacy-radio';
 import { MatLegacyRadioModule } from '@angular/material/legacy-radio';
@@ -10,7 +10,7 @@ import * as i8 from '@angular/material/icon';
 import { MatIconModule } from '@angular/material/icon';
 import { BaseBlockComponent, AutofocusDirective } from '@tmdjr/ngx-editorjs';
 import * as i1 from '@angular/forms';
-import { Validators, ReactiveFormsModule } from '@angular/forms';
+import { Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import * as i3 from '@angular/material/legacy-form-field';
 import { MatLegacyFormFieldModule } from '@angular/material/legacy-form-field';
 import * as i4 from '@angular/material/legacy-input';
@@ -167,8 +167,8 @@ class QuizConfigComponent {
         this.quizConfigForm = this.formBuilder.group({
             question: [(_a = this.value.question) !== null && _a !== void 0 ? _a : '', [Validators.required]],
             correctAnswer: [(_b = this.value.correctAnswer) !== null && _b !== void 0 ? _b : '', [Validators.required]],
-            // ratioOptions: this.formBuilder.array(this.value.ratioOptions ?? [], validateRatioOptions())
-            ratioOptions: this.formBuilder.array(((_c = this.value.ratioOptions) !== null && _c !== void 0 ? _c : []).map(option => this.formBuilder.group({ value: [option.value, Validators.required] })), validateRatioOptions())
+            ratioOptions: this.formBuilder.array(((_c = this.value.ratioOptions) !== null && _c !== void 0 ? _c : [])
+                .map(option => this.formBuilder.group({ value: [option.value, Validators.required] })), validateRatioOptions())
         });
         this.quizConfigForm.statusChanges
             .pipe(takeUntil(this.destory))
@@ -244,7 +244,7 @@ QuizConfigComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: QuizCon
             i0.ɵɵadvance(2);
             i0.ɵɵproperty("disabled", ctx.quizConfigForm.invalid);
         }
-    }, dependencies: [CommonModule, i2.NgForOf, i2.NgIf, MatLegacyInputModule, i3.MatLegacyError, i3.MatLegacyFormField, i3.MatLegacyLabel, i4.MatLegacyInput, MatLegacyButtonModule, i5.MatLegacyButton, MatLegacyFormFieldModule,
+    }, dependencies: [CommonModule, i1$1.NgForOf, i1$1.NgIf, MatLegacyInputModule, i3.MatLegacyError, i3.MatLegacyFormField, i3.MatLegacyLabel, i4.MatLegacyInput, MatLegacyButtonModule, i2.MatLegacyButton, MatLegacyFormFieldModule,
         MatLegacySelectModule, i6.MatLegacySelect, i7.MatLegacyOption, MatIconModule, i8.MatIcon, ReactiveFormsModule, i1.ɵNgNoValidate, i1.DefaultValueAccessor, i1.NgControlStatus, i1.NgControlStatusGroup, i1.FormGroupDirective, i1.FormControlName, i1.FormGroupName, i1.FormArrayName], styles: ["[_nghost-%COMP%]{border:1px solid #ccc;border-radius:4px;padding:20px}[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}.answers-action-group[_ngcontent-%COMP%]{padding-bottom:20px}[_nghost-%COMP%]   h2[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{font-size:12px;color:#f0ad4e}"] });
 (function () {
     (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(QuizConfigComponent, [{
@@ -423,7 +423,7 @@ NgxEditorjsQuizBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ typ
             const _r1 = i0.ɵɵreference(2);
             i0.ɵɵproperty("ngIf", ctx._openEditQuizOverlay)("ngIfElse", _r1);
         }
-    }, dependencies: [CommonModule, i2.NgForOf, i2.NgIf, MatLegacyButtonModule, i5.MatLegacyButton, MatLegacyRadioModule, i3$1.MatLegacyRadioGroup, i3$1.MatLegacyRadioButton, MatIconModule,
+    }, dependencies: [CommonModule, i1$1.NgForOf, i1$1.NgIf, MatLegacyButtonModule, i2.MatLegacyButton, MatLegacyRadioModule, i3$1.MatLegacyRadioGroup, i3$1.MatLegacyRadioButton, MatIconModule,
         QuizConfigComponent], styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column;padding-bottom:22px}.answer-ratio-group[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:21px}.quiz-conatiner[_ngcontent-%COMP%]{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}"] });
 (function () {
     (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(NgxEditorjsQuizBlockComponent, [{
@@ -455,6 +455,89 @@ NgxEditorjsQuizBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ typ
         }], null, { element: [{
                 type: ViewChild,
                 args: ['paragraph']
+            }] });
+})();
+
+function NgxEditorjsQuizClientBlockComponent_mat_radio_button_7_Template(rf, ctx) {
+    if (rf & 1) {
+        i0.ɵɵelementStart(0, "mat-radio-button", 6);
+        i0.ɵɵtext(1);
+        i0.ɵɵelementEnd();
+    }
+    if (rf & 2) {
+        const option_r2 = ctx.$implicit;
+        i0.ɵɵproperty("value", option_r2.value);
+        i0.ɵɵadvance(1);
+        i0.ɵɵtextInterpolate(option_r2.value);
+    }
+}
+class NgxEditorjsQuizClientBlockComponent {
+    constructor() {
+        this.userAnswer = undefined;
+        this._value = {
+            question: '',
+            correctAnswer: '',
+            ratioOptions: []
+        };
+    }
+    set value(value) {
+        !!value && (this._value = JSON.parse(value));
+    }
+    onQuizClick() {
+        console.log('Test the quiz answer', this.userAnswer);
+    }
+}
+NgxEditorjsQuizClientBlockComponent.ɵfac = function NgxEditorjsQuizClientBlockComponent_Factory(t) { return new (t || NgxEditorjsQuizClientBlockComponent)(); };
+NgxEditorjsQuizClientBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: NgxEditorjsQuizClientBlockComponent, selectors: [["ngx-editorjs-image-client-block"]], inputs: { value: "value" }, standalone: true, features: [i0.ɵɵStandaloneFeature], decls: 11, vars: 4, consts: [[1, "quiz-conatiner"], ["paragraph", ""], [1, "answer-ratio-group", 3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [1, "action-group"], ["mat-flat-button", "", "color", "primary", "type", "button", 3, "disabled", "click"], [3, "value"]], template: function NgxEditorjsQuizClientBlockComponent_Template(rf, ctx) {
+        if (rf & 1) {
+            i0.ɵɵelementStart(0, "div", 0)(1, "h1");
+            i0.ɵɵtext(2, "Quiz");
+            i0.ɵɵelementEnd();
+            i0.ɵɵelementStart(3, "p", null, 1);
+            i0.ɵɵtext(5);
+            i0.ɵɵelementEnd();
+            i0.ɵɵelementStart(6, "mat-radio-group", 2);
+            i0.ɵɵlistener("ngModelChange", function NgxEditorjsQuizClientBlockComponent_Template_mat_radio_group_ngModelChange_6_listener($event) { return ctx.userAnswer = $event; });
+            i0.ɵɵtemplate(7, NgxEditorjsQuizClientBlockComponent_mat_radio_button_7_Template, 2, 2, "mat-radio-button", 3);
+            i0.ɵɵelementEnd();
+            i0.ɵɵelementStart(8, "div", 4)(9, "button", 5);
+            i0.ɵɵlistener("click", function NgxEditorjsQuizClientBlockComponent_Template_button_click_9_listener() { return ctx.onQuizClick(); });
+            i0.ɵɵtext(10, "Submit");
+            i0.ɵɵelementEnd()()();
+        }
+        if (rf & 2) {
+            i0.ɵɵadvance(5);
+            i0.ɵɵtextInterpolate(ctx._value.question);
+            i0.ɵɵadvance(1);
+            i0.ɵɵproperty("ngModel", ctx.userAnswer);
+            i0.ɵɵadvance(1);
+            i0.ɵɵproperty("ngForOf", ctx._value.ratioOptions);
+            i0.ɵɵadvance(2);
+            i0.ɵɵproperty("disabled", !ctx.userAnswer);
+        }
+    }, dependencies: [CommonModule, i1$1.NgForOf, MatLegacyButtonModule, i2.MatLegacyButton, MatLegacyRadioModule, i3$1.MatLegacyRadioGroup, i3$1.MatLegacyRadioButton, FormsModule, i1.NgControlStatus, i1.NgModel], styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column;padding-bottom:22px}.answer-ratio-group[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:21px}.quiz-conatiner[_ngcontent-%COMP%]{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}"] });
+(function () {
+    (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(NgxEditorjsQuizClientBlockComponent, [{
+            type: Component,
+            args: [{ standalone: true, selector: 'ngx-editorjs-image-client-block', imports: [
+                        CommonModule,
+                        MatLegacyButtonModule,
+                        MatLegacyRadioModule,
+                        FormsModule
+                    ], template: `
+    <div class="quiz-conatiner">
+      <h1>Quiz</h1>
+      <p #paragraph>{{ _value.question }}</p>
+      <mat-radio-group class="answer-ratio-group" [(ngModel)]="userAnswer">
+        <mat-radio-button *ngFor="let option of _value.ratioOptions" [value]="option.value">{{ option.value }}</mat-radio-button>
+      </mat-radio-group>
+      <div class="action-group">
+        <button mat-flat-button color="primary" type="button" (click)="onQuizClick()" [disabled]="!userAnswer">Submit</button>
+      </div>
+    </div>
+  `, styles: [":host{display:flex;flex-direction:column;padding-bottom:22px}.answer-ratio-group{display:flex;flex-direction:column;gap:21px}.quiz-conatiner{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group{display:flex;justify-content:flex-end;gap:10px}\n"] }]
+        }], null, { value: [{
+                type: Input
             }] });
 })();
 
@@ -506,5 +589,5 @@ NgxEditorjsQuizBlockMediator.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type
  * Generated bundle index. Do not edit.
  */
 
-export { NgxEditorjsQuizBlockComponent, NgxEditorjsQuizBlockMediator, NgxEditorjsQuizBlockService };
+export { NgxEditorjsQuizBlockComponent, NgxEditorjsQuizBlockMediator, NgxEditorjsQuizBlockService, NgxEditorjsQuizClientBlockComponent };
 //# sourceMappingURL=tmdjr-ngx-editorjs-quiz-block.mjs.map

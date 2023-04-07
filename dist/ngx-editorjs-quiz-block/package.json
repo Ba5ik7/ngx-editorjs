@@ -1,6 +1,6 @@
 {
   "name": "@tmdjr/ngx-editorjs-quiz-block",
-  "version": "0.0.0-watch+1680903722480",
+  "version": "0.0.0-watch+1680907552422",
   "peerDependencies": {
     "@angular/common": ">=15.0.0",
     "@angular/core": ">=15.0.0"
