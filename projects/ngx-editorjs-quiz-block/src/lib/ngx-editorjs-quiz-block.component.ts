@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import { MatLegacyRadioModule as MatRatioModule } from '@angular/material/legacy-radio';
 import { MatIconModule } from '@angular/material/icon';
 import { BaseBlockComponent, AutofocusDirective } from '@tmdjr/ngx-editorjs';
-import { QuizConfigComponent } from './quiz-config/quiz-config.component';
+import { QuizConfig, QuizConfigComponent } from './quiz-config/quiz-config.component';
 
 @Component({
   standalone: true,
@@ -14,21 +15,40 @@ import { QuizConfigComponent } from './quiz-config/quiz-config.component';
     </ng-container>
     <ng-template #elseTemplate>
       <div class="quiz-conatiner">
-        <p class="flex-spacer" #paragraph contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></p>
-        <button  
-          mat-mini-fab 
-          class="image-block-button mat-elevation-z2"
-          (click)="openEditQuizOverlay()">
-          <mat-icon>edit</mat-icon>
-        </button>
+        <h1>Quiz</h1>
+        <p #paragraph>{{ _value.question }}</p>
+        <mat-radio-group class="answer-ratio-group" [value]="_value.correctAnswer">
+          <mat-radio-button *ngFor="let option of _value.ratioOptions" [value]="option.value">{{ option.value }}</mat-radio-button>
+        </mat-radio-group>
+        <div class="action-group">
+          <button mat-flat-button color="primary" type="button" (click)="openEditQuizOverlay()">Edit</button>
+        </div>
       </div>
     </ng-template>
   `,
-  styles: [`:host { display: flex; flex-direction: column; } p { font-size: 1.6rem; line-height: 3.2rem; }`],
+  styles: [`
+    :host { display: flex; flex-direction: column; }
+    .answer-ratio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 21px;
+    }
+    .quiz-conatiner {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 20px;
+    }
+    .action-group {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+  `],
   imports: [
     CommonModule,
     AutofocusDirective,
     MatButtonModule,
+    MatRatioModule,
     MatIconModule,
     QuizConfigComponent
   ]
@@ -41,11 +61,15 @@ export class NgxEditorjsQuizBlockComponent extends BaseBlockComponent implements
   @ViewChild('paragraph') element!: ElementRef;
 
   _openEditQuizOverlay = false;
-  _value: { question: string, correctAnswer: string } = { question: '', correctAnswer: '' };
+  _value: QuizConfig = {
+    question: '',
+    correctAnswer: '',
+    ratioOptions: []
+  };
 
   override ngOnInit() {
     !!this.value && (this._value = JSON.parse(this.value));
-    console.log('this.value', this.value);
+    !this.value && this.openEditQuizOverlay();
     super.ngOnInit();
   }
 
@@ -61,9 +85,9 @@ export class NgxEditorjsQuizBlockComponent extends BaseBlockComponent implements
     this._openEditQuizOverlay = true;
   }
 
-  updateQuiz(value: { question: string, correctAnswer: string }) {
-    console.log({
-      updateImage: value
-    })
+  updateQuiz(value: QuizConfig) {
+    this._value = value;
+    this.changeValue(JSON.stringify(value));
+    this._openEditQuizOverlay = false;
   }
 }

@@ -24,7 +24,7 @@ export const InputData: NgxEditorjsOutputBlock[] = [
       "blockId": "o4zw2xfgze",
       "sortIndex": 0,
       "componentInstanceName": "NgxEditorjsQuizBlockMediator",
-    "dataClean": "{\"question\":\"1st Question\",\"answer\":\"The Answer\"}",
+      "dataClean": "{\"question\":\"What is the capital of France?\",\"correctAnswer\":\"Paris\",\"ratioOptions\":[{\"value\":\"London\"},{\"value\":\"Paris\"},{\"value\":\"Berlin\"},{\"value\":\"Rome\"}]}",
       "savedAction": "quiz-hard_o_O!"
     },
     // {

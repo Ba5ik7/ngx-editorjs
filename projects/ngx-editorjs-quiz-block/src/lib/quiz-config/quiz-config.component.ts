@@ -4,12 +4,13 @@ import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Va
 import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
 import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
-import { MatLegacyRadioModule as MatRatioModule } from '@angular/material/legacy-radio';
 import { MatLegacySelectModule as MatSelectModule} from '@angular/material/legacy-select';
 import { MatIconModule } from '@angular/material/icon';
 import { Subject, takeUntil } from 'rxjs';
 import { AbstractControl } from '@angular/forms';
 
+type RatioOption = { value: string };
+export type QuizConfig = { question: string, correctAnswer: string, ratioOptions: RatioOption[] };
 
 function validateRatioOptions(): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } | null => {
@@ -43,9 +44,6 @@ function validateRatioOptions(): ValidatorFn {
           <div formArrayName="ratioOptions">
             <div *ngFor="let option of ratioOptions.controls; let i = index" [formGroupName]="i">
               <div class="ratio-option">
-                <mat-radio-group formControlName="isCorrect">
-                  <mat-radio-button value="{{i}}"></mat-radio-button>
-                </mat-radio-group>
                 <mat-form-field appearance="outline" color="accent" class="ratio-option-input">
                   <mat-label>Option {{i + 1}}</mat-label>
                   <input matInput type="text" formControlName="value"/>
@@ -75,7 +73,7 @@ function validateRatioOptions(): ValidatorFn {
         </ng-container>
 
         <div class="action-group">
-          <button mat-flat-button color="accent" type="button" (click)="updateImage()" [disabled]="quizConfigForm.invalid">Save</button>
+          <button mat-flat-button color="accent" type="button" (click)="updateQuiz()" [disabled]="quizConfigForm.invalid">Save</button>
           <button mat-flat-button color="warn" type="button" (click)="closeConfig()">Cancel</button>
         </div>
       </form>
@@ -109,7 +107,6 @@ function validateRatioOptions(): ValidatorFn {
     MatInputModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatRatioModule,
     MatSelectModule,
     MatIconModule,
     ReactiveFormsModule,
@@ -124,15 +121,20 @@ export class QuizConfigComponent implements OnInit {
 
   quizConfigForm!: FormGroup;
 
-  @Input() value!: { question: string, correctAnswer: string };
-  @Output() quizValue = new EventEmitter<{ question: string, correctAnswer: string }>();
+  get ratioOptions(): FormArray {
+    return this.quizConfigForm.get('ratioOptions') as FormArray;
+  }
 
+  @Input() value!: QuizConfig;
+  @Output() quizValue = new EventEmitter<QuizConfig>();
 
   ngOnInit(): void {
     this.quizConfigForm = this.formBuilder.group({
       question: [this.value.question ?? '', [Validators.required]],
       correctAnswer: [this.value.correctAnswer ?? '', [Validators.required]],
-      ratioOptions: this.formBuilder.array([], validateRatioOptions())
+      // ratioOptions: this.formBuilder.array(this.value.ratioOptions ?? [], validateRatioOptions())
+      ratioOptions: this.formBuilder.array((this.value.ratioOptions ?? []).map(option => this.formBuilder.group({ value: [option.value, Validators.required] })), validateRatioOptions())
+
     });
 
     this.quizConfigForm.statusChanges
@@ -144,7 +146,7 @@ export class QuizConfigComponent implements OnInit {
     this.destory.next(true);
   }
 
-  updateImage() {
+  updateQuiz() {
     this.quizValue.emit(this.quizConfigForm.value);
   }
 
@@ -152,14 +154,9 @@ export class QuizConfigComponent implements OnInit {
     this.quizValue.emit(this.value);
   }
 
-  get ratioOptions(): FormArray {
-    return this.quizConfigForm.get('ratioOptions') as FormArray;
-  }
-
   addRatioOption(): void {
     const option = this.formBuilder.group({
-      value: ['', [Validators.required]],
-      isCorrect: [false, [Validators.required]]
+      value: ['', [Validators.required]]
     });
     this.ratioOptions.push(option);
   }

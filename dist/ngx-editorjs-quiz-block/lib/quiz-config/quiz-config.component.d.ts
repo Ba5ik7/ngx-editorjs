@@ -2,6 +2,14 @@ import { EventEmitter, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import * as i0 from "@angular/core";
+type RatioOption = {
+    value: string;
+};
+export type QuizConfig = {
+    question: string;
+    correctAnswer: string;
+    ratioOptions: RatioOption[];
+};
 export declare class QuizConfigComponent implements OnInit {
     private formBuilder;
     constructor(formBuilder: FormBuilder);
@@ -13,19 +21,13 @@ export declare class QuizConfigComponent implements OnInit {
         [key: string]: string;
     };
     quizConfigForm: FormGroup;
-    value: {
-        question: string;
-        correctAnswer: string;
-    };
-    quizValue: EventEmitter<{
-        question: string;
-        correctAnswer: string;
-    }>;
+    get ratioOptions(): FormArray;
+    value: QuizConfig;
+    quizValue: EventEmitter<QuizConfig>;
     ngOnInit(): void;
     ngOnDestroy(): void;
-    updateImage(): void;
+    updateQuiz(): void;
     closeConfig(): void;
-    get ratioOptions(): FormArray;
     addRatioOption(): void;
     removeRatioOption(index: number): void;
     setErrorsMessages(formGroup: FormGroup, formControlMessages: {
@@ -34,4 +36,5 @@ export declare class QuizConfigComponent implements OnInit {
     static ɵfac: i0.ɵɵFactoryDeclaration<QuizConfigComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<QuizConfigComponent, "quiz-config", never, { "value": "value"; }, { "quizValue": "quizValue"; }, never, never, true, never>;
 }
+export {};
 //# sourceMappingURL=quiz-config.component.d.ts.map
