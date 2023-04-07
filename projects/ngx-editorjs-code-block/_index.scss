@@ -3,6 +3,7 @@
 @import 'codemirror/lib/codemirror';
 @import 'codemirror/theme/material-palenight';
 @import 'codemirror/theme/material';
+@import 'codemirror/addon/hint/show-hint.css';
 
 @mixin theme($theme) {
   @include ngx-editorjs-code-block.theme($theme);

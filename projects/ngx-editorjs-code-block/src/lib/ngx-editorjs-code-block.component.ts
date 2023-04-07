@@ -47,6 +47,7 @@ export class NgxEditorjsCodeBlockComponent extends BaseBlockComponent {
     lineNumbers: true,
     theme: 'material-palenight',
     mode: 'text/typescript',
+    extraKeys: { 'Ctrl-Space': 'autocomplete' },
   }
 
   override ngOnInit(): void {
