@@ -473,6 +473,7 @@ function NgxEditorjsQuizClientBlockComponent_mat_radio_button_7_Template(rf, ctx
 }
 class NgxEditorjsQuizClientBlockComponent {
     constructor() {
+        this.answerSubmited = false;
         this.userAnswer = undefined;
         this._value = {
             question: '',
@@ -483,12 +484,19 @@ class NgxEditorjsQuizClientBlockComponent {
     set value(value) {
         !!value && (this._value = JSON.parse(value));
     }
-    onQuizClick() {
-        console.log('Test the quiz answer', this.userAnswer);
+    onQuizAnswerClick() {
+        this.answerSubmited = true;
+        const isAnswerCorrect = this.userAnswer === this._value.correctAnswer;
+        isAnswerCorrect ? alert('Correct') : alert('Wrong');
+        console.log({
+            userAnswer: this.userAnswer,
+            correctAnswer: this._value.correctAnswer,
+            isAnswerCorrect
+        });
     }
 }
 NgxEditorjsQuizClientBlockComponent.ɵfac = function NgxEditorjsQuizClientBlockComponent_Factory(t) { return new (t || NgxEditorjsQuizClientBlockComponent)(); };
-NgxEditorjsQuizClientBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: NgxEditorjsQuizClientBlockComponent, selectors: [["ngx-editorjs-image-client-block"]], inputs: { value: "value" }, standalone: true, features: [i0.ɵɵStandaloneFeature], decls: 11, vars: 4, consts: [[1, "quiz-conatiner"], ["paragraph", ""], [1, "answer-ratio-group", 3, "ngModel", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [1, "action-group"], ["mat-flat-button", "", "color", "primary", "type", "button", 3, "disabled", "click"], [3, "value"]], template: function NgxEditorjsQuizClientBlockComponent_Template(rf, ctx) {
+NgxEditorjsQuizClientBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: NgxEditorjsQuizClientBlockComponent, selectors: [["ngx-editorjs-image-client-block"]], inputs: { value: "value" }, standalone: true, features: [i0.ɵɵStandaloneFeature], decls: 11, vars: 5, consts: [[1, "quiz-conatiner"], ["paragraph", ""], [1, "answer-ratio-group", 3, "ngModel", "disabled", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [1, "action-group"], ["mat-flat-button", "", "color", "primary", "type", "button", 3, "disabled", "click"], [3, "value"]], template: function NgxEditorjsQuizClientBlockComponent_Template(rf, ctx) {
         if (rf & 1) {
             i0.ɵɵelementStart(0, "div", 0)(1, "h1");
             i0.ɵɵtext(2, "Quiz");
@@ -501,7 +509,7 @@ NgxEditorjsQuizClientBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent
             i0.ɵɵtemplate(7, NgxEditorjsQuizClientBlockComponent_mat_radio_button_7_Template, 2, 2, "mat-radio-button", 3);
             i0.ɵɵelementEnd();
             i0.ɵɵelementStart(8, "div", 4)(9, "button", 5);
-            i0.ɵɵlistener("click", function NgxEditorjsQuizClientBlockComponent_Template_button_click_9_listener() { return ctx.onQuizClick(); });
+            i0.ɵɵlistener("click", function NgxEditorjsQuizClientBlockComponent_Template_button_click_9_listener() { return ctx.onQuizAnswerClick(); });
             i0.ɵɵtext(10, "Submit");
             i0.ɵɵelementEnd()()();
         }
@@ -509,11 +517,11 @@ NgxEditorjsQuizClientBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent
             i0.ɵɵadvance(5);
             i0.ɵɵtextInterpolate(ctx._value.question);
             i0.ɵɵadvance(1);
-            i0.ɵɵproperty("ngModel", ctx.userAnswer);
+            i0.ɵɵproperty("ngModel", ctx.userAnswer)("disabled", ctx.answerSubmited);
             i0.ɵɵadvance(1);
             i0.ɵɵproperty("ngForOf", ctx._value.ratioOptions);
             i0.ɵɵadvance(2);
-            i0.ɵɵproperty("disabled", !ctx.userAnswer);
+            i0.ɵɵproperty("disabled", !ctx.userAnswer || ctx.answerSubmited);
         }
     }, dependencies: [CommonModule, i1$1.NgForOf, MatLegacyButtonModule, i2.MatLegacyButton, MatLegacyRadioModule, i3$1.MatLegacyRadioGroup, i3$1.MatLegacyRadioButton, FormsModule, i1.NgControlStatus, i1.NgModel], styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column;padding-bottom:22px}.answer-ratio-group[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:21px}.quiz-conatiner[_ngcontent-%COMP%]{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}"] });
 (function () {
@@ -528,11 +536,11 @@ NgxEditorjsQuizClientBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent
     <div class="quiz-conatiner">
       <h1>Quiz</h1>
       <p #paragraph>{{ _value.question }}</p>
-      <mat-radio-group class="answer-ratio-group" [(ngModel)]="userAnswer">
+      <mat-radio-group class="answer-ratio-group" [(ngModel)]="userAnswer" [disabled]="answerSubmited">
         <mat-radio-button *ngFor="let option of _value.ratioOptions" [value]="option.value">{{ option.value }}</mat-radio-button>
       </mat-radio-group>
       <div class="action-group">
-        <button mat-flat-button color="primary" type="button" (click)="onQuizClick()" [disabled]="!userAnswer">Submit</button>
+        <button mat-flat-button color="primary" type="button" (click)="onQuizAnswerClick()" [disabled]="!userAnswer || answerSubmited">Submit</button>
       </div>
     </div>
   `, styles: [":host{display:flex;flex-direction:column;padding-bottom:22px}.answer-ratio-group{display:flex;flex-direction:column;gap:21px}.quiz-conatiner{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group{display:flex;justify-content:flex-end;gap:10px}\n"] }]

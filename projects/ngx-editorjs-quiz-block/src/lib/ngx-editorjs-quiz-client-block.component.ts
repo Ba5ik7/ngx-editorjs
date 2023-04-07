@@ -18,11 +18,11 @@ import { FormsModule } from '@angular/forms';
     <div class="quiz-conatiner">
       <h1>Quiz</h1>
       <p #paragraph>{{ _value.question }}</p>
-      <mat-radio-group class="answer-ratio-group" [(ngModel)]="userAnswer">
+      <mat-radio-group class="answer-ratio-group" [(ngModel)]="userAnswer" [disabled]="answerSubmited">
         <mat-radio-button *ngFor="let option of _value.ratioOptions" [value]="option.value">{{ option.value }}</mat-radio-button>
       </mat-radio-group>
       <div class="action-group">
-        <button mat-flat-button color="primary" type="button" (click)="onQuizClick()" [disabled]="!userAnswer">Submit</button>
+        <button mat-flat-button color="primary" type="button" (click)="onQuizAnswerClick()" [disabled]="!userAnswer || answerSubmited">Submit</button>
       </div>
     </div>
   `,
@@ -47,6 +47,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class NgxEditorjsQuizClientBlockComponent {
 
+  answerSubmited = false;
   userAnswer: string | undefined = undefined;
   _value: QuizConfig = {
     question: '',
@@ -59,7 +60,14 @@ export class NgxEditorjsQuizClientBlockComponent {
     !!value && (this._value = JSON.parse(value));
   }
 
-  onQuizClick() {
-    console.log('Test the quiz answer', this.userAnswer);
+  onQuizAnswerClick() {
+    this.answerSubmited = true;
+    const isAnswerCorrect = this.userAnswer === this._value.correctAnswer;
+    isAnswerCorrect ? alert('Correct') : alert('Wrong');
+    console.log({
+      userAnswer: this.userAnswer,
+      correctAnswer: this._value.correctAnswer,
+      isAnswerCorrect
+    });
   }
 }
