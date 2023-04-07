@@ -27,7 +27,7 @@ import { QuizConfig, QuizConfigComponent } from './quiz-config/quiz-config.compo
     </ng-template>
   `,
   styles: [`
-    :host { display: flex; flex-direction: column; }
+    :host { display: flex; flex-direction: column; padding-bottom: 22px; }
     .answer-ratio-group {
       display: flex;
       flex-direction: column;

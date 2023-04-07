@@ -382,7 +382,7 @@ NgxEditorjsQuizBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ typ
         const _r1 = i0.ɵɵreference(2);
         i0.ɵɵproperty("ngIf", ctx._openEditQuizOverlay)("ngIfElse", _r1);
     } }, dependencies: [CommonModule, i2.NgForOf, i2.NgIf, MatLegacyButtonModule, i5.MatLegacyButton, MatLegacyRadioModule, i3$1.MatLegacyRadioGroup, i3$1.MatLegacyRadioButton, MatIconModule,
-        QuizConfigComponent], styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column}.answer-ratio-group[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:21px}.quiz-conatiner[_ngcontent-%COMP%]{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}"] });
+        QuizConfigComponent], styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column;padding-bottom:22px}.answer-ratio-group[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:21px}.quiz-conatiner[_ngcontent-%COMP%]{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}"] });
 (function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(NgxEditorjsQuizBlockComponent, [{
         type: Component,
         args: [{ standalone: true, selector: 'ngx-editorjs-quiz-block', template: `
@@ -408,7 +408,7 @@ NgxEditorjsQuizBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ typ
                     MatLegacyRadioModule,
                     MatIconModule,
                     QuizConfigComponent
-                ], styles: [":host{display:flex;flex-direction:column}.answer-ratio-group{display:flex;flex-direction:column;gap:21px}.quiz-conatiner{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group{display:flex;justify-content:flex-end;gap:10px}\n"] }]
+                ], styles: [":host{display:flex;flex-direction:column;padding-bottom:22px}.answer-ratio-group{display:flex;flex-direction:column;gap:21px}.quiz-conatiner{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group{display:flex;justify-content:flex-end;gap:10px}\n"] }]
     }], null, { element: [{
             type: ViewChild,
             args: ['paragraph']
