@@ -501,25 +501,26 @@ NgxEditorjsQuizBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ typ
             args: ['paragraph']
         }] }); })();
 
-function NgxEditorjsQuizClientBlockComponent_mat_radio_button_7_Template(rf, ctx) { if (rf & 1) {
-    i0.ɵɵelementStart(0, "mat-radio-button", 7);
-    i0.ɵɵtext(1);
-    i0.ɵɵelementEnd();
-} if (rf & 2) {
-    const option_r3 = ctx.$implicit;
-    i0.ɵɵproperty("value", option_r3.value);
-    i0.ɵɵadvance(1);
-    i0.ɵɵtextInterpolate(option_r3.value);
-} }
-function NgxEditorjsQuizClientBlockComponent_p_11_Template(rf, ctx) { if (rf & 1) {
+function NgxEditorjsQuizClientBlockComponent_p_3_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementStart(0, "p", 8);
     i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
 } if (rf & 2) {
-    const ctx_r2 = i0.ɵɵnextContext();
-    i0.ɵɵproperty("ngClass", ctx_r2.isAnswerCorrect ? "correctAnswer" : "incorrectAnswer");
+    const ctx_r0 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("ngClass", ctx_r0.isAnswerCorrect ? "successful-text" : "failure-text");
     i0.ɵɵadvance(1);
-    i0.ɵɵtextInterpolate(ctx_r2.answerResponse);
+    i0.ɵɵtextInterpolate(ctx_r0.answerResponse);
+} }
+function NgxEditorjsQuizClientBlockComponent_li_9_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "li")(1, "mat-radio-button", 9);
+    i0.ɵɵtext(2);
+    i0.ɵɵelementEnd()();
+} if (rf & 2) {
+    const option_r3 = ctx.$implicit;
+    i0.ɵɵadvance(1);
+    i0.ɵɵproperty("value", option_r3.value);
+    i0.ɵɵadvance(1);
+    i0.ɵɵtextInterpolate(option_r3.value);
 } }
 class NgxEditorjsQuizClientBlockComponent {
     constructor() {
@@ -545,35 +546,35 @@ class NgxEditorjsQuizClientBlockComponent {
     }
 }
 NgxEditorjsQuizClientBlockComponent.ɵfac = function NgxEditorjsQuizClientBlockComponent_Factory(t) { return new (t || NgxEditorjsQuizClientBlockComponent)(); };
-NgxEditorjsQuizClientBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: NgxEditorjsQuizClientBlockComponent, selectors: [["ngx-editorjs-image-client-block"]], inputs: { value: "value" }, standalone: true, features: [i0.ɵɵStandaloneFeature], decls: 12, vars: 6, consts: [[1, "quiz-conatiner"], ["paragraph", ""], [1, "answer-ratio-group", 3, "ngModel", "disabled", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [1, "action-group"], ["mat-flat-button", "", "color", "primary", "type", "button", 3, "disabled", "click"], [3, "ngClass", 4, "ngIf"], [3, "value"], [3, "ngClass"]], template: function NgxEditorjsQuizClientBlockComponent_Template(rf, ctx) { if (rf & 1) {
+NgxEditorjsQuizClientBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: NgxEditorjsQuizClientBlockComponent, selectors: [["ngx-editorjs-image-client-block"]], inputs: { value: "value" }, standalone: true, features: [i0.ɵɵStandaloneFeature], decls: 13, vars: 6, consts: [[1, "quiz-conatiner"], [3, "ngClass", 4, "ngIf"], ["paragraph", ""], [3, "ngModel", "disabled", "ngModelChange"], ["type", "a", 1, "answer-ratio-group"], [4, "ngFor", "ngForOf"], [1, "action-group"], ["mat-flat-button", "", "color", "primary", "type", "button", 3, "disabled", "click"], [3, "ngClass"], [3, "value"]], template: function NgxEditorjsQuizClientBlockComponent_Template(rf, ctx) { if (rf & 1) {
         i0.ɵɵelementStart(0, "div", 0)(1, "h1");
         i0.ɵɵtext(2, "Quiz");
         i0.ɵɵelementEnd();
-        i0.ɵɵelementStart(3, "p", null, 1);
-        i0.ɵɵtext(5);
+        i0.ɵɵtemplate(3, NgxEditorjsQuizClientBlockComponent_p_3_Template, 2, 2, "p", 1);
+        i0.ɵɵelementStart(4, "p", null, 2);
+        i0.ɵɵtext(6);
         i0.ɵɵelementEnd();
-        i0.ɵɵelementStart(6, "mat-radio-group", 2);
-        i0.ɵɵlistener("ngModelChange", function NgxEditorjsQuizClientBlockComponent_Template_mat_radio_group_ngModelChange_6_listener($event) { return ctx.userAnswer = $event; });
-        i0.ɵɵtemplate(7, NgxEditorjsQuizClientBlockComponent_mat_radio_button_7_Template, 2, 2, "mat-radio-button", 3);
-        i0.ɵɵelementEnd();
-        i0.ɵɵelementStart(8, "div", 4)(9, "button", 5);
-        i0.ɵɵlistener("click", function NgxEditorjsQuizClientBlockComponent_Template_button_click_9_listener() { return ctx.onQuizAnswerClick(); });
-        i0.ɵɵtext(10, "Submit");
+        i0.ɵɵelementStart(7, "mat-radio-group", 3);
+        i0.ɵɵlistener("ngModelChange", function NgxEditorjsQuizClientBlockComponent_Template_mat_radio_group_ngModelChange_7_listener($event) { return ctx.userAnswer = $event; });
+        i0.ɵɵelementStart(8, "ol", 4);
+        i0.ɵɵtemplate(9, NgxEditorjsQuizClientBlockComponent_li_9_Template, 3, 2, "li", 5);
         i0.ɵɵelementEnd()();
-        i0.ɵɵtemplate(11, NgxEditorjsQuizClientBlockComponent_p_11_Template, 2, 2, "p", 6);
-        i0.ɵɵelementEnd();
+        i0.ɵɵelementStart(10, "div", 6)(11, "button", 7);
+        i0.ɵɵlistener("click", function NgxEditorjsQuizClientBlockComponent_Template_button_click_11_listener() { return ctx.onQuizAnswerClick(); });
+        i0.ɵɵtext(12, "Submit");
+        i0.ɵɵelementEnd()()();
     } if (rf & 2) {
-        i0.ɵɵadvance(5);
+        i0.ɵɵadvance(3);
+        i0.ɵɵproperty("ngIf", ctx.answerResponse);
+        i0.ɵɵadvance(3);
         i0.ɵɵtextInterpolate(ctx._value.question);
         i0.ɵɵadvance(1);
         i0.ɵɵproperty("ngModel", ctx.userAnswer)("disabled", ctx.answerSubmited);
-        i0.ɵɵadvance(1);
+        i0.ɵɵadvance(2);
         i0.ɵɵproperty("ngForOf", ctx._value.ratioOptions);
         i0.ɵɵadvance(2);
         i0.ɵɵproperty("disabled", !ctx.userAnswer || ctx.answerSubmited);
-        i0.ɵɵadvance(2);
-        i0.ɵɵproperty("ngIf", ctx.answerResponse);
-    } }, dependencies: [CommonModule, i1$1.NgClass, i1$1.NgForOf, i1$1.NgIf, MatLegacyButtonModule, i2.MatLegacyButton, MatLegacyRadioModule, i3$1.MatLegacyRadioGroup, i3$1.MatLegacyRadioButton, FormsModule, i1.NgControlStatus, i1.NgModel], styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column;padding-bottom:22px}.answer-ratio-group[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:21px}.quiz-conatiner[_ngcontent-%COMP%]{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}.correctAnswer[_ngcontent-%COMP%]{color:green}.incorrectAnswer[_ngcontent-%COMP%]{color:red}"] });
+    } }, dependencies: [CommonModule, i1$1.NgClass, i1$1.NgForOf, i1$1.NgIf, MatLegacyButtonModule, i2.MatLegacyButton, MatLegacyRadioModule, i3$1.MatLegacyRadioGroup, i3$1.MatLegacyRadioButton, FormsModule, i1.NgControlStatus, i1.NgModel], styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column;padding-bottom:22px}.answer-ratio-group[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:21px}.answer-ratio-group[_ngcontent-%COMP%]   li[_ngcontent-%COMP%]:before{content:\")\";margin-right:.5em}.quiz-conatiner[_ngcontent-%COMP%]{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}"] });
 (function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(NgxEditorjsQuizClientBlockComponent, [{
         type: Component,
         args: [{ standalone: true, selector: 'ngx-editorjs-image-client-block', imports: [
@@ -584,16 +585,21 @@ NgxEditorjsQuizClientBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent
                 ], template: `
     <div class="quiz-conatiner">
       <h1>Quiz</h1>
+      <p *ngIf="answerResponse" [ngClass]="isAnswerCorrect ? 'successful-text' : 'failure-text'" >{{ answerResponse }}</p>
       <p #paragraph>{{ _value.question }}</p>
-      <mat-radio-group class="answer-ratio-group" [(ngModel)]="userAnswer" [disabled]="answerSubmited">
-        <mat-radio-button *ngFor="let option of _value.ratioOptions" [value]="option.value">{{ option.value }}</mat-radio-button>
+      <mat-radio-group [(ngModel)]="userAnswer" [disabled]="answerSubmited">
+        <ol type="a" class="answer-ratio-group">
+          <li *ngFor="let option of _value.ratioOptions">
+          <mat-radio-button [value]="option.value">{{ option.value }}</mat-radio-button>
+          </li>
+        </ol>
+        
       </mat-radio-group>
       <div class="action-group">
         <button mat-flat-button color="primary" type="button" (click)="onQuizAnswerClick()" [disabled]="!userAnswer || answerSubmited">Submit</button>
       </div>
-      <p *ngIf="answerResponse" [ngClass]="isAnswerCorrect ? 'correctAnswer' : 'incorrectAnswer'" >{{ answerResponse }}</p>
     </div>
-  `, styles: [":host{display:flex;flex-direction:column;padding-bottom:22px}.answer-ratio-group{display:flex;flex-direction:column;gap:21px}.quiz-conatiner{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group{display:flex;justify-content:flex-end;gap:10px}.correctAnswer{color:green}.incorrectAnswer{color:red}\n"] }]
+  `, styles: [":host{display:flex;flex-direction:column;padding-bottom:22px}.answer-ratio-group{display:flex;flex-direction:column;gap:21px}.answer-ratio-group li:before{content:\")\";margin-right:.5em}.quiz-conatiner{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group{display:flex;justify-content:flex-end;gap:10px}\n"] }]
     }], null, { value: [{
             type: Input
         }] }); })();

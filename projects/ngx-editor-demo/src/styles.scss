@@ -42,3 +42,12 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+// !IMPORTANT: This is needed for quiz block
+.successful-text {
+  color: #66BB6A;
+}
+.failure-text {
+  color: #EF5350;
+}

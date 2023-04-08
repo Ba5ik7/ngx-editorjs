@@ -107,7 +107,7 @@ export const InputData: NgxEditorjsOutputBlock[] = [
       "blockId": "o4zw2xfgze",
       "sortIndex": 13,
       "componentInstanceName": "NgxEditorjsQuizBlockMediator",
-      "dataClean": "{\"question\":\"What is the capital of France?\",\"correctAnswer\":\"Paris\",\"correctAnswerResponse\":\"Yay!\",\"incorrectAnswerResponse\":\"Sorry wrong answer\",\"ratioOptions\":[{\"value\":\"London\"},{\"value\":\"Paris\"},{\"value\":\"Berlin\"},{\"value\":\"Rome\"}]}",
+      "dataClean": "{\"question\":\"Which of the following statements is true about Angular's default RouteReuseStrategy?\",\"correctAnswer\":\"It reuses components when the route configuration remains the same.\",\"correctAnswerResponse\":\"That's correct! Angular's default RouteReuseStrategy reuses components when the route configuration remains the same. This prevents components from being destroyed and recreated when only the fragment or query parameters change.\",\"incorrectAnswerResponse\":\"That's incorrect. The correct answer is C. Angular's default RouteReuseStrategy reuses components when the route configuration remains the same. This prevents components from being destroyed and recreated when only the fragment or query parameters change.\",\"ratioOptions\":[{\"value\":\"It only reuses components when the route configuration changes.\"},{\"value\":\"It only reuses components when the route parameters change.\"},{\"value\":\"It reuses components when the route configuration remains the same.\"},{\"value\":\"It never reuses components.\"}]}",
       "savedAction": "quiz-hard_o_O!"
     },
     // {

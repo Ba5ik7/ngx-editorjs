@@ -17,14 +17,19 @@ import { FormsModule } from '@angular/forms';
   template: `
     <div class="quiz-conatiner">
       <h1>Quiz</h1>
+      <p *ngIf="answerResponse" [ngClass]="isAnswerCorrect ? 'successful-text' : 'failure-text'" >{{ answerResponse }}</p>
       <p #paragraph>{{ _value.question }}</p>
-      <mat-radio-group class="answer-ratio-group" [(ngModel)]="userAnswer" [disabled]="answerSubmited">
-        <mat-radio-button *ngFor="let option of _value.ratioOptions" [value]="option.value">{{ option.value }}</mat-radio-button>
+      <mat-radio-group [(ngModel)]="userAnswer" [disabled]="answerSubmited">
+        <ol type="a" class="answer-ratio-group">
+          <li *ngFor="let option of _value.ratioOptions">
+          <mat-radio-button [value]="option.value">{{ option.value }}</mat-radio-button>
+          </li>
+        </ol>
+        
       </mat-radio-group>
       <div class="action-group">
         <button mat-flat-button color="primary" type="button" (click)="onQuizAnswerClick()" [disabled]="!userAnswer || answerSubmited">Submit</button>
       </div>
-      <p *ngIf="answerResponse" [ngClass]="isAnswerCorrect ? 'correctAnswer' : 'incorrectAnswer'" >{{ answerResponse }}</p>
     </div>
   `,
   styles: [`
@@ -33,6 +38,10 @@ import { FormsModule } from '@angular/forms';
       display: flex;
       flex-direction: column;
       gap: 21px;
+    }
+    .answer-ratio-group li::before {
+      content: ")";
+      margin-right: 0.5em;
     }
     .quiz-conatiner {
       border: 1px solid #ccc;
@@ -43,12 +52,6 @@ import { FormsModule } from '@angular/forms';
       display: flex;
       justify-content: flex-end;
       gap: 10px;
-    }
-    .correctAnswer {
-      color: green;
-    }
-    .incorrectAnswer {
-      color: red;
     }
   `]
 })
