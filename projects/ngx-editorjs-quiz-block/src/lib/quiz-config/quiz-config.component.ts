@@ -173,9 +173,6 @@ export class QuizConfigComponent implements OnInit {
   }
 
   updateQuiz() {
-    console.log('updateQuiz');
-    console.log(this.quizConfigForm.value);
-    
     this.quizValue.emit(this.quizConfigForm.value);
   }
 

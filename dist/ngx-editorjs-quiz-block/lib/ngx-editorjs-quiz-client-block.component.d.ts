@@ -11,4 +11,3 @@ export declare class NgxEditorjsQuizClientBlockComponent {
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxEditorjsQuizClientBlockComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<NgxEditorjsQuizClientBlockComponent, "ngx-editorjs-image-client-block", never, { "value": "value"; }, {}, never, never, true, never>;
 }
-//# sourceMappingURL=ngx-editorjs-quiz-client-block.component.d.ts.map

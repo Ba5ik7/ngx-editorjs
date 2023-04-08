@@ -177,11 +177,6 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
   }
 
   parentRequestCurrentValue(): void {
-
-    console.log({
-      blockControlMap: this.blockControlMap,
-    });
-    
     const blocks: NgxEditorjsOutputBlock[] = [];
     this.blockControlMap.forEach((block, key) => {
       blocks.push({
