@@ -10,7 +10,13 @@ import { Subject, takeUntil } from 'rxjs';
 import { AbstractControl } from '@angular/forms';
 
 type RatioOption = { value: string };
-export type QuizConfig = { question: string, correctAnswer: string, ratioOptions: RatioOption[] };
+export type QuizConfig = {
+  question: string,
+  correctAnswer: string,
+  correctAnswerResponse: string,
+  incorrectAnswerResponse: string,
+  ratioOptions: RatioOption[]
+};
 
 function validateRatioOptions(): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } | null => {
@@ -69,6 +75,24 @@ function validateRatioOptions(): ValidatorFn {
               </mat-option>
             </mat-select>
             <mat-error *ngIf="quizConfigForm.get('correctAnswer')?.errors">{{quizConfigFormErrorMessages['correctAnswer']}}</mat-error>
+          </mat-form-field>
+        </ng-container>
+
+        <ng-container *ngIf="quizConfigForm.get('question')?.valid &&  quizConfigForm.get('ratioOptions')?.valid && quizConfigForm.get('correctAnswer')?.valid">
+          <h2>4) Correct answer response.</h2>
+          <mat-form-field appearance="outline" color="accent">
+            <mat-label>Response</mat-label>
+            <textarea #title matInput formControlName="correctAnswerResponse"></textarea>
+            <mat-error *ngIf="quizConfigForm.get('correctAnswerResponse')?.errors">{{quizConfigFormErrorMessages['correctAnswerResponse']}}</mat-error>
+          </mat-form-field>
+        </ng-container>
+
+        <ng-container *ngIf="quizConfigForm.get('question')?.valid &&  quizConfigForm.get('ratioOptions')?.valid && quizConfigForm.get('correctAnswer')?.valid">
+          <h2>5) Incorrect answer response.</h2>
+          <mat-form-field appearance="outline" color="accent">
+            <mat-label>Response</mat-label>
+            <textarea #title matInput formControlName="incorrectAnswerResponse"></textarea>
+            <mat-error *ngIf="quizConfigForm.get('incorrectAnswerResponse')?.errors">{{quizConfigFormErrorMessages['incorrectAnswerResponse']}}</mat-error>
           </mat-form-field>
         </ng-container>
 
@@ -131,7 +155,9 @@ export class QuizConfigComponent implements OnInit {
   ngOnInit(): void {
     this.quizConfigForm = this.formBuilder.group({
       question: [this.value.question ?? '', [Validators.required]],
-      correctAnswer: [this.value.correctAnswer ?? '', [Validators.required]],
+      correctAnswer: [this.value.correctAnswer ?? undefined, [Validators.required]],
+      correctAnswerResponse: [this.value.correctAnswerResponse ?? '', [Validators.required]],
+      incorrectAnswerResponse: [this.value.incorrectAnswerResponse ?? '', [Validators.required]],
       ratioOptions: this.formBuilder.array((this.value.ratioOptions ?? [])
                     .map(option => this.formBuilder.group({ value: [option.value, Validators.required] })), validateRatioOptions())
 
@@ -147,6 +173,9 @@ export class QuizConfigComponent implements OnInit {
   }
 
   updateQuiz() {
+    console.log('updateQuiz');
+    console.log(this.quizConfigForm.value);
+    
     this.quizValue.emit(this.quizConfigForm.value);
   }
 
@@ -162,6 +191,7 @@ export class QuizConfigComponent implements OnInit {
   }
 
   removeRatioOption(index: number): void {
+    this.quizConfigForm.get('correctAnswer')?.setValue(undefined);
     this.ratioOptions.removeAt(index);
   }
 

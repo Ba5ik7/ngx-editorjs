@@ -8,6 +8,8 @@ type RatioOption = {
 export type QuizConfig = {
     question: string;
     correctAnswer: string;
+    correctAnswerResponse: string;
+    incorrectAnswerResponse: string;
     ratioOptions: RatioOption[];
 };
 export declare class QuizConfigComponent implements OnInit {

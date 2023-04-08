@@ -42,25 +42,25 @@ function QuizConfigComponent_mat_error_11_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵtextInterpolate(ctx_r1.quizConfigFormErrorMessages["question"]);
 } }
 function QuizConfigComponent_ng_container_12_div_6_Template(rf, ctx) { if (rf & 1) {
-    const _r8 = i0.ɵɵgetCurrentView();
+    const _r10 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementStart(0, "div", 14)(1, "div", 15)(2, "mat-form-field", 16)(3, "mat-label");
     i0.ɵɵtext(4);
     i0.ɵɵelementEnd();
     i0.ɵɵelement(5, "input", 17);
     i0.ɵɵelementEnd();
     i0.ɵɵelementStart(6, "button", 18);
-    i0.ɵɵlistener("click", function QuizConfigComponent_ng_container_12_div_6_Template_button_click_6_listener() { const restoredCtx = i0.ɵɵrestoreView(_r8); const i_r6 = restoredCtx.index; const ctx_r7 = i0.ɵɵnextContext(2); return i0.ɵɵresetView(ctx_r7.removeRatioOption(i_r6)); });
+    i0.ɵɵlistener("click", function QuizConfigComponent_ng_container_12_div_6_Template_button_click_6_listener() { const restoredCtx = i0.ɵɵrestoreView(_r10); const i_r8 = restoredCtx.index; const ctx_r9 = i0.ɵɵnextContext(2); return i0.ɵɵresetView(ctx_r9.removeRatioOption(i_r8)); });
     i0.ɵɵelementStart(7, "mat-icon");
     i0.ɵɵtext(8, "delete");
     i0.ɵɵelementEnd()()()();
 } if (rf & 2) {
-    const i_r6 = ctx.index;
-    i0.ɵɵproperty("formGroupName", i_r6);
+    const i_r8 = ctx.index;
+    i0.ɵɵproperty("formGroupName", i_r8);
     i0.ɵɵadvance(4);
-    i0.ɵɵtextInterpolate1("Option ", i_r6 + 1, "");
+    i0.ɵɵtextInterpolate1("Option ", i_r8 + 1, "");
 } }
 function QuizConfigComponent_ng_container_12_Template(rf, ctx) { if (rf & 1) {
-    const _r10 = i0.ɵɵgetCurrentView();
+    const _r12 = i0.ɵɵgetCurrentView();
     i0.ɵɵelementContainerStart(0);
     i0.ɵɵelementStart(1, "h2");
     i0.ɵɵtext(2, "2) Create the possible answers ");
@@ -70,7 +70,7 @@ function QuizConfigComponent_ng_container_12_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementStart(5, "div", 10);
     i0.ɵɵtemplate(6, QuizConfigComponent_ng_container_12_div_6_Template, 9, 2, "div", 11);
     i0.ɵɵelementStart(7, "div", 12)(8, "button", 13);
-    i0.ɵɵlistener("click", function QuizConfigComponent_ng_container_12_Template_button_click_8_listener() { i0.ɵɵrestoreView(_r10); const ctx_r9 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r9.addRatioOption()); });
+    i0.ɵɵlistener("click", function QuizConfigComponent_ng_container_12_Template_button_click_8_listener() { i0.ɵɵrestoreView(_r12); const ctx_r11 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r11.addRatioOption()); });
     i0.ɵɵtext(9, "Add Answer");
     i0.ɵɵelementEnd()()();
     i0.ɵɵelementContainerEnd();
@@ -84,21 +84,21 @@ function QuizConfigComponent_ng_container_13_mat_option_7_Template(rf, ctx) { if
     i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
 } if (rf & 2) {
-    const option_r13 = ctx.$implicit;
+    const option_r15 = ctx.$implicit;
     let tmp_0_0;
     let tmp_1_0;
-    i0.ɵɵproperty("value", (tmp_0_0 = option_r13.get("value")) == null ? null : tmp_0_0.value);
+    i0.ɵɵproperty("value", (tmp_0_0 = option_r15.get("value")) == null ? null : tmp_0_0.value);
     i0.ɵɵadvance(1);
-    i0.ɵɵtextInterpolate1(" ", (tmp_1_0 = option_r13.get("value")) == null ? null : tmp_1_0.value, " ");
+    i0.ɵɵtextInterpolate1(" ", (tmp_1_0 = option_r15.get("value")) == null ? null : tmp_1_0.value, " ");
 } }
 function QuizConfigComponent_ng_container_13_mat_error_8_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementStart(0, "mat-error");
     i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
 } if (rf & 2) {
-    const ctx_r12 = i0.ɵɵnextContext(2);
+    const ctx_r14 = i0.ɵɵnextContext(2);
     i0.ɵɵadvance(1);
-    i0.ɵɵtextInterpolate(ctx_r12.quizConfigFormErrorMessages["correctAnswer"]);
+    i0.ɵɵtextInterpolate(ctx_r14.quizConfigFormErrorMessages["correctAnswer"]);
 } }
 function QuizConfigComponent_ng_container_13_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵelementContainerStart(0);
@@ -121,6 +121,60 @@ function QuizConfigComponent_ng_container_13_Template(rf, ctx) { if (rf & 1) {
     i0.ɵɵproperty("ngForOf", ctx_r3.ratioOptions.controls);
     i0.ɵɵadvance(1);
     i0.ɵɵproperty("ngIf", (tmp_1_0 = ctx_r3.quizConfigForm.get("correctAnswer")) == null ? null : tmp_1_0.errors);
+} }
+function QuizConfigComponent_ng_container_14_mat_error_8_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "mat-error");
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r18 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance(1);
+    i0.ɵɵtextInterpolate(ctx_r18.quizConfigFormErrorMessages["correctAnswerResponse"]);
+} }
+function QuizConfigComponent_ng_container_14_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementContainerStart(0);
+    i0.ɵɵelementStart(1, "h2");
+    i0.ɵɵtext(2, "4) Correct answer response.");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(3, "mat-form-field", 3)(4, "mat-label");
+    i0.ɵɵtext(5, "Response");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelement(6, "textarea", 22, 5);
+    i0.ɵɵtemplate(8, QuizConfigComponent_ng_container_14_mat_error_8_Template, 2, 1, "mat-error", 6);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementContainerEnd();
+} if (rf & 2) {
+    const ctx_r4 = i0.ɵɵnextContext();
+    let tmp_0_0;
+    i0.ɵɵadvance(8);
+    i0.ɵɵproperty("ngIf", (tmp_0_0 = ctx_r4.quizConfigForm.get("correctAnswerResponse")) == null ? null : tmp_0_0.errors);
+} }
+function QuizConfigComponent_ng_container_15_mat_error_8_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "mat-error");
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r20 = i0.ɵɵnextContext(2);
+    i0.ɵɵadvance(1);
+    i0.ɵɵtextInterpolate(ctx_r20.quizConfigFormErrorMessages["incorrectAnswerResponse"]);
+} }
+function QuizConfigComponent_ng_container_15_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementContainerStart(0);
+    i0.ɵɵelementStart(1, "h2");
+    i0.ɵɵtext(2, "5) Incorrect answer response.");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementStart(3, "mat-form-field", 3)(4, "mat-label");
+    i0.ɵɵtext(5, "Response");
+    i0.ɵɵelementEnd();
+    i0.ɵɵelement(6, "textarea", 23, 5);
+    i0.ɵɵtemplate(8, QuizConfigComponent_ng_container_15_mat_error_8_Template, 2, 1, "mat-error", 6);
+    i0.ɵɵelementEnd();
+    i0.ɵɵelementContainerEnd();
+} if (rf & 2) {
+    const ctx_r5 = i0.ɵɵnextContext();
+    let tmp_0_0;
+    i0.ɵɵadvance(8);
+    i0.ɵɵproperty("ngIf", (tmp_0_0 = ctx_r5.quizConfigForm.get("incorrectAnswerResponse")) == null ? null : tmp_0_0.errors);
 } }
 function validateRatioOptions() {
     return (control) => {
@@ -145,7 +199,9 @@ class QuizConfigComponent {
     ngOnInit() {
         this.quizConfigForm = this.formBuilder.group({
             question: [this.value.question ?? '', [Validators.required]],
-            correctAnswer: [this.value.correctAnswer ?? '', [Validators.required]],
+            correctAnswer: [this.value.correctAnswer ?? undefined, [Validators.required]],
+            correctAnswerResponse: [this.value.correctAnswerResponse ?? '', [Validators.required]],
+            incorrectAnswerResponse: [this.value.incorrectAnswerResponse ?? '', [Validators.required]],
             ratioOptions: this.formBuilder.array((this.value.ratioOptions ?? [])
                 .map(option => this.formBuilder.group({ value: [option.value, Validators.required] })), validateRatioOptions())
         });
@@ -157,6 +213,8 @@ class QuizConfigComponent {
         this.destory.next(true);
     }
     updateQuiz() {
+        console.log('updateQuiz');
+        console.log(this.quizConfigForm.value);
         this.quizValue.emit(this.quizConfigForm.value);
     }
     closeConfig() {
@@ -169,6 +227,7 @@ class QuizConfigComponent {
         this.ratioOptions.push(option);
     }
     removeRatioOption(index) {
+        this.quizConfigForm.get('correctAnswer')?.setValue(undefined);
         this.ratioOptions.removeAt(index);
     }
     setErrorsMessages(formGroup, formControlMessages) {
@@ -182,7 +241,7 @@ class QuizConfigComponent {
     }
 }
 QuizConfigComponent.ɵfac = function QuizConfigComponent_Factory(t) { return new (t || QuizConfigComponent)(i0.ɵɵdirectiveInject(i1.FormBuilder)); };
-QuizConfigComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: QuizConfigComponent, selectors: [["quiz-config"]], inputs: { value: "value" }, outputs: { quizValue: "quizValue" }, standalone: true, features: [i0.ɵɵStandaloneFeature], decls: 19, vars: 5, consts: [[1, "image-block-modal"], [3, "formGroup"], ["mat-dialog-title", ""], ["appearance", "outline", "color", "accent"], ["matInput", "", "formControlName", "question"], ["title", ""], [4, "ngIf"], [1, "action-group"], ["mat-flat-button", "", "color", "accent", "type", "button", 3, "disabled", "click"], ["mat-flat-button", "", "color", "warn", "type", "button", 3, "click"], ["formArrayName", "ratioOptions"], [3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "answers-action-group"], ["mat-raised-button", "", "color", "accent", "type", "button", 3, "click"], [3, "formGroupName"], [1, "ratio-option"], ["appearance", "outline", "color", "accent", 1, "ratio-option-input"], ["matInput", "", "type", "text", "formControlName", "value"], ["mat-icon-button", "", "color", "warn", "type", "button", 3, "click"], ["formControlName", "correctAnswer"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"]], template: function QuizConfigComponent_Template(rf, ctx) { if (rf & 1) {
+QuizConfigComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: QuizConfigComponent, selectors: [["quiz-config"]], inputs: { value: "value" }, outputs: { quizValue: "quizValue" }, standalone: true, features: [i0.ɵɵStandaloneFeature], decls: 21, vars: 7, consts: [[1, "image-block-modal"], [3, "formGroup"], ["mat-dialog-title", ""], ["appearance", "outline", "color", "accent"], ["matInput", "", "formControlName", "question"], ["title", ""], [4, "ngIf"], [1, "action-group"], ["mat-flat-button", "", "color", "accent", "type", "button", 3, "disabled", "click"], ["mat-flat-button", "", "color", "warn", "type", "button", 3, "click"], ["formArrayName", "ratioOptions"], [3, "formGroupName", 4, "ngFor", "ngForOf"], [1, "answers-action-group"], ["mat-raised-button", "", "color", "accent", "type", "button", 3, "click"], [3, "formGroupName"], [1, "ratio-option"], ["appearance", "outline", "color", "accent", 1, "ratio-option-input"], ["matInput", "", "type", "text", "formControlName", "value"], ["mat-icon-button", "", "color", "warn", "type", "button", 3, "click"], ["formControlName", "correctAnswer"], [3, "value", 4, "ngFor", "ngForOf"], [3, "value"], ["matInput", "", "formControlName", "correctAnswerResponse"], ["matInput", "", "formControlName", "incorrectAnswerResponse"]], template: function QuizConfigComponent_Template(rf, ctx) { if (rf & 1) {
         i0.ɵɵelementStart(0, "div", 0)(1, "form", 1)(2, "h1", 2);
         i0.ɵɵtext(3, "Quiz Configuration");
         i0.ɵɵelementEnd();
@@ -197,18 +256,22 @@ QuizConfigComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: QuizCon
         i0.ɵɵelementEnd();
         i0.ɵɵtemplate(12, QuizConfigComponent_ng_container_12_Template, 10, 1, "ng-container", 6);
         i0.ɵɵtemplate(13, QuizConfigComponent_ng_container_13_Template, 9, 2, "ng-container", 6);
-        i0.ɵɵelementStart(14, "div", 7)(15, "button", 8);
-        i0.ɵɵlistener("click", function QuizConfigComponent_Template_button_click_15_listener() { return ctx.updateQuiz(); });
-        i0.ɵɵtext(16, "Save");
+        i0.ɵɵtemplate(14, QuizConfigComponent_ng_container_14_Template, 9, 1, "ng-container", 6);
+        i0.ɵɵtemplate(15, QuizConfigComponent_ng_container_15_Template, 9, 1, "ng-container", 6);
+        i0.ɵɵelementStart(16, "div", 7)(17, "button", 8);
+        i0.ɵɵlistener("click", function QuizConfigComponent_Template_button_click_17_listener() { return ctx.updateQuiz(); });
+        i0.ɵɵtext(18, "Save");
         i0.ɵɵelementEnd();
-        i0.ɵɵelementStart(17, "button", 9);
-        i0.ɵɵlistener("click", function QuizConfigComponent_Template_button_click_17_listener() { return ctx.closeConfig(); });
-        i0.ɵɵtext(18, "Cancel");
+        i0.ɵɵelementStart(19, "button", 9);
+        i0.ɵɵlistener("click", function QuizConfigComponent_Template_button_click_19_listener() { return ctx.closeConfig(); });
+        i0.ɵɵtext(20, "Cancel");
         i0.ɵɵelementEnd()()()();
     } if (rf & 2) {
         let tmp_1_0;
         let tmp_2_0;
         let tmp_3_0;
+        let tmp_4_0;
+        let tmp_5_0;
         i0.ɵɵadvance(1);
         i0.ɵɵproperty("formGroup", ctx.quizConfigForm);
         i0.ɵɵadvance(10);
@@ -217,6 +280,10 @@ QuizConfigComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: QuizCon
         i0.ɵɵproperty("ngIf", (tmp_2_0 = ctx.quizConfigForm.get("question")) == null ? null : tmp_2_0.valid);
         i0.ɵɵadvance(1);
         i0.ɵɵproperty("ngIf", ((tmp_3_0 = ctx.quizConfigForm.get("question")) == null ? null : tmp_3_0.valid) && ((tmp_3_0 = ctx.quizConfigForm.get("ratioOptions")) == null ? null : tmp_3_0.valid));
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("ngIf", ((tmp_4_0 = ctx.quizConfigForm.get("question")) == null ? null : tmp_4_0.valid) && ((tmp_4_0 = ctx.quizConfigForm.get("ratioOptions")) == null ? null : tmp_4_0.valid) && ((tmp_4_0 = ctx.quizConfigForm.get("correctAnswer")) == null ? null : tmp_4_0.valid));
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("ngIf", ((tmp_5_0 = ctx.quizConfigForm.get("question")) == null ? null : tmp_5_0.valid) && ((tmp_5_0 = ctx.quizConfigForm.get("ratioOptions")) == null ? null : tmp_5_0.valid) && ((tmp_5_0 = ctx.quizConfigForm.get("correctAnswer")) == null ? null : tmp_5_0.valid));
         i0.ɵɵadvance(2);
         i0.ɵɵproperty("disabled", ctx.quizConfigForm.invalid);
     } }, dependencies: [CommonModule, i1$1.NgForOf, i1$1.NgIf, MatLegacyInputModule, i3.MatLegacyError, i3.MatLegacyFormField, i3.MatLegacyLabel, i4.MatLegacyInput, MatLegacyButtonModule, i2.MatLegacyButton, MatLegacyFormFieldModule,
@@ -266,6 +333,24 @@ QuizConfigComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: QuizCon
               </mat-option>
             </mat-select>
             <mat-error *ngIf="quizConfigForm.get('correctAnswer')?.errors">{{quizConfigFormErrorMessages['correctAnswer']}}</mat-error>
+          </mat-form-field>
+        </ng-container>
+
+        <ng-container *ngIf="quizConfigForm.get('question')?.valid &&  quizConfigForm.get('ratioOptions')?.valid && quizConfigForm.get('correctAnswer')?.valid">
+          <h2>4) Correct answer response.</h2>
+          <mat-form-field appearance="outline" color="accent">
+            <mat-label>Response</mat-label>
+            <textarea #title matInput formControlName="correctAnswerResponse"></textarea>
+            <mat-error *ngIf="quizConfigForm.get('correctAnswerResponse')?.errors">{{quizConfigFormErrorMessages['correctAnswerResponse']}}</mat-error>
+          </mat-form-field>
+        </ng-container>
+
+        <ng-container *ngIf="quizConfigForm.get('question')?.valid &&  quizConfigForm.get('ratioOptions')?.valid && quizConfigForm.get('correctAnswer')?.valid">
+          <h2>5) Incorrect answer response.</h2>
+          <mat-form-field appearance="outline" color="accent">
+            <mat-label>Response</mat-label>
+            <textarea #title matInput formControlName="incorrectAnswerResponse"></textarea>
+            <mat-error *ngIf="quizConfigForm.get('incorrectAnswerResponse')?.errors">{{quizConfigFormErrorMessages['incorrectAnswerResponse']}}</mat-error>
           </mat-form-field>
         </ng-container>
 
@@ -346,7 +431,9 @@ class NgxEditorjsQuizBlockComponent extends BaseBlockComponent {
         this._value = {
             question: '',
             correctAnswer: '',
-            ratioOptions: []
+            ratioOptions: [],
+            correctAnswerResponse: '',
+            incorrectAnswerResponse: ''
         };
     }
     ngOnInit() {
@@ -415,23 +502,37 @@ NgxEditorjsQuizBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ typ
         }] }); })();
 
 function NgxEditorjsQuizClientBlockComponent_mat_radio_button_7_Template(rf, ctx) { if (rf & 1) {
-    i0.ɵɵelementStart(0, "mat-radio-button", 6);
+    i0.ɵɵelementStart(0, "mat-radio-button", 7);
     i0.ɵɵtext(1);
     i0.ɵɵelementEnd();
 } if (rf & 2) {
-    const option_r2 = ctx.$implicit;
-    i0.ɵɵproperty("value", option_r2.value);
+    const option_r3 = ctx.$implicit;
+    i0.ɵɵproperty("value", option_r3.value);
     i0.ɵɵadvance(1);
-    i0.ɵɵtextInterpolate(option_r2.value);
+    i0.ɵɵtextInterpolate(option_r3.value);
+} }
+function NgxEditorjsQuizClientBlockComponent_p_11_Template(rf, ctx) { if (rf & 1) {
+    i0.ɵɵelementStart(0, "p", 8);
+    i0.ɵɵtext(1);
+    i0.ɵɵelementEnd();
+} if (rf & 2) {
+    const ctx_r2 = i0.ɵɵnextContext();
+    i0.ɵɵproperty("ngClass", ctx_r2.isAnswerCorrect ? "correctAnswer" : "incorrectAnswer");
+    i0.ɵɵadvance(1);
+    i0.ɵɵtextInterpolate(ctx_r2.answerResponse);
 } }
 class NgxEditorjsQuizClientBlockComponent {
     constructor() {
+        this.isAnswerCorrect = undefined;
+        this.answerResponse = undefined;
         this.answerSubmited = false;
         this.userAnswer = undefined;
         this._value = {
             question: '',
             correctAnswer: '',
-            ratioOptions: []
+            ratioOptions: [],
+            correctAnswerResponse: '',
+            incorrectAnswerResponse: ''
         };
     }
     set value(value) {
@@ -439,17 +540,12 @@ class NgxEditorjsQuizClientBlockComponent {
     }
     onQuizAnswerClick() {
         this.answerSubmited = true;
-        const isAnswerCorrect = this.userAnswer === this._value.correctAnswer;
-        isAnswerCorrect ? alert('Correct') : alert('Wrong');
-        console.log({
-            userAnswer: this.userAnswer,
-            correctAnswer: this._value.correctAnswer,
-            isAnswerCorrect
-        });
+        this.isAnswerCorrect = this.userAnswer === this._value.correctAnswer;
+        this.answerResponse = this.isAnswerCorrect ? this._value.correctAnswerResponse : this._value.incorrectAnswerResponse;
     }
 }
 NgxEditorjsQuizClientBlockComponent.ɵfac = function NgxEditorjsQuizClientBlockComponent_Factory(t) { return new (t || NgxEditorjsQuizClientBlockComponent)(); };
-NgxEditorjsQuizClientBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: NgxEditorjsQuizClientBlockComponent, selectors: [["ngx-editorjs-image-client-block"]], inputs: { value: "value" }, standalone: true, features: [i0.ɵɵStandaloneFeature], decls: 11, vars: 5, consts: [[1, "quiz-conatiner"], ["paragraph", ""], [1, "answer-ratio-group", 3, "ngModel", "disabled", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [1, "action-group"], ["mat-flat-button", "", "color", "primary", "type", "button", 3, "disabled", "click"], [3, "value"]], template: function NgxEditorjsQuizClientBlockComponent_Template(rf, ctx) { if (rf & 1) {
+NgxEditorjsQuizClientBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: NgxEditorjsQuizClientBlockComponent, selectors: [["ngx-editorjs-image-client-block"]], inputs: { value: "value" }, standalone: true, features: [i0.ɵɵStandaloneFeature], decls: 12, vars: 6, consts: [[1, "quiz-conatiner"], ["paragraph", ""], [1, "answer-ratio-group", 3, "ngModel", "disabled", "ngModelChange"], [3, "value", 4, "ngFor", "ngForOf"], [1, "action-group"], ["mat-flat-button", "", "color", "primary", "type", "button", 3, "disabled", "click"], [3, "ngClass", 4, "ngIf"], [3, "value"], [3, "ngClass"]], template: function NgxEditorjsQuizClientBlockComponent_Template(rf, ctx) { if (rf & 1) {
         i0.ɵɵelementStart(0, "div", 0)(1, "h1");
         i0.ɵɵtext(2, "Quiz");
         i0.ɵɵelementEnd();
@@ -463,7 +559,9 @@ NgxEditorjsQuizClientBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent
         i0.ɵɵelementStart(8, "div", 4)(9, "button", 5);
         i0.ɵɵlistener("click", function NgxEditorjsQuizClientBlockComponent_Template_button_click_9_listener() { return ctx.onQuizAnswerClick(); });
         i0.ɵɵtext(10, "Submit");
-        i0.ɵɵelementEnd()()();
+        i0.ɵɵelementEnd()();
+        i0.ɵɵtemplate(11, NgxEditorjsQuizClientBlockComponent_p_11_Template, 2, 2, "p", 6);
+        i0.ɵɵelementEnd();
     } if (rf & 2) {
         i0.ɵɵadvance(5);
         i0.ɵɵtextInterpolate(ctx._value.question);
@@ -473,7 +571,9 @@ NgxEditorjsQuizClientBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent
         i0.ɵɵproperty("ngForOf", ctx._value.ratioOptions);
         i0.ɵɵadvance(2);
         i0.ɵɵproperty("disabled", !ctx.userAnswer || ctx.answerSubmited);
-    } }, dependencies: [CommonModule, i1$1.NgForOf, MatLegacyButtonModule, i2.MatLegacyButton, MatLegacyRadioModule, i3$1.MatLegacyRadioGroup, i3$1.MatLegacyRadioButton, FormsModule, i1.NgControlStatus, i1.NgModel], styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column;padding-bottom:22px}.answer-ratio-group[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:21px}.quiz-conatiner[_ngcontent-%COMP%]{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}"] });
+        i0.ɵɵadvance(2);
+        i0.ɵɵproperty("ngIf", ctx.answerResponse);
+    } }, dependencies: [CommonModule, i1$1.NgClass, i1$1.NgForOf, i1$1.NgIf, MatLegacyButtonModule, i2.MatLegacyButton, MatLegacyRadioModule, i3$1.MatLegacyRadioGroup, i3$1.MatLegacyRadioButton, FormsModule, i1.NgControlStatus, i1.NgModel], styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column;padding-bottom:22px}.answer-ratio-group[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:21px}.quiz-conatiner[_ngcontent-%COMP%]{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}.correctAnswer[_ngcontent-%COMP%]{color:green}.incorrectAnswer[_ngcontent-%COMP%]{color:red}"] });
 (function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(NgxEditorjsQuizClientBlockComponent, [{
         type: Component,
         args: [{ standalone: true, selector: 'ngx-editorjs-image-client-block', imports: [
@@ -491,8 +591,9 @@ NgxEditorjsQuizClientBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent
       <div class="action-group">
         <button mat-flat-button color="primary" type="button" (click)="onQuizAnswerClick()" [disabled]="!userAnswer || answerSubmited">Submit</button>
       </div>
+      <p *ngIf="answerResponse" [ngClass]="isAnswerCorrect ? 'correctAnswer' : 'incorrectAnswer'" >{{ answerResponse }}</p>
     </div>
-  `, styles: [":host{display:flex;flex-direction:column;padding-bottom:22px}.answer-ratio-group{display:flex;flex-direction:column;gap:21px}.quiz-conatiner{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group{display:flex;justify-content:flex-end;gap:10px}\n"] }]
+  `, styles: [":host{display:flex;flex-direction:column;padding-bottom:22px}.answer-ratio-group{display:flex;flex-direction:column;gap:21px}.quiz-conatiner{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group{display:flex;justify-content:flex-end;gap:10px}.correctAnswer{color:green}.incorrectAnswer{color:red}\n"] }]
     }], null, { value: [{
             type: Input
         }] }); })();

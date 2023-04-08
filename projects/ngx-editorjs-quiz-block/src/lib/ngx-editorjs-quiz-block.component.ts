@@ -64,7 +64,9 @@ export class NgxEditorjsQuizBlockComponent extends BaseBlockComponent implements
   _value: QuizConfig = {
     question: '',
     correctAnswer: '',
-    ratioOptions: []
+    ratioOptions: [],
+    correctAnswerResponse: '',
+    incorrectAnswerResponse: ''
   };
 
   override ngOnInit() {

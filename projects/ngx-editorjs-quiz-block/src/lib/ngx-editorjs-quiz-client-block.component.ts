@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
       <div class="action-group">
         <button mat-flat-button color="primary" type="button" (click)="onQuizAnswerClick()" [disabled]="!userAnswer || answerSubmited">Submit</button>
       </div>
+      <p *ngIf="answerResponse" [ngClass]="isAnswerCorrect ? 'correctAnswer' : 'incorrectAnswer'" >{{ answerResponse }}</p>
     </div>
   `,
   styles: [`
@@ -43,16 +44,26 @@ import { FormsModule } from '@angular/forms';
       justify-content: flex-end;
       gap: 10px;
     }
+    .correctAnswer {
+      color: green;
+    }
+    .incorrectAnswer {
+      color: red;
+    }
   `]
 })
 export class NgxEditorjsQuizClientBlockComponent {
 
+  isAnswerCorrect: boolean | undefined = undefined;
+  answerResponse: string | undefined = undefined;
   answerSubmited = false;
   userAnswer: string | undefined = undefined;
   _value: QuizConfig = {
     question: '',
     correctAnswer: '',
-    ratioOptions: []
+    ratioOptions: [],
+    correctAnswerResponse: '',
+    incorrectAnswerResponse: ''
   };
 
   @Input() 
@@ -62,12 +73,7 @@ export class NgxEditorjsQuizClientBlockComponent {
 
   onQuizAnswerClick() {
     this.answerSubmited = true;
-    const isAnswerCorrect = this.userAnswer === this._value.correctAnswer;
-    isAnswerCorrect ? alert('Correct') : alert('Wrong');
-    console.log({
-      userAnswer: this.userAnswer,
-      correctAnswer: this._value.correctAnswer,
-      isAnswerCorrect
-    });
+    this.isAnswerCorrect = this.userAnswer === this._value.correctAnswer;
+    this.answerResponse = this.isAnswerCorrect ? this._value.correctAnswerResponse : this._value.incorrectAnswerResponse;
   }
 }
