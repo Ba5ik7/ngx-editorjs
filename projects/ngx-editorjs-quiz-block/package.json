@@ -1,16 +1,16 @@
 {
-  "name": "@tmdjr/ngx-editorjs-quiz-block",
-  "version": "0.0.32",
-  "peerDependencies": {
-    "@angular/common": ">=15.0.0",
-    "@angular/core": ">=15.0.0"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
-  "exports": {
-    "./esm2020": {
-       "default": "./esm2020"
-    }
- }
+   "name": "@tmdjr/ngx-editorjs-quiz-block",
+   "version": "0.0.33",
+   "peerDependencies": {
+      "@angular/common": ">=15.0.0",
+      "@angular/core": ">=15.0.0"
+   },
+   "dependencies": {
+      "tslib": "^2.3.0"
+   },
+   "exports": {
+      "./esm2020": {
+         "default": "./esm2020"
+      }
+   }
 }
