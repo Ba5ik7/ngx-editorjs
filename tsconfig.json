@@ -27,6 +27,9 @@
       "ngx-editorjs-image-block": [
         "dist/ngx-editorjs-image-block"
       ],
+      "ngx-editorjs-mermaid-block": [
+        "dist/ngx-editorjs-mermaid-block"
+      ],
       "ngx-editorjs-paragraph-block": [
         "dist/ngx-editorjs-paragraph-block"
       ],
