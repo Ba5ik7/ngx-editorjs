@@ -21,12 +21,18 @@ export const InputData2: NgxEditorjsOutputBlock[] = [
 
 export const InputData: NgxEditorjsOutputBlock[] = [
     {
-        "blockId": "eftkta822ke",
+        "blockId": "b3yosua186n",
         "sortIndex": 0,
-        "componentInstanceName": "NgxEditorjsHeaderBlockMediator",
-        "dataClean": "Property binding best practices",
-        "savedAction": "h1"
+        "componentInstanceName": "NgxEditorjsMermaidBlockMediator",
+        "dataClean": ""
     },
+    // {
+    //     "blockId": "eftkta822ke",
+    //     "sortIndex": 0,
+    //     "componentInstanceName": "NgxEditorjsHeaderBlockMediator",
+    //     "dataClean": "Property binding best practices",
+    //     "savedAction": "h1"
+    // },
     // {
     //     "blockId": "3apa0n490qe",
     //     "sortIndex": 1,

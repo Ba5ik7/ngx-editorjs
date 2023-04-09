@@ -33,7 +33,7 @@ function validateRatioOptions(): ValidatorFn {
   selector: 'quiz-config',
   standalone: true,
   template: `
-    <div class="image-block-modal" >
+    <div class="quiz-block-modal" >
       <form [formGroup]="quizConfigForm">
 
         <h1 mat-dialog-title>Quiz Configuration</h1>
