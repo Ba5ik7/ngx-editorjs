@@ -19,6 +19,7 @@ import { NgxEditorjsBlockquotesBlockMediator, NgxEditorjsBlockquotesClientBlockC
 import { NgxEditorjsImageBlockMediator, NgxEditorjsImageClientBlockComponent } from '@tmdjr/ngx-editorjs-image-block';
 import { NgxEditorjsCodeBlockMediator, NgxEditorjsCodeClientBlockComponent } from '@tmdjr/ngx-editorjs-code-block';
 import { NgxEditorjsQuizBlockMediator, NgxEditorjsQuizClientBlockComponent } from '@tmdjr/ngx-editorjs-quiz-block';
+import { NgxEditorjsMermaidBlockMediator } from '@tmdjr/ngx-editorjs-mermaid-block';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,11 @@ import { NgxEditorjsQuizBlockMediator, NgxEditorjsQuizClientBlockComponent } fro
             name: 'Quiz',
             component: NgxEditorjsQuizBlockMediator,
             componentInstanceName: 'NgxEditorjsQuizBlockMediator'
+          },
+          {
+            name: 'Mermaid',
+            component: NgxEditorjsMermaidBlockMediator,
+            componentInstanceName: 'NgxEditorjsMermaidBlockMediator'
           }
         ]
       }

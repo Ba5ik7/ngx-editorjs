@@ -1,5 +1,5 @@
 {
-  "name": "ngx-editorjs-mermaid-block",
+  "name": "@tmdjr/ngx-editorjs-mermaid-block",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^15.2.0",

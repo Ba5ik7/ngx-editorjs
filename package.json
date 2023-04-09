@@ -14,6 +14,7 @@
     "watch5": "ng build ngx-editorjs-image-block --watch --configuration development",
     "watch6": "ng build ngx-editorjs-code-block --watch --configuration development",
     "watch7": "ng build ngx-editorjs-quiz-block --watch --configuration development",
+    "watch8": "ng build ngx-editorjs-mermaid-block --watch --configuration development",
     "watch": "npm run watch1 & npm run watch3 & npm run watch4 & npm run watch5 & npm run watch6",
     "test": "ng test",
     "linkEditor": "cd dist/ngx-editorjs && npm link && cd ../../",
@@ -23,8 +24,9 @@
     "linkEditorImage": "cd dist/ngx-editorjs-image-block && npm link && cd ../../",
     "linkEditorCode": "cd dist/ngx-editorjs-code-block && npm link && cd ../../",
     "linkEditorQuiz": "cd dist/ngx-editorjs-quiz-block && npm link && cd ../../",
-    "linkAll": "npm run linkEditor && npm run linkEditorClient && npm run linkEditorParagraph && npm run linkEditorBlockquotes && npm run linkEditorImage && npm run linkEditorCode",
-    "link": "npm link @tmdjr/ngx-editorjs @tmdjr/ngx-editorjs-client @tmdjr/ngx-editorjs-paragraph-block @tmdjr/ngx-editorjs-blockquotes-block @tmdjr/ngx-editorjs-image-block @tmdjr/ngx-editorjs-code-block @tmdjr/ngx-editorjs-quiz-block",
+    "linkEditorMermaid": "cd dist/ngx-editorjs-mermaid-block && npm link && cd ../../",
+    "linkAll": "npm run linkEditor && npm run linkEditorClient && npm run linkEditorParagraph && npm run linkEditorBlockquotes && npm run linkEditorImage && npm run linkEditorCode && npm run linkEditorQuiz && npm run linkEditorMermaid",
+    "link": "npm link @tmdjr/ngx-editorjs @tmdjr/ngx-editorjs-client @tmdjr/ngx-editorjs-paragraph-block @tmdjr/ngx-editorjs-blockquotes-block @tmdjr/ngx-editorjs-image-block @tmdjr/ngx-editorjs-code-block @tmdjr/ngx-editorjs-quiz-block @tmdjr/ngx-editorjs-mermaid-block",
     "publishEditor": "cd dist/ngx-editorjs && npm publish && cd ../../",
     "publishEditorClient": "cd dist/ngx-editorjs-client && npm publish && cd ../../",
     "publishEditorParagraph": "cd dist/ngx-editorjs-paragraph-block && npm publish && cd ../../",
@@ -32,7 +34,8 @@
     "publishEditorImage": "cd dist/ngx-editorjs-image-block && npm publish && cd ../../",
     "publishEditorCode": "cd dist/ngx-editorjs-code-block && npm publish && cd ../../",
     "publishEditorQuiz": "cd dist/ngx-editorjs-quiz-block && npm publish && cd ../../",
-    "publishAll": "npm run publishEditor && npm run publishEditorClient && npm run publishEditorParagraph && npm run publishEditorBlockquotes && npm run publishEditorImage && npm run publishEditorCode && npm run publishEditorQuiz"
+    "publishEditorMermaid": "cd dist/ngx-editorjs-mermaid-block && npm publish && cd ../../",
+    "publishAll": "npm run publishEditor && npm run publishEditorClient && npm run publishEditorParagraph && npm run publishEditorBlockquotes && npm run publishEditorImage && npm run publishEditorCode && npm run publishEditorQuiz && npm run publishEditorMermaid"
   },
   "private": false,
   "dependencies": {

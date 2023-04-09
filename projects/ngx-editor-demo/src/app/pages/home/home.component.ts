@@ -20,13 +20,13 @@ export const InputData2: NgxEditorjsOutputBlock[] = [
 ];
 
 export const InputData: NgxEditorjsOutputBlock[] = [
-    // {
-    //     "blockId": "eftkta822ke",
-    //     "sortIndex": 0,
-    //     "componentInstanceName": "NgxEditorjsHeaderBlockMediator",
-    //     "dataClean": "Property binding best practices",
-    //     "savedAction": "h1"
-    // },
+    {
+        "blockId": "eftkta822ke",
+        "sortIndex": 0,
+        "componentInstanceName": "NgxEditorjsHeaderBlockMediator",
+        "dataClean": "Property binding best practices",
+        "savedAction": "h1"
+    },
     // {
     //     "blockId": "3apa0n490qe",
     //     "sortIndex": 1,
@@ -103,13 +103,13 @@ export const InputData: NgxEditorjsOutputBlock[] = [
     //     "componentInstanceName": "NgxEditorjsParagraphBlockMediator",
     //     "dataClean": "With reactive forms, you define the form model directly in the component class. The [formControl] directive links the explicitly created <code _ngcontent-jwe-c114=\"\" class=\"inline-code-example\"><a href=\"https://angular.io/api/forms/FormControl\">FormControl</a></code> instance to a specific form element in the view, using an internal value accessor."
     // },
-    {
-      "blockId": "o4zw2xfgze",
-      "sortIndex": 13,
-      "componentInstanceName": "NgxEditorjsQuizBlockMediator",
-      "dataClean": "{\"question\":\"Which of the following statements is true about Angular's default RouteReuseStrategy?\",\"correctAnswer\":\"It reuses components when the route configuration remains the same.\",\"correctAnswerResponse\":\"That's correct! Angular's default RouteReuseStrategy reuses components when the route configuration remains the same. This prevents components from being destroyed and recreated when only the fragment or query parameters change.\",\"incorrectAnswerResponse\":\"That's incorrect. The correct answer is C. Angular's default RouteReuseStrategy reuses components when the route configuration remains the same. This prevents components from being destroyed and recreated when only the fragment or query parameters change.\",\"ratioOptions\":[{\"value\":\"It only reuses components when the route configuration changes.\"},{\"value\":\"It only reuses components when the route parameters change.\"},{\"value\":\"It reuses components when the route configuration remains the same.\"},{\"value\":\"It never reuses components.\"}]}",
-      "savedAction": "quiz-hard_o_O!"
-    },
+    // {
+    //   "blockId": "o4zw2xfgze",
+    //   "sortIndex": 13,
+    //   "componentInstanceName": "NgxEditorjsQuizBlockMediator",
+    //   "dataClean": "{\"question\":\"Which of the following statements is true about Angular's default RouteReuseStrategy?\",\"correctAnswer\":\"It reuses components when the route configuration remains the same.\",\"correctAnswerResponse\":\"That's correct! Angular's default RouteReuseStrategy reuses components when the route configuration remains the same. This prevents components from being destroyed and recreated when only the fragment or query parameters change.\",\"incorrectAnswerResponse\":\"That's incorrect. The correct answer is C. Angular's default RouteReuseStrategy reuses components when the route configuration remains the same. This prevents components from being destroyed and recreated when only the fragment or query parameters change.\",\"ratioOptions\":[{\"value\":\"It only reuses components when the route configuration changes.\"},{\"value\":\"It only reuses components when the route parameters change.\"},{\"value\":\"It reuses components when the route configuration remains the same.\"},{\"value\":\"It never reuses components.\"}]}",
+    //   "savedAction": "quiz-hard_o_O!"
+    // },
     // {
     //     "blockId": "5syss70ry1t",
     //     "sortIndex": 14,
