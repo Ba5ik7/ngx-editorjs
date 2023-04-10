@@ -1,6 +1,6 @@
 {
   "name": "@tmdjr/ngx-editorjs-mermaid-block",
-  "version": "0.0.0-watch+1681101285448",
+  "version": "0.0.0-watch+1681102494427",
   "peerDependencies": {
     "@angular/common": "^15.2.0",
     "@angular/core": "^15.2.0"

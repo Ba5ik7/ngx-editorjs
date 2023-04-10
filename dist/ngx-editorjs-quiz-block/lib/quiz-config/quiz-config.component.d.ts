@@ -39,3 +39,4 @@ export declare class QuizConfigComponent implements OnInit {
     static ɵcmp: i0.ɵɵComponentDeclaration<QuizConfigComponent, "quiz-config", never, { "value": "value"; }, { "quizValue": "quizValue"; }, never, never, true, never>;
 }
 export {};
+//# sourceMappingURL=quiz-config.component.d.ts.map

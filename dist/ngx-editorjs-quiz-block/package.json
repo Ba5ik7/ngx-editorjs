@@ -1,6 +1,6 @@
 {
   "name": "@tmdjr/ngx-editorjs-quiz-block",
-  "version": "0.0.33",
+  "version": "0.0.0-watch+1681103184130",
   "peerDependencies": {
     "@angular/common": ">=15.0.0",
     "@angular/core": ">=15.0.0"
@@ -30,5 +30,8 @@
   "fesm2020": "fesm2020/tmdjr-ngx-editorjs-quiz-block.mjs",
   "fesm2015": "fesm2015/tmdjr-ngx-editorjs-quiz-block.mjs",
   "typings": "index.d.ts",
-  "sideEffects": false
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy in full compilation mode. This is not allowed.\\nPlease delete and rebuild the package with Ivy partial compilation mode, before attempting to publish.\\n')\" && exit 1"
+  }
 }
