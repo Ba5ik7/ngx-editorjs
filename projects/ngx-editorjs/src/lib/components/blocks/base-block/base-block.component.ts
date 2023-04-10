@@ -10,7 +10,8 @@ import {
   ViewContainerRef,
   ComponentFactoryResolver,
   Input,
-  OnDestroy
+  OnDestroy,
+  NgZone
 } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { merge, Subject, take, takeUntil } from 'rxjs';
@@ -28,7 +29,8 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
     private viewContainerRef: ViewContainerRef,
     private componentFactoryResolver: ComponentFactoryResolver,
     private ngxEdotorjsService: NgxEditorjsService,
-    private overlay: Overlay
+    private overlay: Overlay,
+    public ngZone: NgZone
   ) {
     this.controlDir.valueAccessor = this;
   }

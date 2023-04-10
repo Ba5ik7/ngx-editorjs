@@ -8,5 +8,12 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "exports": {
+    "./esm2020": {
+       "default": "./esm2020"
+    },
+    ".": {
+       "sass": "./_index.scss"
+    }
+ }
 }

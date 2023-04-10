@@ -1,18 +1,18 @@
 import * as i0 from '@angular/core';
-import { Injectable, EventEmitter, Component, Input, Output, ViewChild } from '@angular/core';
+import { Injectable, EventEmitter, Component, Input, Output, Pipe, ViewChild } from '@angular/core';
 import * as i2 from '@angular/common';
 import { CommonModule } from '@angular/common';
-import * as i5 from '@angular/material/legacy-button';
+import * as i3 from '@angular/material/legacy-button';
 import { MatLegacyButtonModule } from '@angular/material/legacy-button';
+import * as i4 from '@angular/material/icon';
 import { MatIconModule } from '@angular/material/icon';
 import { BaseBlockComponent, AutofocusDirective } from '@tmdjr/ngx-editorjs';
-import * as i1 from '@angular/forms';
-import { Validators, ReactiveFormsModule } from '@angular/forms';
-import * as i3 from '@angular/material/legacy-form-field';
-import { MatLegacyFormFieldModule } from '@angular/material/legacy-form-field';
-import * as i4 from '@angular/material/legacy-input';
-import { MatLegacyInputModule } from '@angular/material/legacy-input';
-import { Subject, takeUntil } from 'rxjs';
+import * as i1$1 from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import * as i1 from '@ctrl/ngx-codemirror';
+import { CodemirrorModule } from '@ctrl/ngx-codemirror';
+import mermaid from 'mermaid';
+import * as i1$2 from '@angular/platform-browser';
 
 class NgxEditorjsMermaidBlockService {
     constructor() { }
@@ -28,145 +28,62 @@ NgxEditorjsMermaidBlockService.ɵprov = /*@__PURE__*/ i0.ɵɵdefineInjectable({ 
         }], function () { return []; }, null);
 })();
 
-function MermaidConfigComponent_mat_error_9_Template(rf, ctx) {
-    if (rf & 1) {
-        i0.ɵɵelementStart(0, "mat-error");
-        i0.ɵɵtext(1);
-        i0.ɵɵelementEnd();
-    }
-    if (rf & 2) {
-        const ctx_r1 = i0.ɵɵnextContext();
-        i0.ɵɵadvance(1);
-        i0.ɵɵtextInterpolate(ctx_r1.mermaidConfigFormErrorMessages["title"]);
-    }
-}
-function MermaidConfigComponent_mat_error_15_Template(rf, ctx) {
-    if (rf & 1) {
-        i0.ɵɵelementStart(0, "mat-error");
-        i0.ɵɵtext(1);
-        i0.ɵɵelementEnd();
-    }
-    if (rf & 2) {
-        const ctx_r3 = i0.ɵɵnextContext();
-        i0.ɵɵadvance(1);
-        i0.ɵɵtextInterpolate(ctx_r3.mermaidConfigFormErrorMessages["url"]);
-    }
-}
 class MermaidConfigComponent {
-    constructor(formBuilder) {
-        this.formBuilder = formBuilder;
-        this.destory = new Subject();
-        this.errorMessages = {
-            required: 'Required',
+    constructor() {
+        this.codeMirrorOptions = {
+            lineNumbers: true,
+            theme: 'material-palenight',
+            mode: 'text/typescript',
+            extraKeys: { 'Ctrl-Space': 'autocomplete' },
         };
-        this.mermaidConfigFormErrorMessages = {
-            url: '', title: ''
-        };
-        this.value = { url: '', title: '' };
+        this.value = '';
         this.mermaidValue = new EventEmitter();
     }
-    ngOnInit() {
-        var _a, _b;
-        this.mermaidConfigForm = this.formBuilder.group({
-            url: [(_a = this.value.url) !== null && _a !== void 0 ? _a : '', [Validators.required]],
-            title: [(_b = this.value.title) !== null && _b !== void 0 ? _b : '', [Validators.required]]
-        });
-        this.mermaidConfigForm.statusChanges
-            .pipe(takeUntil(this.destory))
-            .subscribe(() => this.setErrorsMessages(this.mermaidConfigForm, this.mermaidConfigFormErrorMessages));
-    }
-    ngOnDestroy() {
-        this.destory.next(true);
+    changeValue(newValue) {
+        this.value = newValue;
     }
     updateMermaid() {
-        this.mermaidValue.emit(this.mermaidConfigForm.value);
-    }
-    closeConfig() {
         this.mermaidValue.emit(this.value);
     }
-    setErrorsMessages(formGroup, formControlMessages) {
-        Object.keys(formGroup.controls).forEach(element => {
-            var _a;
-            const errors = (_a = formGroup.get(element)) === null || _a === void 0 ? void 0 : _a.errors;
-            if (errors) {
-                const error = Object.keys(errors)[0];
-                formControlMessages[element] = this.errorMessages[error];
-            }
-        });
-    }
 }
-MermaidConfigComponent.ɵfac = function MermaidConfigComponent_Factory(t) { return new (t || MermaidConfigComponent)(i0.ɵɵdirectiveInject(i1.FormBuilder)); };
-MermaidConfigComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: MermaidConfigComponent, selectors: [["mermaid-config"]], inputs: { value: "value" }, outputs: { mermaidValue: "mermaidValue" }, standalone: true, features: [i0.ɵɵStandaloneFeature], decls: 21, vars: 4, consts: [[1, "mermaid-block-modal"], [3, "formGroup"], ["mat-dialog-title", ""], ["appearance", "outline", "color", "accent"], ["matInput", "", "type", "text", "formControlName", "title"], ["title", ""], [4, "ngIf"], ["matInput", "", "type", "text", "title", "URL", "formControlName", "url"], ["url", ""], [1, "action-group"], ["mat-flat-button", "", "color", "accent", "type", "button", 3, "disabled", "click"], ["mat-flat-button", "", "color", "warn", "type", "button", 3, "click"]], template: function MermaidConfigComponent_Template(rf, ctx) {
+MermaidConfigComponent.ɵfac = function MermaidConfigComponent_Factory(t) { return new (t || MermaidConfigComponent)(); };
+MermaidConfigComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: MermaidConfigComponent, selectors: [["mermaid-config"]], inputs: { value: "value" }, outputs: { mermaidValue: "mermaidValue" }, standalone: true, features: [i0.ɵɵStandaloneFeature], decls: 5, vars: 2, consts: [[1, "container"], [3, "ngModel", "options", "ngModelChange"], [1, "action-group"], ["mat-flat-button", "", "color", "accent", "type", "button", 3, "click"]], template: function MermaidConfigComponent_Template(rf, ctx) {
         if (rf & 1) {
-            i0.ɵɵelementStart(0, "div", 0)(1, "form", 1)(2, "h2", 2);
-            i0.ɵɵtext(3, "Mermaid Configurations");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(4, "mat-form-field", 3)(5, "mat-label");
-            i0.ɵɵtext(6, "Title");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelement(7, "input", 4, 5);
-            i0.ɵɵtemplate(9, MermaidConfigComponent_mat_error_9_Template, 2, 1, "mat-error", 6);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(10, "mat-form-field", 3)(11, "mat-label");
-            i0.ɵɵtext(12, "Mark Down");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelement(13, "input", 7, 8);
-            i0.ɵɵtemplate(15, MermaidConfigComponent_mat_error_15_Template, 2, 1, "mat-error", 6);
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(16, "div", 9)(17, "button", 10);
-            i0.ɵɵlistener("click", function MermaidConfigComponent_Template_button_click_17_listener() { return ctx.updateMermaid(); });
-            i0.ɵɵtext(18, "Save");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(19, "button", 11);
-            i0.ɵɵlistener("click", function MermaidConfigComponent_Template_button_click_19_listener() { return ctx.closeConfig(); });
-            i0.ɵɵtext(20, "Cancel");
-            i0.ɵɵelementEnd()()()();
+            i0.ɵɵelementStart(0, "div", 0)(1, "ngx-codemirror", 1);
+            i0.ɵɵlistener("ngModelChange", function MermaidConfigComponent_Template_ngx_codemirror_ngModelChange_1_listener($event) { return ctx.changeValue($event); });
+            i0.ɵɵelementEnd()();
+            i0.ɵɵelementStart(2, "div", 2)(3, "button", 3);
+            i0.ɵɵlistener("click", function MermaidConfigComponent_Template_button_click_3_listener() { return ctx.updateMermaid(); });
+            i0.ɵɵtext(4, "Update");
+            i0.ɵɵelementEnd()();
         }
         if (rf & 2) {
-            let tmp_1_0;
-            let tmp_2_0;
             i0.ɵɵadvance(1);
-            i0.ɵɵproperty("formGroup", ctx.mermaidConfigForm);
-            i0.ɵɵadvance(8);
-            i0.ɵɵproperty("ngIf", (tmp_1_0 = ctx.mermaidConfigForm.get("title")) == null ? null : tmp_1_0.errors);
-            i0.ɵɵadvance(6);
-            i0.ɵɵproperty("ngIf", (tmp_2_0 = ctx.mermaidConfigForm.get("url")) == null ? null : tmp_2_0.errors);
-            i0.ɵɵadvance(2);
-            i0.ɵɵproperty("disabled", ctx.mermaidConfigForm.invalid);
+            i0.ɵɵproperty("ngModel", ctx.value)("options", ctx.codeMirrorOptions);
         }
-    }, dependencies: [CommonModule, i2.NgIf, MatLegacyInputModule, i3.MatLegacyError, i3.MatLegacyFormField, i3.MatLegacyLabel, i4.MatLegacyInput, MatLegacyButtonModule, i5.MatLegacyButton, MatLegacyFormFieldModule,
-        ReactiveFormsModule, i1.ɵNgNoValidate, i1.DefaultValueAccessor, i1.NgControlStatus, i1.NgControlStatusGroup, i1.FormGroupDirective, i1.FormControlName], styles: ["[_nghost-%COMP%]{border:1px solid #ccc;border-radius:4px;padding:20px}[_nghost-%COMP%]   form[_ngcontent-%COMP%]{display:flex;flex-direction:column}[_nghost-%COMP%]   form[_ngcontent-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}"] });
+    }, dependencies: [CommonModule,
+        CodemirrorModule, i1.CodemirrorComponent, FormsModule, i1$1.NgControlStatus, i1$1.NgModel, MatLegacyButtonModule, i3.MatLegacyButton], styles: ["[_nghost-%COMP%]{width:100%;display:flex;flex-direction:column;border-radius:5px;margin:16px auto;position:relative;z-index:1}[_nghost-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}[_nghost-%COMP%]   .answers-action-group[_ngcontent-%COMP%]{padding-bottom:20px}[_nghost-%COMP%]     .CodeMirror{height:250px}.container[_ngcontent-%COMP%]{padding-bottom:20px}"] });
 (function () {
     (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(MermaidConfigComponent, [{
             type: Component,
             args: [{ selector: 'mermaid-config', standalone: true, imports: [
                         CommonModule,
-                        MatLegacyInputModule,
-                        MatLegacyButtonModule,
-                        MatLegacyFormFieldModule,
-                        ReactiveFormsModule,
+                        CodemirrorModule,
+                        FormsModule,
+                        MatLegacyButtonModule
                     ], template: `
-    <div class="mermaid-block-modal" >
-      <form [formGroup]="mermaidConfigForm">
-        <h2 mat-dialog-title>Mermaid Configurations</h2>
-        <mat-form-field appearance="outline" color="accent">
-          <mat-label>Title</mat-label>
-          <input #title matInput type="text" formControlName="title" />
-          <mat-error *ngIf="mermaidConfigForm.get('title')?.errors">{{mermaidConfigFormErrorMessages['title']}}</mat-error>
-        </mat-form-field>
-        <mat-form-field appearance="outline" color="accent">
-          <mat-label>Mark Down</mat-label>
-          <input #url matInput type="text" title="URL" formControlName="url" />
-          <mat-error *ngIf="mermaidConfigForm.get('url')?.errors">{{mermaidConfigFormErrorMessages['url']}}</mat-error>
-        </mat-form-field>
-        <div class="action-group">
-          <button mat-flat-button color="accent" type="button" (click)="updateMermaid()" [disabled]="mermaidConfigForm.invalid">Save</button>
-          <button mat-flat-button color="warn" type="button" (click)="closeConfig()">Cancel</button>
-        </div>
-      </form>
+    <div class="container">
+    <ngx-codemirror
+      (ngModelChange)="changeValue($event)"
+      [ngModel]="value"
+      [options]="codeMirrorOptions">
+    </ngx-codemirror>
     </div>
-  `, styles: [":host{border:1px solid #ccc;border-radius:4px;padding:20px}:host form{display:flex;flex-direction:column}:host form .action-group{display:flex;justify-content:flex-end;gap:10px}\n"] }]
-        }], function () { return [{ type: i1.FormBuilder }]; }, { value: [{
+    <div class="action-group">
+      <button mat-flat-button color="accent" type="button" (click)="updateMermaid()">Update</button>
+    </div>
+  `, styles: [":host{width:100%;display:flex;flex-direction:column;border-radius:5px;margin:16px auto;position:relative;z-index:1}:host .action-group{display:flex;justify-content:flex-end;gap:10px}:host .answers-action-group{padding-bottom:20px}:host ::ng-deep .CodeMirror{height:250px}.container{padding-bottom:20px}\n"] }]
+        }], null, { value: [{
                 type: Input
             }], mermaidValue: [{
                 type: Output
@@ -174,6 +91,7 @@ MermaidConfigComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: Merm
 })();
 
 const _c0 = ["paragraph"];
+const _c1 = ["mermaidContainer"];
 function NgxEditorjsMermaidBlockComponent_ng_container_0_Template(rf, ctx) {
     if (rf & 1) {
         const _r4 = i0.ɵɵgetCurrentView();
@@ -183,41 +101,90 @@ function NgxEditorjsMermaidBlockComponent_ng_container_0_Template(rf, ctx) {
         i0.ɵɵelementEnd();
         i0.ɵɵelementContainerEnd();
     }
+    if (rf & 2) {
+        const ctx_r0 = i0.ɵɵnextContext();
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("value", ctx_r0._value);
+    }
 }
 function NgxEditorjsMermaidBlockComponent_ng_template_1_Template(rf, ctx) {
     if (rf & 1) {
-        i0.ɵɵelementStart(0, "h1");
-        i0.ɵɵtext(1, "Mermaid!");
-        i0.ɵɵelementEnd();
+        const _r7 = i0.ɵɵgetCurrentView();
+        i0.ɵɵelementStart(0, "div", 3);
+        i0.ɵɵelement(1, "div", 4, 5);
+        i0.ɵɵpipe(3, "safeHtml");
+        i0.ɵɵelementStart(4, "button", 6);
+        i0.ɵɵlistener("click", function NgxEditorjsMermaidBlockComponent_ng_template_1_Template_button_click_4_listener() { i0.ɵɵrestoreView(_r7); const ctx_r6 = i0.ɵɵnextContext(); return i0.ɵɵresetView(ctx_r6.openEditUrlOverlay()); });
+        i0.ɵɵelementStart(5, "mat-icon");
+        i0.ɵɵtext(6, "edit");
+        i0.ɵɵelementEnd()()();
+    }
+    if (rf & 2) {
+        const ctx_r2 = i0.ɵɵnextContext();
+        i0.ɵɵadvance(1);
+        i0.ɵɵproperty("ngClass", ctx_r2.activeImageClass)("innerHTML", i0.ɵɵpipeBind1(3, 2, ctx_r2._mermaidDiagramSVG), i0.ɵɵsanitizeHtml);
     }
 }
+mermaid.parseError = function (err, hash) {
+    console.warn(`Error parsing mermaid diagram: ${err} ${hash}`);
+};
+class SafeHtmlPipe {
+    constructor(sanitized) {
+        this.sanitized = sanitized;
+    }
+    transform(value) {
+        return this.sanitized.bypassSecurityTrustHtml(value);
+    }
+}
+SafeHtmlPipe.ɵfac = function SafeHtmlPipe_Factory(t) { return new (t || SafeHtmlPipe)(i0.ɵɵdirectiveInject(i1$2.DomSanitizer, 16)); };
+SafeHtmlPipe.ɵpipe = /*@__PURE__*/ i0.ɵɵdefinePipe({ name: "safeHtml", type: SafeHtmlPipe, pure: true, standalone: true });
+(function () {
+    (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(SafeHtmlPipe, [{
+            type: Pipe,
+            args: [{ name: 'safeHtml', standalone: true }]
+        }], function () { return [{ type: i1$2.DomSanitizer }]; }, null);
+})();
 class NgxEditorjsMermaidBlockComponent extends BaseBlockComponent {
     constructor() {
         super(...arguments);
         this.useInlineToolbar = false;
         this.useInputType = false;
+        this.useOnPasteHTMLRemoval = false;
+        this._mermaidAPI = mermaid.mermaidAPI;
         this._openEditMermaidOverlay = false;
-        this._value = { url: '', title: '' };
+        this._value = '';
+        this._mermaidDiagramSVG = '';
+        this.activeImageClass = 'flex-start';
         this.blockOptionActions = [
             { action: 'flex-start', icon: 'format_align_left' },
             { action: 'center', icon: 'format_align_center' },
-            { action: 'flex-end', icon: 'format_align_right' },
-            { action: 'stretch', icon: 'format_align_justify' }
+            { action: 'flex-end', icon: 'format_align_right' }
         ];
     }
-    ngOnInit() {
-        !!this.value && (this._value = JSON.parse(this.value));
-        !this.value && this.openEditUrlOverlay();
-        super.ngOnInit();
+    renderMermaidDiagram(mermaidDiagram) {
+        const uniqueId = `mermaid-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+        this.ngZone.runOutsideAngular(() => {
+            this._mermaidAPI.render(uniqueId, mermaidDiagram).then(data => this.ngZone.run(() => this._mermaidDiagramSVG = data.svg), error => console.warn(`Error: ${error}`));
+        });
     }
-    ngAfterViewInit() {
-        super.viewChild = this.element;
+    ngOnInit() {
+        this.ngZone.runOutsideAngular(() => {
+            this._mermaidAPI.initialize({ startOnLoad: false });
+        });
+        if (this.value) {
+            this.renderMermaidDiagram(this.value);
+            this._value = this.value;
+        }
+        else {
+            this.openEditUrlOverlay();
+        }
+        super.ngOnInit();
     }
     changeValue(value) {
         super.changeValue(value);
     }
     handleBlockOptionAction(action) {
-        console.log('action:', action);
+        this.activeImageClass = action !== null && action !== void 0 ? action : 'flex-start';
         super.handleBlockOptionAction(action);
     }
     openEditUrlOverlay() {
@@ -225,7 +192,8 @@ class NgxEditorjsMermaidBlockComponent extends BaseBlockComponent {
     }
     updateMermaid(value) {
         this._value = value;
-        this.changeValue(JSON.stringify(value));
+        this.renderMermaidDiagram(value);
+        this.changeValue(value);
         this._openEditMermaidOverlay = false;
     }
 }
@@ -233,43 +201,59 @@ NgxEditorjsMermaidBlockComponent.ɵfac = /*@__PURE__*/ function () { let ɵNgxEd
 NgxEditorjsMermaidBlockComponent.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ type: NgxEditorjsMermaidBlockComponent, selectors: [["ngx-editorjs-mermaid-block"]], viewQuery: function NgxEditorjsMermaidBlockComponent_Query(rf, ctx) {
         if (rf & 1) {
             i0.ɵɵviewQuery(_c0, 5);
+            i0.ɵɵviewQuery(_c1, 5);
         }
         if (rf & 2) {
             let _t;
             i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.element = _t.first);
+            i0.ɵɵqueryRefresh(_t = i0.ɵɵloadQuery()) && (ctx.mermaidContainer = _t.first);
         }
-    }, standalone: true, features: [i0.ɵɵInheritDefinitionFeature, i0.ɵɵStandaloneFeature], decls: 3, vars: 2, consts: [[4, "ngIf", "ngIfElse"], ["elseTemplate", ""], [3, "mermaidValue"]], template: function NgxEditorjsMermaidBlockComponent_Template(rf, ctx) {
+    }, standalone: true, features: [i0.ɵɵInheritDefinitionFeature, i0.ɵɵStandaloneFeature], decls: 3, vars: 2, consts: [[4, "ngIf", "ngIfElse"], ["elseTemplate", ""], [3, "value", "mermaidValue"], [1, "mermaid-container"], [1, "mermaid", 3, "ngClass", "innerHTML"], ["mermaidContainer", ""], ["mat-mini-fab", "", 1, "mermaid-block-button", "mat-elevation-z2", 3, "click"]], template: function NgxEditorjsMermaidBlockComponent_Template(rf, ctx) {
         if (rf & 1) {
-            i0.ɵɵtemplate(0, NgxEditorjsMermaidBlockComponent_ng_container_0_Template, 2, 0, "ng-container", 0);
-            i0.ɵɵtemplate(1, NgxEditorjsMermaidBlockComponent_ng_template_1_Template, 2, 0, "ng-template", null, 1, i0.ɵɵtemplateRefExtractor);
+            i0.ɵɵtemplate(0, NgxEditorjsMermaidBlockComponent_ng_container_0_Template, 2, 1, "ng-container", 0);
+            i0.ɵɵtemplate(1, NgxEditorjsMermaidBlockComponent_ng_template_1_Template, 7, 4, "ng-template", null, 1, i0.ɵɵtemplateRefExtractor);
         }
         if (rf & 2) {
             const _r1 = i0.ɵɵreference(2);
             i0.ɵɵproperty("ngIf", ctx._openEditMermaidOverlay)("ngIfElse", _r1);
         }
-    }, dependencies: [CommonModule, i2.NgIf, MatLegacyButtonModule,
-        MatIconModule,
-        MermaidConfigComponent], styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column;padding-bottom:22px}"] });
+    }, dependencies: [CommonModule, i2.NgClass, i2.NgIf, MatLegacyButtonModule, i3.MatLegacyButton, MatIconModule, i4.MatIcon, MermaidConfigComponent, SafeHtmlPipe], styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column;position:relative;padding-bottom:22px}.mermaid[_ngcontent-%COMP%]{width:100%;display:flex}.mermaid[_ngcontent-%COMP%]:hover ~ .mermaid-block-button[_ngcontent-%COMP%], .mermaid-block-button[_ngcontent-%COMP%]:hover{display:block}.mermaid-block-button[_ngcontent-%COMP%]{position:absolute;top:6px;left:6px;z-index:1;display:none;width:32px;height:32px}.mermaid-container[_ngcontent-%COMP%]{display:flex}[_nghost-%COMP%]   .flex-start[_ngcontent-%COMP%]{justify-content:flex-start}[_nghost-%COMP%]   .flex-end[_ngcontent-%COMP%]{justify-content:flex-end}[_nghost-%COMP%]   .center[_ngcontent-%COMP%]{justify-content:center}[_nghost-%COMP%]   .stretch[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{width:100%}  .mermaid-block-button .mat-button-wrapper .mat-icon{font-size:1.6rem;vertical-align:baseline}"] });
 (function () {
     (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(NgxEditorjsMermaidBlockComponent, [{
             type: Component,
             args: [{ standalone: true, selector: 'ngx-editorjs-mermaid-block', template: `
-    <ng-container *ngIf="_openEditMermaidOverlay; else elseTemplate">
-      <mermaid-config (mermaidValue)="updateMermaid($event)"></mermaid-config>
-    </ng-container>
-    <ng-template #elseTemplate>
-      <h1>Mermaid!</h1>
-    </ng-template>
+  <ng-container *ngIf="_openEditMermaidOverlay; else elseTemplate">
+    <mermaid-config [value]="_value" (mermaidValue)="updateMermaid($event)"></mermaid-config>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <div class="mermaid-container"> 
+      <div
+        #mermaidContainer
+        [ngClass]="activeImageClass"
+        [innerHTML]="_mermaidDiagramSVG | safeHtml"
+        class="mermaid"></div>
+      <button  
+        mat-mini-fab 
+        class="mermaid-block-button mat-elevation-z2"
+        (click)="openEditUrlOverlay()">
+          <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+  </ng-template>
   `, imports: [
                         CommonModule,
                         AutofocusDirective,
                         MatLegacyButtonModule,
                         MatIconModule,
-                        MermaidConfigComponent
-                    ], styles: [":host{display:flex;flex-direction:column;padding-bottom:22px}\n"] }]
+                        MermaidConfigComponent,
+                        SafeHtmlPipe
+                    ], styles: [":host{display:flex;flex-direction:column;position:relative;padding-bottom:22px}.mermaid{width:100%;display:flex}.mermaid:hover~.mermaid-block-button,.mermaid-block-button:hover{display:block}.mermaid-block-button{position:absolute;top:6px;left:6px;z-index:1;display:none;width:32px;height:32px}.mermaid-container{display:flex}:host .flex-start{justify-content:flex-start}:host .flex-end{justify-content:flex-end}:host .center{justify-content:center}:host .stretch img{width:100%}::ng-deep .mermaid-block-button .mat-button-wrapper .mat-icon{font-size:1.6rem;vertical-align:baseline}\n"] }]
         }], null, { element: [{
                 type: ViewChild,
                 args: ['paragraph']
+            }], mermaidContainer: [{
+                type: ViewChild,
+                args: ['mermaidContainer']
             }] });
 })();
 
@@ -287,7 +271,7 @@ NgxEditorjsMermaidBlockMediator.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ t
             i0.ɵɵadvance(1);
             i0.ɵɵproperty("blockId", ctx.blockId)("formControlName", ctx.formControlName)("savedAction", ctx.savedAction);
         }
-    }, dependencies: [ReactiveFormsModule, i1.NgControlStatus, i1.NgControlStatusGroup, i1.FormGroupDirective, i1.FormControlName, NgxEditorjsMermaidBlockComponent], encapsulation: 2 });
+    }, dependencies: [ReactiveFormsModule, i1$1.NgControlStatus, i1$1.NgControlStatusGroup, i1$1.FormGroupDirective, i1$1.FormControlName, NgxEditorjsMermaidBlockComponent], encapsulation: 2 });
 (function () {
     (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(NgxEditorjsMermaidBlockMediator, [{
             type: Component,
@@ -323,5 +307,5 @@ NgxEditorjsMermaidBlockMediator.ɵcmp = /*@__PURE__*/ i0.ɵɵdefineComponent({ t
  * Generated bundle index. Do not edit.
  */
 
-export { NgxEditorjsMermaidBlockComponent, NgxEditorjsMermaidBlockMediator, NgxEditorjsMermaidBlockService };
+export { NgxEditorjsMermaidBlockComponent, NgxEditorjsMermaidBlockMediator, NgxEditorjsMermaidBlockService, SafeHtmlPipe };
 //# sourceMappingURL=tmdjr-ngx-editorjs-mermaid-block.mjs.map

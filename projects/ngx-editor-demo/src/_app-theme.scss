@@ -11,6 +11,7 @@
 @use '@tmdjr/ngx-editorjs' as ngx-editorjs;
 @use '@tmdjr/ngx-editorjs-blockquotes-block' as ngx-editorjs-blockquotes-block;
 @use '@tmdjr/ngx-editorjs-code-block' as ngx-editorjs-code-block;
+@use '@tmdjr/ngx-editorjs-mermaid-block' as ngx-editorjs-mermaid-block;
 
 // @include test-lib-theme($theme);
 // @import '@tmdjr/ngx-editor/ngx-editor-theme';
@@ -47,4 +48,5 @@
   @include ngx-editorjs.theme($theme);
   @include ngx-editorjs-blockquotes-block.theme($theme);
   @include ngx-editorjs-code-block.theme($theme);
+  @include ngx-editorjs-mermaid-block.theme($theme);
 }

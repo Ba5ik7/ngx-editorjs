@@ -1,6 +1,6 @@
 {
   "name": "@tmdjr/ngx-editorjs-mermaid-block",
-  "version": "0.0.0-watch+1681007126454",
+  "version": "0.0.0-watch+1681101285448",
   "peerDependencies": {
     "@angular/common": "^15.2.0",
     "@angular/core": "^15.2.0"
@@ -8,26 +8,30 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false,
-  "module": "fesm2015/tmdjr-ngx-editorjs-mermaid-block.mjs",
-  "es2020": "fesm2020/tmdjr-ngx-editorjs-mermaid-block.mjs",
-  "esm2020": "esm2020/tmdjr-ngx-editorjs-mermaid-block.mjs",
-  "fesm2020": "fesm2020/tmdjr-ngx-editorjs-mermaid-block.mjs",
-  "fesm2015": "fesm2015/tmdjr-ngx-editorjs-mermaid-block.mjs",
-  "typings": "index.d.ts",
   "exports": {
-    "./package.json": {
-      "default": "./package.json"
+    "./esm2020": {
+      "default": "./esm2020"
     },
     ".": {
+      "sass": "./_index.scss",
       "types": "./index.d.ts",
       "esm2020": "./esm2020/tmdjr-ngx-editorjs-mermaid-block.mjs",
       "es2020": "./fesm2020/tmdjr-ngx-editorjs-mermaid-block.mjs",
       "es2015": "./fesm2015/tmdjr-ngx-editorjs-mermaid-block.mjs",
       "node": "./fesm2015/tmdjr-ngx-editorjs-mermaid-block.mjs",
       "default": "./fesm2020/tmdjr-ngx-editorjs-mermaid-block.mjs"
+    },
+    "./package.json": {
+      "default": "./package.json"
     }
   },
+  "module": "fesm2015/tmdjr-ngx-editorjs-mermaid-block.mjs",
+  "es2020": "fesm2020/tmdjr-ngx-editorjs-mermaid-block.mjs",
+  "esm2020": "esm2020/tmdjr-ngx-editorjs-mermaid-block.mjs",
+  "fesm2020": "fesm2020/tmdjr-ngx-editorjs-mermaid-block.mjs",
+  "fesm2015": "fesm2015/tmdjr-ngx-editorjs-mermaid-block.mjs",
+  "typings": "index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy in full compilation mode. This is not allowed.\\nPlease delete and rebuild the package with Ivy partial compilation mode, before attempting to publish.\\n')\" && exit 1"
   }

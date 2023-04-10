@@ -1,58 +1,124 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NgZone, Component, ElementRef, OnInit, Pipe, PipeTransform, ViewChild } from '@angular/core';
 import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { MatIconModule } from '@angular/material/icon';
 import { AutofocusDirective, BaseBlockComponent } from '@tmdjr/ngx-editorjs';
 import { MermaidConfigComponent } from './image-config/mermaid-config.component';
+import { DomSanitizer } from '@angular/platform-browser';
+import mermaid from 'mermaid';
 
+mermaid.parseError = function(err: any, hash: any) {
+  console.warn(`Error parsing mermaid diagram: ${err} ${hash}`);
+};
+
+@Pipe({ name: 'safeHtml', standalone: true })
+export class SafeHtmlPipe implements PipeTransform  {
+  constructor(private sanitized: DomSanitizer) {}
+  transform(value: string) {
+    return this.sanitized.bypassSecurityTrustHtml(value);
+  }
+}
 
 @Component({
   standalone: true,
   selector: 'ngx-editorjs-mermaid-block',
   template: `
-    <ng-container *ngIf="_openEditMermaidOverlay; else elseTemplate">
-      <mermaid-config (mermaidValue)="updateMermaid($event)"></mermaid-config>
-    </ng-container>
-    <ng-template #elseTemplate>
-      <h1>Mermaid!</h1>
-    </ng-template>
+  <ng-container *ngIf="_openEditMermaidOverlay; else elseTemplate">
+    <mermaid-config [value]="_value" (mermaidValue)="updateMermaid($event)"></mermaid-config>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <div class="mermaid-container"> 
+      <div
+        #mermaidContainer
+        [ngClass]="activeImageClass"
+        [innerHTML]="_mermaidDiagramSVG | safeHtml"
+        class="mermaid"></div>
+      <button  
+        mat-mini-fab 
+        class="mermaid-block-button mat-elevation-z2"
+        (click)="openEditUrlOverlay()">
+          <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+  </ng-template>
   `,
   styles: [`
-  :host { display: flex; flex-direction: column; padding-bottom: 22px; }
+  :host { display: flex; flex-direction: column; position: relative; padding-bottom: 22px; }
+  .mermaid { width: 100%; display: flex; }
+  .mermaid:hover ~ .mermaid-block-button, .mermaid-block-button:hover {
+      display: block;
+    }
+  .mermaid-block-button {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      z-index: 1;
+      display: none;
+      width: 32px;
+      height: 32px; 
+    }
+    .mermaid-container {
+      display: flex;
+    }
+    :host .flex-start { justify-content: flex-start; }
+    :host .flex-end { justify-content: flex-end; }
+    :host .center { justify-content: center; }
+    :host .stretch img { width: 100%; }
+    ::ng-deep .mermaid-block-button .mat-button-wrapper .mat-icon {
+      font-size: 1.6rem;
+      vertical-align: baseline;
+    }
   `],
   imports: [
     CommonModule,
     AutofocusDirective,
     MatButtonModule,
     MatIconModule,
-    MermaidConfigComponent
+    MermaidConfigComponent,
+    SafeHtmlPipe
   ]
 })
-export class NgxEditorjsMermaidBlockComponent extends BaseBlockComponent implements OnInit, AfterViewInit {
+export class NgxEditorjsMermaidBlockComponent extends BaseBlockComponent implements OnInit {
   override useInlineToolbar = false;
   override useInputType = false;
+  override useOnPasteHTMLRemoval = false;
 
   @ViewChild('paragraph') element!: ElementRef;
+  @ViewChild('mermaidContainer') mermaidContainer!: ElementRef;
 
+  _mermaidAPI = mermaid.mermaidAPI;
   _openEditMermaidOverlay: boolean = false;
-
-  _value: { url: string, title: string } = { url: '', title: '' };
+  _value = '';
+  _mermaidDiagramSVG = '';
+  activeImageClass: string = 'flex-start';
 
   override blockOptionActions: { action: string, icon: string }[] = [
     { action: 'flex-start', icon: 'format_align_left' },
     { action: 'center', icon: 'format_align_center' },
-    { action: 'flex-end', icon: 'format_align_right' },
-    { action: 'stretch', icon: 'format_align_justify' }
+    { action: 'flex-end', icon: 'format_align_right' }
   ];
 
-  override ngOnInit() {
-    !!this.value && (this._value = JSON.parse(this.value));
-    !this.value && this.openEditUrlOverlay();
-    super.ngOnInit();
+  renderMermaidDiagram(mermaidDiagram: string): void {
+    const uniqueId = `mermaid-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+    this.ngZone.runOutsideAngular(() => {
+      this._mermaidAPI.render(uniqueId, mermaidDiagram).then(
+        data => this.ngZone.run(() => this._mermaidDiagramSVG = data.svg),
+        error => console.warn(`Error: ${error}`)
+      );
+    });
   }
 
-  ngAfterViewInit(): void {
-    super.viewChild = this.element;
+  override ngOnInit() {
+    this.ngZone.runOutsideAngular(() => {
+      this._mermaidAPI.initialize({ startOnLoad: false });
+    });
+    if(this.value) {
+      this.renderMermaidDiagram(this.value);
+      this._value = this.value;
+    } else {
+      this.openEditUrlOverlay();
+    }
+    super.ngOnInit();
   }
 
   override changeValue(value: string) {
@@ -60,7 +126,7 @@ export class NgxEditorjsMermaidBlockComponent extends BaseBlockComponent impleme
   }
 
   override handleBlockOptionAction(action: string) {
-    console.log('action:', action);
+    this.activeImageClass = action ?? 'flex-start';
     super.handleBlockOptionAction(action);
   }
 
@@ -68,9 +134,10 @@ export class NgxEditorjsMermaidBlockComponent extends BaseBlockComponent impleme
     this._openEditMermaidOverlay = true;
   }
 
-  updateMermaid(value: { url: string, title: string }) {
+  updateMermaid(value: string) {
     this._value = value;
-    this.changeValue(JSON.stringify(value));
+    this.renderMermaidDiagram(value);
+    this.changeValue(value);
     this._openEditMermaidOverlay = false;
   }
 }

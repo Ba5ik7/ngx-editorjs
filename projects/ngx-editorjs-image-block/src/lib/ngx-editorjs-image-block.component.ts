@@ -16,7 +16,7 @@ import { ImageConfigComponent } from './image-config/image-config.component';
     ImageConfigComponent,
   ],
   template: `
-    <div *ngIf="!_openEditUrlOverlay" class="image-conatiner" [ngClass]="activeImageClass">
+    <div *ngIf="!_openEditUrlOverlay" class="image-container" [ngClass]="activeImageClass">
       <img
         #image
         class="image-block"
@@ -57,7 +57,7 @@ import { ImageConfigComponent } from './image-config/image-config.component';
       height: 32px; 
     }
 
-    .image-conatiner {
+    .image-container {
       display: flex;
     }
 

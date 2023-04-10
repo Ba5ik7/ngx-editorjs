@@ -11,6 +11,9 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["node"],
     "paths": {
       "@tmdjr/ngx-editorjs": [
         "dist/ngx-editorjs"
