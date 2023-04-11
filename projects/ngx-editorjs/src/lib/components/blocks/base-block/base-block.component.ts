@@ -37,7 +37,14 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
 
   destory: Subject<boolean> = new Subject();
 
+  @Input()
+  _autofocus = true;
+  set autofocus(value: boolean) {
+    this._autofocus = value;
+  }
+
   @Input() blockId!: string;
+
   @Input() 
   set savedAction(action: string) {
     this.handleBlockOptionAction(action);

@@ -46,4 +46,3 @@ export declare class NgxEditorjsMermaidBlockComponent extends BaseBlockComponent
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxEditorjsMermaidBlockComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<NgxEditorjsMermaidBlockComponent, "ngx-editorjs-mermaid-block", never, {}, {}, never, never, true, never>;
 }
-//# sourceMappingURL=ngx-editorjs-mermaid-block.component.d.ts.map

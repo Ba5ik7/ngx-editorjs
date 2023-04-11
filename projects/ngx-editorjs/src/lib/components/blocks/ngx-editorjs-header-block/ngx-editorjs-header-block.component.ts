@@ -6,12 +6,12 @@ import { BaseBlockComponent } from '../base-block/base-block.component';
   selector: 'ngx-editorjs-header-block',
   template: `
     <span #header [ngSwitch]="whichHeader">
-        <h2 *ngSwitchCase="'h2'" class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h2>
-        <h3 *ngSwitchCase="'h3'" class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h3>
-        <h4 *ngSwitchCase="'h4'" class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h4>
-        <h5 *ngSwitchCase="'h5'" class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h5>
-        <h6 *ngSwitchCase="'h6'" class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h6>
-        <h1 *ngSwitchDefault class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h1>
+        <h2 *ngSwitchCase="'h2'" class="flex-spacer" contenteditable [autofocus]="_autofocus" (focus)="onMouseEnter($event)" [innerHTML]="value"></h2>
+        <h3 *ngSwitchCase="'h3'" class="flex-spacer" contenteditable [autofocus]="_autofocus" (focus)="onMouseEnter($event)" [innerHTML]="value"></h3>
+        <h4 *ngSwitchCase="'h4'" class="flex-spacer" contenteditable [autofocus]="_autofocus" (focus)="onMouseEnter($event)" [innerHTML]="value"></h4>
+        <h5 *ngSwitchCase="'h5'" class="flex-spacer" contenteditable [autofocus]="_autofocus" (focus)="onMouseEnter($event)" [innerHTML]="value"></h5>
+        <h6 *ngSwitchCase="'h6'" class="flex-spacer" contenteditable [autofocus]="_autofocus" (focus)="onMouseEnter($event)" [innerHTML]="value"></h6>
+        <h1 *ngSwitchDefault class="flex-spacer" contenteditable [autofocus]="_autofocus" (focus)="onMouseEnter($event)" [innerHTML]="value"></h1>
     </span>
   `,
   styles: [`

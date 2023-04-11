@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BaseBlockComponent, AutofocusDirective } from '@tmdjr/ngx-editorjs';
+import { BaseBlockComponent } from '@tmdjr/ngx-editorjs';
 import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 import { FormsModule } from '@angular/forms';
 
@@ -11,9 +11,6 @@ import { FormsModule } from '@angular/forms';
   ],
   selector: 'ngx-editorjs-code-block',
   template: `
-  <!-- <pre class="prettyprint">
-    <code #code contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></code>
-  </pre> -->
     <ngx-codemirror
       (ngModelChange)="changeValue($event)"
       [ngModel]="value"

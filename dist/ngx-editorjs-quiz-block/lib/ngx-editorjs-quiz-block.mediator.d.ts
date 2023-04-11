@@ -7,4 +7,3 @@ export declare class NgxEditorjsQuizBlockMediator {
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxEditorjsQuizBlockMediator, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<NgxEditorjsQuizBlockMediator, "ngx-editorjs-quiz-paragraph-block", never, { "blockId": "blockId"; "form": "form"; "formControlName": "formControlName"; }, {}, never, never, true, never>;
 }
-//# sourceMappingURL=ngx-editorjs-quiz-block.mediator.d.ts.map

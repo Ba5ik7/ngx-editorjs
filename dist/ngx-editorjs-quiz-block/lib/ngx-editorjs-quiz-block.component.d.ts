@@ -16,4 +16,3 @@ export declare class NgxEditorjsQuizBlockComponent extends BaseBlockComponent im
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxEditorjsQuizBlockComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<NgxEditorjsQuizBlockComponent, "ngx-editorjs-quiz-block", never, {}, {}, never, never, true, never>;
 }
-//# sourceMappingURL=ngx-editorjs-quiz-block.component.d.ts.map

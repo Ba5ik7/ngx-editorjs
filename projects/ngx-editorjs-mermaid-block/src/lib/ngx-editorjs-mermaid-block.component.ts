@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { NgZone, Component, ElementRef, OnInit, Pipe, PipeTransform, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, Pipe, PipeTransform, ViewChild } from '@angular/core';
 import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { MatIconModule } from '@angular/material/icon';
-import { AutofocusDirective, BaseBlockComponent } from '@tmdjr/ngx-editorjs';
+import { BaseBlockComponent } from '@tmdjr/ngx-editorjs';
 import { MermaidConfigComponent } from './image-config/mermaid-config.component';
 import { DomSanitizer } from '@angular/platform-browser';
 import mermaid from 'mermaid';
@@ -71,7 +71,6 @@ export class SafeHtmlPipe implements PipeTransform  {
   `],
   imports: [
     CommonModule,
-    AutofocusDirective,
     MatButtonModule,
     MatIconModule,
     MermaidConfigComponent,

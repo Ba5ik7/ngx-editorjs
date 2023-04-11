@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { MatIconModule } from '@angular/material/icon';
-import { AutofocusDirective, BaseBlockComponent } from '@tmdjr/ngx-editorjs';
+import { BaseBlockComponent } from '@tmdjr/ngx-editorjs';
 import { ImageConfigComponent } from './image-config/image-config.component';
 
 @Component({
@@ -10,7 +10,6 @@ import { ImageConfigComponent } from './image-config/image-config.component';
   standalone: true,
   imports: [
     CommonModule,
-    AutofocusDirective,
     MatButtonModule,
     MatIconModule,
     ImageConfigComponent,
