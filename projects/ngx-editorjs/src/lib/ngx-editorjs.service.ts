@@ -67,6 +67,7 @@ export interface BlockMediatorComponent {
   blockId: string;
   form: FormGroup;
   formControlName: string;
+  autofocus?: boolean;
   savedAction?: string;
 }
 

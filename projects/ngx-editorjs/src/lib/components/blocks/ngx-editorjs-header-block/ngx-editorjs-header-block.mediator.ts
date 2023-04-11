@@ -4,7 +4,10 @@ import { FormGroup } from '@angular/forms';
   selector: 'ngx-editorjs-meditator-header-block',
   template: `
     <div [formGroup]="form">
-      <ngx-editorjs-header-block [blockId]="blockId" [formControlName]="formControlName" [savedAction]="savedAction"></ngx-editorjs-header-block>
+      <ngx-editorjs-header-block
+        [blockId]="blockId"
+        [formControlName]="formControlName"
+        [savedAction]="savedAction"></ngx-editorjs-header-block>
     </div>
   `,
 })
