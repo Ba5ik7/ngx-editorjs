@@ -1,4 +1,4 @@
-import { Component, Input, ViewRef } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NgxEditorjsBlockquotesBlockComponent } from './ngx-editorjs-blockquotes-block.component';
 

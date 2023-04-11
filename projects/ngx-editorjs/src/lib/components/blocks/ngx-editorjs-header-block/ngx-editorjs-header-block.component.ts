@@ -1,8 +1,11 @@
-import { Component, OnInit, ViewChild, AfterViewInit, ElementRef, Input, ViewChildren, QueryList } from '@angular/core';
-import { BlockOptionAction } from '../../../ngx-editorjs.service';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { BaseBlockComponent } from '../base-block/base-block.component';
+import { AutofocusDirective } from '../../../directives/autofocus/autofocus.directive';
+import { BlockOptionAction } from '../../../ngx-editorjs.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
+  standalone: true,
   selector: 'ngx-editorjs-header-block',
   template: `
     <span #header [ngSwitch]="whichHeader">
@@ -16,7 +19,11 @@ import { BaseBlockComponent } from '../base-block/base-block.component';
   `,
   styles: [`
     :host { display: flex; flex-direction: column; }
-  `]
+  `],
+  imports: [
+    CommonModule,
+    AutofocusDirective
+  ]
 })
 export class NgxEditorjsHeaderBlockComponent extends BaseBlockComponent implements OnInit, AfterViewInit {
 

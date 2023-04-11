@@ -1,6 +1,8 @@
-import { Component, Input, ViewRef } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { NgxEditorjsHeaderBlockComponent } from './ngx-editorjs-header-block.component';
 @Component({
+  standalone: true,
   selector: 'ngx-editorjs-meditator-header-block',
   template: `
     <div [formGroup]="form">
@@ -10,6 +12,10 @@ import { FormGroup } from '@angular/forms';
         [savedAction]="savedAction"></ngx-editorjs-header-block>
     </div>
   `,
+  imports: [
+    ReactiveFormsModule,
+    NgxEditorjsHeaderBlockComponent
+  ],
 })
 export class NgxEditorjsHeaderBlockMediator {
   @Input() blockId!: string;

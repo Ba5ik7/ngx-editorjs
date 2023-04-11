@@ -9,16 +9,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    NgxEditorjsHeaderBlockComponent,
-    NgxEditorjsHeaderBlockMediator
   ],
   imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    AutofocusDirective
   ],
   exports: [
-    NgxEditorjsHeaderBlockMediator
   ]
 })
 export class NgxEditorjsHeaderBlockModule { }

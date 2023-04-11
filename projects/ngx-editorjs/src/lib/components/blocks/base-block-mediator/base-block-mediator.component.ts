@@ -15,5 +15,4 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BaseBlockMediatorComponent {
-
 }
