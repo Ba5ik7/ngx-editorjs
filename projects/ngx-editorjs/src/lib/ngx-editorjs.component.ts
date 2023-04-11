@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild, ViewContainerRef, ViewRef } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild, ViewContainerRef, ViewRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { combineLatest, concatMap, forkJoin, from, map, of, Subject, takeUntil, tap } from 'rxjs';
+import {  Subject, takeUntil } from 'rxjs';
 import { NgxEditorjsHeaderBlockMediator } from './components/blocks/ngx-editorjs-header-block/ngx-editorjs-header-block.mediator';
 import { 
   AdjustBlockPosition,
