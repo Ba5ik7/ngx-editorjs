@@ -8,3 +8,4 @@ export declare class NgxEditorjsMermaidBlockMediator {
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxEditorjsMermaidBlockMediator, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<NgxEditorjsMermaidBlockMediator, "ngx-editorjs-mermaid-blockquotes-block", never, { "blockId": "blockId"; "form": "form"; "formControlName": "formControlName"; "savedAction": "savedAction"; }, {}, never, never, true, never>;
 }
+//# sourceMappingURL=ngx-editorjs-mermaid-block.mediator.d.ts.map

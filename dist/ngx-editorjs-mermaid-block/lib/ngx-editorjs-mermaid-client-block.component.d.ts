@@ -1,12 +1,7 @@
-import { ElementRef, OnInit } from '@angular/core';
-import { BaseBlockComponent } from '@tmdjr/ngx-editorjs';
+import { NgZone, OnInit } from '@angular/core';
 import * as i0 from "@angular/core";
-export declare class NgxEditorjsMermaidBlockComponent extends BaseBlockComponent implements OnInit {
-    useInlineToolbar: boolean;
-    useInputType: boolean;
-    useOnPasteHTMLRemoval: boolean;
-    element: ElementRef;
-    mermaidContainer: ElementRef;
+export declare class NgxEditorjsMermaidClientBlockComponent implements OnInit {
+    ngZone: NgZone;
     _mermaidAPI: Readonly<{
         render: (id: string, text: string, svgContainingElement?: Element | undefined) => Promise<import("mermaid").RenderResult>;
         parse: (text: string, parseOptions?: import("mermaid").ParseOptions | undefined) => Promise<boolean>;
@@ -21,21 +16,12 @@ export declare class NgxEditorjsMermaidBlockComponent extends BaseBlockComponent
         globalReset: () => void;
         defaultConfig: import("mermaid").MermaidConfig;
     }>;
-    _openEditMermaidOverlay: boolean;
-    _value: string;
     _mermaidDiagramSVG: string;
     activeMermaidClass: string;
-    blockOptionActions: {
-        action: string;
-        icon: string;
-    }[];
-    renderMermaidDiagram(mermaidDiagram: string): void;
+    set value(mermaidDiagram: string);
     ngOnInit(): void;
-    changeValue(value: string): void;
-    handleBlockOptionAction(action: string): void;
-    openEditUrlOverlay(): void;
-    updateMermaid(value: string): void;
-    static ɵfac: i0.ɵɵFactoryDeclaration<NgxEditorjsMermaidBlockComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NgxEditorjsMermaidBlockComponent, "ngx-editorjs-mermaid-block", never, {}, {}, never, never, true, never>;
+    set savedAction(action: string);
+    static ɵfac: i0.ɵɵFactoryDeclaration<NgxEditorjsMermaidClientBlockComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NgxEditorjsMermaidClientBlockComponent, "ngx-editorjs-mermaid-client-block", never, { "value": "value"; "savedAction": "savedAction"; }, {}, never, never, true, never>;
 }
-//# sourceMappingURL=ngx-editorjs-mermaid-block.component.d.ts.map
+//# sourceMappingURL=ngx-editorjs-mermaid-client-block.component.d.ts.map

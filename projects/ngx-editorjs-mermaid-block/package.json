@@ -1,19 +1,19 @@
 {
-  "name": "@tmdjr/ngx-editorjs-mermaid-block",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "^15.2.0",
-    "@angular/core": "^15.2.0"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
-  "exports": {
-    "./esm2020": {
-       "default": "./esm2020"
-    },
-    ".": {
-       "sass": "./_index.scss"
-    }
- }
+   "name": "@tmdjr/ngx-editorjs-mermaid-block",
+   "version": "0.0.34",
+   "peerDependencies": {
+      "@angular/common": "^15.2.0",
+      "@angular/core": "^15.2.0"
+   },
+   "dependencies": {
+      "tslib": "^2.3.0"
+   },
+   "exports": {
+      "./esm2020": {
+         "default": "./esm2020"
+      },
+      ".": {
+         "sass": "./_index.scss"
+      }
+   }
 }

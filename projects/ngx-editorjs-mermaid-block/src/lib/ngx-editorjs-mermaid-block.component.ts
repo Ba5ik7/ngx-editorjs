@@ -4,20 +4,12 @@ import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/lega
 import { MatIconModule } from '@angular/material/icon';
 import { BaseBlockComponent } from '@tmdjr/ngx-editorjs';
 import { MermaidConfigComponent } from './image-config/mermaid-config.component';
-import { DomSanitizer } from '@angular/platform-browser';
 import mermaid from 'mermaid';
+import { SafeHtmlPipe } from './pipes/shared.pipe';
 
 mermaid.parseError = function(err: any, hash: any) {
   console.warn(`Error parsing mermaid diagram: ${err} ${hash}`);
 };
-
-@Pipe({ name: 'safeHtml', standalone: true })
-export class SafeHtmlPipe implements PipeTransform  {
-  constructor(private sanitized: DomSanitizer) {}
-  transform(value: string) {
-    return this.sanitized.bypassSecurityTrustHtml(value);
-  }
-}
 
 @Component({
   standalone: true,
@@ -30,7 +22,7 @@ export class SafeHtmlPipe implements PipeTransform  {
     <div class="mermaid-container"> 
       <div
         #mermaidContainer
-        [ngClass]="activeImageClass"
+        [ngClass]="activeMermaidClass"
         [innerHTML]="_mermaidDiagramSVG | safeHtml"
         class="mermaid"></div>
       <button  
@@ -89,7 +81,7 @@ export class NgxEditorjsMermaidBlockComponent extends BaseBlockComponent impleme
   _openEditMermaidOverlay: boolean = false;
   _value = '';
   _mermaidDiagramSVG = '';
-  activeImageClass: string = 'flex-start';
+  activeMermaidClass: string = 'flex-start';
 
   override blockOptionActions: { action: string, icon: string }[] = [
     { action: 'flex-start', icon: 'format_align_left' },
@@ -125,7 +117,7 @@ export class NgxEditorjsMermaidBlockComponent extends BaseBlockComponent impleme
   }
 
   override handleBlockOptionAction(action: string) {
-    this.activeImageClass = action ?? 'flex-start';
+    this.activeMermaidClass = action ?? 'flex-start';
     super.handleBlockOptionAction(action);
   }
 
