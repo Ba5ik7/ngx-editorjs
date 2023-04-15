@@ -16,4 +16,3 @@ export declare class MermaidConfigComponent {
     static ɵfac: i0.ɵɵFactoryDeclaration<MermaidConfigComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<MermaidConfigComponent, "mermaid-config", never, { "value": "value"; }, { "mermaidValue": "mermaidValue"; }, never, never, true, never>;
 }
-//# sourceMappingURL=mermaid-config.component.d.ts.map

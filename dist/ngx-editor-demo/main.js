@@ -186,6 +186,10 @@ AppModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵd
         name: 'Quiz',
         component: _tmdjr_ngx_editorjs_quiz_block__WEBPACK_IMPORTED_MODULE_9__.NgxEditorjsQuizClientBlockComponent,
         componentInstanceName: 'NgxEditorjsQuizBlockMediator'
+      }, {
+        name: 'Quiz',
+        component: _tmdjr_ngx_editorjs_mermaid_block__WEBPACK_IMPORTED_MODULE_10__.NgxEditorjsMermaidClientBlockComponent,
+        componentInstanceName: 'NgxEditorjsMermaidBlockMediator'
       }]
     }
   }],
@@ -819,7 +823,7 @@ NgxEditorjsBlockquotesBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPA
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", true)("innerHTML", ctx.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", ctx._autofocus)("innerHTML", ctx.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
     }
   },
   dependencies: [_tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_1__.AutofocusDirective],
@@ -833,7 +837,7 @@ NgxEditorjsBlockquotesBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPA
       imports: [_tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_1__.AutofocusDirective],
       selector: 'ngx-editorjs-blockquotes-block',
       template: `
-    <blockquote class="flex-spacer" #blockquotes contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></blockquote>
+    <blockquote class="flex-spacer" #blockquotes contenteditable [autofocus]="_autofocus" (focus)="onMouseEnter($event)" [innerHTML]="value"></blockquote>
   `,
       styles: [":host{display:flex;flex-direction:column}blockquote{margin:20px 0;padding-left:1.5rem}\n"]
     }]
@@ -1437,9 +1441,6 @@ NgxEditorjsCodeBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPO
       imports: [_ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_1__.CodemirrorModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormsModule],
       selector: 'ngx-editorjs-code-block',
       template: `
-  <!-- <pre class="prettyprint">
-    <code #code contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></code>
-  </pre> -->
     <ngx-codemirror
       (ngModelChange)="changeValue($event)"
       [ngModel]="value"
@@ -1961,7 +1962,7 @@ NgxEditorjsImageBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMP
   features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵStandaloneFeature"]],
   decls: 2,
   vars: 2,
-  consts: [["class", "image-conatiner", 3, "ngClass", 4, "ngIf"], [3, "value", "imageValue", 4, "ngIf"], [1, "image-conatiner", 3, "ngClass"], ["onerror", "this.onerror=null;this.src='https://dummyimage.com/640x360/000/AAF'", 1, "image-block", 3, "src", "title"], ["image", ""], ["mat-mini-fab", "", 1, "image-block-button", "mat-elevation-z2", 3, "click"], [3, "value", "imageValue"]],
+  consts: [["class", "image-container", 3, "ngClass", 4, "ngIf"], [3, "value", "imageValue", 4, "ngIf"], [1, "image-container", 3, "ngClass"], ["onerror", "this.onerror=null;this.src='https://dummyimage.com/640x360/000/AAF'", 1, "image-block", 3, "src", "title"], ["image", ""], ["mat-mini-fab", "", 1, "image-block-button", "mat-elevation-z2", 3, "click"], [3, "value", "imageValue"]],
   template: function NgxEditorjsImageBlockComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, NgxEditorjsImageBlockComponent_div_0_Template, 6, 3, "div", 0);
@@ -1974,7 +1975,7 @@ NgxEditorjsImageBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMP
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.CommonModule, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_7__.MatLegacyButtonModule, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_7__.MatLegacyButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__.MatIconModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__.MatIcon, ImageConfigComponent],
-  styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column;position:relative;margin-bottom:22px}[_nghost-%COMP%]   .flex-start[_ngcontent-%COMP%]{justify-content:flex-start}[_nghost-%COMP%]   .flex-end[_ngcontent-%COMP%]{justify-content:flex-end}[_nghost-%COMP%]   .center[_ngcontent-%COMP%]{justify-content:center}[_nghost-%COMP%]   .stretch[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{width:100%}.image-block[_ngcontent-%COMP%]:hover ~ .image-block-button[_ngcontent-%COMP%], .image-block-button[_ngcontent-%COMP%]:hover{display:block}.image-block[_ngcontent-%COMP%]{min-width:0}.image-block-button[_ngcontent-%COMP%]{position:absolute;top:6px;left:6px;z-index:1;display:none;width:32px;height:32px}.image-conatiner[_ngcontent-%COMP%]{display:flex}  .image-block-button .mat-button-wrapper .mat-icon{font-size:1.6rem;vertical-align:baseline}"]
+  styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column;position:relative;margin-bottom:22px}[_nghost-%COMP%]   .flex-start[_ngcontent-%COMP%]{justify-content:flex-start}[_nghost-%COMP%]   .flex-end[_ngcontent-%COMP%]{justify-content:flex-end}[_nghost-%COMP%]   .center[_ngcontent-%COMP%]{justify-content:center}[_nghost-%COMP%]   .stretch[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{width:100%}.image-block[_ngcontent-%COMP%]:hover ~ .image-block-button[_ngcontent-%COMP%], .image-block-button[_ngcontent-%COMP%]:hover{display:block}.image-block[_ngcontent-%COMP%]{min-width:0}.image-block-button[_ngcontent-%COMP%]{position:absolute;top:6px;left:6px;z-index:1;display:none;width:32px;height:32px}.image-container[_ngcontent-%COMP%]{display:flex}  .image-block-button .mat-button-wrapper .mat-icon{font-size:1.6rem;vertical-align:baseline}"]
 });
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NgxEditorjsImageBlockComponent, [{
@@ -1982,9 +1983,9 @@ NgxEditorjsImageBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMP
     args: [{
       selector: 'ngx-editorjs-image-block',
       standalone: true,
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.CommonModule, _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_8__.AutofocusDirective, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_7__.MatLegacyButtonModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__.MatIconModule, ImageConfigComponent],
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.CommonModule, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_7__.MatLegacyButtonModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__.MatIconModule, ImageConfigComponent],
       template: `
-    <div *ngIf="!_openEditUrlOverlay" class="image-conatiner" [ngClass]="activeImageClass">
+    <div *ngIf="!_openEditUrlOverlay" class="image-container" [ngClass]="activeImageClass">
       <img
         #image
         class="image-block"
@@ -2000,7 +2001,7 @@ NgxEditorjsImageBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMP
     </div>
     <image-config *ngIf="_openEditUrlOverlay" [value]="_value" (imageValue)="updateImage($event)"></image-config>
   `,
-      styles: [":host{display:flex;flex-direction:column;position:relative;margin-bottom:22px}:host .flex-start{justify-content:flex-start}:host .flex-end{justify-content:flex-end}:host .center{justify-content:center}:host .stretch img{width:100%}.image-block:hover~.image-block-button,.image-block-button:hover{display:block}.image-block{min-width:0}.image-block-button{position:absolute;top:6px;left:6px;z-index:1;display:none;width:32px;height:32px}.image-conatiner{display:flex}::ng-deep .image-block-button .mat-button-wrapper .mat-icon{font-size:1.6rem;vertical-align:baseline}\n"]
+      styles: [":host{display:flex;flex-direction:column;position:relative;margin-bottom:22px}:host .flex-start{justify-content:flex-start}:host .flex-end{justify-content:flex-end}:host .center{justify-content:center}:host .stretch img{width:100%}.image-block:hover~.image-block-button,.image-block-button:hover{display:block}.image-block{min-width:0}.image-block-button{position:absolute;top:6px;left:6px;z-index:1;display:none;width:32px;height:32px}.image-container{display:flex}::ng-deep .image-block-button .mat-button-wrapper .mat-icon{font-size:1.6rem;vertical-align:baseline}\n"]
     }]
   }], null, {
     element: [{
@@ -2112,17 +2113,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "NgxEditorjsMermaidBlockComponent": () => (/* binding */ NgxEditorjsMermaidBlockComponent),
 /* harmony export */   "NgxEditorjsMermaidBlockMediator": () => (/* binding */ NgxEditorjsMermaidBlockMediator),
 /* harmony export */   "NgxEditorjsMermaidBlockService": () => (/* binding */ NgxEditorjsMermaidBlockService),
-/* harmony export */   "SafeHtmlPipe": () => (/* binding */ SafeHtmlPipe)
+/* harmony export */   "NgxEditorjsMermaidClientBlockComponent": () => (/* binding */ NgxEditorjsMermaidClientBlockComponent)
 /* harmony export */ });
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 94666);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 22560);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ 94666);
-/* harmony import */ var _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/legacy-button */ 69159);
+/* harmony import */ var mermaid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mermaid */ 75132);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ 34497);
+/* harmony import */ var _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/legacy-button */ 69159);
 /* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/icon */ 57822);
 /* harmony import */ var _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @tmdjr/ngx-editorjs */ 51753);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 2508);
-/* harmony import */ var _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ctrl/ngx-codemirror */ 5489);
-/* harmony import */ var mermaid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! mermaid */ 75132);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser */ 34497);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 2508);
+/* harmony import */ var _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ctrl/ngx-codemirror */ 5489);
 
 
 
@@ -2138,116 +2139,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-class NgxEditorjsMermaidBlockService {
-  constructor() {}
-}
-NgxEditorjsMermaidBlockService.ɵfac = function NgxEditorjsMermaidBlockService_Factory(t) {
-  return new (t || NgxEditorjsMermaidBlockService)();
-};
-NgxEditorjsMermaidBlockService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-  token: NgxEditorjsMermaidBlockService,
-  factory: NgxEditorjsMermaidBlockService.ɵfac,
-  providedIn: 'root'
-});
-(function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NgxEditorjsMermaidBlockService, [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Injectable,
-    args: [{
-      providedIn: 'root'
-    }]
-  }], function () {
-    return [];
-  }, null);
-})();
-class MermaidConfigComponent {
-  constructor() {
-    this.codeMirrorOptions = {
-      lineNumbers: true,
-      theme: 'material-palenight',
-      mode: 'text/typescript',
-      extraKeys: {
-        'Ctrl-Space': 'autocomplete'
-      }
-    };
-    this.value = '';
-    this.mermaidValue = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
-  }
-  changeValue(newValue) {
-    this.value = newValue;
-  }
-  updateMermaid() {
-    this.mermaidValue.emit(this.value);
-  }
-}
-MermaidConfigComponent.ɵfac = function MermaidConfigComponent_Factory(t) {
-  return new (t || MermaidConfigComponent)();
-};
-MermaidConfigComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-  type: MermaidConfigComponent,
-  selectors: [["mermaid-config"]],
-  inputs: {
-    value: "value"
-  },
-  outputs: {
-    mermaidValue: "mermaidValue"
-  },
-  standalone: true,
-  features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵStandaloneFeature"]],
-  decls: 5,
-  vars: 2,
-  consts: [[1, "container"], [3, "ngModel", "options", "ngModelChange"], [1, "action-group"], ["mat-flat-button", "", "color", "accent", "type", "button", 3, "click"]],
-  template: function MermaidConfigComponent_Template(rf, ctx) {
-    if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0)(1, "ngx-codemirror", 1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function MermaidConfigComponent_Template_ngx_codemirror_ngModelChange_1_listener($event) {
-        return ctx.changeValue($event);
-      });
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2)(3, "button", 3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function MermaidConfigComponent_Template_button_click_3_listener() {
-        return ctx.updateMermaid();
-      });
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Update");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-    }
-    if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.value)("options", ctx.codeMirrorOptions);
-    }
-  },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.CommonModule, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_2__.CodemirrorModule, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_2__.CodemirrorComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgModel, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_4__.MatLegacyButtonModule, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_4__.MatLegacyButton],
-  styles: ["[_nghost-%COMP%]{width:100%;display:flex;flex-direction:column;border-radius:5px;margin:16px auto;position:relative;z-index:1}[_nghost-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}[_nghost-%COMP%]   .answers-action-group[_ngcontent-%COMP%]{padding-bottom:20px}[_nghost-%COMP%]     .CodeMirror{height:250px}.container[_ngcontent-%COMP%]{padding-bottom:20px}"]
-});
-(function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MermaidConfigComponent, [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Component,
-    args: [{
-      selector: 'mermaid-config',
-      standalone: true,
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.CommonModule, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_2__.CodemirrorModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormsModule, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_4__.MatLegacyButtonModule],
-      template: `
-    <div class="container">
-    <ngx-codemirror
-      (ngModelChange)="changeValue($event)"
-      [ngModel]="value"
-      [options]="codeMirrorOptions">
-    </ngx-codemirror>
-    </div>
-    <div class="action-group">
-      <button mat-flat-button color="accent" type="button" (click)="updateMermaid()">Update</button>
-    </div>
-  `,
-      styles: [":host{width:100%;display:flex;flex-direction:column;border-radius:5px;margin:16px auto;position:relative;z-index:1}:host .action-group{display:flex;justify-content:flex-end;gap:10px}:host .answers-action-group{padding-bottom:20px}:host ::ng-deep .CodeMirror{height:250px}.container{padding-bottom:20px}\n"]
-    }]
-  }], null, {
-    value: [{
-      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
-    }],
-    mermaidValue: [{
-      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Output
-    }]
-  });
-})();
 const _c0 = ["paragraph"];
 const _c1 = ["mermaidContainer"];
 function NgxEditorjsMermaidBlockComponent_ng_container_0_Template(rf, ctx) {
@@ -2288,12 +2179,9 @@ function NgxEditorjsMermaidBlockComponent_ng_template_1_Template(rf, ctx) {
   if (rf & 2) {
     const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r2.activeImageClass)("innerHTML", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](3, 2, ctx_r2._mermaidDiagramSVG), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r2.activeMermaidClass)("innerHTML", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](3, 2, ctx_r2._mermaidDiagramSVG), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
   }
 }
-mermaid__WEBPACK_IMPORTED_MODULE_5__["default"].parseError = function (err, hash) {
-  console.warn(`Error parsing mermaid diagram: ${err} ${hash}`);
-};
 class SafeHtmlPipe {
   constructor(sanitized) {
     this.sanitized = sanitized;
@@ -2303,9 +2191,9 @@ class SafeHtmlPipe {
   }
 }
 SafeHtmlPipe.ɵfac = function SafeHtmlPipe_Factory(t) {
-  return new (t || SafeHtmlPipe)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__.DomSanitizer, 16));
+  return new (t || SafeHtmlPipe)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__.DomSanitizer, 16));
 };
-SafeHtmlPipe.ɵpipe = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefinePipe"]({
+SafeHtmlPipe.ɵpipe = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefinePipe"]({
   name: "safeHtml",
   type: SafeHtmlPipe,
   pure: true,
@@ -2320,21 +2208,219 @@ SafeHtmlPipe.ɵpipe = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["�
     }]
   }], function () {
     return [{
-      type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__.DomSanitizer
+      type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__.DomSanitizer
     }];
   }, null);
 })();
+mermaid__WEBPACK_IMPORTED_MODULE_2__["default"].parseError = function (err, hash) {
+  console.warn(`Error parsing mermaid diagram: ${err} ${hash}`);
+};
+class NgxEditorjsMermaidClientBlockComponent {
+  constructor() {
+    this.ngZone = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone);
+    this._mermaidAPI = mermaid__WEBPACK_IMPORTED_MODULE_2__["default"].mermaidAPI;
+    this._mermaidDiagramSVG = '';
+    this.activeMermaidClass = 'flex-start';
+  }
+  set value(mermaidDiagram) {
+    const uniqueId = `mermaid-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+    this.ngZone.runOutsideAngular(() => {
+      this._mermaidAPI.render(uniqueId, mermaidDiagram ?? '').then(data => this.ngZone.run(() => this._mermaidDiagramSVG = data.svg), error => console.warn(`Error: ${error}`));
+    });
+  }
+  ngOnInit() {
+    this.ngZone.runOutsideAngular(() => {
+      this._mermaidAPI.initialize({
+        startOnLoad: false
+      });
+    });
+  }
+  set savedAction(action) {
+    console.log('action', action);
+    this.activeMermaidClass = action ?? 'flex-start';
+  }
+}
+NgxEditorjsMermaidClientBlockComponent.ɵfac = function NgxEditorjsMermaidClientBlockComponent_Factory(t) {
+  return new (t || NgxEditorjsMermaidClientBlockComponent)();
+};
+NgxEditorjsMermaidClientBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+  type: NgxEditorjsMermaidClientBlockComponent,
+  selectors: [["ngx-editorjs-mermaid-client-block"]],
+  inputs: {
+    value: "value",
+    savedAction: "savedAction"
+  },
+  standalone: true,
+  features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵStandaloneFeature"]],
+  decls: 4,
+  vars: 4,
+  consts: [[1, "mermaid-container"], [1, "mermaid", 3, "ngClass", "innerHTML"], ["mermaidContainer", ""]],
+  template: function NgxEditorjsMermaidClientBlockComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "div", 1, 2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](3, "safeHtml");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    }
+    if (rf & 2) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx.activeMermaidClass)("innerHTML", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](3, 2, ctx._mermaidDiagramSVG), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
+    }
+  },
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.CommonModule, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgClass, SafeHtmlPipe],
+  styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column;position:relative;padding-bottom:22px}.mermaid[_ngcontent-%COMP%]{width:100%;display:flex}.mermaid-container[_ngcontent-%COMP%]{display:flex}[_nghost-%COMP%]   .flex-start[_ngcontent-%COMP%]{justify-content:flex-start}[_nghost-%COMP%]   .flex-end[_ngcontent-%COMP%]{justify-content:flex-end}[_nghost-%COMP%]   .center[_ngcontent-%COMP%]{justify-content:center}"]
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NgxEditorjsMermaidClientBlockComponent, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Component,
+    args: [{
+      standalone: true,
+      selector: 'ngx-editorjs-mermaid-client-block',
+      template: `
+    <div class="mermaid-container">
+      <div
+        #mermaidContainer
+        [ngClass]="activeMermaidClass"
+        [innerHTML]="_mermaidDiagramSVG | safeHtml"
+        class="mermaid"></div>
+    </div>
+  `,
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.CommonModule, SafeHtmlPipe],
+      styles: [":host{display:flex;flex-direction:column;position:relative;padding-bottom:22px}.mermaid{width:100%;display:flex}.mermaid-container{display:flex}:host .flex-start{justify-content:flex-start}:host .flex-end{justify-content:flex-end}:host .center{justify-content:center}\n"]
+    }]
+  }], null, {
+    value: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+    }],
+    savedAction: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+    }]
+  });
+})();
+class NgxEditorjsMermaidBlockService {
+  constructor() {}
+}
+NgxEditorjsMermaidBlockService.ɵfac = function NgxEditorjsMermaidBlockService_Factory(t) {
+  return new (t || NgxEditorjsMermaidBlockService)();
+};
+NgxEditorjsMermaidBlockService.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+  token: NgxEditorjsMermaidBlockService,
+  factory: NgxEditorjsMermaidBlockService.ɵfac,
+  providedIn: 'root'
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NgxEditorjsMermaidBlockService, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Injectable,
+    args: [{
+      providedIn: 'root'
+    }]
+  }], function () {
+    return [];
+  }, null);
+})();
+class MermaidConfigComponent {
+  constructor() {
+    this.codeMirrorOptions = {
+      lineNumbers: true,
+      theme: 'material-palenight',
+      mode: 'text/typescript',
+      extraKeys: {
+        'Ctrl-Space': 'autocomplete'
+      }
+    };
+    this.value = '';
+    this.mermaidValue = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
+  }
+  changeValue(newValue) {
+    this.value = newValue;
+  }
+  updateMermaid() {
+    this.mermaidValue.emit(this.value);
+  }
+}
+MermaidConfigComponent.ɵfac = function MermaidConfigComponent_Factory(t) {
+  return new (t || MermaidConfigComponent)();
+};
+MermaidConfigComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+  type: MermaidConfigComponent,
+  selectors: [["mermaid-config"]],
+  inputs: {
+    value: "value"
+  },
+  outputs: {
+    mermaidValue: "mermaidValue"
+  },
+  standalone: true,
+  features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵStandaloneFeature"]],
+  decls: 5,
+  vars: 2,
+  consts: [[1, "container"], [3, "ngModel", "options", "ngModelChange"], [1, "action-group"], ["mat-flat-button", "", "color", "accent", "type", "button", 3, "click"]],
+  template: function MermaidConfigComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0)(1, "ngx-codemirror", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function MermaidConfigComponent_Template_ngx_codemirror_ngModelChange_1_listener($event) {
+        return ctx.changeValue($event);
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2)(3, "button", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function MermaidConfigComponent_Template_button_click_3_listener() {
+        return ctx.updateMermaid();
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Update");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+    }
+    if (rf & 2) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.value)("options", ctx.codeMirrorOptions);
+    }
+  },
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.CommonModule, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_4__.CodemirrorModule, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_4__.CodemirrorComponent, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgModel, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_6__.MatLegacyButtonModule, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_6__.MatLegacyButton],
+  styles: ["[_nghost-%COMP%]{width:100%;display:flex;flex-direction:column;border-radius:5px;margin:16px auto;position:relative;z-index:1}[_nghost-%COMP%]   .action-group[_ngcontent-%COMP%]{display:flex;justify-content:flex-end;gap:10px}[_nghost-%COMP%]   .answers-action-group[_ngcontent-%COMP%]{padding-bottom:20px}[_nghost-%COMP%]     .CodeMirror{height:250px}.container[_ngcontent-%COMP%]{padding-bottom:20px}"]
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MermaidConfigComponent, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Component,
+    args: [{
+      selector: 'mermaid-config',
+      standalone: true,
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.CommonModule, _ctrl_ngx_codemirror__WEBPACK_IMPORTED_MODULE_4__.CodemirrorModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormsModule, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_6__.MatLegacyButtonModule],
+      template: `
+    <div class="container">
+    <ngx-codemirror
+      (ngModelChange)="changeValue($event)"
+      [ngModel]="value"
+      [options]="codeMirrorOptions">
+    </ngx-codemirror>
+    </div>
+    <div class="action-group">
+      <button mat-flat-button color="accent" type="button" (click)="updateMermaid()">Update</button>
+    </div>
+  `,
+      styles: [":host{width:100%;display:flex;flex-direction:column;border-radius:5px;margin:16px auto;position:relative;z-index:1}:host .action-group{display:flex;justify-content:flex-end;gap:10px}:host .answers-action-group{padding-bottom:20px}:host ::ng-deep .CodeMirror{height:250px}.container{padding-bottom:20px}\n"]
+    }]
+  }], null, {
+    value: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+    }],
+    mermaidValue: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Output
+    }]
+  });
+})();
+mermaid__WEBPACK_IMPORTED_MODULE_2__["default"].parseError = function (err, hash) {
+  console.warn(`Error parsing mermaid diagram: ${err} ${hash}`);
+};
 class NgxEditorjsMermaidBlockComponent extends _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_7__.BaseBlockComponent {
   constructor() {
     super(...arguments);
     this.useInlineToolbar = false;
     this.useInputType = false;
     this.useOnPasteHTMLRemoval = false;
-    this._mermaidAPI = mermaid__WEBPACK_IMPORTED_MODULE_5__["default"].mermaidAPI;
+    this._mermaidAPI = mermaid__WEBPACK_IMPORTED_MODULE_2__["default"].mermaidAPI;
     this._openEditMermaidOverlay = false;
     this._value = '';
     this._mermaidDiagramSVG = '';
-    this.activeImageClass = 'flex-start';
+    this.activeMermaidClass = 'flex-start';
     this.blockOptionActions = [{
       action: 'flex-start',
       icon: 'format_align_left'
@@ -2370,7 +2456,7 @@ class NgxEditorjsMermaidBlockComponent extends _tmdjr_ngx_editorjs__WEBPACK_IMPO
     super.changeValue(value);
   }
   handleBlockOptionAction(action) {
-    this.activeImageClass = action ?? 'flex-start';
+    this.activeMermaidClass = action ?? 'flex-start';
     super.handleBlockOptionAction(action);
   }
   openEditUrlOverlay() {
@@ -2383,13 +2469,13 @@ class NgxEditorjsMermaidBlockComponent extends _tmdjr_ngx_editorjs__WEBPACK_IMPO
     this._openEditMermaidOverlay = false;
   }
 }
-NgxEditorjsMermaidBlockComponent.ɵfac = /*@__PURE__*/function () {
+NgxEditorjsMermaidBlockComponent.ɵfac = /* @__PURE__ */function () {
   let ɵNgxEditorjsMermaidBlockComponent_BaseFactory;
   return function NgxEditorjsMermaidBlockComponent_Factory(t) {
     return (ɵNgxEditorjsMermaidBlockComponent_BaseFactory || (ɵNgxEditorjsMermaidBlockComponent_BaseFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetInheritedFactory"](NgxEditorjsMermaidBlockComponent)))(t || NgxEditorjsMermaidBlockComponent);
   };
 }();
-NgxEditorjsMermaidBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+NgxEditorjsMermaidBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: NgxEditorjsMermaidBlockComponent,
   selectors: [["ngx-editorjs-mermaid-block"]],
   viewQuery: function NgxEditorjsMermaidBlockComponent_Query(rf, ctx) {
@@ -2418,7 +2504,7 @@ NgxEditorjsMermaidBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMP
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx._openEditMermaidOverlay)("ngIfElse", _r1);
     }
   },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.CommonModule, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_1__.NgIf, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_4__.MatLegacyButtonModule, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_4__.MatLegacyButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__.MatIconModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__.MatIcon, MermaidConfigComponent, SafeHtmlPipe],
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.CommonModule, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgClass, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_6__.MatLegacyButtonModule, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_6__.MatLegacyButton, _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__.MatIconModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__.MatIcon, MermaidConfigComponent, SafeHtmlPipe],
   styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column;position:relative;padding-bottom:22px}.mermaid[_ngcontent-%COMP%]{width:100%;display:flex}.mermaid[_ngcontent-%COMP%]:hover ~ .mermaid-block-button[_ngcontent-%COMP%], .mermaid-block-button[_ngcontent-%COMP%]:hover{display:block}.mermaid-block-button[_ngcontent-%COMP%]{position:absolute;top:6px;left:6px;z-index:1;display:none;width:32px;height:32px}.mermaid-container[_ngcontent-%COMP%]{display:flex}[_nghost-%COMP%]   .flex-start[_ngcontent-%COMP%]{justify-content:flex-start}[_nghost-%COMP%]   .flex-end[_ngcontent-%COMP%]{justify-content:flex-end}[_nghost-%COMP%]   .center[_ngcontent-%COMP%]{justify-content:center}[_nghost-%COMP%]   .stretch[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{width:100%}  .mermaid-block-button .mat-button-wrapper .mat-icon{font-size:1.6rem;vertical-align:baseline}"]
 });
 (function () {
@@ -2435,7 +2521,7 @@ NgxEditorjsMermaidBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMP
     <div class="mermaid-container"> 
       <div
         #mermaidContainer
-        [ngClass]="activeImageClass"
+        [ngClass]="activeMermaidClass"
         [innerHTML]="_mermaidDiagramSVG | safeHtml"
         class="mermaid"></div>
       <button  
@@ -2447,7 +2533,7 @@ NgxEditorjsMermaidBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMP
     </div>
   </ng-template>
   `,
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__.CommonModule, _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_7__.AutofocusDirective, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_4__.MatLegacyButtonModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__.MatIconModule, MermaidConfigComponent, SafeHtmlPipe],
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.CommonModule, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_6__.MatLegacyButtonModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__.MatIconModule, MermaidConfigComponent, SafeHtmlPipe],
       styles: [":host{display:flex;flex-direction:column;position:relative;padding-bottom:22px}.mermaid{width:100%;display:flex}.mermaid:hover~.mermaid-block-button,.mermaid-block-button:hover{display:block}.mermaid-block-button{position:absolute;top:6px;left:6px;z-index:1;display:none;width:32px;height:32px}.mermaid-container{display:flex}:host .flex-start{justify-content:flex-start}:host .flex-end{justify-content:flex-end}:host .center{justify-content:center}:host .stretch img{width:100%}::ng-deep .mermaid-block-button .mat-button-wrapper .mat-icon{font-size:1.6rem;vertical-align:baseline}\n"]
     }]
   }], null, {
@@ -2465,7 +2551,7 @@ class NgxEditorjsMermaidBlockMediator {}
 NgxEditorjsMermaidBlockMediator.ɵfac = function NgxEditorjsMermaidBlockMediator_Factory(t) {
   return new (t || NgxEditorjsMermaidBlockMediator)();
 };
-NgxEditorjsMermaidBlockMediator.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+NgxEditorjsMermaidBlockMediator.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: NgxEditorjsMermaidBlockMediator,
   selectors: [["ngx-editorjs-mermaid-blockquotes-block"]],
   inputs: {
@@ -2491,7 +2577,7 @@ NgxEditorjsMermaidBlockMediator.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPO
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("blockId", ctx.blockId)("formControlName", ctx.formControlName)("savedAction", ctx.savedAction);
     }
   },
-  dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.FormControlName, NgxEditorjsMermaidBlockComponent],
+  dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlName, NgxEditorjsMermaidBlockComponent],
   encapsulation: 2
 });
 (function () {
@@ -2505,7 +2591,7 @@ NgxEditorjsMermaidBlockMediator.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPO
       <ngx-editorjs-mermaid-block [blockId]="blockId" [formControlName]="formControlName" [savedAction]="savedAction"></ngx-editorjs-mermaid-block>
     </div>
   `,
-      imports: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.ReactiveFormsModule, NgxEditorjsMermaidBlockComponent]
+      imports: [_angular_forms__WEBPACK_IMPORTED_MODULE_5__.ReactiveFormsModule, NgxEditorjsMermaidBlockComponent]
     }]
   }], null, {
     blockId: [{
@@ -2557,13 +2643,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const _c0 = ["paragraph"];
+const _c1 = "[_nghost-%COMP%]{display:flex;flex-direction:column}p[_ngcontent-%COMP%]{font-size:1.6rem;line-height:3.2rem}";
 class NgxEditorParagraphBlockService {
   constructor() {}
 }
 NgxEditorParagraphBlockService.ɵfac = function NgxEditorParagraphBlockService_Factory(t) {
   return new (t || NgxEditorParagraphBlockService)();
 };
-NgxEditorParagraphBlockService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+NgxEditorParagraphBlockService.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
   token: NgxEditorParagraphBlockService,
   factory: NgxEditorParagraphBlockService.ɵfac,
   providedIn: 'root'
@@ -2578,7 +2666,6 @@ NgxEditorParagraphBlockService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPO
     return [];
   }, null);
 })();
-const _c0 = ["paragraph"];
 class NgxEditorjsParagraphBlockComponent extends _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_1__.BaseBlockComponent {
   ngOnInit() {
     super.ngOnInit();
@@ -2590,13 +2677,13 @@ class NgxEditorjsParagraphBlockComponent extends _tmdjr_ngx_editorjs__WEBPACK_IM
     super.onMouseEnter(event);
   }
 }
-NgxEditorjsParagraphBlockComponent.ɵfac = /*@__PURE__*/function () {
+NgxEditorjsParagraphBlockComponent.ɵfac = /* @__PURE__ */function () {
   let ɵNgxEditorjsParagraphBlockComponent_BaseFactory;
   return function NgxEditorjsParagraphBlockComponent_Factory(t) {
     return (ɵNgxEditorjsParagraphBlockComponent_BaseFactory || (ɵNgxEditorjsParagraphBlockComponent_BaseFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetInheritedFactory"](NgxEditorjsParagraphBlockComponent)))(t || NgxEditorjsParagraphBlockComponent);
   };
 }();
-NgxEditorjsParagraphBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+NgxEditorjsParagraphBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: NgxEditorjsParagraphBlockComponent,
   selectors: [["ngx-editorjs-paragraph-block"]],
   viewQuery: function NgxEditorjsParagraphBlockComponent_Query(rf, ctx) {
@@ -2622,7 +2709,7 @@ NgxEditorjsParagraphBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_I
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", true)("innerHTML", ctx.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", ctx._autofocus)("innerHTML", ctx.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
     }
   },
   dependencies: [_tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_1__.AutofocusDirective],
@@ -2635,7 +2722,7 @@ NgxEditorjsParagraphBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_I
       standalone: true,
       selector: 'ngx-editorjs-paragraph-block',
       template: `
-    <p class="flex-spacer" #paragraph contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></p>
+    <p class="flex-spacer" #paragraph contenteditable [autofocus]="_autofocus" (focus)="onMouseEnter($event)" [innerHTML]="value"></p>
   `,
       imports: [_tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_1__.AutofocusDirective],
       styles: [":host{display:flex;flex-direction:column}p{font-size:1.6rem;line-height:3.2rem}\n"]
@@ -2655,7 +2742,7 @@ class NgxEditorjsParagraphClientBlockComponent {
 NgxEditorjsParagraphClientBlockComponent.ɵfac = function NgxEditorjsParagraphClientBlockComponent_Factory(t) {
   return new (t || NgxEditorjsParagraphClientBlockComponent)();
 };
-NgxEditorjsParagraphClientBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+NgxEditorjsParagraphClientBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: NgxEditorjsParagraphClientBlockComponent,
   selectors: [["ngx-editorjs-paragraph-client-block"]],
   inputs: {
@@ -2674,7 +2761,7 @@ NgxEditorjsParagraphClientBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEB
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("innerHTML", ctx.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
     }
   },
-  styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column}p[_ngcontent-%COMP%]{font-size:1.6rem;line-height:3.2rem}"]
+  styles: [_c1]
 });
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NgxEditorjsParagraphClientBlockComponent, [{
@@ -2698,7 +2785,7 @@ class NgxEditorjsParagraphBlockMediator {}
 NgxEditorjsParagraphBlockMediator.ɵfac = function NgxEditorjsParagraphBlockMediator_Factory(t) {
   return new (t || NgxEditorjsParagraphBlockMediator)();
 };
-NgxEditorjsParagraphBlockMediator.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+NgxEditorjsParagraphBlockMediator.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: NgxEditorjsParagraphBlockMediator,
   selectors: [["ngx-editorjs-meditator-paragraph-block"]],
   inputs: {
@@ -2755,10 +2842,10 @@ class NgxEditorParagraphBlockModule {}
 NgxEditorParagraphBlockModule.ɵfac = function NgxEditorParagraphBlockModule_Factory(t) {
   return new (t || NgxEditorParagraphBlockModule)();
 };
-NgxEditorParagraphBlockModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+NgxEditorParagraphBlockModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
   type: NgxEditorParagraphBlockModule
 });
-NgxEditorParagraphBlockModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({});
+NgxEditorParagraphBlockModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({});
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NgxEditorParagraphBlockModule, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.NgModule,
@@ -2829,27 +2916,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-class NgxEditorjsQuizBlockService {
-  constructor() {}
-}
-NgxEditorjsQuizBlockService.ɵfac = function NgxEditorjsQuizBlockService_Factory(t) {
-  return new (t || NgxEditorjsQuizBlockService)();
-};
-NgxEditorjsQuizBlockService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-  token: NgxEditorjsQuizBlockService,
-  factory: NgxEditorjsQuizBlockService.ɵfac,
-  providedIn: 'root'
-});
-(function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NgxEditorjsQuizBlockService, [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Injectable,
-    args: [{
-      providedIn: 'root'
-    }]
-  }], function () {
-    return [];
-  }, null);
-})();
 function QuizConfigComponent_mat_error_11_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
@@ -3033,6 +3099,118 @@ function QuizConfigComponent_ng_container_15_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (tmp_0_0 = ctx_r5.quizConfigForm.get("incorrectAnswerResponse")) == null ? null : tmp_0_0.errors);
   }
 }
+const _c0 = ["paragraph"];
+function NgxEditorjsQuizBlockComponent_ng_container_0_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "quiz-config", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("quizValue", function NgxEditorjsQuizBlockComponent_ng_container_0_Template_quiz_config_quizValue_1_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4);
+      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r3.updateQuiz($event));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx_r0._value);
+  }
+}
+function NgxEditorjsQuizBlockComponent_ng_template_1_mat_radio_button_7_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-radio-button", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const option_r7 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", option_r7.value);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](option_r7.value);
+  }
+}
+function NgxEditorjsQuizBlockComponent_ng_template_1_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 3)(1, "h1");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Quiz");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", null, 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-radio-group", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, NgxEditorjsQuizBlockComponent_ng_template_1_mat_radio_button_7_Template, 2, 2, "mat-radio-button", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 7)(9, "button", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function NgxEditorjsQuizBlockComponent_ng_template_1_Template_button_click_9_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r9);
+      const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r8.openEditQuizOverlay());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Edit");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
+  }
+  if (rf & 2) {
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r2._value.question);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx_r2._value.correctAnswer);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r2._value.ratioOptions);
+  }
+}
+function NgxEditorjsQuizClientBlockComponent_p_3_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r0.isAnswerCorrect ? "successful-text" : "failure-text");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r0.answerResponse);
+  }
+}
+function NgxEditorjsQuizClientBlockComponent_li_9_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li")(1, "mat-radio-button", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+  }
+  if (rf & 2) {
+    const option_r3 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", option_r3.value);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](option_r3.value);
+  }
+}
+class NgxEditorjsQuizBlockService {
+  constructor() {}
+}
+NgxEditorjsQuizBlockService.ɵfac = function NgxEditorjsQuizBlockService_Factory(t) {
+  return new (t || NgxEditorjsQuizBlockService)();
+};
+NgxEditorjsQuizBlockService.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+  token: NgxEditorjsQuizBlockService,
+  factory: NgxEditorjsQuizBlockService.ɵfac,
+  providedIn: 'root'
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NgxEditorjsQuizBlockService, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Injectable,
+    args: [{
+      providedIn: 'root'
+    }]
+  }], function () {
+    return [];
+  }, null);
+})();
 function validateRatioOptions() {
   return control => {
     const optionsArray = control;
@@ -3104,7 +3282,7 @@ class QuizConfigComponent {
 QuizConfigComponent.ɵfac = function QuizConfigComponent_Factory(t) {
   return new (t || QuizConfigComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormBuilder));
 };
-QuizConfigComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+QuizConfigComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: QuizConfigComponent,
   selectors: [["quiz-config"]],
   inputs: {
@@ -3269,70 +3447,6 @@ QuizConfigComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
     }]
   });
 })();
-const _c0 = ["paragraph"];
-function NgxEditorjsQuizBlockComponent_ng_container_0_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "quiz-config", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("quizValue", function NgxEditorjsQuizBlockComponent_ng_container_0_Template_quiz_config_quizValue_1_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4);
-      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r3.updateQuiz($event));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx_r0._value);
-  }
-}
-function NgxEditorjsQuizBlockComponent_ng_template_1_mat_radio_button_7_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-radio-button", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const option_r7 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", option_r7.value);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](option_r7.value);
-  }
-}
-function NgxEditorjsQuizBlockComponent_ng_template_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 3)(1, "h1");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Quiz");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", null, 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-radio-group", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, NgxEditorjsQuizBlockComponent_ng_template_1_mat_radio_button_7_Template, 2, 2, "mat-radio-button", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 7)(9, "button", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function NgxEditorjsQuizBlockComponent_ng_template_1_Template_button_click_9_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r9);
-      const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r8.openEditQuizOverlay());
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Edit");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
-  }
-  if (rf & 2) {
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r2._value.question);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", ctx_r2._value.correctAnswer);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r2._value.ratioOptions);
-  }
-}
 class NgxEditorjsQuizBlockComponent extends _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_11__.BaseBlockComponent {
   constructor() {
     super(...arguments);
@@ -3367,13 +3481,13 @@ class NgxEditorjsQuizBlockComponent extends _tmdjr_ngx_editorjs__WEBPACK_IMPORTE
     this._openEditQuizOverlay = false;
   }
 }
-NgxEditorjsQuizBlockComponent.ɵfac = /*@__PURE__*/function () {
+NgxEditorjsQuizBlockComponent.ɵfac = /* @__PURE__ */function () {
   let ɵNgxEditorjsQuizBlockComponent_BaseFactory;
   return function NgxEditorjsQuizBlockComponent_Factory(t) {
     return (ɵNgxEditorjsQuizBlockComponent_BaseFactory || (ɵNgxEditorjsQuizBlockComponent_BaseFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetInheritedFactory"](NgxEditorjsQuizBlockComponent)))(t || NgxEditorjsQuizBlockComponent);
   };
 }();
-NgxEditorjsQuizBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+NgxEditorjsQuizBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: NgxEditorjsQuizBlockComponent,
   selectors: [["ngx-editorjs-quiz-block"]],
   viewQuery: function NgxEditorjsQuizBlockComponent_Query(rf, ctx) {
@@ -3426,7 +3540,7 @@ NgxEditorjsQuizBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORT
       </div>
     </ng-template>
   `,
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_11__.AutofocusDirective, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_7__.MatLegacyButtonModule, _angular_material_legacy_radio__WEBPACK_IMPORTED_MODULE_12__.MatLegacyRadioModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, QuizConfigComponent],
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.CommonModule, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_7__.MatLegacyButtonModule, _angular_material_legacy_radio__WEBPACK_IMPORTED_MODULE_12__.MatLegacyRadioModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_10__.MatIconModule, QuizConfigComponent],
       styles: [":host{display:flex;flex-direction:column;padding-bottom:22px}.answer-ratio-group{display:flex;flex-direction:column;gap:21px}.quiz-conatiner{border:1px solid #ccc;border-radius:4px;padding:20px}.action-group{display:flex;justify-content:flex-end;gap:10px}\n"]
     }]
   }], null, {
@@ -3436,33 +3550,6 @@ NgxEditorjsQuizBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORT
     }]
   });
 })();
-function NgxEditorjsQuizClientBlockComponent_p_3_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", ctx_r0.isAnswerCorrect ? "successful-text" : "failure-text");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r0.answerResponse);
-  }
-}
-function NgxEditorjsQuizClientBlockComponent_li_9_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li")(1, "mat-radio-button", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-  }
-  if (rf & 2) {
-    const option_r3 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("value", option_r3.value);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](option_r3.value);
-  }
-}
 class NgxEditorjsQuizClientBlockComponent {
   constructor() {
     this.isAnswerCorrect = undefined;
@@ -3489,7 +3576,7 @@ class NgxEditorjsQuizClientBlockComponent {
 NgxEditorjsQuizClientBlockComponent.ɵfac = function NgxEditorjsQuizClientBlockComponent_Factory(t) {
   return new (t || NgxEditorjsQuizClientBlockComponent)();
 };
-NgxEditorjsQuizClientBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+NgxEditorjsQuizClientBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: NgxEditorjsQuizClientBlockComponent,
   selectors: [["ngx-editorjs-image-client-block"]],
   inputs: {
@@ -3576,7 +3663,7 @@ class NgxEditorjsQuizBlockMediator {}
 NgxEditorjsQuizBlockMediator.ɵfac = function NgxEditorjsQuizBlockMediator_Factory(t) {
   return new (t || NgxEditorjsQuizBlockMediator)();
 };
-NgxEditorjsQuizBlockMediator.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+NgxEditorjsQuizBlockMediator.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: NgxEditorjsQuizBlockMediator,
   selectors: [["ngx-editorjs-quiz-paragraph-block"]],
   inputs: {
@@ -3697,52 +3784,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const NGX_EDITORJS_OPTIONS = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('NGX_EDITORJS_OPTIONS');
-class NgxEditorjsService {
-  constructor(options) {
-    this.toolbarComponentDetachSubject = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
-    this.toolbarComponentDetach$ = this.toolbarComponentDetachSubject.asObservable();
-    this.adjustBlockPositionSubject = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
-    this.adjustBlockPosition$ = this.adjustBlockPositionSubject.asObservable();
-    this.addNewBlockSubject = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
-    this.addNewBlock$ = this.addNewBlockSubject.asObservable();
-    this.updateBlockOptionActionSubject = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
-    this.updateBlockOptionAction$ = this.updateBlockOptionActionSubject.asObservable();
-    this.blocks = options?.blocks || [];
-  }
-}
-NgxEditorjsService.ɵfac = function NgxEditorjsService_Factory(t) {
-  return new (t || NgxEditorjsService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](NGX_EDITORJS_OPTIONS, 8));
-};
-NgxEditorjsService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-  token: NgxEditorjsService,
-  factory: NgxEditorjsService.ɵfac,
-  providedIn: 'root'
-});
-(function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NgxEditorjsService, [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Injectable,
-    args: [{
-      providedIn: 'root'
-    }]
-  }], function () {
-    return [{
-      type: undefined,
-      decorators: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Optional
-      }, {
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Inject,
-        args: [NGX_EDITORJS_OPTIONS]
-      }]
-    }];
-  }, null);
-})();
-var AdjustBlockPositionActions;
-(function (AdjustBlockPositionActions) {
-  AdjustBlockPositionActions["UP"] = "UP";
-  AdjustBlockPositionActions["DOWN"] = "DOWN";
-  AdjustBlockPositionActions["DELETE"] = "DELETE";
-})(AdjustBlockPositionActions || (AdjustBlockPositionActions = {}));
 function SearchableBlockListComponent_mat_list_5_mat_list_item_1_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-list-item", 7);
@@ -3784,6 +3825,254 @@ function SearchableBlockListComponent_mat_list_5_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", filteredBlocks_r1);
   }
 }
+function BlockOptionsListComponent_div_11_mat_icon_1_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const blockOptionAction_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](blockOptionAction_r1.icon);
+  }
+}
+function BlockOptionsListComponent_div_11_span_2_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const blockOptionAction_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](blockOptionAction_r1.text);
+  }
+}
+function BlockOptionsListComponent_div_11_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BlockOptionsListComponent_div_11_Template_div_click_0_listener() {
+      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7);
+      const blockOptionAction_r1 = restoredCtx.$implicit;
+      const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r6.handleBlockOptionAction(blockOptionAction_r1.action));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, BlockOptionsListComponent_div_11_mat_icon_1_Template, 2, 1, "mat-icon", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, BlockOptionsListComponent_div_11_span_2_Template, 2, 1, "span", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const blockOptionAction_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", blockOptionAction_r1.icon);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", blockOptionAction_r1.text);
+  }
+}
+function ToolbarBlockComponent_ng_template_10_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "searchable-block-list", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("addBlock", function ToolbarBlockComponent_ng_template_10_Template_searchable_block_list_addBlock_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5);
+      const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r4.addBlock($event));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+}
+function ToolbarBlockComponent_ng_template_11_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "block-options-list", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("handleBlockOptionAction", function ToolbarBlockComponent_ng_template_11_Template_block_options_list_handleBlockOptionAction_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7);
+      const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r6.handleBlockOptionAction($event));
+    })("adjustBlockPosition", function ToolbarBlockComponent_ng_template_11_Template_block_options_list_adjustBlockPosition_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7);
+      const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r8.adjustBlockPosition($event));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("blockOptionActions", ctx_r3.blockOptionActions);
+  }
+}
+function InlineToolbarBlockComponent_div_44_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 1)(1, "input", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function InlineToolbarBlockComponent_div_44_Template_input_ngModelChange_1_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r2);
+      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r1.url = $event);
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function InlineToolbarBlockComponent_div_44_Template_div_click_2_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r2);
+      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r3.createLink());
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-icon");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "add");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
+  }
+  if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx_r0.url);
+  }
+}
+const _c0 = ["header"];
+function NgxEditorjsHeaderBlockComponent_h2_2_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h2", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focus", function NgxEditorjsHeaderBlockComponent_h2_2_Template_h2_focus_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r8);
+      const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r7.onMouseEnter($event));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", ctx_r1._autofocus)("innerHTML", ctx_r1.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
+  }
+}
+function NgxEditorjsHeaderBlockComponent_h3_3_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h3", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focus", function NgxEditorjsHeaderBlockComponent_h3_3_Template_h3_focus_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r10);
+      const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r9.onMouseEnter($event));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", ctx_r2._autofocus)("innerHTML", ctx_r2.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
+  }
+}
+function NgxEditorjsHeaderBlockComponent_h4_4_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h4", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focus", function NgxEditorjsHeaderBlockComponent_h4_4_Template_h4_focus_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r12);
+      const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r11.onMouseEnter($event));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", ctx_r3._autofocus)("innerHTML", ctx_r3.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
+  }
+}
+function NgxEditorjsHeaderBlockComponent_h5_5_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h5", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focus", function NgxEditorjsHeaderBlockComponent_h5_5_Template_h5_focus_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14);
+      const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r13.onMouseEnter($event));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", ctx_r4._autofocus)("innerHTML", ctx_r4.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
+  }
+}
+function NgxEditorjsHeaderBlockComponent_h6_6_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h6", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focus", function NgxEditorjsHeaderBlockComponent_h6_6_Template_h6_focus_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r16);
+      const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r15.onMouseEnter($event));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", ctx_r5._autofocus)("innerHTML", ctx_r5.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
+  }
+}
+function NgxEditorjsHeaderBlockComponent_h1_7_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h1", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focus", function NgxEditorjsHeaderBlockComponent_h1_7_Template_h1_focus_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r18);
+      const ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r17.onMouseEnter($event));
+    });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", ctx_r6._autofocus)("innerHTML", ctx_r6.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
+  }
+}
+const _c1 = ["ngxEditor"];
+const NGX_EDITORJS_OPTIONS = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('NGX_EDITORJS_OPTIONS');
+class NgxEditorjsService {
+  constructor(options) {
+    this.toolbarComponentDetachSubject = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
+    this.toolbarComponentDetach$ = this.toolbarComponentDetachSubject.asObservable();
+    this.adjustBlockPositionSubject = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
+    this.adjustBlockPosition$ = this.adjustBlockPositionSubject.asObservable();
+    this.addNewBlockSubject = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
+    this.addNewBlock$ = this.addNewBlockSubject.asObservable();
+    this.updateBlockOptionActionSubject = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
+    this.updateBlockOptionAction$ = this.updateBlockOptionActionSubject.asObservable();
+    this.blocks = options?.blocks || [];
+  }
+}
+NgxEditorjsService.ɵfac = function NgxEditorjsService_Factory(t) {
+  return new (t || NgxEditorjsService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](NGX_EDITORJS_OPTIONS, 8));
+};
+NgxEditorjsService.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+  token: NgxEditorjsService,
+  factory: NgxEditorjsService.ɵfac,
+  providedIn: 'root'
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NgxEditorjsService, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Injectable,
+    args: [{
+      providedIn: 'root'
+    }]
+  }], function () {
+    return [{
+      type: undefined,
+      decorators: [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Optional
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Inject,
+        args: [NGX_EDITORJS_OPTIONS]
+      }]
+    }];
+  }, null);
+})();
+var AdjustBlockPositionActions;
+(function (AdjustBlockPositionActions) {
+  AdjustBlockPositionActions["UP"] = "UP";
+  AdjustBlockPositionActions["DOWN"] = "DOWN";
+  AdjustBlockPositionActions["DELETE"] = "DELETE";
+})(AdjustBlockPositionActions || (AdjustBlockPositionActions = {}));
 class SearchableBlockListComponent {
   constructor(ngxEdotorjsService) {
     this.ngxEdotorjsService = ngxEdotorjsService;
@@ -3817,7 +4106,7 @@ class SearchableBlockListComponent {
 SearchableBlockListComponent.ɵfac = function SearchableBlockListComponent_Factory(t) {
   return new (t || SearchableBlockListComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](NgxEditorjsService));
 };
-SearchableBlockListComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+SearchableBlockListComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: SearchableBlockListComponent,
   selectors: [["searchable-block-list"]],
   outputs: {
@@ -3868,52 +4157,6 @@ SearchableBlockListComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTE
     }]
   });
 })();
-function BlockOptionsListComponent_div_11_mat_icon_1_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-icon");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const blockOptionAction_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](blockOptionAction_r1.icon);
-  }
-}
-function BlockOptionsListComponent_div_11_span_2_Template(rf, ctx) {
-  if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const blockOptionAction_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](blockOptionAction_r1.text);
-  }
-}
-function BlockOptionsListComponent_div_11_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function BlockOptionsListComponent_div_11_Template_div_click_0_listener() {
-      const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7);
-      const blockOptionAction_r1 = restoredCtx.$implicit;
-      const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r6.handleBlockOptionAction(blockOptionAction_r1.action));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, BlockOptionsListComponent_div_11_mat_icon_1_Template, 2, 1, "mat-icon", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, BlockOptionsListComponent_div_11_span_2_Template, 2, 1, "span", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const blockOptionAction_r1 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", blockOptionAction_r1.icon);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", blockOptionAction_r1.text);
-  }
-}
 class BlockOptionsListComponent {
   constructor() {
     this.handleBlockOptionActionEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
@@ -3930,7 +4173,7 @@ class BlockOptionsListComponent {
 BlockOptionsListComponent.ɵfac = function BlockOptionsListComponent_Factory(t) {
   return new (t || BlockOptionsListComponent)();
 };
-BlockOptionsListComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+BlockOptionsListComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: BlockOptionsListComponent,
   selectors: [["block-options-list"]],
   inputs: {
@@ -4003,38 +4246,6 @@ BlockOptionsListComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_M
     }]
   });
 })();
-function ToolbarBlockComponent_ng_template_10_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "searchable-block-list", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("addBlock", function ToolbarBlockComponent_ng_template_10_Template_searchable_block_list_addBlock_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5);
-      const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r4.addBlock($event));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-  }
-}
-function ToolbarBlockComponent_ng_template_11_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "block-options-list", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("handleBlockOptionAction", function ToolbarBlockComponent_ng_template_11_Template_block_options_list_handleBlockOptionAction_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7);
-      const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r6.handleBlockOptionAction($event));
-    })("adjustBlockPosition", function ToolbarBlockComponent_ng_template_11_Template_block_options_list_adjustBlockPosition_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r7);
-      const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r8.adjustBlockPosition($event));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("blockOptionActions", ctx_r3.blockOptionActions);
-  }
-}
 class ToolbarBlockComponent {
   constructor(ngxEdotorjsService) {
     this.ngxEdotorjsService = ngxEdotorjsService;
@@ -4077,7 +4288,7 @@ class ToolbarBlockComponent {
 ToolbarBlockComponent.ɵfac = function ToolbarBlockComponent_Factory(t) {
   return new (t || ToolbarBlockComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](NgxEditorjsService));
 };
-ToolbarBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+ToolbarBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: ToolbarBlockComponent,
   selectors: [["toolbar-block"]],
   inputs: {
@@ -4154,32 +4365,6 @@ ToolbarBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODUL
     }]
   });
 })();
-function InlineToolbarBlockComponent_div_44_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 1)(1, "input", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function InlineToolbarBlockComponent_div_44_Template_input_ngModelChange_1_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r2);
-      const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r1.url = $event);
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function InlineToolbarBlockComponent_div_44_Template_div_click_2_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r2);
-      const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r3.createLink());
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-icon");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "add");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
-  }
-  if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx_r0.url);
-  }
-}
 class InlineToolbarBlockComponent {
   constructor(renderer) {
     this.renderer = renderer;
@@ -4225,7 +4410,7 @@ class InlineToolbarBlockComponent {
 InlineToolbarBlockComponent.ɵfac = function InlineToolbarBlockComponent_Factory(t) {
   return new (t || InlineToolbarBlockComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.Renderer2));
 };
-InlineToolbarBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+InlineToolbarBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: InlineToolbarBlockComponent,
   selectors: [["inline-toolbar-block"]],
   inputs: {
@@ -4383,6 +4568,7 @@ class BaseBlockComponent {
     this.overlay = overlay;
     this.ngZone = ngZone;
     this.destory = new rxjs__WEBPACK_IMPORTED_MODULE_1__.Subject();
+    this._autofocus = true;
     this.isActive = false;
     this.error = '';
     this.escalateMsg = true;
@@ -4396,6 +4582,9 @@ class BaseBlockComponent {
     this.onTouched = () => {};
     this.onChange = () => {};
     this.controlDir.valueAccessor = this;
+  }
+  set autofocus(value) {
+    this._autofocus = value;
   }
   set savedAction(action) {
     this.handleBlockOptionAction(action);
@@ -4506,7 +4695,7 @@ class BaseBlockComponent {
 BaseBlockComponent.ɵfac = function BaseBlockComponent_Factory(t) {
   return new (t || BaseBlockComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControl, 2), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ApplicationRef), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewContainerRef), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ComponentFactoryResolver), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](NgxEditorjsService), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_14__.Overlay), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone));
 };
-BaseBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+BaseBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: BaseBlockComponent,
   selectors: [["ng-component"]],
   hostBindings: function BaseBlockComponent_HostBindings(rf, ctx) {
@@ -4523,6 +4712,7 @@ BaseBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0
     }
   },
   inputs: {
+    _autofocus: "_autofocus",
     blockId: "blockId",
     savedAction: "savedAction"
   },
@@ -4559,6 +4749,9 @@ BaseBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.NgZone
     }];
   }, {
+    _autofocus: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+    }],
     blockId: [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
     }],
@@ -4600,7 +4793,7 @@ class AutofocusDirective {
 AutofocusDirective.ɵfac = function AutofocusDirective_Factory(t) {
   return new (t || AutofocusDirective)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef));
 };
-AutofocusDirective.ɵdir = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+AutofocusDirective.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
   type: AutofocusDirective,
   selectors: [["", "autofocus", ""]],
   inputs: {
@@ -4625,103 +4818,6 @@ AutofocusDirective.ɵdir = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0
     }]
   });
 })();
-const _c0$1 = ["header"];
-function NgxEditorjsHeaderBlockComponent_h2_2_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h2", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focus", function NgxEditorjsHeaderBlockComponent_h2_2_Template_h2_focus_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r8);
-      const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r7.onMouseEnter($event));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", true)("innerHTML", ctx_r1.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
-  }
-}
-function NgxEditorjsHeaderBlockComponent_h3_3_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h3", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focus", function NgxEditorjsHeaderBlockComponent_h3_3_Template_h3_focus_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r10);
-      const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r9.onMouseEnter($event));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", true)("innerHTML", ctx_r2.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
-  }
-}
-function NgxEditorjsHeaderBlockComponent_h4_4_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h4", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focus", function NgxEditorjsHeaderBlockComponent_h4_4_Template_h4_focus_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r12);
-      const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r11.onMouseEnter($event));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", true)("innerHTML", ctx_r3.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
-  }
-}
-function NgxEditorjsHeaderBlockComponent_h5_5_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h5", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focus", function NgxEditorjsHeaderBlockComponent_h5_5_Template_h5_focus_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14);
-      const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r13.onMouseEnter($event));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", true)("innerHTML", ctx_r4.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
-  }
-}
-function NgxEditorjsHeaderBlockComponent_h6_6_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h6", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focus", function NgxEditorjsHeaderBlockComponent_h6_6_Template_h6_focus_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r16);
-      const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r15.onMouseEnter($event));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", true)("innerHTML", ctx_r5.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
-  }
-}
-function NgxEditorjsHeaderBlockComponent_h1_7_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h1", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("focus", function NgxEditorjsHeaderBlockComponent_h1_7_Template_h1_focus_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r18);
-      const ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵresetView"](ctx_r17.onMouseEnter($event));
-    });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-  }
-  if (rf & 2) {
-    const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("autofocus", true)("innerHTML", ctx_r6.value, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeHtml"]);
-  }
-}
 class NgxEditorjsHeaderBlockComponent extends BaseBlockComponent {
   constructor() {
     super(...arguments);
@@ -4759,25 +4855,26 @@ class NgxEditorjsHeaderBlockComponent extends BaseBlockComponent {
     }
   }
 }
-NgxEditorjsHeaderBlockComponent.ɵfac = /*@__PURE__*/function () {
+NgxEditorjsHeaderBlockComponent.ɵfac = /* @__PURE__ */function () {
   let ɵNgxEditorjsHeaderBlockComponent_BaseFactory;
   return function NgxEditorjsHeaderBlockComponent_Factory(t) {
     return (ɵNgxEditorjsHeaderBlockComponent_BaseFactory || (ɵNgxEditorjsHeaderBlockComponent_BaseFactory = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetInheritedFactory"](NgxEditorjsHeaderBlockComponent)))(t || NgxEditorjsHeaderBlockComponent);
   };
 }();
-NgxEditorjsHeaderBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+NgxEditorjsHeaderBlockComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: NgxEditorjsHeaderBlockComponent,
   selectors: [["ngx-editorjs-header-block"]],
   viewQuery: function NgxEditorjsHeaderBlockComponent_Query(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0$1, 5, _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, 5, _angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef);
     }
     if (rf & 2) {
       let _t;
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.element = _t.first);
     }
   },
-  features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
+  standalone: true,
+  features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"], _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵStandaloneFeature"]],
   decls: 8,
   vars: 6,
   consts: [[3, "ngSwitch"], ["header", ""], ["class", "flex-spacer", "contenteditable", "", 3, "autofocus", "innerHTML", "focus", 4, "ngSwitchCase"], ["class", "flex-spacer", "contenteditable", "", 3, "autofocus", "innerHTML", "focus", 4, "ngSwitchDefault"], ["contenteditable", "", 1, "flex-spacer", 3, "autofocus", "innerHTML", "focus"]],
@@ -4806,24 +4903,26 @@ NgxEditorjsHeaderBlockComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPO
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngSwitchCase", "h6");
     }
   },
-  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.NgSwitch, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgSwitchCase, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgSwitchDefault, AutofocusDirective],
+  dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgSwitch, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgSwitchCase, _angular_common__WEBPACK_IMPORTED_MODULE_8__.NgSwitchDefault, AutofocusDirective],
   styles: ["[_nghost-%COMP%]{display:flex;flex-direction:column}"]
 });
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NgxEditorjsHeaderBlockComponent, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Component,
     args: [{
+      standalone: true,
       selector: 'ngx-editorjs-header-block',
       template: `
     <span #header [ngSwitch]="whichHeader">
-        <h2 *ngSwitchCase="'h2'" class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h2>
-        <h3 *ngSwitchCase="'h3'" class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h3>
-        <h4 *ngSwitchCase="'h4'" class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h4>
-        <h5 *ngSwitchCase="'h5'" class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h5>
-        <h6 *ngSwitchCase="'h6'" class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h6>
-        <h1 *ngSwitchDefault class="flex-spacer" contenteditable [autofocus]="true" (focus)="onMouseEnter($event)" [innerHTML]="value"></h1>
+        <h2 *ngSwitchCase="'h2'" class="flex-spacer" contenteditable [autofocus]="_autofocus" (focus)="onMouseEnter($event)" [innerHTML]="value"></h2>
+        <h3 *ngSwitchCase="'h3'" class="flex-spacer" contenteditable [autofocus]="_autofocus" (focus)="onMouseEnter($event)" [innerHTML]="value"></h3>
+        <h4 *ngSwitchCase="'h4'" class="flex-spacer" contenteditable [autofocus]="_autofocus" (focus)="onMouseEnter($event)" [innerHTML]="value"></h4>
+        <h5 *ngSwitchCase="'h5'" class="flex-spacer" contenteditable [autofocus]="_autofocus" (focus)="onMouseEnter($event)" [innerHTML]="value"></h5>
+        <h6 *ngSwitchCase="'h6'" class="flex-spacer" contenteditable [autofocus]="_autofocus" (focus)="onMouseEnter($event)" [innerHTML]="value"></h6>
+        <h1 *ngSwitchDefault class="flex-spacer" contenteditable [autofocus]="_autofocus" (focus)="onMouseEnter($event)" [innerHTML]="value"></h1>
     </span>
   `,
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule, AutofocusDirective],
       styles: [":host{display:flex;flex-direction:column}\n"]
     }]
   }], null, {
@@ -4839,7 +4938,7 @@ class NgxEditorjsHeaderBlockMediator {}
 NgxEditorjsHeaderBlockMediator.ɵfac = function NgxEditorjsHeaderBlockMediator_Factory(t) {
   return new (t || NgxEditorjsHeaderBlockMediator)();
 };
-NgxEditorjsHeaderBlockMediator.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+NgxEditorjsHeaderBlockMediator.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: NgxEditorjsHeaderBlockMediator,
   selectors: [["ngx-editorjs-meditator-header-block"]],
   inputs: {
@@ -4848,6 +4947,8 @@ NgxEditorjsHeaderBlockMediator.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPOR
     formControlName: "formControlName",
     savedAction: "savedAction"
   },
+  standalone: true,
+  features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵStandaloneFeature"]],
   decls: 2,
   vars: 4,
   consts: [[3, "formGroup"], [3, "blockId", "formControlName", "savedAction"]],
@@ -4863,19 +4964,24 @@ NgxEditorjsHeaderBlockMediator.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPOR
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("blockId", ctx.blockId)("formControlName", ctx.formControlName)("savedAction", ctx.savedAction);
     }
   },
-  dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormControlName, NgxEditorjsHeaderBlockComponent],
+  dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormGroupDirective, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormControlName, NgxEditorjsHeaderBlockComponent],
   encapsulation: 2
 });
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NgxEditorjsHeaderBlockMediator, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Component,
     args: [{
+      standalone: true,
       selector: 'ngx-editorjs-meditator-header-block',
       template: `
     <div [formGroup]="form">
-      <ngx-editorjs-header-block [blockId]="blockId" [formControlName]="formControlName" [savedAction]="savedAction"></ngx-editorjs-header-block>
+      <ngx-editorjs-header-block
+        [blockId]="blockId"
+        [formControlName]="formControlName"
+        [savedAction]="savedAction"></ngx-editorjs-header-block>
     </div>
-  `
+  `,
+      imports: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule, NgxEditorjsHeaderBlockComponent]
     }]
   }], null, {
     blockId: [{
@@ -4892,7 +4998,7 @@ NgxEditorjsHeaderBlockMediator.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPOR
     }]
   });
 })();
-const _c0 = ["ngxEditor"];
+
 // ['header',{ type: 'header', dataClean: '' }],
 // ['paragraph', { type: 'paragraph', dataClean: '' }],
 // ['list', { type: 'list', dataClean: '' }],
@@ -5076,12 +5182,12 @@ class NgxEditorjsComponent {
 NgxEditorjsComponent.ɵfac = function NgxEditorjsComponent_Factory(t) {
   return new (t || NgxEditorjsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](NgxEditorjsService));
 };
-NgxEditorjsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+NgxEditorjsComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: NgxEditorjsComponent,
   selectors: [["ngx-editorjs"]],
   viewQuery: function NgxEditorjsComponent_Query(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, 7, _angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewContainerRef);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c1, 7, _angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewContainerRef);
     }
     if (rf & 2) {
       let _t;
@@ -5151,28 +5257,19 @@ class NgxEditorjsHeaderBlockModule {}
 NgxEditorjsHeaderBlockModule.ɵfac = function NgxEditorjsHeaderBlockModule_Factory(t) {
   return new (t || NgxEditorjsHeaderBlockModule)();
 };
-NgxEditorjsHeaderBlockModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+NgxEditorjsHeaderBlockModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
   type: NgxEditorjsHeaderBlockModule
 });
-NgxEditorjsHeaderBlockModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-  imports: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule]
-});
+NgxEditorjsHeaderBlockModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({});
 (function () {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](NgxEditorjsHeaderBlockModule, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.NgModule,
     args: [{
-      declarations: [NgxEditorjsHeaderBlockComponent, NgxEditorjsHeaderBlockMediator],
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule, AutofocusDirective],
-      exports: [NgxEditorjsHeaderBlockMediator]
+      declarations: [],
+      imports: [],
+      exports: []
     }]
   }], null, null);
-})();
-(function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](NgxEditorjsHeaderBlockModule, {
-    declarations: [NgxEditorjsHeaderBlockComponent, NgxEditorjsHeaderBlockMediator],
-    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule, AutofocusDirective],
-    exports: [NgxEditorjsHeaderBlockMediator]
-  });
 })();
 
 // import { AutofocusDirective } from './autofocus.directive';
@@ -5180,10 +5277,10 @@ class AutofocusModule {}
 AutofocusModule.ɵfac = function AutofocusModule_Factory(t) {
   return new (t || AutofocusModule)();
 };
-AutofocusModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+AutofocusModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
   type: AutofocusModule
 });
-AutofocusModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+AutofocusModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
   imports: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule]
 });
 (function () {
@@ -5200,19 +5297,14 @@ AutofocusModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__[
     }]
   }], null, null);
 })();
-(function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](AutofocusModule, {
-    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule]
-  });
-})();
 class ToolbarBlockModule {}
 ToolbarBlockModule.ɵfac = function ToolbarBlockModule_Factory(t) {
   return new (t || ToolbarBlockModule)();
 };
-ToolbarBlockModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+ToolbarBlockModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
   type: ToolbarBlockModule
 });
-ToolbarBlockModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+ToolbarBlockModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
   imports: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_14__.OverlayModule, _angular_material_legacy_form_field__WEBPACK_IMPORTED_MODULE_9__.MatLegacyFormFieldModule, _angular_material_legacy_input__WEBPACK_IMPORTED_MODULE_10__.MatLegacyInputModule, _angular_material_legacy_list__WEBPACK_IMPORTED_MODULE_11__.MatLegacyListModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_13__.MatIconModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_12__.MatRippleModule, AutofocusModule]
 });
 (function () {
@@ -5225,18 +5317,11 @@ ToolbarBlockModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0
     }]
   }], null, null);
 })();
-(function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](ToolbarBlockModule, {
-    declarations: [ToolbarBlockComponent, SearchableBlockListComponent, BlockOptionsListComponent],
-    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule, _angular_cdk_overlay__WEBPACK_IMPORTED_MODULE_14__.OverlayModule, _angular_material_legacy_form_field__WEBPACK_IMPORTED_MODULE_9__.MatLegacyFormFieldModule, _angular_material_legacy_input__WEBPACK_IMPORTED_MODULE_10__.MatLegacyInputModule, _angular_material_legacy_list__WEBPACK_IMPORTED_MODULE_11__.MatLegacyListModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_13__.MatIconModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_12__.MatRippleModule, AutofocusModule],
-    exports: [ToolbarBlockComponent]
-  });
-})();
 class InlineToolbarBlockMediator {}
 InlineToolbarBlockMediator.ɵfac = function InlineToolbarBlockMediator_Factory(t) {
   return new (t || InlineToolbarBlockMediator)();
 };
-InlineToolbarBlockMediator.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+InlineToolbarBlockMediator.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: InlineToolbarBlockMediator,
   selectors: [["meditator-inline-toolbar-block"]],
   inputs: {
@@ -5269,10 +5354,10 @@ class InlineToolbarBlockModule {}
 InlineToolbarBlockModule.ɵfac = function InlineToolbarBlockModule_Factory(t) {
   return new (t || InlineToolbarBlockModule)();
 };
-InlineToolbarBlockModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+InlineToolbarBlockModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
   type: InlineToolbarBlockModule
 });
-InlineToolbarBlockModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+InlineToolbarBlockModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
   imports: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule, _angular_material_legacy_list__WEBPACK_IMPORTED_MODULE_11__.MatLegacyListModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_13__.MatIconModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_12__.MatRippleModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormsModule]
 });
 (function () {
@@ -5284,20 +5369,14 @@ InlineToolbarBlockModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MO
     }]
   }], null, null);
 })();
-(function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](InlineToolbarBlockModule, {
-    declarations: [InlineToolbarBlockMediator, InlineToolbarBlockComponent],
-    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule, _angular_material_legacy_list__WEBPACK_IMPORTED_MODULE_11__.MatLegacyListModule, _angular_material_icon__WEBPACK_IMPORTED_MODULE_13__.MatIconModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_12__.MatRippleModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.FormsModule]
-  });
-})();
 class NgxEditorjsModule {}
 NgxEditorjsModule.ɵfac = function NgxEditorjsModule_Factory(t) {
   return new (t || NgxEditorjsModule)();
 };
-NgxEditorjsModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+NgxEditorjsModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
   type: NgxEditorjsModule
 });
-NgxEditorjsModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+NgxEditorjsModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
   imports: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule, NgxEditorjsHeaderBlockModule, ToolbarBlockModule, AutofocusModule, InlineToolbarBlockModule]
 });
 (function () {
@@ -5309,13 +5388,6 @@ NgxEditorjsModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0_
       exports: [NgxEditorjsComponent]
     }]
   }], null, null);
-})();
-(function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](NgxEditorjsModule, {
-    declarations: [NgxEditorjsComponent],
-    imports: [_angular_common__WEBPACK_IMPORTED_MODULE_8__.CommonModule, _angular_forms__WEBPACK_IMPORTED_MODULE_2__.ReactiveFormsModule, NgxEditorjsHeaderBlockModule, ToolbarBlockModule, AutofocusModule, InlineToolbarBlockModule],
-    exports: [NgxEditorjsComponent]
-  });
 })();
 
 /*

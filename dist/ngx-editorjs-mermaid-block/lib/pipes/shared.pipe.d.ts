@@ -8,4 +8,3 @@ export declare class SafeHtmlPipe implements PipeTransform {
     static ɵfac: i0.ɵɵFactoryDeclaration<SafeHtmlPipe, never>;
     static ɵpipe: i0.ɵɵPipeDeclaration<SafeHtmlPipe, "safeHtml", true>;
 }
-//# sourceMappingURL=shared.pipe.d.ts.map

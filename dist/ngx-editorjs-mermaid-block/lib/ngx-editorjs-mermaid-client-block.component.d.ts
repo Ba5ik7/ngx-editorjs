@@ -24,4 +24,3 @@ export declare class NgxEditorjsMermaidClientBlockComponent implements OnInit {
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxEditorjsMermaidClientBlockComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<NgxEditorjsMermaidClientBlockComponent, "ngx-editorjs-mermaid-client-block", never, { "value": "value"; "savedAction": "savedAction"; }, {}, never, never, true, never>;
 }
-//# sourceMappingURL=ngx-editorjs-mermaid-client-block.component.d.ts.map
