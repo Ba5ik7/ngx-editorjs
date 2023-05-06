@@ -1,6 +1,7 @@
 {
    "name": "@tmdjr/ngx-editorjs",
-   "version": "0.0.34",
+   "version": "0.0.35",
+   "license": "MIT",
    "exports": {
       ".": {
          "sass": "./_index.scss"

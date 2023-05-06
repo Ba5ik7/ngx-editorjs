@@ -1,6 +1,7 @@
 {
    "name": "@tmdjr/ngx-editorjs-image-block",
-   "version": "0.0.34",
+   "version": "0.0.35",
+   "license": "MIT",
    "peerDependencies": {
       "@angular/common": ">=15.0.0",
       "@angular/core": ">=15.0.0"
