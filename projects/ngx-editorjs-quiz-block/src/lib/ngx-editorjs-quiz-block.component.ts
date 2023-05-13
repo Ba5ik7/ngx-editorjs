@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatRadioModule as MatRatioModule } from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon';
 import { BaseBlockComponent } from '@tmdjr/ngx-editorjs';
 import { QuizConfig, QuizConfigComponent } from './quiz-config/quiz-config.component';
@@ -47,7 +47,7 @@ import { QuizConfig, QuizConfigComponent } from './quiz-config/quiz-config.compo
   imports: [
     CommonModule,
     MatButtonModule,
-    MatRatioModule,
+    MatRadioModule,
     MatIconModule,
     QuizConfigComponent
   ]

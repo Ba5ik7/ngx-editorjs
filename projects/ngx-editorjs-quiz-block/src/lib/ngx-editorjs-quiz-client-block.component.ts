@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
-import { MatLegacyRadioModule as MatRatioModule } from '@angular/material/legacy-radio';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
 import { QuizConfig } from './quiz-config/quiz-config.component';
 import { FormsModule } from '@angular/forms';
 
@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     MatButtonModule,
-    MatRatioModule,
+    MatRadioModule,
     FormsModule
   ],
   template: `
@@ -25,10 +25,9 @@ import { FormsModule } from '@angular/forms';
           <mat-radio-button [value]="option.value">{{ option.value }}</mat-radio-button>
           </li>
         </ol>
-        
       </mat-radio-group>
       <div class="action-group">
-        <button mat-flat-button color="primary" type="button" (click)="onQuizAnswerClick()" [disabled]="!userAnswer || answerSubmited">Submit</button>
+        <button mat-flat-button color="accent" type="button" (click)="onQuizAnswerClick()" [disabled]="!userAnswer || answerSubmited">Submit</button>
       </div>
     </div>
   `,
