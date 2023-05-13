@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { BaseBlockComponent } from '@tmdjr/ngx-editorjs';
 import { ImageConfigComponent } from './image-config/image-config.component';
@@ -60,6 +60,7 @@ import { ImageConfigComponent } from './image-config/image-config.component';
       display: flex;
     }
 
+    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
     ::ng-deep .image-block-button .mat-button-wrapper .mat-icon {
         font-size: 1.6rem;
         vertical-align: baseline;

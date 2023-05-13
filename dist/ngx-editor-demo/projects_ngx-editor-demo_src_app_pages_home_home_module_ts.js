@@ -55,9 +55,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 80228);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 22560);
-/* harmony import */ var _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/legacy-button */ 69159);
-/* harmony import */ var _angular_material_legacy_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/legacy-card */ 77315);
-/* harmony import */ var _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tmdjr/ngx-editorjs-client */ 99540);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/button */ 84522);
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/card */ 82156);
+/* harmony import */ var _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tmdjr/ngx-editorjs */ 51753);
+/* harmony import */ var _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @tmdjr/ngx-editorjs-client */ 99540);
+
 
 
 
@@ -209,9 +211,9 @@ HomeComponent.ɵfac = function HomeComponent_Factory(t) {
 HomeComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
   type: HomeComponent,
   selectors: [["app-home"]],
-  decls: 13,
-  vars: 1,
-  consts: [["focusOnNavigation", "", "aria-label", "Get started", "id", "homepage-header", 1, "header-background"], [1, "header-section"], [1, "header-headline"], [1, "header-start"], ["mat-raised-button", "", 3, "click"], [1, "home-main"], [3, "inputData"]],
+  decls: 15,
+  vars: 3,
+  consts: [["focusOnNavigation", "", "aria-label", "Get started", "id", "homepage-header", 1, "header-background"], [1, "header-section"], [1, "header-headline"], [1, "header-start"], ["mat-raised-button", "", 3, "click"], [1, "home-main"], ["appearance", "outlined"], [3, "inputData", "requestValue", "valueRequested"], [3, "inputData"]],
   template: function HomeComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "header", 0)(1, "div", 1)(2, "div", 2)(3, "h1");
@@ -226,17 +228,24 @@ HomeComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["�
       });
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Save Blocks");
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "main", 5)(11, "mat-card");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](12, "ngx-editorjs-client", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "main", 5)(11, "mat-card", 6)(12, "ngx-editorjs", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("valueRequested", function HomeComponent_Template_ngx_editorjs_valueRequested_12_listener($event) {
+        return ctx.valueRequested($event);
+      });
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "mat-card", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](14, "ngx-editorjs-client", 8);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("inputData", ctx.inputData)("requestValue", ctx.requestValue);
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("inputData", ctx.inputData);
     }
   },
-  dependencies: [_angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_2__.MatLegacyAnchor, _angular_material_legacy_card__WEBPACK_IMPORTED_MODULE_3__.MatLegacyCard, _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_4__.NgxEditorjsClientComponent],
-  styles: [".header-background[_ngcontent-%COMP%] {\n  overflow: hidden;\n  position: relative;\n  height: 420px;\n}\n\n.header-background[_ngcontent-%COMP%]::before {\n  content: \"\";\n  position: absolute;\n  background-image: url('text_fields.svg');\n  background-size: 400px;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-repeat: no-repeat;\n  background-position: 80% 20px;\n  opacity: 0.2;\n}\n\n.header-section[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  align-items: center;\n  height: 100%;\n  text-align: center;\n}\n\n.header-headline[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 56px;\n  font-weight: bold;\n  line-height: 56px;\n  margin: 15px 5px;\n}\n.header-headline[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 300;\n  line-height: 28px;\n  margin: 15px 0 25px 0;\n}\n\n.header-start[_ngcontent-%COMP%] {\n  text-align: center;\n  margin: 15px 0 0 0;\n}\n.header-start[_ngcontent-%COMP%]   .mat-raised-button[_ngcontent-%COMP%] {\n  font-size: 15px;\n}\n\n.home-main[_ngcontent-%COMP%] {\n  padding: 16px;\n  width: 75%;\n  max-width: 900px;\n  margin: auto;\n}\n.home-main[_ngcontent-%COMP%]   .mat-card[_ngcontent-%COMP%] {\n  padding: 40px;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3Byb2plY3RzL25neC1lZGl0b3ItZGVtby9zcmMvYXBwL3BhZ2VzL2hvbWUvaG9tZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxhQUFBO0FBQ0Y7O0FBRUE7RUFDRSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSx3Q0FBQTtFQUNBLHNCQUFBO0VBQ0EsTUFBQTtFQUNBLFNBQUE7RUFDQSxPQUFBO0VBQ0EsUUFBQTtFQUNBLDRCQUFBO0VBQ0EsNkJBQUE7RUFDQSxZQUFBO0FBQ0Y7O0FBRUE7RUFDRSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0FBQ0Y7O0FBR0U7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0FBQUo7QUFHRTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0EscUJBQUE7QUFESjs7QUFLQTtFQUNFLGtCQUFBO0VBQ0Esa0JBQUE7QUFGRjtBQUlFO0VBQ0UsZUFBQTtBQUZKOztBQU1BO0VBQ0UsYUFBQTtFQUNBLFVBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7QUFIRjtBQUtFO0VBQ0UsYUFBQTtBQUhKIiwic291cmNlc0NvbnRlbnQiOlsiLmhlYWRlci1iYWNrZ3JvdW5kIHtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDQyMHB4O1xufVxuXG4uaGVhZGVyLWJhY2tncm91bmQ6OmJlZm9yZSB7XG4gIGNvbnRlbnQ6ICcnO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnLi4vLi4vLi4vYXNzZXRzL2ltZy90ZXh0X2ZpZWxkcy5zdmcnKTtcbiAgYmFja2dyb3VuZC1zaXplOiA0MDBweDtcbiAgdG9wOiAwO1xuICBib3R0b206IDA7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiA4MCUgMjBweDtcbiAgb3BhY2l0eTogMC4yO1xufVxuXG4uaGVhZGVyLXNlY3Rpb24ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgaGVpZ2h0OiAxMDAlO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5oZWFkZXItaGVhZGxpbmUge1xuICBoMSB7XG4gICAgZm9udC1zaXplOiA1NnB4O1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgIGxpbmUtaGVpZ2h0OiA1NnB4O1xuICAgIG1hcmdpbjogMTVweCA1cHg7XG4gIH1cblxuICBoMiB7XG4gICAgZm9udC1zaXplOiAyMHB4O1xuICAgIGZvbnQtd2VpZ2h0OiAzMDA7XG4gICAgbGluZS1oZWlnaHQ6IDI4cHg7XG4gICAgbWFyZ2luOiAxNXB4IDAgMjVweCAwO1xuICB9XG59XG5cbi5oZWFkZXItc3RhcnQge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIG1hcmdpbjogMTVweCAwIDAgMDtcblxuICAubWF0LXJhaXNlZC1idXR0b24ge1xuICAgIGZvbnQtc2l6ZTogMTVweDtcbiAgfVxufVxuXG4uaG9tZS1tYWluIHtcbiAgcGFkZGluZzogMTZweDtcbiAgd2lkdGg6IDc1JTtcbiAgbWF4LXdpZHRoOiA5MDBweDtcbiAgbWFyZ2luOiBhdXRvO1xuXG4gIC5tYXQtY2FyZCB7XG4gICAgcGFkZGluZzogNDBweDtcbiAgfVxuXG4gIC8vIG5neC1lZGl0b3JqcyB7XG4gIC8vICAgZGlzcGxheTogYmxvY2s7XG4gIC8vICAgbWFyZ2luLXRvcDogNDBweDtcbiAgLy8gfVxufVxuXG4iXSwic291cmNlUm9vdCI6IiJ9 */"]
+  dependencies: [_angular_material_button__WEBPACK_IMPORTED_MODULE_2__.MatAnchor, _angular_material_card__WEBPACK_IMPORTED_MODULE_3__.MatCard, _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_4__.NgxEditorjsComponent, _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_5__.NgxEditorjsClientComponent],
+  styles: [".header-background[_ngcontent-%COMP%] {\n  overflow: hidden;\n  position: relative;\n  height: 420px;\n}\n\n.header-background[_ngcontent-%COMP%]::before {\n  content: \"\";\n  position: absolute;\n  background-image: url('text_fields.svg');\n  background-size: 400px;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-repeat: no-repeat;\n  background-position: 80% 20px;\n  opacity: 0.2;\n}\n\n.header-section[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  align-items: center;\n  height: 100%;\n  text-align: center;\n}\n\n.header-headline[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 56px;\n  font-weight: bold;\n  line-height: 56px;\n  margin: 15px 5px;\n}\n.header-headline[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 300;\n  line-height: 28px;\n  margin: 15px 0 25px 0;\n}\n\n.header-start[_ngcontent-%COMP%] {\n  text-align: center;\n  margin: 15px 0 0 0;\n}\n.header-start[_ngcontent-%COMP%]   .mat-mdc-raised-button[_ngcontent-%COMP%] {\n  font-size: 15px;\n}\n\n.home-main[_ngcontent-%COMP%] {\n  padding: 16px;\n  width: 75%;\n  max-width: 900px;\n  margin: auto;\n}\n.home-main[_ngcontent-%COMP%]   .mat-mdc-card[_ngcontent-%COMP%] {\n  padding: 40px;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3Byb2plY3RzL25neC1lZGl0b3ItZGVtby9zcmMvYXBwL3BhZ2VzL2hvbWUvaG9tZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxhQUFBO0FBQ0Y7O0FBRUE7RUFDRSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSx3Q0FBQTtFQUNBLHNCQUFBO0VBQ0EsTUFBQTtFQUNBLFNBQUE7RUFDQSxPQUFBO0VBQ0EsUUFBQTtFQUNBLDRCQUFBO0VBQ0EsNkJBQUE7RUFDQSxZQUFBO0FBQ0Y7O0FBRUE7RUFDRSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0FBQ0Y7O0FBR0U7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0FBQUo7QUFHRTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0EscUJBQUE7QUFESjs7QUFLQTtFQUNFLGtCQUFBO0VBQ0Esa0JBQUE7QUFGRjtBQUlFO0VBQ0UsZUFBQTtBQUZKOztBQU1BO0VBQ0UsYUFBQTtFQUNBLFVBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7QUFIRjtBQUtFO0VBQ0UsYUFBQTtBQUhKIiwic291cmNlc0NvbnRlbnQiOlsiLmhlYWRlci1iYWNrZ3JvdW5kIHtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDQyMHB4O1xufVxuXG4uaGVhZGVyLWJhY2tncm91bmQ6OmJlZm9yZSB7XG4gIGNvbnRlbnQ6ICcnO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnLi4vLi4vLi4vYXNzZXRzL2ltZy90ZXh0X2ZpZWxkcy5zdmcnKTtcbiAgYmFja2dyb3VuZC1zaXplOiA0MDBweDtcbiAgdG9wOiAwO1xuICBib3R0b206IDA7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiA4MCUgMjBweDtcbiAgb3BhY2l0eTogMC4yO1xufVxuXG4uaGVhZGVyLXNlY3Rpb24ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgaGVpZ2h0OiAxMDAlO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5oZWFkZXItaGVhZGxpbmUge1xuICBoMSB7XG4gICAgZm9udC1zaXplOiA1NnB4O1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgIGxpbmUtaGVpZ2h0OiA1NnB4O1xuICAgIG1hcmdpbjogMTVweCA1cHg7XG4gIH1cblxuICBoMiB7XG4gICAgZm9udC1zaXplOiAyMHB4O1xuICAgIGZvbnQtd2VpZ2h0OiAzMDA7XG4gICAgbGluZS1oZWlnaHQ6IDI4cHg7XG4gICAgbWFyZ2luOiAxNXB4IDAgMjVweCAwO1xuICB9XG59XG5cbi5oZWFkZXItc3RhcnQge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIG1hcmdpbjogMTVweCAwIDAgMDtcblxuICAubWF0LW1kYy1yYWlzZWQtYnV0dG9uIHtcbiAgICBmb250LXNpemU6IDE1cHg7XG4gIH1cbn1cblxuLmhvbWUtbWFpbiB7XG4gIHBhZGRpbmc6IDE2cHg7XG4gIHdpZHRoOiA3NSU7XG4gIG1heC13aWR0aDogOTAwcHg7XG4gIG1hcmdpbjogYXV0bztcblxuICAubWF0LW1kYy1jYXJkIHtcbiAgICBwYWRkaW5nOiA0MHB4O1xuICB9XG5cbiAgLy8gbmd4LWVkaXRvcmpzIHtcbiAgLy8gICBkaXNwbGF5OiBibG9jaztcbiAgLy8gICBtYXJnaW4tdG9wOiA0MHB4O1xuICAvLyB9XG59XG5cbiJdLCJzb3VyY2VSb290IjoiIn0= */"]
 });
 
 /***/ }),
@@ -253,8 +262,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _home_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home-routing.module */ 6475);
 /* harmony import */ var _home_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.component */ 21044);
-/* harmony import */ var _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/legacy-button */ 69159);
-/* harmony import */ var _angular_material_legacy_card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/legacy-card */ 77315);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/button */ 84522);
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/card */ 82156);
 /* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/divider */ 71528);
 /* harmony import */ var _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @tmdjr/ngx-editorjs */ 51753);
 /* harmony import */ var _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @tmdjr/ngx-editorjs-client */ 99540);
@@ -275,42 +284,44 @@ HomeModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵ
   type: HomeModule
 });
 HomeModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
-  imports: [_home_routing_module__WEBPACK_IMPORTED_MODULE_0__.HomeRoutingModule, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_3__.MatLegacyButtonModule, _angular_material_legacy_card__WEBPACK_IMPORTED_MODULE_4__.MatLegacyCardModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_5__.MatDividerModule, _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_6__.NgxEditorjsModule, _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_7__.NgxEditorjsClientModule]
+  imports: [_home_routing_module__WEBPACK_IMPORTED_MODULE_0__.HomeRoutingModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_3__.MatButtonModule, _angular_material_card__WEBPACK_IMPORTED_MODULE_4__.MatCardModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_5__.MatDividerModule, _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_6__.NgxEditorjsModule, _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_7__.NgxEditorjsClientModule]
 });
 (function () {
   (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](HomeModule, {
     declarations: [_home_component__WEBPACK_IMPORTED_MODULE_1__.HomeComponent],
-    imports: [_home_routing_module__WEBPACK_IMPORTED_MODULE_0__.HomeRoutingModule, _angular_material_legacy_button__WEBPACK_IMPORTED_MODULE_3__.MatLegacyButtonModule, _angular_material_legacy_card__WEBPACK_IMPORTED_MODULE_4__.MatLegacyCardModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_5__.MatDividerModule, _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_6__.NgxEditorjsModule, _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_7__.NgxEditorjsClientModule]
+    imports: [_home_routing_module__WEBPACK_IMPORTED_MODULE_0__.HomeRoutingModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_3__.MatButtonModule, _angular_material_card__WEBPACK_IMPORTED_MODULE_4__.MatCardModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_5__.MatDividerModule, _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_6__.NgxEditorjsModule, _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_7__.NgxEditorjsClientModule]
   });
 })();
 
 /***/ }),
 
-/***/ 77315:
-/*!*****************************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2020/legacy-card.mjs ***!
-  \*****************************************************************/
+/***/ 82156:
+/*!**********************************************************!*\
+  !*** ./node_modules/@angular/material/fesm2020/card.mjs ***!
+  \**********************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "MatLegacyCard": () => (/* binding */ MatLegacyCard),
-/* harmony export */   "MatLegacyCardActions": () => (/* binding */ MatLegacyCardActions),
-/* harmony export */   "MatLegacyCardAvatar": () => (/* binding */ MatLegacyCardAvatar),
-/* harmony export */   "MatLegacyCardContent": () => (/* binding */ MatLegacyCardContent),
-/* harmony export */   "MatLegacyCardFooter": () => (/* binding */ MatLegacyCardFooter),
-/* harmony export */   "MatLegacyCardHeader": () => (/* binding */ MatLegacyCardHeader),
-/* harmony export */   "MatLegacyCardImage": () => (/* binding */ MatLegacyCardImage),
-/* harmony export */   "MatLegacyCardLgImage": () => (/* binding */ MatLegacyCardLgImage),
-/* harmony export */   "MatLegacyCardMdImage": () => (/* binding */ MatLegacyCardMdImage),
-/* harmony export */   "MatLegacyCardModule": () => (/* binding */ MatLegacyCardModule),
-/* harmony export */   "MatLegacyCardSmImage": () => (/* binding */ MatLegacyCardSmImage),
-/* harmony export */   "MatLegacyCardSubtitle": () => (/* binding */ MatLegacyCardSubtitle),
-/* harmony export */   "MatLegacyCardTitle": () => (/* binding */ MatLegacyCardTitle),
-/* harmony export */   "MatLegacyCardTitleGroup": () => (/* binding */ MatLegacyCardTitleGroup),
-/* harmony export */   "MatLegacyCardXlImage": () => (/* binding */ MatLegacyCardXlImage)
+/* harmony export */   "MAT_CARD_CONFIG": () => (/* binding */ MAT_CARD_CONFIG),
+/* harmony export */   "MatCard": () => (/* binding */ MatCard),
+/* harmony export */   "MatCardActions": () => (/* binding */ MatCardActions),
+/* harmony export */   "MatCardAvatar": () => (/* binding */ MatCardAvatar),
+/* harmony export */   "MatCardContent": () => (/* binding */ MatCardContent),
+/* harmony export */   "MatCardFooter": () => (/* binding */ MatCardFooter),
+/* harmony export */   "MatCardHeader": () => (/* binding */ MatCardHeader),
+/* harmony export */   "MatCardImage": () => (/* binding */ MatCardImage),
+/* harmony export */   "MatCardLgImage": () => (/* binding */ MatCardLgImage),
+/* harmony export */   "MatCardMdImage": () => (/* binding */ MatCardMdImage),
+/* harmony export */   "MatCardModule": () => (/* binding */ MatCardModule),
+/* harmony export */   "MatCardSmImage": () => (/* binding */ MatCardSmImage),
+/* harmony export */   "MatCardSubtitle": () => (/* binding */ MatCardSubtitle),
+/* harmony export */   "MatCardTitle": () => (/* binding */ MatCardTitle),
+/* harmony export */   "MatCardTitleGroup": () => (/* binding */ MatCardTitleGroup),
+/* harmony export */   "MatCardXlImage": () => (/* binding */ MatCardXlImage)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser/animations */ 22560);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 22560);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 94666);
 /* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/core */ 59121);
 
 
@@ -324,461 +335,133 @@ __webpack_require__.r(__webpack_exports__);
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+/** Injection token that can be used to provide the default options the card module. */
+const _c0 = ["*"];
+const _c1 = [[["mat-card-title"], ["mat-card-subtitle"], ["", "mat-card-title", ""], ["", "mat-card-subtitle", ""], ["", "matCardTitle", ""], ["", "matCardSubtitle", ""]], [["", "mat-card-image", ""], ["", "matCardImage", ""], ["", "mat-card-sm-image", ""], ["", "matCardImageSmall", ""], ["", "mat-card-md-image", ""], ["", "matCardImageMedium", ""], ["", "mat-card-lg-image", ""], ["", "matCardImageLarge", ""], ["", "mat-card-xl-image", ""], ["", "matCardImageXLarge", ""]], "*"];
+const _c2 = ["mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]", "[mat-card-image], [matCardImage],\n                    [mat-card-sm-image], [matCardImageSmall],\n                    [mat-card-md-image], [matCardImageMedium],\n                    [mat-card-lg-image], [matCardImageLarge],\n                    [mat-card-xl-image], [matCardImageXLarge]", "*"];
+const _c3 = [[["", "mat-card-avatar", ""], ["", "matCardAvatar", ""]], [["mat-card-title"], ["mat-card-subtitle"], ["", "mat-card-title", ""], ["", "mat-card-subtitle", ""], ["", "matCardTitle", ""], ["", "matCardSubtitle", ""]], "*"];
+const _c4 = ["[mat-card-avatar], [matCardAvatar]", "mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]", "*"];
+const MAT_CARD_CONFIG = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.InjectionToken('MAT_CARD_CONFIG');
 /**
- * Content of a card, needed as it's used as a selector in the API.
- * @docs-private
- * @deprecated Use `MatCardContent` from `@angular/material/card` instead. See https://material.angular.io/guide/mdc-migration for information about migrating.
- * @breaking-change 17.0.0
+ * Material Design card component. Cards contain content and actions about a single subject.
+ * See https://material.io/design/components/cards.html
+ *
+ * MatCard provides no behaviors, instead serving as a purely visual treatment.
  */
-const _c0 = ["*", [["mat-card-footer"]]];
-const _c1 = ["*", "mat-card-footer"];
-const _c2 = [[["", "mat-card-avatar", ""], ["", "matCardAvatar", ""]], [["mat-card-title"], ["mat-card-subtitle"], ["", "mat-card-title", ""], ["", "mat-card-subtitle", ""], ["", "matCardTitle", ""], ["", "matCardSubtitle", ""]], "*"];
-const _c3 = ["[mat-card-avatar], [matCardAvatar]", "mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]", "*"];
-const _c4 = [[["mat-card-title"], ["mat-card-subtitle"], ["", "mat-card-title", ""], ["", "mat-card-subtitle", ""], ["", "matCardTitle", ""], ["", "matCardSubtitle", ""]], [["img"]], "*"];
-const _c5 = ["mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]", "img", "*"];
-class MatLegacyCardContent {}
-MatLegacyCardContent.ɵfac = function MatLegacyCardContent_Factory(t) {
-  return new (t || MatLegacyCardContent)();
-};
-MatLegacyCardContent.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatLegacyCardContent,
-  selectors: [["mat-card-content"], ["", "mat-card-content", ""], ["", "matCardContent", ""]],
-  hostAttrs: [1, "mat-card-content"]
-});
-(function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatLegacyCardContent, [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
-    args: [{
-      selector: 'mat-card-content, [mat-card-content], [matCardContent]',
-      host: {
-        'class': 'mat-card-content'
-      }
-    }]
-  }], null, null);
-})();
-/**
- * Title of a card, needed as it's used as a selector in the API.
- * @docs-private
- * @deprecated Use `MatCardTitle` from `@angular/material/card` instead. See https://material.angular.io/guide/mdc-migration for information about migrating.
- * @breaking-change 17.0.0
- */
-class MatLegacyCardTitle {}
-MatLegacyCardTitle.ɵfac = function MatLegacyCardTitle_Factory(t) {
-  return new (t || MatLegacyCardTitle)();
-};
-MatLegacyCardTitle.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatLegacyCardTitle,
-  selectors: [["mat-card-title"], ["", "mat-card-title", ""], ["", "matCardTitle", ""]],
-  hostAttrs: [1, "mat-card-title"]
-});
-(function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatLegacyCardTitle, [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
-    args: [{
-      selector: `mat-card-title, [mat-card-title], [matCardTitle]`,
-      host: {
-        'class': 'mat-card-title'
-      }
-    }]
-  }], null, null);
-})();
-/**
- * Sub-title of a card, needed as it's used as a selector in the API.
- * @docs-private
- * @deprecated Use `MatCardSubtitle` from `@angular/material/card` instead. See https://material.angular.io/guide/mdc-migration for information about migrating.
- * @breaking-change 17.0.0
- */
-class MatLegacyCardSubtitle {}
-MatLegacyCardSubtitle.ɵfac = function MatLegacyCardSubtitle_Factory(t) {
-  return new (t || MatLegacyCardSubtitle)();
-};
-MatLegacyCardSubtitle.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatLegacyCardSubtitle,
-  selectors: [["mat-card-subtitle"], ["", "mat-card-subtitle", ""], ["", "matCardSubtitle", ""]],
-  hostAttrs: [1, "mat-card-subtitle"]
-});
-(function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatLegacyCardSubtitle, [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
-    args: [{
-      selector: `mat-card-subtitle, [mat-card-subtitle], [matCardSubtitle]`,
-      host: {
-        'class': 'mat-card-subtitle'
-      }
-    }]
-  }], null, null);
-})();
-/**
- * Action section of a card, needed as it's used as a selector in the API.
- * @docs-private
- * @deprecated Use `MatCardActions` from `@angular/material/card` instead. See https://material.angular.io/guide/mdc-migration for information about migrating.
- * @breaking-change 17.0.0
- */
-class MatLegacyCardActions {
-  constructor() {
-    /** Position of the actions inside the card. */
-    this.align = 'start';
+class MatCard {
+  constructor(config) {
+    this.appearance = config?.appearance || 'raised';
   }
 }
-MatLegacyCardActions.ɵfac = function MatLegacyCardActions_Factory(t) {
-  return new (t || MatLegacyCardActions)();
+MatCard.ɵfac = function MatCard_Factory(t) {
+  return new (t || MatCard)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](MAT_CARD_CONFIG, 8));
 };
-MatLegacyCardActions.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatLegacyCardActions,
-  selectors: [["mat-card-actions"]],
-  hostAttrs: [1, "mat-card-actions"],
-  hostVars: 2,
-  hostBindings: function MatLegacyCardActions_HostBindings(rf, ctx) {
+MatCard.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+  type: MatCard,
+  selectors: [["mat-card"]],
+  hostAttrs: [1, "mat-mdc-card", "mdc-card"],
+  hostVars: 4,
+  hostBindings: function MatCard_HostBindings(rf, ctx) {
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-card-actions-align-end", ctx.align === "end");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-card-outlined", ctx.appearance === "outlined")("mdc-card--outlined", ctx.appearance === "outlined");
     }
   },
   inputs: {
-    align: "align"
-  },
-  exportAs: ["matCardActions"]
-});
-(function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatLegacyCardActions, [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
-    args: [{
-      selector: 'mat-card-actions',
-      exportAs: 'matCardActions',
-      host: {
-        'class': 'mat-card-actions',
-        '[class.mat-card-actions-align-end]': 'align === "end"'
-      }
-    }]
-  }], null, {
-    align: [{
-      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
-    }]
-  });
-})();
-/**
- * Footer of a card, needed as it's used as a selector in the API.
- * @docs-private
- * @deprecated Use `MatCardFooter` from `@angular/material/card` instead. See https://material.angular.io/guide/mdc-migration for information about migrating.
- * @breaking-change 17.0.0
- */
-class MatLegacyCardFooter {}
-MatLegacyCardFooter.ɵfac = function MatLegacyCardFooter_Factory(t) {
-  return new (t || MatLegacyCardFooter)();
-};
-MatLegacyCardFooter.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatLegacyCardFooter,
-  selectors: [["mat-card-footer"]],
-  hostAttrs: [1, "mat-card-footer"]
-});
-(function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatLegacyCardFooter, [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
-    args: [{
-      selector: 'mat-card-footer',
-      host: {
-        'class': 'mat-card-footer'
-      }
-    }]
-  }], null, null);
-})();
-/**
- * Image used in a card, needed to add the mat- CSS styling.
- * @docs-private
- * @deprecated Use `MatCardImage` from `@angular/material/card` instead. See https://material.angular.io/guide/mdc-migration for information about migrating.
- * @breaking-change 17.0.0
- */
-class MatLegacyCardImage {}
-MatLegacyCardImage.ɵfac = function MatLegacyCardImage_Factory(t) {
-  return new (t || MatLegacyCardImage)();
-};
-MatLegacyCardImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatLegacyCardImage,
-  selectors: [["", "mat-card-image", ""], ["", "matCardImage", ""]],
-  hostAttrs: [1, "mat-card-image"]
-});
-(function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatLegacyCardImage, [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
-    args: [{
-      selector: '[mat-card-image], [matCardImage]',
-      host: {
-        'class': 'mat-card-image'
-      }
-    }]
-  }], null, null);
-})();
-/**
- * Image used in a card, needed to add the mat- CSS styling.
- * @docs-private
- * @deprecated Use `MatCardSmImage` from `@angular/material/card` instead. See https://material.angular.io/guide/mdc-migration for information about migrating.
- * @breaking-change 17.0.0
- */
-class MatLegacyCardSmImage {}
-MatLegacyCardSmImage.ɵfac = function MatLegacyCardSmImage_Factory(t) {
-  return new (t || MatLegacyCardSmImage)();
-};
-MatLegacyCardSmImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatLegacyCardSmImage,
-  selectors: [["", "mat-card-sm-image", ""], ["", "matCardImageSmall", ""]],
-  hostAttrs: [1, "mat-card-sm-image"]
-});
-(function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatLegacyCardSmImage, [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
-    args: [{
-      selector: '[mat-card-sm-image], [matCardImageSmall]',
-      host: {
-        'class': 'mat-card-sm-image'
-      }
-    }]
-  }], null, null);
-})();
-/**
- * Image used in a card, needed to add the mat- CSS styling.
- * @docs-private
- * @deprecated Use `MatCardMdImage` from `@angular/material/card` instead. See https://material.angular.io/guide/mdc-migration for information about migrating.
- * @breaking-change 17.0.0
- */
-class MatLegacyCardMdImage {}
-MatLegacyCardMdImage.ɵfac = function MatLegacyCardMdImage_Factory(t) {
-  return new (t || MatLegacyCardMdImage)();
-};
-MatLegacyCardMdImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatLegacyCardMdImage,
-  selectors: [["", "mat-card-md-image", ""], ["", "matCardImageMedium", ""]],
-  hostAttrs: [1, "mat-card-md-image"]
-});
-(function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatLegacyCardMdImage, [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
-    args: [{
-      selector: '[mat-card-md-image], [matCardImageMedium]',
-      host: {
-        'class': 'mat-card-md-image'
-      }
-    }]
-  }], null, null);
-})();
-/**
- * Image used in a card, needed to add the mat- CSS styling.
- * @docs-private
- * @deprecated Use `MatCardLgImage` from `@angular/material/card` instead. See https://material.angular.io/guide/mdc-migration for information about migrating.
- * @breaking-change 17.0.0
- */
-class MatLegacyCardLgImage {}
-MatLegacyCardLgImage.ɵfac = function MatLegacyCardLgImage_Factory(t) {
-  return new (t || MatLegacyCardLgImage)();
-};
-MatLegacyCardLgImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatLegacyCardLgImage,
-  selectors: [["", "mat-card-lg-image", ""], ["", "matCardImageLarge", ""]],
-  hostAttrs: [1, "mat-card-lg-image"]
-});
-(function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatLegacyCardLgImage, [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
-    args: [{
-      selector: '[mat-card-lg-image], [matCardImageLarge]',
-      host: {
-        'class': 'mat-card-lg-image'
-      }
-    }]
-  }], null, null);
-})();
-/**
- * Large image used in a card, needed to add the mat- CSS styling.
- * @docs-private
- * @deprecated Use `MatCardXlImage` from `@angular/material/card` instead. See https://material.angular.io/guide/mdc-migration for information about migrating.
- * @breaking-change 17.0.0
- */
-class MatLegacyCardXlImage {}
-MatLegacyCardXlImage.ɵfac = function MatLegacyCardXlImage_Factory(t) {
-  return new (t || MatLegacyCardXlImage)();
-};
-MatLegacyCardXlImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatLegacyCardXlImage,
-  selectors: [["", "mat-card-xl-image", ""], ["", "matCardImageXLarge", ""]],
-  hostAttrs: [1, "mat-card-xl-image"]
-});
-(function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatLegacyCardXlImage, [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
-    args: [{
-      selector: '[mat-card-xl-image], [matCardImageXLarge]',
-      host: {
-        'class': 'mat-card-xl-image'
-      }
-    }]
-  }], null, null);
-})();
-/**
- * Avatar image used in a card, needed to add the mat- CSS styling.
- * @docs-private
- * @deprecated Use `MatCardAvatar` from `@angular/material/card` instead. See https://material.angular.io/guide/mdc-migration for information about migrating.
- * @breaking-change 17.0.0
- */
-class MatLegacyCardAvatar {}
-MatLegacyCardAvatar.ɵfac = function MatLegacyCardAvatar_Factory(t) {
-  return new (t || MatLegacyCardAvatar)();
-};
-MatLegacyCardAvatar.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatLegacyCardAvatar,
-  selectors: [["", "mat-card-avatar", ""], ["", "matCardAvatar", ""]],
-  hostAttrs: [1, "mat-card-avatar"]
-});
-(function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatLegacyCardAvatar, [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
-    args: [{
-      selector: '[mat-card-avatar], [matCardAvatar]',
-      host: {
-        'class': 'mat-card-avatar'
-      }
-    }]
-  }], null, null);
-})();
-/**
- * A basic content container component that adds the styles of a Material design card.
- *
- * While this component can be used alone, it also provides a number
- * of preset styles for common card sections, including:
- * - mat-card-title
- * - mat-card-subtitle
- * - mat-card-content
- * - mat-card-actions
- * - mat-card-footer
- *
- * @deprecated Use `MatCard` from `@angular/material/card` instead. See https://material.angular.io/guide/mdc-migration for information about migrating.
- * @breaking-change 17.0.0
- */
-class MatLegacyCard {
-  // @breaking-change 9.0.0 `_animationMode` parameter to be made required.
-  constructor(_animationMode) {
-    this._animationMode = _animationMode;
-  }
-}
-MatLegacyCard.ɵfac = function MatLegacyCard_Factory(t) {
-  return new (t || MatLegacyCard)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__.ANIMATION_MODULE_TYPE, 8));
-};
-MatLegacyCard.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-  type: MatLegacyCard,
-  selectors: [["mat-card"]],
-  hostAttrs: [1, "mat-card", "mat-focus-indicator"],
-  hostVars: 2,
-  hostBindings: function MatLegacyCard_HostBindings(rf, ctx) {
-    if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("_mat-animation-noopable", ctx._animationMode === "NoopAnimations");
-    }
+    appearance: "appearance"
   },
   exportAs: ["matCard"],
-  ngContentSelectors: _c1,
-  decls: 2,
+  ngContentSelectors: _c0,
+  decls: 1,
   vars: 0,
-  template: function MatLegacyCard_Template(rf, ctx) {
+  template: function MatCard_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](0);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1, 1);
     }
   },
-  styles: [".mat-card{transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);display:block;position:relative;padding:16px;border-radius:4px}.mat-card._mat-animation-noopable{transition:none !important;animation:none !important}.mat-card>.mat-divider-horizontal{position:absolute;left:0;width:100%}[dir=rtl] .mat-card>.mat-divider-horizontal{left:auto;right:0}.mat-card>.mat-divider-horizontal.mat-divider-inset{position:static;margin:0}[dir=rtl] .mat-card>.mat-divider-horizontal.mat-divider-inset{margin-right:0}.cdk-high-contrast-active .mat-card{outline:solid 1px}.mat-card-actions,.mat-card-subtitle,.mat-card-content{display:block;margin-bottom:16px}.mat-card-title{display:block;margin-bottom:8px}.mat-card-actions{margin-left:-8px;margin-right:-8px;padding:8px 0}.mat-card-actions-align-end{display:flex;justify-content:flex-end}.mat-card-image{width:calc(100% + 32px);margin:0 -16px 16px -16px;display:block;overflow:hidden}.mat-card-image img{width:100%}.mat-card-footer{display:block;margin:0 -16px -16px -16px}.mat-card-actions .mat-button,.mat-card-actions .mat-raised-button,.mat-card-actions .mat-stroked-button{margin:0 8px}.mat-card-header{display:flex;flex-direction:row}.mat-card-header .mat-card-title{margin-bottom:12px}.mat-card-header-text{margin:0 16px}.mat-card-avatar{height:40px;width:40px;border-radius:50%;flex-shrink:0;object-fit:cover}.mat-card-title-group{display:flex;justify-content:space-between}.mat-card-sm-image{width:80px;height:80px}.mat-card-md-image{width:112px;height:112px}.mat-card-lg-image{width:152px;height:152px}.mat-card-xl-image{width:240px;height:240px;margin:-8px}.mat-card-title-group>.mat-card-xl-image{margin:-8px 0 8px}@media(max-width: 599px){.mat-card-title-group{margin:0}.mat-card-xl-image{margin-left:0;margin-right:0}}.mat-card>:first-child,.mat-card-content>:first-child{margin-top:0}.mat-card>:last-child:not(.mat-card-footer),.mat-card-content>:last-child:not(.mat-card-footer){margin-bottom:0}.mat-card-image:first-child{margin-top:-16px;border-top-left-radius:inherit;border-top-right-radius:inherit}.mat-card>.mat-card-actions:last-child{margin-bottom:-8px;padding-bottom:0}.mat-card-actions:not(.mat-card-actions-align-end) .mat-button:first-child,.mat-card-actions:not(.mat-card-actions-align-end) .mat-raised-button:first-child,.mat-card-actions:not(.mat-card-actions-align-end) .mat-stroked-button:first-child{margin-left:0;margin-right:0}.mat-card-actions-align-end .mat-button:last-child,.mat-card-actions-align-end .mat-raised-button:last-child,.mat-card-actions-align-end .mat-stroked-button:last-child{margin-left:0;margin-right:0}.mat-card-title:not(:first-child),.mat-card-subtitle:not(:first-child){margin-top:-4px}.mat-card-header .mat-card-subtitle:not(:first-child){margin-top:-8px}.mat-card>.mat-card-xl-image:first-child{margin-top:-8px}.mat-card>.mat-card-xl-image:last-child{margin-bottom:-8px}"],
+  styles: [".mdc-card{display:flex;flex-direction:column;box-sizing:border-box}.mdc-card::after{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;border:1px solid rgba(0,0,0,0);border-radius:inherit;content:\"\";pointer-events:none;pointer-events:none}@media screen and (forced-colors: active){.mdc-card::after{border-color:CanvasText}}.mdc-card--outlined::after{border:none}.mdc-card__content{border-radius:inherit;height:100%}.mdc-card__media{position:relative;box-sizing:border-box;background-repeat:no-repeat;background-position:center;background-size:cover}.mdc-card__media::before{display:block;content:\"\"}.mdc-card__media:first-child{border-top-left-radius:inherit;border-top-right-radius:inherit}.mdc-card__media:last-child{border-bottom-left-radius:inherit;border-bottom-right-radius:inherit}.mdc-card__media--square::before{margin-top:100%}.mdc-card__media--16-9::before{margin-top:56.25%}.mdc-card__media-content{position:absolute;top:0;right:0;bottom:0;left:0;box-sizing:border-box}.mdc-card__primary-action{display:flex;flex-direction:column;box-sizing:border-box;position:relative;outline:none;color:inherit;text-decoration:none;cursor:pointer;overflow:hidden}.mdc-card__primary-action:first-child{border-top-left-radius:inherit;border-top-right-radius:inherit}.mdc-card__primary-action:last-child{border-bottom-left-radius:inherit;border-bottom-right-radius:inherit}.mdc-card__actions{display:flex;flex-direction:row;align-items:center;box-sizing:border-box;min-height:52px;padding:8px}.mdc-card__actions--full-bleed{padding:0}.mdc-card__action-buttons,.mdc-card__action-icons{display:flex;flex-direction:row;align-items:center;box-sizing:border-box}.mdc-card__action-icons{flex-grow:1;justify-content:flex-end}.mdc-card__action-buttons+.mdc-card__action-icons{margin-left:16px;margin-right:0}[dir=rtl] .mdc-card__action-buttons+.mdc-card__action-icons,.mdc-card__action-buttons+.mdc-card__action-icons[dir=rtl]{margin-left:0;margin-right:16px}.mdc-card__action{display:inline-flex;flex-direction:row;align-items:center;box-sizing:border-box;justify-content:center;cursor:pointer;user-select:none}.mdc-card__action:focus{outline:none}.mdc-card__action--button{margin-left:0;margin-right:8px;padding:0 8px}[dir=rtl] .mdc-card__action--button,.mdc-card__action--button[dir=rtl]{margin-left:8px;margin-right:0}.mdc-card__action--button:last-child{margin-left:0;margin-right:0}[dir=rtl] .mdc-card__action--button:last-child,.mdc-card__action--button:last-child[dir=rtl]{margin-left:0;margin-right:0}.mdc-card__actions--full-bleed .mdc-card__action--button{justify-content:space-between;width:100%;height:auto;max-height:none;margin:0;padding:8px 16px;text-align:left}[dir=rtl] .mdc-card__actions--full-bleed .mdc-card__action--button,.mdc-card__actions--full-bleed .mdc-card__action--button[dir=rtl]{text-align:right}.mdc-card__action--icon{margin:-6px 0;padding:12px}.mat-mdc-card{position:relative;border-radius:var(--mdc-elevated-card-container-shape, var(--mdc-shape-medium, 4px));background-color:var(--mdc-elevated-card-container-color, transparent);border-width:0;border-style:solid;border-color:var(--mdc-elevated-card-container-color, transparent)}.mat-mdc-card .mdc-card::after{border-radius:var(--mdc-elevated-card-container-shape, var(--mdc-shape-medium, 4px))}.mat-mdc-card-outlined{border-width:var(--mdc-outlined-card-outline-width, 1px);border-style:solid;border-color:var(--mdc-outlined-card-outline-color, transparent)}.mat-mdc-card-title,.mat-mdc-card-subtitle{display:block;margin:0}.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-title,.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-subtitle{padding:16px 16px 0}.mat-mdc-card-header{display:flex;padding:16px 16px 0}.mat-mdc-card-content{display:block;padding:0 16px}.mat-mdc-card-content:first-child{padding-top:16px}.mat-mdc-card-content:last-child{padding-bottom:16px}.mat-mdc-card-title-group{display:flex;justify-content:space-between;width:100%}.mat-mdc-card-avatar{height:40px;width:40px;border-radius:50%;flex-shrink:0;margin-bottom:16px;object-fit:cover}.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-subtitle,.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-title{line-height:normal}.mat-mdc-card-sm-image{width:80px;height:80px}.mat-mdc-card-md-image{width:112px;height:112px}.mat-mdc-card-lg-image{width:152px;height:152px}.mat-mdc-card-xl-image{width:240px;height:240px}.mat-mdc-card-subtitle~.mat-mdc-card-title,.mat-mdc-card-title~.mat-mdc-card-subtitle,.mat-mdc-card-header .mat-mdc-card-header-text .mat-mdc-card-title,.mat-mdc-card-header .mat-mdc-card-header-text .mat-mdc-card-subtitle,.mat-mdc-card-title-group .mat-mdc-card-title,.mat-mdc-card-title-group .mat-mdc-card-subtitle{padding-top:0}.mat-mdc-card-content>:last-child:not(.mat-mdc-card-footer){margin-bottom:0}.mat-mdc-card-actions-align-end{justify-content:flex-end}"],
   encapsulation: 2,
   changeDetection: 0
 });
 (function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatLegacyCard, [{
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCard, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Component,
     args: [{
       selector: 'mat-card',
+      host: {
+        'class': 'mat-mdc-card mdc-card',
+        '[class.mat-mdc-card-outlined]': 'appearance === "outlined"',
+        '[class.mdc-card--outlined]': 'appearance === "outlined"'
+      },
       exportAs: 'matCard',
       encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewEncapsulation.None,
       changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ChangeDetectionStrategy.OnPush,
-      host: {
-        'class': 'mat-card mat-focus-indicator',
-        '[class._mat-animation-noopable]': '_animationMode === "NoopAnimations"'
-      },
-      template: "<ng-content></ng-content>\n<ng-content select=\"mat-card-footer\"></ng-content>\n",
-      styles: [".mat-card{transition:box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);display:block;position:relative;padding:16px;border-radius:4px}.mat-card._mat-animation-noopable{transition:none !important;animation:none !important}.mat-card>.mat-divider-horizontal{position:absolute;left:0;width:100%}[dir=rtl] .mat-card>.mat-divider-horizontal{left:auto;right:0}.mat-card>.mat-divider-horizontal.mat-divider-inset{position:static;margin:0}[dir=rtl] .mat-card>.mat-divider-horizontal.mat-divider-inset{margin-right:0}.cdk-high-contrast-active .mat-card{outline:solid 1px}.mat-card-actions,.mat-card-subtitle,.mat-card-content{display:block;margin-bottom:16px}.mat-card-title{display:block;margin-bottom:8px}.mat-card-actions{margin-left:-8px;margin-right:-8px;padding:8px 0}.mat-card-actions-align-end{display:flex;justify-content:flex-end}.mat-card-image{width:calc(100% + 32px);margin:0 -16px 16px -16px;display:block;overflow:hidden}.mat-card-image img{width:100%}.mat-card-footer{display:block;margin:0 -16px -16px -16px}.mat-card-actions .mat-button,.mat-card-actions .mat-raised-button,.mat-card-actions .mat-stroked-button{margin:0 8px}.mat-card-header{display:flex;flex-direction:row}.mat-card-header .mat-card-title{margin-bottom:12px}.mat-card-header-text{margin:0 16px}.mat-card-avatar{height:40px;width:40px;border-radius:50%;flex-shrink:0;object-fit:cover}.mat-card-title-group{display:flex;justify-content:space-between}.mat-card-sm-image{width:80px;height:80px}.mat-card-md-image{width:112px;height:112px}.mat-card-lg-image{width:152px;height:152px}.mat-card-xl-image{width:240px;height:240px;margin:-8px}.mat-card-title-group>.mat-card-xl-image{margin:-8px 0 8px}@media(max-width: 599px){.mat-card-title-group{margin:0}.mat-card-xl-image{margin-left:0;margin-right:0}}.mat-card>:first-child,.mat-card-content>:first-child{margin-top:0}.mat-card>:last-child:not(.mat-card-footer),.mat-card-content>:last-child:not(.mat-card-footer){margin-bottom:0}.mat-card-image:first-child{margin-top:-16px;border-top-left-radius:inherit;border-top-right-radius:inherit}.mat-card>.mat-card-actions:last-child{margin-bottom:-8px;padding-bottom:0}.mat-card-actions:not(.mat-card-actions-align-end) .mat-button:first-child,.mat-card-actions:not(.mat-card-actions-align-end) .mat-raised-button:first-child,.mat-card-actions:not(.mat-card-actions-align-end) .mat-stroked-button:first-child{margin-left:0;margin-right:0}.mat-card-actions-align-end .mat-button:last-child,.mat-card-actions-align-end .mat-raised-button:last-child,.mat-card-actions-align-end .mat-stroked-button:last-child{margin-left:0;margin-right:0}.mat-card-title:not(:first-child),.mat-card-subtitle:not(:first-child){margin-top:-4px}.mat-card-header .mat-card-subtitle:not(:first-child){margin-top:-8px}.mat-card>.mat-card-xl-image:first-child{margin-top:-8px}.mat-card>.mat-card-xl-image:last-child{margin-bottom:-8px}"]
+      template: "<ng-content></ng-content>\n",
+      styles: [".mdc-card{display:flex;flex-direction:column;box-sizing:border-box}.mdc-card::after{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;border:1px solid rgba(0,0,0,0);border-radius:inherit;content:\"\";pointer-events:none;pointer-events:none}@media screen and (forced-colors: active){.mdc-card::after{border-color:CanvasText}}.mdc-card--outlined::after{border:none}.mdc-card__content{border-radius:inherit;height:100%}.mdc-card__media{position:relative;box-sizing:border-box;background-repeat:no-repeat;background-position:center;background-size:cover}.mdc-card__media::before{display:block;content:\"\"}.mdc-card__media:first-child{border-top-left-radius:inherit;border-top-right-radius:inherit}.mdc-card__media:last-child{border-bottom-left-radius:inherit;border-bottom-right-radius:inherit}.mdc-card__media--square::before{margin-top:100%}.mdc-card__media--16-9::before{margin-top:56.25%}.mdc-card__media-content{position:absolute;top:0;right:0;bottom:0;left:0;box-sizing:border-box}.mdc-card__primary-action{display:flex;flex-direction:column;box-sizing:border-box;position:relative;outline:none;color:inherit;text-decoration:none;cursor:pointer;overflow:hidden}.mdc-card__primary-action:first-child{border-top-left-radius:inherit;border-top-right-radius:inherit}.mdc-card__primary-action:last-child{border-bottom-left-radius:inherit;border-bottom-right-radius:inherit}.mdc-card__actions{display:flex;flex-direction:row;align-items:center;box-sizing:border-box;min-height:52px;padding:8px}.mdc-card__actions--full-bleed{padding:0}.mdc-card__action-buttons,.mdc-card__action-icons{display:flex;flex-direction:row;align-items:center;box-sizing:border-box}.mdc-card__action-icons{flex-grow:1;justify-content:flex-end}.mdc-card__action-buttons+.mdc-card__action-icons{margin-left:16px;margin-right:0}[dir=rtl] .mdc-card__action-buttons+.mdc-card__action-icons,.mdc-card__action-buttons+.mdc-card__action-icons[dir=rtl]{margin-left:0;margin-right:16px}.mdc-card__action{display:inline-flex;flex-direction:row;align-items:center;box-sizing:border-box;justify-content:center;cursor:pointer;user-select:none}.mdc-card__action:focus{outline:none}.mdc-card__action--button{margin-left:0;margin-right:8px;padding:0 8px}[dir=rtl] .mdc-card__action--button,.mdc-card__action--button[dir=rtl]{margin-left:8px;margin-right:0}.mdc-card__action--button:last-child{margin-left:0;margin-right:0}[dir=rtl] .mdc-card__action--button:last-child,.mdc-card__action--button:last-child[dir=rtl]{margin-left:0;margin-right:0}.mdc-card__actions--full-bleed .mdc-card__action--button{justify-content:space-between;width:100%;height:auto;max-height:none;margin:0;padding:8px 16px;text-align:left}[dir=rtl] .mdc-card__actions--full-bleed .mdc-card__action--button,.mdc-card__actions--full-bleed .mdc-card__action--button[dir=rtl]{text-align:right}.mdc-card__action--icon{margin:-6px 0;padding:12px}.mat-mdc-card{position:relative;border-radius:var(--mdc-elevated-card-container-shape, var(--mdc-shape-medium, 4px));background-color:var(--mdc-elevated-card-container-color, transparent);border-width:0;border-style:solid;border-color:var(--mdc-elevated-card-container-color, transparent)}.mat-mdc-card .mdc-card::after{border-radius:var(--mdc-elevated-card-container-shape, var(--mdc-shape-medium, 4px))}.mat-mdc-card-outlined{border-width:var(--mdc-outlined-card-outline-width, 1px);border-style:solid;border-color:var(--mdc-outlined-card-outline-color, transparent)}.mat-mdc-card-title,.mat-mdc-card-subtitle{display:block;margin:0}.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-title,.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-subtitle{padding:16px 16px 0}.mat-mdc-card-header{display:flex;padding:16px 16px 0}.mat-mdc-card-content{display:block;padding:0 16px}.mat-mdc-card-content:first-child{padding-top:16px}.mat-mdc-card-content:last-child{padding-bottom:16px}.mat-mdc-card-title-group{display:flex;justify-content:space-between;width:100%}.mat-mdc-card-avatar{height:40px;width:40px;border-radius:50%;flex-shrink:0;margin-bottom:16px;object-fit:cover}.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-subtitle,.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-title{line-height:normal}.mat-mdc-card-sm-image{width:80px;height:80px}.mat-mdc-card-md-image{width:112px;height:112px}.mat-mdc-card-lg-image{width:152px;height:152px}.mat-mdc-card-xl-image{width:240px;height:240px}.mat-mdc-card-subtitle~.mat-mdc-card-title,.mat-mdc-card-title~.mat-mdc-card-subtitle,.mat-mdc-card-header .mat-mdc-card-header-text .mat-mdc-card-title,.mat-mdc-card-header .mat-mdc-card-header-text .mat-mdc-card-subtitle,.mat-mdc-card-title-group .mat-mdc-card-title,.mat-mdc-card-title-group .mat-mdc-card-subtitle{padding-top:0}.mat-mdc-card-content>:last-child:not(.mat-mdc-card-footer){margin-bottom:0}.mat-mdc-card-actions-align-end{justify-content:flex-end}"]
     }]
   }], function () {
     return [{
       type: undefined,
       decorators: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Optional
-      }, {
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Inject,
-        args: [_angular_core__WEBPACK_IMPORTED_MODULE_0__.ANIMATION_MODULE_TYPE]
+        args: [MAT_CARD_CONFIG]
+      }, {
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Optional
       }]
     }];
-  }, null);
+  }, {
+    appearance: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+    }]
+  });
 })();
+// TODO(jelbourn): add `MatActionCard`, which is a card that acts like a button (and has a ripple).
+// Supported in MDC with `.mdc-card__primary-action`. Will require additional a11y docs for users.
 /**
- * Component intended to be used within the `<mat-card>` component. It adds styles for a
- * preset header section (i.e. a title, subtitle, and avatar layout).
- * @docs-private
- * @deprecated Use `MatCardHeader` from `@angular/material/card` instead. See https://material.angular.io/guide/mdc-migration for information about migrating.
- * @breaking-change 17.0.0
+ * Title of a card, intended for use within `<mat-card>`. This component is an optional
+ * convenience for one variety of card title; any custom title element may be used in its place.
+ *
+ * MatCardTitle provides no behaviors, instead serving as a purely visual treatment.
  */
-class MatLegacyCardHeader {}
-MatLegacyCardHeader.ɵfac = function MatLegacyCardHeader_Factory(t) {
-  return new (t || MatLegacyCardHeader)();
+class MatCardTitle {}
+MatCardTitle.ɵfac = function MatCardTitle_Factory(t) {
+  return new (t || MatCardTitle)();
 };
-MatLegacyCardHeader.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-  type: MatLegacyCardHeader,
-  selectors: [["mat-card-header"]],
-  hostAttrs: [1, "mat-card-header"],
-  ngContentSelectors: _c3,
-  decls: 4,
-  vars: 0,
-  consts: [[1, "mat-card-header-text"]],
-  template: function MatLegacyCardHeader_Template(rf, ctx) {
-    if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](0);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 0);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](2, 1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3, 2);
-    }
-  },
-  encapsulation: 2,
-  changeDetection: 0
+MatCardTitle.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+  type: MatCardTitle,
+  selectors: [["mat-card-title"], ["", "mat-card-title", ""], ["", "matCardTitle", ""]],
+  hostAttrs: [1, "mat-mdc-card-title"]
 });
 (function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatLegacyCardHeader, [{
-    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Component,
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardTitle, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
     args: [{
-      selector: 'mat-card-header',
-      encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewEncapsulation.None,
-      changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ChangeDetectionStrategy.OnPush,
+      selector: `mat-card-title, [mat-card-title], [matCardTitle]`,
       host: {
-        'class': 'mat-card-header'
-      },
-      template: "<ng-content select=\"[mat-card-avatar], [matCardAvatar]\"></ng-content>\n<div class=\"mat-card-header-text\">\n  <ng-content\n      select=\"mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]\"></ng-content>\n</div>\n<ng-content></ng-content>\n"
+        'class': 'mat-mdc-card-title'
+      }
     }]
   }], null, null);
 })();
 /**
- * Component intended to be used within the `<mat-card>` component. It adds styles for a preset
- * layout that groups an image with a title section.
- * @docs-private
- * @deprecated Use `MatCardTitleGroup` from `@angular/material/card` instead. See https://material.angular.io/guide/mdc-migration for information about migrating.
- * @breaking-change 17.0.0
+ * Container intended to be used within the `<mat-card>` component. Can contain exactly one
+ * `<mat-card-title>`, one `<mat-card-subtitle>` and one content image of any size
+ * (e.g. `<img matCardLgImage>`).
  */
-class MatLegacyCardTitleGroup {}
-MatLegacyCardTitleGroup.ɵfac = function MatLegacyCardTitleGroup_Factory(t) {
-  return new (t || MatLegacyCardTitleGroup)();
+class MatCardTitleGroup {}
+MatCardTitleGroup.ɵfac = function MatCardTitleGroup_Factory(t) {
+  return new (t || MatCardTitleGroup)();
 };
-MatLegacyCardTitleGroup.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-  type: MatLegacyCardTitleGroup,
+MatCardTitleGroup.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+  type: MatCardTitleGroup,
   selectors: [["mat-card-title-group"]],
-  hostAttrs: [1, "mat-card-title-group"],
-  ngContentSelectors: _c5,
+  hostAttrs: [1, "mat-mdc-card-title-group"],
+  ngContentSelectors: _c2,
   decls: 4,
   vars: 0,
-  template: function MatLegacyCardTitleGroup_Template(rf, ctx) {
+  template: function MatCardTitleGroup_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -790,16 +473,338 @@ MatLegacyCardTitleGroup.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_M
   changeDetection: 0
 });
 (function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatLegacyCardTitleGroup, [{
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardTitleGroup, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Component,
     args: [{
       selector: 'mat-card-title-group',
       encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewEncapsulation.None,
       changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ChangeDetectionStrategy.OnPush,
       host: {
-        'class': 'mat-card-title-group'
+        'class': 'mat-mdc-card-title-group'
       },
-      template: "<div>\n  <ng-content\n      select=\"mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]\"></ng-content>\n</div>\n<ng-content select=\"img\"></ng-content>\n<ng-content></ng-content>\n"
+      template: "<div>\n  <ng-content\n      select=\"mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]\"></ng-content>\n</div>\n<ng-content select=\"[mat-card-image], [matCardImage],\n                    [mat-card-sm-image], [matCardImageSmall],\n                    [mat-card-md-image], [matCardImageMedium],\n                    [mat-card-lg-image], [matCardImageLarge],\n                    [mat-card-xl-image], [matCardImageXLarge]\"></ng-content>\n<ng-content></ng-content>\n"
+    }]
+  }], null, null);
+})();
+/**
+ * Content of a card, intended for use within `<mat-card>`. This component is an optional
+ * convenience for use with other convenience elements, such as `<mat-card-title>`; any custom
+ * content block element may be used in its place.
+ *
+ * MatCardContent provides no behaviors, instead serving as a purely visual treatment.
+ */
+class MatCardContent {}
+MatCardContent.ɵfac = function MatCardContent_Factory(t) {
+  return new (t || MatCardContent)();
+};
+MatCardContent.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+  type: MatCardContent,
+  selectors: [["mat-card-content"]],
+  hostAttrs: [1, "mat-mdc-card-content"]
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardContent, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
+    args: [{
+      selector: 'mat-card-content',
+      host: {
+        'class': 'mat-mdc-card-content'
+      }
+    }]
+  }], null, null);
+})();
+/**
+ * Sub-title of a card, intended for use within `<mat-card>` beneath a `<mat-card-title>`. This
+ * component is an optional convenience for use with other convenience elements, such as
+ * `<mat-card-title>`.
+ *
+ * MatCardSubtitle provides no behaviors, instead serving as a purely visual treatment.
+ */
+class MatCardSubtitle {}
+MatCardSubtitle.ɵfac = function MatCardSubtitle_Factory(t) {
+  return new (t || MatCardSubtitle)();
+};
+MatCardSubtitle.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+  type: MatCardSubtitle,
+  selectors: [["mat-card-subtitle"], ["", "mat-card-subtitle", ""], ["", "matCardSubtitle", ""]],
+  hostAttrs: [1, "mat-mdc-card-subtitle"]
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardSubtitle, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
+    args: [{
+      selector: `mat-card-subtitle, [mat-card-subtitle], [matCardSubtitle]`,
+      host: {
+        'class': 'mat-mdc-card-subtitle'
+      }
+    }]
+  }], null, null);
+})();
+/**
+ * Bottom area of a card that contains action buttons, intended for use within `<mat-card>`.
+ * This component is an optional convenience for use with other convenience elements, such as
+ * `<mat-card-content>`; any custom action block element may be used in its place.
+ *
+ * MatCardActions provides no behaviors, instead serving as a purely visual treatment.
+ */
+class MatCardActions {
+  constructor() {
+    // TODO(jelbourn): deprecate `align` in favor of `actionPosition` or `actionAlignment`
+    // as to not conflict with the native `align` attribute.
+    /** Position of the actions inside the card. */
+    this.align = 'start';
+  }
+}
+MatCardActions.ɵfac = function MatCardActions_Factory(t) {
+  return new (t || MatCardActions)();
+};
+MatCardActions.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+  type: MatCardActions,
+  selectors: [["mat-card-actions"]],
+  hostAttrs: [1, "mat-mdc-card-actions", "mdc-card__actions"],
+  hostVars: 2,
+  hostBindings: function MatCardActions_HostBindings(rf, ctx) {
+    if (rf & 2) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-card-actions-align-end", ctx.align === "end");
+    }
+  },
+  inputs: {
+    align: "align"
+  },
+  exportAs: ["matCardActions"]
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardActions, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
+    args: [{
+      selector: 'mat-card-actions',
+      exportAs: 'matCardActions',
+      host: {
+        'class': 'mat-mdc-card-actions mdc-card__actions',
+        '[class.mat-mdc-card-actions-align-end]': 'align === "end"'
+      }
+    }]
+  }], null, {
+    align: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
+    }]
+  });
+})();
+/**
+ * Header region of a card, intended for use within `<mat-card>`. This header captures
+ * a card title, subtitle, and avatar.  This component is an optional convenience for use with
+ * other convenience elements, such as `<mat-card-footer>`; any custom header block element may be
+ * used in its place.
+ *
+ * MatCardHeader provides no behaviors, instead serving as a purely visual treatment.
+ */
+class MatCardHeader {}
+MatCardHeader.ɵfac = function MatCardHeader_Factory(t) {
+  return new (t || MatCardHeader)();
+};
+MatCardHeader.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+  type: MatCardHeader,
+  selectors: [["mat-card-header"]],
+  hostAttrs: [1, "mat-mdc-card-header"],
+  ngContentSelectors: _c4,
+  decls: 4,
+  vars: 0,
+  consts: [[1, "mat-mdc-card-header-text"]],
+  template: function MatCardHeader_Template(rf, ctx) {
+    if (rf & 1) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 0);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](2, 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3, 2);
+    }
+  },
+  encapsulation: 2,
+  changeDetection: 0
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardHeader, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Component,
+    args: [{
+      selector: 'mat-card-header',
+      encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewEncapsulation.None,
+      changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ChangeDetectionStrategy.OnPush,
+      host: {
+        'class': 'mat-mdc-card-header'
+      },
+      template: "<ng-content select=\"[mat-card-avatar], [matCardAvatar]\"></ng-content>\n<div class=\"mat-mdc-card-header-text\">\n  <ng-content\n      select=\"mat-card-title, mat-card-subtitle,\n      [mat-card-title], [mat-card-subtitle],\n      [matCardTitle], [matCardSubtitle]\"></ng-content>\n</div>\n<ng-content></ng-content>\n"
+    }]
+  }], null, null);
+})();
+/**
+ * Footer area a card, intended for use within `<mat-card>`.
+ * This component is an optional convenience for use with other convenience elements, such as
+ * `<mat-card-content>`; any custom footer block element may be used in its place.
+ *
+ * MatCardFooter provides no behaviors, instead serving as a purely visual treatment.
+ */
+class MatCardFooter {}
+MatCardFooter.ɵfac = function MatCardFooter_Factory(t) {
+  return new (t || MatCardFooter)();
+};
+MatCardFooter.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+  type: MatCardFooter,
+  selectors: [["mat-card-footer"]],
+  hostAttrs: [1, "mat-mdc-card-footer"]
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardFooter, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
+    args: [{
+      selector: 'mat-card-footer',
+      host: {
+        'class': 'mat-mdc-card-footer'
+      }
+    }]
+  }], null, null);
+})();
+// TODO(jelbourn): deprecate the "image" selectors to replace with "media".
+// TODO(jelbourn): support `.mdc-card__media-content`.
+/**
+ * Primary image content for a card, intended for use within `<mat-card>`. Can be applied to
+ * any media element, such as `<img>` or `<picture>`.
+ *
+ * This component is an optional convenience for use with other convenience elements, such as
+ * `<mat-card-content>`; any custom media element may be used in its place.
+ *
+ * MatCardImage provides no behaviors, instead serving as a purely visual treatment.
+ */
+class MatCardImage {}
+MatCardImage.ɵfac = function MatCardImage_Factory(t) {
+  return new (t || MatCardImage)();
+};
+MatCardImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+  type: MatCardImage,
+  selectors: [["", "mat-card-image", ""], ["", "matCardImage", ""]],
+  hostAttrs: [1, "mat-mdc-card-image", "mdc-card__media"]
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardImage, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
+    args: [{
+      selector: '[mat-card-image], [matCardImage]',
+      host: {
+        'class': 'mat-mdc-card-image mdc-card__media'
+      }
+    }]
+  }], null, null);
+})();
+/** Same as `MatCardImage`, but small. */
+class MatCardSmImage {}
+MatCardSmImage.ɵfac = function MatCardSmImage_Factory(t) {
+  return new (t || MatCardSmImage)();
+};
+MatCardSmImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+  type: MatCardSmImage,
+  selectors: [["", "mat-card-sm-image", ""], ["", "matCardImageSmall", ""]],
+  hostAttrs: [1, "mat-mdc-card-sm-image", "mdc-card__media"]
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardSmImage, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
+    args: [{
+      selector: '[mat-card-sm-image], [matCardImageSmall]',
+      host: {
+        'class': 'mat-mdc-card-sm-image mdc-card__media'
+      }
+    }]
+  }], null, null);
+})();
+/** Same as `MatCardImage`, but medium. */
+class MatCardMdImage {}
+MatCardMdImage.ɵfac = function MatCardMdImage_Factory(t) {
+  return new (t || MatCardMdImage)();
+};
+MatCardMdImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+  type: MatCardMdImage,
+  selectors: [["", "mat-card-md-image", ""], ["", "matCardImageMedium", ""]],
+  hostAttrs: [1, "mat-mdc-card-md-image", "mdc-card__media"]
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardMdImage, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
+    args: [{
+      selector: '[mat-card-md-image], [matCardImageMedium]',
+      host: {
+        'class': 'mat-mdc-card-md-image mdc-card__media'
+      }
+    }]
+  }], null, null);
+})();
+/** Same as `MatCardImage`, but large. */
+class MatCardLgImage {}
+MatCardLgImage.ɵfac = function MatCardLgImage_Factory(t) {
+  return new (t || MatCardLgImage)();
+};
+MatCardLgImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+  type: MatCardLgImage,
+  selectors: [["", "mat-card-lg-image", ""], ["", "matCardImageLarge", ""]],
+  hostAttrs: [1, "mat-mdc-card-lg-image", "mdc-card__media"]
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardLgImage, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
+    args: [{
+      selector: '[mat-card-lg-image], [matCardImageLarge]',
+      host: {
+        'class': 'mat-mdc-card-lg-image mdc-card__media'
+      }
+    }]
+  }], null, null);
+})();
+/** Same as `MatCardImage`, but extra-large. */
+class MatCardXlImage {}
+MatCardXlImage.ɵfac = function MatCardXlImage_Factory(t) {
+  return new (t || MatCardXlImage)();
+};
+MatCardXlImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+  type: MatCardXlImage,
+  selectors: [["", "mat-card-xl-image", ""], ["", "matCardImageXLarge", ""]],
+  hostAttrs: [1, "mat-mdc-card-xl-image", "mdc-card__media"]
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardXlImage, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
+    args: [{
+      selector: '[mat-card-xl-image], [matCardImageXLarge]',
+      host: {
+        'class': 'mat-mdc-card-xl-image mdc-card__media'
+      }
+    }]
+  }], null, null);
+})();
+/**
+ * Avatar image content for a card, intended for use within `<mat-card>`. Can be applied to
+ * any media element, such as `<img>` or `<picture>`.
+ *
+ * This component is an optional convenience for use with other convenience elements, such as
+ * `<mat-card-title>`; any custom media element may be used in its place.
+ *
+ * MatCardAvatar provides no behaviors, instead serving as a purely visual treatment.
+ */
+class MatCardAvatar {}
+MatCardAvatar.ɵfac = function MatCardAvatar_Factory(t) {
+  return new (t || MatCardAvatar)();
+};
+MatCardAvatar.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+  type: MatCardAvatar,
+  selectors: [["", "mat-card-avatar", ""], ["", "matCardAvatar", ""]],
+  hostAttrs: [1, "mat-mdc-card-avatar"]
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardAvatar, [{
+    type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
+    args: [{
+      selector: '[mat-card-avatar], [matCardAvatar]',
+      host: {
+        'class': 'mat-mdc-card-avatar'
+      }
     }]
   }], null, null);
 })();
@@ -811,27 +816,24 @@ MatLegacyCardTitleGroup.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_M
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-/**
- * @deprecated Use `MatCardModule` from `@angular/material/card` instead. See https://material.angular.io/guide/mdc-migration for information about migrating.
- * @breaking-change 17.0.0
- */
-class MatLegacyCardModule {}
-MatLegacyCardModule.ɵfac = function MatLegacyCardModule_Factory(t) {
-  return new (t || MatLegacyCardModule)();
+const CARD_DIRECTIVES = [MatCard, MatCardActions, MatCardAvatar, MatCardContent, MatCardFooter, MatCardHeader, MatCardImage, MatCardLgImage, MatCardMdImage, MatCardSmImage, MatCardSubtitle, MatCardTitle, MatCardTitleGroup, MatCardXlImage];
+class MatCardModule {}
+MatCardModule.ɵfac = function MatCardModule_Factory(t) {
+  return new (t || MatCardModule)();
 };
-MatLegacyCardModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
-  type: MatLegacyCardModule
+MatCardModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+  type: MatCardModule
 });
-MatLegacyCardModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-  imports: [_angular_material_core__WEBPACK_IMPORTED_MODULE_1__.MatCommonModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_1__.MatCommonModule]
+MatCardModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+  imports: [_angular_material_core__WEBPACK_IMPORTED_MODULE_1__.MatCommonModule, _angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_1__.MatCommonModule]
 });
 (function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatLegacyCardModule, [{
+  (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardModule, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.NgModule,
     args: [{
-      imports: [_angular_material_core__WEBPACK_IMPORTED_MODULE_1__.MatCommonModule],
-      exports: [MatLegacyCard, MatLegacyCardHeader, MatLegacyCardTitleGroup, MatLegacyCardContent, MatLegacyCardTitle, MatLegacyCardSubtitle, MatLegacyCardActions, MatLegacyCardFooter, MatLegacyCardSmImage, MatLegacyCardMdImage, MatLegacyCardLgImage, MatLegacyCardImage, MatLegacyCardXlImage, MatLegacyCardAvatar, _angular_material_core__WEBPACK_IMPORTED_MODULE_1__.MatCommonModule],
-      declarations: [MatLegacyCard, MatLegacyCardHeader, MatLegacyCardTitleGroup, MatLegacyCardContent, MatLegacyCardTitle, MatLegacyCardSubtitle, MatLegacyCardActions, MatLegacyCardFooter, MatLegacyCardSmImage, MatLegacyCardMdImage, MatLegacyCardLgImage, MatLegacyCardImage, MatLegacyCardXlImage, MatLegacyCardAvatar]
+      imports: [_angular_material_core__WEBPACK_IMPORTED_MODULE_1__.MatCommonModule, _angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule],
+      exports: [CARD_DIRECTIVES, _angular_material_core__WEBPACK_IMPORTED_MODULE_1__.MatCommonModule],
+      declarations: CARD_DIRECTIVES
     }]
   }], null, null);
 })();

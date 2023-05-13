@@ -11,7 +11,7 @@
 </header>
 <main class="home-main">
   
-  <mat-card>
+  <mat-card appearance="outlined">
     <!-- <h2>Editor Js: <button mat-button (click)="getValue()">Get Value</button></h2> -->
     <!-- <mat-divider></mat-divider> -->
     <!-- <ngx-editorjs [config]="config" [data]="data" (ready)="onReady($event)" (change)="onChange($event)"></ngx-editorjs> -->
@@ -21,7 +21,7 @@
       (valueRequested)="valueRequested($event)"></ngx-editorjs>
   </mat-card>
 
-  <mat-card>
+  <mat-card appearance="outlined">
     <ngx-editorjs-client [inputData]="inputData"></ngx-editorjs-client>
   </mat-card>
 </main>
