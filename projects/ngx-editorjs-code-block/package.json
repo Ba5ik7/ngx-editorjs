@@ -1,6 +1,6 @@
 {
    "name": "@tmdjr/ngx-editorjs-code-block",
-   "version": "0.0.37",
+   "version": "0.0.38",
    "license": "MIT",
    "peerDependencies": {
       "@angular/common": ">=15.0.0",
