@@ -56,11 +56,6 @@ mermaid.parseError = function(err: any, hash: any) {
     :host .flex-end { justify-content: flex-end; }
     :host .center { justify-content: center; }
     :host .stretch img { width: 100%; }
-    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
-    ::ng-deep .mermaid-block-button .mat-button-wrapper .mat-icon {
-      font-size: 1.6rem;
-      vertical-align: baseline;
-    }
   `],
   imports: [
     CommonModule,

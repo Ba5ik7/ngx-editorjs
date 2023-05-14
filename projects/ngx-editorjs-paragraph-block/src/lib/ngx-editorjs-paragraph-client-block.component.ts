@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   template: `
     <p class="flex-spacer" [innerHTML]="value"></p>
   `,
-  styles: [`:host { display: flex; flex-direction: column; } p { font-size: 1.6rem; line-height: 3.2rem; }`],
+  styles: [`:host { display: flex; flex-direction: column; }`],
   imports: []
 })
 export class NgxEditorjsParagraphClientBlockComponent {

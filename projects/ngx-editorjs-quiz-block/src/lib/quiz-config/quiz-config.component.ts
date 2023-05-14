@@ -37,27 +37,27 @@ function validateRatioOptions(): ValidatorFn {
     <div class="quiz-block-modal" >
       <form [formGroup]="quizConfigForm">
 
-        <h1 mat-dialog-title>Quiz Configuration</h1>
+        <h2 mat-dialog-title>Quiz Configuration</h2>
 
-        <h2>1) Create a Question.</h2>
+        <h3>Create a Question.</h3>
         <mat-form-field appearance="outline" color="accent">
           <mat-label>Question</mat-label>
-          <textarea #title matInput formControlName="question"></textarea>
+          <textarea matInput formControlName="question"></textarea>
           <mat-error *ngIf="quizConfigForm.get('question')?.errors">{{quizConfigFormErrorMessages['question']}}</mat-error>
         </mat-form-field>
 
         <ng-container *ngIf="quizConfigForm.get('question')?.valid">
-          <h2>2) Create the possible answers <span>(Create at least 2 options)</span></h2>
+          <h3>Create the possible answers <span>(Create at least 2 options)</span></h3>
           <div formArrayName="ratioOptions">
             <div *ngFor="let option of ratioOptions.controls; let i = index" [formGroupName]="i">
-              <div class="ratio-option">
-                <mat-form-field appearance="outline" color="accent" class="ratio-option-input">
+              <div class="radio-option-container">
+                <mat-form-field appearance="outline" color="accent">
                   <mat-label>Option {{i + 1}}</mat-label>
-                  <input matInput type="text" formControlName="value"/>
+                  <textarea matInput formControlName="value"></textarea>
                 </mat-form-field>
-                <button mat-icon-button color="warn" type="button" (click)="removeRatioOption(i)">
+                <a mat-icon-button color="warn" (click)="removeRatioOption(i)">
                   <mat-icon>delete</mat-icon>
-                </button>
+                </a>
               </div>
             </div>
             <div class="answers-action-group">
@@ -67,7 +67,7 @@ function validateRatioOptions(): ValidatorFn {
         </ng-container>
 
         <ng-container *ngIf="quizConfigForm.get('question')?.valid && quizConfigForm.get('ratioOptions')?.valid">
-          <h2>3) Select the correct answer</h2>
+          <h3>Select the correct answer</h3>
           <mat-form-field appearance="outline" color="accent">
             <mat-label>Answer</mat-label>
             <mat-select formControlName="correctAnswer">
@@ -80,19 +80,19 @@ function validateRatioOptions(): ValidatorFn {
         </ng-container>
 
         <ng-container *ngIf="quizConfigForm.get('question')?.valid &&  quizConfigForm.get('ratioOptions')?.valid && quizConfigForm.get('correctAnswer')?.valid">
-          <h2>4) Correct answer response.</h2>
+          <h3>Correct answer response.</h3>
           <mat-form-field appearance="outline" color="accent">
             <mat-label>Response</mat-label>
-            <textarea #title matInput formControlName="correctAnswerResponse"></textarea>
+            <textarea matInput formControlName="correctAnswerResponse"></textarea>
             <mat-error *ngIf="quizConfigForm.get('correctAnswerResponse')?.errors">{{quizConfigFormErrorMessages['correctAnswerResponse']}}</mat-error>
           </mat-form-field>
         </ng-container>
 
         <ng-container *ngIf="quizConfigForm.get('question')?.valid &&  quizConfigForm.get('ratioOptions')?.valid && quizConfigForm.get('correctAnswer')?.valid">
-          <h2>5) Incorrect answer response.</h2>
+          <h3>Incorrect answer response.</h3>
           <mat-form-field appearance="outline" color="accent">
             <mat-label>Response</mat-label>
-            <textarea #title matInput formControlName="incorrectAnswerResponse"></textarea>
+            <textarea matInput formControlName="incorrectAnswerResponse"></textarea>
             <mat-error *ngIf="quizConfigForm.get('incorrectAnswerResponse')?.errors">{{quizConfigFormErrorMessages['incorrectAnswerResponse']}}</mat-error>
           </mat-form-field>
         </ng-container>
@@ -122,9 +122,12 @@ function validateRatioOptions(): ValidatorFn {
     .answers-action-group {
       padding-bottom: 20px;
     }
-    :host h2 span{
-      font-size: 12px;
-      color: #f0ad4e;
+    .radio-option-container {
+      display: flex;
+      gap: 10px;
+    }
+    .radio-option-container mat-form-field {
+      flex: 1;
     }
   `],
   imports: [

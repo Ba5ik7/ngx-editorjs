@@ -59,12 +59,6 @@ import { ImageConfigComponent } from './image-config/image-config.component';
     .image-container {
       display: flex;
     }
-
-    /* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version. */
-    ::ng-deep .image-block-button .mat-button-wrapper .mat-icon {
-        font-size: 1.6rem;
-        vertical-align: baseline;
-    }
   `]
 })
 export class NgxEditorjsImageBlockComponent extends BaseBlockComponent implements OnInit, AfterViewInit {
