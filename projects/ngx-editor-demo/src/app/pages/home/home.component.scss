@@ -57,7 +57,13 @@
   width: 75%;
   max-width: 900px;
   margin: auto;
-
+  perspective: 2500px;
+  
+  position: relative;
+  mat-card {
+    transform: rotateY(-40deg);
+    position: absolute;
+  }
   .mat-mdc-card {
     padding: 40px;
   }

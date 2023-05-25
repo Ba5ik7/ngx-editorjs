@@ -34,7 +34,7 @@ export class NgxEditorjsCodeClientBlockComponent {
     lineNumbers: true,
     theme: 'material-palenight',
     mode: 'text/typescript',
-    readOnly: true
+    readOnly: 'nocursor'
   }
 
   @Input() 
