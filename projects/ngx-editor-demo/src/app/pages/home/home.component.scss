@@ -52,6 +52,11 @@
   }
 }
 
+@keyframes rotate {
+  from { transform: rotateY(45deg); }
+  to { transform: rotateY(0deg); }
+}
+
 .home-main {
   padding: 16px;
   width: 75%;
@@ -61,8 +66,9 @@
   
   position: relative;
   mat-card {
-    transform: rotateY(-40deg);
     position: absolute;
+    animation-name: rotate;
+    animation-duration: 1s;
   }
   .mat-mdc-card {
     padding: 40px;
