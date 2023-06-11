@@ -1,6 +1,6 @@
 {
    "name": "@tmdjr/ngx-editorjs-client",
-   "version": "0.0.38",
+   "version": "0.0.39",
    "license": "MIT",
    "exports": {
       ".": {

@@ -1,6 +1,6 @@
 {
   "name": "@tmdjr/ngx-editorjs-mermaid-block",
-  "version": "0.0.38",
+  "version": "0.0.39",
   "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^15.2.0",
