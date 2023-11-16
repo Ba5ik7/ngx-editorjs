@@ -136,10 +136,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ngx-editor-demo:build:production"
+              "buildTarget": "ngx-editor-demo:build:production"
             },
             "development": {
-              "browserTarget": "ngx-editor-demo:build:development"
+              "buildTarget": "ngx-editor-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -147,7 +147,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-editor-demo:build"
+            "buildTarget": "ngx-editor-demo:build"
           }
         },
         "test": {
