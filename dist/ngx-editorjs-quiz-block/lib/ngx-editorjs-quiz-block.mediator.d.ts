@@ -5,5 +5,5 @@ export declare class NgxEditorjsQuizBlockMediator {
     form: FormGroup;
     formControlName: string;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxEditorjsQuizBlockMediator, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NgxEditorjsQuizBlockMediator, "ngx-editorjs-quiz-paragraph-block", never, { "blockId": "blockId"; "form": "form"; "formControlName": "formControlName"; }, {}, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NgxEditorjsQuizBlockMediator, "ngx-editorjs-quiz-paragraph-block", never, { "blockId": { "alias": "blockId"; "required": false; }; "form": { "alias": "form"; "required": false; }; "formControlName": { "alias": "formControlName"; "required": false; }; }, {}, never, never, true, never>;
 }

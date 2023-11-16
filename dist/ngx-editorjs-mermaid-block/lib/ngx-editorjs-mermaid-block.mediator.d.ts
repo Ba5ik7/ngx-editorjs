@@ -6,5 +6,5 @@ export declare class NgxEditorjsMermaidBlockMediator {
     formControlName: string;
     savedAction: string;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxEditorjsMermaidBlockMediator, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NgxEditorjsMermaidBlockMediator, "ngx-editorjs-mermaid-blockquotes-block", never, { "blockId": "blockId"; "form": "form"; "formControlName": "formControlName"; "savedAction": "savedAction"; }, {}, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NgxEditorjsMermaidBlockMediator, "ngx-editorjs-mermaid-blockquotes-block", never, { "blockId": { "alias": "blockId"; "required": false; }; "form": { "alias": "form"; "required": false; }; "formControlName": { "alias": "formControlName"; "required": false; }; "savedAction": { "alias": "savedAction"; "required": false; }; }, {}, never, never, true, never>;
 }

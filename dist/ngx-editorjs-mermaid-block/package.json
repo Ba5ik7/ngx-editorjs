@@ -16,21 +16,15 @@
     ".": {
       "sass": "./_index.scss",
       "types": "./index.d.ts",
-      "esm2020": "./esm2020/tmdjr-ngx-editorjs-mermaid-block.mjs",
-      "es2020": "./fesm2020/tmdjr-ngx-editorjs-mermaid-block.mjs",
-      "es2015": "./fesm2015/tmdjr-ngx-editorjs-mermaid-block.mjs",
-      "node": "./fesm2015/tmdjr-ngx-editorjs-mermaid-block.mjs",
-      "default": "./fesm2020/tmdjr-ngx-editorjs-mermaid-block.mjs"
+      "esm2022": "./esm2022/tmdjr-ngx-editorjs-mermaid-block.mjs",
+      "esm": "./esm2022/tmdjr-ngx-editorjs-mermaid-block.mjs",
+      "default": "./fesm2022/tmdjr-ngx-editorjs-mermaid-block.mjs"
     },
     "./package.json": {
       "default": "./package.json"
     }
   },
-  "module": "fesm2015/tmdjr-ngx-editorjs-mermaid-block.mjs",
-  "es2020": "fesm2020/tmdjr-ngx-editorjs-mermaid-block.mjs",
-  "esm2020": "esm2020/tmdjr-ngx-editorjs-mermaid-block.mjs",
-  "fesm2020": "fesm2020/tmdjr-ngx-editorjs-mermaid-block.mjs",
-  "fesm2015": "fesm2015/tmdjr-ngx-editorjs-mermaid-block.mjs",
+  "module": "fesm2022/tmdjr-ngx-editorjs-mermaid-block.mjs",
   "typings": "index.d.ts",
   "sideEffects": false
 }

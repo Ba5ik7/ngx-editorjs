@@ -18,18 +18,12 @@
     },
     ".": {
       "types": "./index.d.ts",
-      "esm2020": "./esm2020/tmdjr-ngx-editorjs-quiz-block.mjs",
-      "es2020": "./fesm2020/tmdjr-ngx-editorjs-quiz-block.mjs",
-      "es2015": "./fesm2015/tmdjr-ngx-editorjs-quiz-block.mjs",
-      "node": "./fesm2015/tmdjr-ngx-editorjs-quiz-block.mjs",
-      "default": "./fesm2020/tmdjr-ngx-editorjs-quiz-block.mjs"
+      "esm2022": "./esm2022/tmdjr-ngx-editorjs-quiz-block.mjs",
+      "esm": "./esm2022/tmdjr-ngx-editorjs-quiz-block.mjs",
+      "default": "./fesm2022/tmdjr-ngx-editorjs-quiz-block.mjs"
     }
   },
-  "module": "fesm2015/tmdjr-ngx-editorjs-quiz-block.mjs",
-  "es2020": "fesm2020/tmdjr-ngx-editorjs-quiz-block.mjs",
-  "esm2020": "esm2020/tmdjr-ngx-editorjs-quiz-block.mjs",
-  "fesm2020": "fesm2020/tmdjr-ngx-editorjs-quiz-block.mjs",
-  "fesm2015": "fesm2015/tmdjr-ngx-editorjs-quiz-block.mjs",
+  "module": "fesm2022/tmdjr-ngx-editorjs-quiz-block.mjs",
   "typings": "index.d.ts",
   "sideEffects": false
 }

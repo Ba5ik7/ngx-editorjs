@@ -14,5 +14,5 @@ export declare class MermaidConfigComponent {
     changeValue(newValue: string): void;
     updateMermaid(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<MermaidConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<MermaidConfigComponent, "mermaid-config", never, { "value": "value"; }, { "mermaidValue": "mermaidValue"; }, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<MermaidConfigComponent, "mermaid-config", never, { "value": { "alias": "value"; "required": false; }; }, { "mermaidValue": "mermaidValue"; }, never, never, true, never>;
 }

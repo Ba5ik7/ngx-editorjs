@@ -36,6 +36,6 @@ export declare class QuizConfigComponent implements OnInit {
         [key: string]: string;
     }): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<QuizConfigComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<QuizConfigComponent, "quiz-config", never, { "value": "value"; }, { "quizValue": "quizValue"; }, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<QuizConfigComponent, "quiz-config", never, { "value": { "alias": "value"; "required": false; }; }, { "quizValue": "quizValue"; }, never, never, true, never>;
 }
 export {};

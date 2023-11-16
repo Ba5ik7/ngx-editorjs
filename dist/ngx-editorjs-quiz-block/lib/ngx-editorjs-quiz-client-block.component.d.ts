@@ -9,5 +9,5 @@ export declare class NgxEditorjsQuizClientBlockComponent {
     set value(value: string);
     onQuizAnswerClick(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<NgxEditorjsQuizClientBlockComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<NgxEditorjsQuizClientBlockComponent, "ngx-editorjs-image-client-block", never, { "value": "value"; }, {}, never, never, true, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<NgxEditorjsQuizClientBlockComponent, "ngx-editorjs-image-client-block", never, { "value": { "alias": "value"; "required": false; }; }, {}, never, never, true, never>;
 }

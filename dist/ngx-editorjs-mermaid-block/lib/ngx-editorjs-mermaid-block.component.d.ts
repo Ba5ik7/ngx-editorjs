@@ -10,8 +10,7 @@ export declare class NgxEditorjsMermaidBlockComponent extends BaseBlockComponent
     _mermaidAPI: Readonly<{
         render: (id: string, text: string, svgContainingElement?: Element | undefined) => Promise<import("mermaid").RenderResult>;
         parse: (text: string, parseOptions?: import("mermaid").ParseOptions | undefined) => Promise<boolean>;
-        parseDirective: (p: any, statement: string, context: string, type: string) => void;
-        getDiagramFromText: (text: string) => Promise<import("mermaid/dist/Diagram").Diagram>;
+        getDiagramFromText: (text: string, metadata?: Pick<import("mermaid/dist/diagram-api/types").DiagramMetadata, "title"> | undefined) => Promise<import("mermaid/dist/Diagram").Diagram>;
         initialize: (options?: import("mermaid").MermaidConfig | undefined) => void;
         getConfig: () => import("mermaid").MermaidConfig;
         setConfig: (conf: import("mermaid").MermaidConfig) => import("mermaid").MermaidConfig;
