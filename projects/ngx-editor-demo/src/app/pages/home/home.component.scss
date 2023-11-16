@@ -65,11 +65,11 @@
   perspective: 2500px;
   
   position: relative;
-  mat-card {
-    position: absolute;
-    animation-name: rotate;
-    animation-duration: 1s;
-  }
+  //! mat-card {
+  //!   position: absolute;
+  //!  animation-name: rotate;
+  //!   animation-duration: 1s;
+  //! }
   .mat-mdc-card {
     padding: 40px;
   }
