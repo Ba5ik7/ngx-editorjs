@@ -4,14 +4,14 @@ import { NgxEditorjsQuizBlockComponent } from './ngx-editorjs-quiz-block.compone
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/forms";
 export class NgxEditorjsQuizBlockMediator {
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.3", ngImport: i0, type: NgxEditorjsQuizBlockMediator, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
-    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "17.0.3", type: NgxEditorjsQuizBlockMediator, isStandalone: true, selector: "ngx-editorjs-quiz-paragraph-block", inputs: { blockId: "blockId", form: "form", formControlName: "formControlName" }, ngImport: i0, template: `
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxEditorjsQuizBlockMediator, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
+    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "17.0.9", type: NgxEditorjsQuizBlockMediator, isStandalone: true, selector: "ngx-editorjs-quiz-paragraph-block", inputs: { blockId: "blockId", form: "form", formControlName: "formControlName" }, ngImport: i0, template: `
     <div [formGroup]="form">
       <ngx-editorjs-quiz-block [blockId]="blockId" [formControlName]="formControlName"></ngx-editorjs-quiz-block>
     </div>
   `, isInline: true, dependencies: [{ kind: "ngmodule", type: ReactiveFormsModule }, { kind: "directive", type: i1.NgControlStatus, selector: "[formControlName],[ngModel],[formControl]" }, { kind: "directive", type: i1.NgControlStatusGroup, selector: "[formGroupName],[formArrayName],[ngModelGroup],[formGroup],form:not([ngNoForm]),[ngForm]" }, { kind: "directive", type: i1.FormGroupDirective, selector: "[formGroup]", inputs: ["formGroup"], outputs: ["ngSubmit"], exportAs: ["ngForm"] }, { kind: "directive", type: i1.FormControlName, selector: "[formControlName]", inputs: ["formControlName", "disabled", "ngModel"], outputs: ["ngModelChange"] }, { kind: "component", type: NgxEditorjsQuizBlockComponent, selector: "ngx-editorjs-quiz-block" }] }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.3", ngImport: i0, type: NgxEditorjsQuizBlockMediator, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxEditorjsQuizBlockMediator, decorators: [{
             type: Component,
             args: [{
                     standalone: true,

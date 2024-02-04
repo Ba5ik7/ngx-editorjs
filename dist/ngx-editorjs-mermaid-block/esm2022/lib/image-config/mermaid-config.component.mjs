@@ -24,8 +24,8 @@ export class MermaidConfigComponent {
     updateMermaid() {
         this.mermaidValue.emit(this.value);
     }
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.3", ngImport: i0, type: MermaidConfigComponent, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
-    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "17.0.3", type: MermaidConfigComponent, isStandalone: true, selector: "mermaid-config", inputs: { value: "value" }, outputs: { mermaidValue: "mermaidValue" }, ngImport: i0, template: `
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: MermaidConfigComponent, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
+    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "17.0.9", type: MermaidConfigComponent, isStandalone: true, selector: "mermaid-config", inputs: { value: "value" }, outputs: { mermaidValue: "mermaidValue" }, ngImport: i0, template: `
     <div class="container">
     <ngx-codemirror
       (ngModelChange)="changeValue($event)"
@@ -38,7 +38,7 @@ export class MermaidConfigComponent {
     </div>
   `, isInline: true, styles: [":host{width:100%;display:flex;flex-direction:column;border-radius:5px;margin:16px auto;position:relative;z-index:1}:host .action-group{display:flex;justify-content:flex-end;gap:10px}:host .answers-action-group{padding-bottom:20px}:host ::ng-deep .CodeMirror{height:250px}.container{padding-bottom:20px}\n"], dependencies: [{ kind: "ngmodule", type: CommonModule }, { kind: "ngmodule", type: CodemirrorModule }, { kind: "component", type: i1.CodemirrorComponent, selector: "ngx-codemirror", inputs: ["className", "name", "autoFocus", "options", "preserveScrollPosition"], outputs: ["cursorActivity", "focusChange", "scroll", "drop", "codeMirrorLoaded"] }, { kind: "ngmodule", type: FormsModule }, { kind: "directive", type: i2.NgControlStatus, selector: "[formControlName],[ngModel],[formControl]" }, { kind: "directive", type: i2.NgModel, selector: "[ngModel]:not([formControlName]):not([formControl])", inputs: ["name", "disabled", "ngModel", "ngModelOptions"], outputs: ["ngModelChange"], exportAs: ["ngModel"] }, { kind: "ngmodule", type: MatButtonModule }, { kind: "component", type: i3.MatButton, selector: "    button[mat-button], button[mat-raised-button], button[mat-flat-button],    button[mat-stroked-button]  ", exportAs: ["matButton"] }] }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.3", ngImport: i0, type: MermaidConfigComponent, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: MermaidConfigComponent, decorators: [{
             type: Component,
             args: [{ selector: 'mermaid-config', standalone: true, imports: [
                         CommonModule,

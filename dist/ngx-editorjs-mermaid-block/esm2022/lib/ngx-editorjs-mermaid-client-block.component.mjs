@@ -29,8 +29,8 @@ export class NgxEditorjsMermaidClientBlockComponent {
         console.log('action', action);
         this.activeMermaidClass = action ?? 'flex-start';
     }
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.3", ngImport: i0, type: NgxEditorjsMermaidClientBlockComponent, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
-    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "17.0.3", type: NgxEditorjsMermaidClientBlockComponent, isStandalone: true, selector: "ngx-editorjs-mermaid-client-block", inputs: { value: "value", savedAction: "savedAction" }, ngImport: i0, template: `
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxEditorjsMermaidClientBlockComponent, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
+    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "17.0.9", type: NgxEditorjsMermaidClientBlockComponent, isStandalone: true, selector: "ngx-editorjs-mermaid-client-block", inputs: { value: "value", savedAction: "savedAction" }, ngImport: i0, template: `
     <div class="mermaid-container">
       <div
         #mermaidContainer
@@ -40,7 +40,7 @@ export class NgxEditorjsMermaidClientBlockComponent {
     </div>
   `, isInline: true, styles: [":host{display:flex;flex-direction:column;position:relative;padding-bottom:22px}.mermaid{width:100%;display:flex}.mermaid-container{display:flex}:host .flex-start{justify-content:flex-start}:host .flex-end{justify-content:flex-end}:host .center{justify-content:center}\n"], dependencies: [{ kind: "ngmodule", type: CommonModule }, { kind: "directive", type: i1.NgClass, selector: "[ngClass]", inputs: ["class", "ngClass"] }, { kind: "pipe", type: SafeHtmlPipe, name: "safeHtml" }] }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.3", ngImport: i0, type: NgxEditorjsMermaidClientBlockComponent, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxEditorjsMermaidClientBlockComponent, decorators: [{
             type: Component,
             args: [{ standalone: true, selector: 'ngx-editorjs-mermaid-client-block', template: `
     <div class="mermaid-container">

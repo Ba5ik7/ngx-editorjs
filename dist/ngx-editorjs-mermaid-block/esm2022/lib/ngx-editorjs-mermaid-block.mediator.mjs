@@ -4,14 +4,14 @@ import { NgxEditorjsMermaidBlockComponent } from './ngx-editorjs-mermaid-block.c
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/forms";
 export class NgxEditorjsMermaidBlockMediator {
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.3", ngImport: i0, type: NgxEditorjsMermaidBlockMediator, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
-    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "17.0.3", type: NgxEditorjsMermaidBlockMediator, isStandalone: true, selector: "ngx-editorjs-mermaid-blockquotes-block", inputs: { blockId: "blockId", form: "form", formControlName: "formControlName", savedAction: "savedAction" }, ngImport: i0, template: `
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxEditorjsMermaidBlockMediator, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
+    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "17.0.9", type: NgxEditorjsMermaidBlockMediator, isStandalone: true, selector: "ngx-editorjs-mermaid-blockquotes-block", inputs: { blockId: "blockId", form: "form", formControlName: "formControlName", savedAction: "savedAction" }, ngImport: i0, template: `
     <div [formGroup]="form">
       <ngx-editorjs-mermaid-block [blockId]="blockId" [formControlName]="formControlName" [savedAction]="savedAction"></ngx-editorjs-mermaid-block>
     </div>
   `, isInline: true, dependencies: [{ kind: "ngmodule", type: ReactiveFormsModule }, { kind: "directive", type: i1.NgControlStatus, selector: "[formControlName],[ngModel],[formControl]" }, { kind: "directive", type: i1.NgControlStatusGroup, selector: "[formGroupName],[formArrayName],[ngModelGroup],[formGroup],form:not([ngNoForm]),[ngForm]" }, { kind: "directive", type: i1.FormGroupDirective, selector: "[formGroup]", inputs: ["formGroup"], outputs: ["ngSubmit"], exportAs: ["ngForm"] }, { kind: "directive", type: i1.FormControlName, selector: "[formControlName]", inputs: ["formControlName", "disabled", "ngModel"], outputs: ["ngModelChange"] }, { kind: "component", type: NgxEditorjsMermaidBlockComponent, selector: "ngx-editorjs-mermaid-block" }] }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.3", ngImport: i0, type: NgxEditorjsMermaidBlockMediator, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxEditorjsMermaidBlockMediator, decorators: [{
             type: Component,
             args: [{
                     standalone: true,

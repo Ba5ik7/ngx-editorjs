@@ -8,10 +8,10 @@ export class SafeHtmlPipe {
     transform(value) {
         return this.sanitized.bypassSecurityTrustHtml(value);
     }
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.3", ngImport: i0, type: SafeHtmlPipe, deps: [{ token: i1.DomSanitizer }], target: i0.ɵɵFactoryTarget.Pipe }); }
-    static { this.ɵpipe = i0.ɵɵngDeclarePipe({ minVersion: "14.0.0", version: "17.0.3", ngImport: i0, type: SafeHtmlPipe, isStandalone: true, name: "safeHtml" }); }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: SafeHtmlPipe, deps: [{ token: i1.DomSanitizer }], target: i0.ɵɵFactoryTarget.Pipe }); }
+    static { this.ɵpipe = i0.ɵɵngDeclarePipe({ minVersion: "14.0.0", version: "17.0.9", ngImport: i0, type: SafeHtmlPipe, isStandalone: true, name: "safeHtml" }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.3", ngImport: i0, type: SafeHtmlPipe, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: SafeHtmlPipe, decorators: [{
             type: Pipe,
             args: [{ name: 'safeHtml', standalone: true }]
         }], ctorParameters: () => [{ type: i1.DomSanitizer }] });
