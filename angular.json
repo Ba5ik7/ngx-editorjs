@@ -57,12 +57,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ngx-editor-demo",
+            "outputPath": {
+              "base": "dist/ngx-editor-demo"
+            },
             "index": "projects/ngx-editor-demo/src/index.html",
-            "main": "projects/ngx-editor-demo/src/main.ts",
-            "polyfills": "projects/ngx-editor-demo/src/polyfills.ts",
+            "polyfills": [
+              "projects/ngx-editor-demo/src/polyfills.ts"
+            ],
             "tsConfig": "projects/ngx-editor-demo/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "stylePreprocessorOptions": {
@@ -97,7 +100,8 @@
                 "bundleName": "purple-green"
               }
             ],
-            "scripts": []
+            "scripts": [],
+            "browser": "projects/ngx-editor-demo/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -122,9 +126,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true

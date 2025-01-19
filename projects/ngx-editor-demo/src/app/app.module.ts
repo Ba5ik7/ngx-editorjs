@@ -9,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 import { NavbarModule } from './components/navbar/navbar.module';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { NGX_EDITORJS_OPTIONS } from '@tmdjr/ngx-editorjs';
 import { NGX_EDITORJS_CLIENT_OPTIONS } from '@tmdjr/ngx-editorjs-client';
@@ -21,96 +21,90 @@ import { NgxEditorjsCodeBlockMediator, NgxEditorjsCodeClientBlockComponent } fro
 import { NgxEditorjsQuizBlockMediator, NgxEditorjsQuizClientBlockComponent } from '@tmdjr/ngx-editorjs-quiz-block';
 import { NgxEditorjsMermaidBlockMediator, NgxEditorjsMermaidClientBlockComponent } from '@tmdjr/ngx-editorjs-mermaid-block';
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
-    NavbarModule
-  ],
-  providers: [
-    {
-      provide: NGX_EDITORJS_OPTIONS,
-      useValue: {
-        blocks: [
-          {
-            name: 'Paragraph',
-            component: NgxEditorjsParagraphBlockMediator,
-            componentInstanceName: 'NgxEditorjsParagraphBlockMediator'
-          },
-          {
-            name: 'Blockquotes',
-            component: NgxEditorjsBlockquotesBlockMediator,
-            componentInstanceName: 'NgxEditorjsBlockquotesBlockMediator'
-          },
-          {
-            name: 'Image',
-            component: NgxEditorjsImageBlockMediator,
-            componentInstanceName: 'NgxEditorjsImageBlockMediator'
-          },
-          {
-            name: 'Code',
-            component: NgxEditorjsCodeBlockMediator,
-            componentInstanceName: 'NgxEditorjsCodeBlockMediator'
-          },
-          {
-            name: 'Quiz',
-            component: NgxEditorjsQuizBlockMediator,
-            componentInstanceName: 'NgxEditorjsQuizBlockMediator'
-          },
-          {
-            name: 'Mermaid',
-            component: NgxEditorjsMermaidBlockMediator,
-            componentInstanceName: 'NgxEditorjsMermaidBlockMediator'
-          }
-        ]
-      }
-    },
-    {
-      provide: NGX_EDITORJS_CLIENT_OPTIONS,
-      useValue: {
-        blocks: [
-          {
-            name: 'Paragraph',
-            component: NgxEditorjsParagraphClientBlockComponent,
-            componentInstanceName: 'NgxEditorjsParagraphBlockMediator'
-          },
-          {
-            name: 'Blockquotes',
-            component: NgxEditorjsBlockquotesClientBlockComponent,
-            componentInstanceName: 'NgxEditorjsBlockquotesBlockMediator'
-          },
-          {
-            name: 'Image',
-            component: NgxEditorjsImageClientBlockComponent,
-            componentInstanceName: 'NgxEditorjsImageBlockMediator'
-          },
-          {
-            name: 'Code',
-            component: NgxEditorjsCodeClientBlockComponent,
-            componentInstanceName: 'NgxEditorjsCodeBlockMediator'
-          },
-          {
-            name: 'Quiz',
-            component: NgxEditorjsQuizClientBlockComponent,
-            componentInstanceName: 'NgxEditorjsQuizBlockMediator'
-          },
-          {
-            name: 'Quiz',
-            component: NgxEditorjsMermaidClientBlockComponent,
-            componentInstanceName: 'NgxEditorjsMermaidBlockMediator'
-          }
-        ]
-      }
-    },
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatIconModule,
+        NavbarModule], providers: [
+        {
+            provide: NGX_EDITORJS_OPTIONS,
+            useValue: {
+                blocks: [
+                    {
+                        name: 'Paragraph',
+                        component: NgxEditorjsParagraphBlockMediator,
+                        componentInstanceName: 'NgxEditorjsParagraphBlockMediator'
+                    },
+                    {
+                        name: 'Blockquotes',
+                        component: NgxEditorjsBlockquotesBlockMediator,
+                        componentInstanceName: 'NgxEditorjsBlockquotesBlockMediator'
+                    },
+                    {
+                        name: 'Image',
+                        component: NgxEditorjsImageBlockMediator,
+                        componentInstanceName: 'NgxEditorjsImageBlockMediator'
+                    },
+                    {
+                        name: 'Code',
+                        component: NgxEditorjsCodeBlockMediator,
+                        componentInstanceName: 'NgxEditorjsCodeBlockMediator'
+                    },
+                    {
+                        name: 'Quiz',
+                        component: NgxEditorjsQuizBlockMediator,
+                        componentInstanceName: 'NgxEditorjsQuizBlockMediator'
+                    },
+                    {
+                        name: 'Mermaid',
+                        component: NgxEditorjsMermaidBlockMediator,
+                        componentInstanceName: 'NgxEditorjsMermaidBlockMediator'
+                    }
+                ]
+            }
+        },
+        {
+            provide: NGX_EDITORJS_CLIENT_OPTIONS,
+            useValue: {
+                blocks: [
+                    {
+                        name: 'Paragraph',
+                        component: NgxEditorjsParagraphClientBlockComponent,
+                        componentInstanceName: 'NgxEditorjsParagraphBlockMediator'
+                    },
+                    {
+                        name: 'Blockquotes',
+                        component: NgxEditorjsBlockquotesClientBlockComponent,
+                        componentInstanceName: 'NgxEditorjsBlockquotesBlockMediator'
+                    },
+                    {
+                        name: 'Image',
+                        component: NgxEditorjsImageClientBlockComponent,
+                        componentInstanceName: 'NgxEditorjsImageBlockMediator'
+                    },
+                    {
+                        name: 'Code',
+                        component: NgxEditorjsCodeClientBlockComponent,
+                        componentInstanceName: 'NgxEditorjsCodeBlockMediator'
+                    },
+                    {
+                        name: 'Quiz',
+                        component: NgxEditorjsQuizClientBlockComponent,
+                        componentInstanceName: 'NgxEditorjsQuizBlockMediator'
+                    },
+                    {
+                        name: 'Quiz',
+                        component: NgxEditorjsMermaidClientBlockComponent,
+                        componentInstanceName: 'NgxEditorjsMermaidBlockMediator'
+                    }
+                ]
+            }
+        },
+        provideHttpClient(withInterceptorsFromDi()),
+    ] })
 export class AppModule { }
 
