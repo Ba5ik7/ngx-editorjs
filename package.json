@@ -1,6 +1,6 @@
 {
   "name": "@tmdjr/ngx-editorjs-demo",
-  "version": "0.0.39",
+  "version": "0.0.41",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -36,6 +36,7 @@
     "linkEditorMermaid": "cd dist/ngx-editorjs-mermaid-block && npm link && cd ../../",
     "linkAll": "npm run linkEditor && npm run linkEditorClient && npm run linkEditorParagraph && npm run linkEditorBlockquotes && npm run linkEditorImage && npm run linkEditorCode && npm run linkEditorQuiz && npm run linkEditorMermaid",
     "link": "npm link @tmdjr/ngx-editorjs @tmdjr/ngx-editorjs-client @tmdjr/ngx-editorjs-paragraph-block @tmdjr/ngx-editorjs-blockquotes-block @tmdjr/ngx-editorjs-image-block @tmdjr/ngx-editorjs-code-block @tmdjr/ngx-editorjs-quiz-block @tmdjr/ngx-editorjs-mermaid-block",
+    "uninstallAll": "npm uninstall -g @tmdjr/ngx-editorjs @tmdjr/ngx-editorjs-client @tmdjr/ngx-editorjs-blockquotes-block @tmdjr/ngx-editorjs-client @tmdjr/ngx-editorjs-code-block @tmdjr/ngx-editorjs-image-block @tmdjr/ngx-editorjs-paragraph-block @tmdjr/ngx-editorjs-quiz-block @tmdjr/ngx-editorjs-mermaid-block",
     "publishEditor": "cd dist/ngx-editorjs && npm publish && cd ../../",
     "publishEditorClient": "cd dist/ngx-editorjs-client && npm publish && cd ../../",
     "publishEditorParagraph": "cd dist/ngx-editorjs-paragraph-block && npm publish && cd ../../",
@@ -44,7 +45,8 @@
     "publishEditorCode": "cd dist/ngx-editorjs-code-block && npm publish && cd ../../",
     "publishEditorQuiz": "cd dist/ngx-editorjs-quiz-block && npm publish && cd ../../",
     "publishEditorMermaid": "cd dist/ngx-editorjs-mermaid-block && npm publish && cd ../../",
-    "publishAll": "npm run publishEditor && npm run publishEditorClient && npm run publishEditorParagraph && npm run publishEditorBlockquotes && npm run publishEditorImage && npm run publishEditorCode && npm run publishEditorQuiz && npm run publishEditorMermaid"
+    "publishAll": "npm run publishEditor && npm run publishEditorClient && npm run publishEditorParagraph && npm run publishEditorBlockquotes && npm run publishEditorImage && npm run publishEditorCode && npm run publishEditorQuiz && npm run publishEditorMermaid",
+    "buildAndLinkAll": "npm run build1 && npm run build2 && npm run build3 && npm run build4 && npm run build5 && npm run build6 && npm run build7 && npm run build8 && npm run linkAll"
   },
   "private": false,
   "dependencies": {

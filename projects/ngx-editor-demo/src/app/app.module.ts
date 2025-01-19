@@ -97,7 +97,7 @@ import { NgxEditorjsMermaidBlockMediator, NgxEditorjsMermaidClientBlockComponent
                         componentInstanceName: 'NgxEditorjsQuizBlockMediator'
                     },
                     {
-                        name: 'Quiz',
+                        name: 'Mermaid',
                         component: NgxEditorjsMermaidClientBlockComponent,
                         componentInstanceName: 'NgxEditorjsMermaidBlockMediator'
                     }

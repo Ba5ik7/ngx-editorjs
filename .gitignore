@@ -7,6 +7,8 @@
 /dist/ngx-editorjs-code-block
 /dist/ngx-editorjs-client
 /dist/ngx-editorjs-blockquotes-block
+/dist/ngx-editorjs-quiz-block
+/dist/ngx-editorjs-mermaid-block
 /tmp
 /out-tsc
 /bazel-out

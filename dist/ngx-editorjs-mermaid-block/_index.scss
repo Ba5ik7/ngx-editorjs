@@ -1,5 +1,0 @@
-@use 'src/lib/ngx-editorjs-mermaid-block.theme' as ngx-editorjs-mermaid-block;
-
-@mixin theme($theme) {
-  @include ngx-editorjs-mermaid-block.theme($theme);
-}

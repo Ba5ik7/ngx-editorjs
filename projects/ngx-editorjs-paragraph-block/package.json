@@ -1,10 +1,10 @@
 {
    "name": "@tmdjr/ngx-editorjs-paragraph-block",
-   "version": "0.0.39",
+   "version": "0.0.41",
    "license": "MIT",
    "peerDependencies": {
-      "@angular/common": ">=17.0.3",
-      "@angular/core": ">=17.0.3"
+      "@angular/common": ">=18.2.13",
+      "@angular/core": ">=18.2.13"
    },
    "dependencies": {
       "tslib": "^2.3.0"
