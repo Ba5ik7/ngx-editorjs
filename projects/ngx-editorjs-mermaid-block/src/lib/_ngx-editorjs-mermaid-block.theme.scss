@@ -14,28 +14,28 @@
   .mermaid {
     // Change the fill color of nodes
     rect {
-      fill: mat.get-color-from-palette($primary, 100) !important;
+      fill: mat.m2-get-color-from-palette($primary, 100) !important;
     }
 
     // Change the text color inside nodes
     text {
       fill: map.get($foreground, text) !important;
       &.sequenceNumber {
-        fill: mat.get-color-from-palette($accent, default) !important;
+        fill: mat.m2-get-color-from-palette($accent, default) !important;
       }
       &.loopText>tspan, &.labelText {
-        fill: mat.get-color-from-palette($warn, 300) !important;
+        fill: mat.m2-get-color-from-palette($warn, 300) !important;
       }
     }
 
     // Change the color of lines
     path, line, polyline {
-      stroke: mat.get-color-from-palette($accent, default) !important;
+      stroke: mat.m2-get-color-from-palette($accent, default) !important;
     }
 
     // Change the color of arrows
     polygon, marker > path {
-      fill: mat.get-color-from-palette($accent, default) !important;
+      fill: mat.m2-get-color-from-palette($accent, default) !important;
     }
   }
 }

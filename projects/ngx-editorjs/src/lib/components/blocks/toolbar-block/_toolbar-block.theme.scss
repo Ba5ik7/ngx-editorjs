@@ -11,17 +11,17 @@
 
   .block-list-container {
     color: map.get($foreground, text);
-    background: mat.get-color-from-palette($background, card);
+    background: mat.m2-get-color-from-palette($background, card);
   }
 
   .block-list-item, .block-option-list-item, .toolbar-buttons {
     &:hover, &:focus {
-      background: mat.get-color-from-palette($accent, if($is-dark-theme, 400, 100));
+      background: mat.m2-get-color-from-palette($accent, if($is-dark-theme, 400, 100));
     }
   }
 
   .toolbar-buttons {
-    background: mat.get-color-from-palette($background, card);
+    background: mat.m2-get-color-from-palette($background, card);
     // color: mat.get-color-from-palette($primary, if($is-dark-theme, 300, 100));
     // background-color: if($is-dark-theme, #323, #323232);
     // &:hover, &:focus {
