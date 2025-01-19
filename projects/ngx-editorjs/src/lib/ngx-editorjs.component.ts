@@ -39,6 +39,7 @@ export const HeaderSearchableBlock: SearchableBlock = {
 
 @Component({
   selector: 'ngx-editorjs',
+  standalone: false,
   template: `
     <form [formGroup]="formGroup">
       <ng-container #ngxEditor></ng-container>

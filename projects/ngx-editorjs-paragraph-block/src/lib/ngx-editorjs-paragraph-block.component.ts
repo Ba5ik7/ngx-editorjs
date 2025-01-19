@@ -21,7 +21,7 @@ export class NgxEditorjsParagraphBlockComponent extends BaseBlockComponent imple
   }
 
   ngAfterViewInit(): void {
-    super.viewChild = this.element;
+    this.viewChild = this.element;
   }
 
   override onMouseEnter(event: Event) {

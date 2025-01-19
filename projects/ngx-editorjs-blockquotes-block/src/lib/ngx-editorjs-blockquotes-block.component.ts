@@ -27,7 +27,7 @@ export class NgxEditorjsBlockquotesBlockComponent extends BaseBlockComponent imp
   }
 
   ngAfterViewInit(): void {
-    super.viewChild = this.element;
+    this.viewChild = this.element;
   }
 
   override onMouseEnter(event: Event) {

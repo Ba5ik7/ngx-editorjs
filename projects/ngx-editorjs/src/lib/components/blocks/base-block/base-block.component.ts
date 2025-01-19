@@ -66,7 +66,7 @@ export class BaseBlockComponent implements ControlValueAccessor, OnInit, OnDestr
     this.injector
   );
 
-  viewChild!: ElementRef;
+  public viewChild!: ElementRef;
 
   toolbarBlockPortal!: ComponentPortal<ToolbarBlockComponent>;
   overlayRef!: OverlayRef;

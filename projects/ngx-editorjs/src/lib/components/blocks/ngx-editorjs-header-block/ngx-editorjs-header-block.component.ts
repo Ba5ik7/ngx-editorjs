@@ -41,7 +41,7 @@ export class NgxEditorjsHeaderBlockComponent extends BaseBlockComponent implemen
   ];
 
   ngAfterViewInit(): void {
-    super.viewChild = new ElementRef(this.element.nativeElement.firstElementChild);
+    this.viewChild = new ElementRef(this.element.nativeElement.firstElementChild);
   }
 
   override handleBlockOptionAction(action: string) {
@@ -49,7 +49,7 @@ export class NgxEditorjsHeaderBlockComponent extends BaseBlockComponent implemen
     // Have to wait for the next frame to get the new element
     if (this.element) {
       requestAnimationFrame(() => {
-        super.viewChild = new ElementRef(this.element.nativeElement.firstElementChild);
+        this.viewChild = new ElementRef(this.element.nativeElement.firstElementChild);
         this.value = this.controlDir.control?.value ?? '';
       });
     }

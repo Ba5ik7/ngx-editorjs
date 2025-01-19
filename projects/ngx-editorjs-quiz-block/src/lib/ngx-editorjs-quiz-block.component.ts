@@ -75,7 +75,7 @@ export class NgxEditorjsQuizBlockComponent extends BaseBlockComponent implements
   }
 
   ngAfterViewInit(): void {
-    super.viewChild = this.element;
+    this.viewChild = this.element;
   }
 
   override onMouseEnter(event: Event) {

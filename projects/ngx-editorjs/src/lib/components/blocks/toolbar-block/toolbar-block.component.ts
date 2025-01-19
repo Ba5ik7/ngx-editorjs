@@ -4,7 +4,8 @@ import { AdjustBlockPositionActions, BlockOptionAction, NgxEditorjsService, Sear
   selector: 'toolbar-block',
   templateUrl: './toolbar-block.component.html',
   styleUrls: ['./toolbar-block.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false
 })
 export class ToolbarBlockComponent {
 

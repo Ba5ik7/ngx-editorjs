@@ -89,7 +89,7 @@ export class NgxEditorjsImageBlockComponent extends BaseBlockComponent implement
   }
 
   ngAfterViewInit(): void {
-    super.viewChild = this.element;
+    this.viewChild = this.element;
   }
 
   override changeValue(value: string) {

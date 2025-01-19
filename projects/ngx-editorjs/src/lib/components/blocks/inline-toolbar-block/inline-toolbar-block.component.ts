@@ -4,7 +4,8 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
   selector: 'inline-toolbar-block',
   templateUrl: './inline-toolbar-block.component.html',
   styleUrls: ['./inline-toolbar-block.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false
 })
 export class InlineToolbarBlockComponent implements OnInit {
 

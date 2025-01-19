@@ -5,7 +5,8 @@ import { AdjustBlockPositionActions, BlockOptionAction } from '../../../../ngx-e
   selector: 'block-options-list',
   templateUrl: './block-options-list.component.html',
   styleUrls: ['./block-options-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false
 })
 export class BlockOptionsListComponent {
 

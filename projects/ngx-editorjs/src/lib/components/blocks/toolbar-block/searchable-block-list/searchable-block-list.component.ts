@@ -7,7 +7,8 @@ import { combineLatest, map, Observable, of, startWith, Subject, takeUntil } fro
   selector: 'searchable-block-list',
   templateUrl: './searchable-block-list.component.html',
   styleUrls: ['./searchable-block-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false
 })
 export class SearchableBlockListComponent implements OnInit {
 
