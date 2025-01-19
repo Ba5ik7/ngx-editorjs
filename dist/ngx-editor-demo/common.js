@@ -1,78 +1,114 @@
 "use strict";
 (self["webpackChunkngx_editor_demo"] = self["webpackChunkngx_editor_demo"] || []).push([["common"],{
 
-/***/ 33908:
-/*!*****************************************************!*\
-  !*** ./node_modules/khroma/dist/methods/is_dark.js ***!
-  \*****************************************************/
+/***/ 31311:
+/*!*************************************************************!*\
+  !*** ./node_modules/mermaid/dist/svgDrawCommon-ad5ef572.js ***!
+  \*************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   a: () => (/* binding */ drawBackgroundRect),
+/* harmony export */   b: () => (/* binding */ drawEmbeddedImage),
+/* harmony export */   c: () => (/* binding */ drawImage),
+/* harmony export */   d: () => (/* binding */ drawRect),
+/* harmony export */   e: () => (/* binding */ getTextObj),
+/* harmony export */   f: () => (/* binding */ drawText),
+/* harmony export */   g: () => (/* binding */ getNoteRect)
 /* harmony export */ });
-/* harmony import */ var _is_light_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./is_light.js */ 21063);
-/* IMPORT */
+/* harmony import */ var _braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @braintree/sanitize-url */ 62963);
+/* harmony import */ var _mermaid_934d9bea_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mermaid-934d9bea.js */ 19415);
 
-/* MAIN */
-const isDark = color => {
-  return !(0,_is_light_js__WEBPACK_IMPORTED_MODULE_0__["default"])(color);
+
+const drawRect = (element, rectData) => {
+  const rectElement = element.append("rect");
+  rectElement.attr("x", rectData.x);
+  rectElement.attr("y", rectData.y);
+  rectElement.attr("fill", rectData.fill);
+  rectElement.attr("stroke", rectData.stroke);
+  rectElement.attr("width", rectData.width);
+  rectElement.attr("height", rectData.height);
+  rectData.rx !== void 0 && rectElement.attr("rx", rectData.rx);
+  rectData.ry !== void 0 && rectElement.attr("ry", rectData.ry);
+  if (rectData.attrs !== void 0) {
+    for (const attrKey in rectData.attrs) {
+      rectElement.attr(attrKey, rectData.attrs[attrKey]);
+    }
+  }
+  rectData.class !== void 0 && rectElement.attr("class", rectData.class);
+  return rectElement;
 };
-/* EXPORT */
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isDark);
-
-/***/ }),
-
-/***/ 21063:
-/*!******************************************************!*\
-  !*** ./node_modules/khroma/dist/methods/is_light.js ***!
-  \******************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _luminance_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./luminance.js */ 51875);
-/* IMPORT */
-
-/* MAIN */
-const isLight = color => {
-  return (0,_luminance_js__WEBPACK_IMPORTED_MODULE_0__["default"])(color) >= .5;
+const drawBackgroundRect = (element, bounds) => {
+  const rectData = {
+    x: bounds.startx,
+    y: bounds.starty,
+    width: bounds.stopx - bounds.startx,
+    height: bounds.stopy - bounds.starty,
+    fill: bounds.fill,
+    stroke: bounds.stroke,
+    class: "rect"
+  };
+  const rectElement = drawRect(element, rectData);
+  rectElement.lower();
 };
-/* EXPORT */
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isLight);
-
-/***/ }),
-
-/***/ 51875:
-/*!*******************************************************!*\
-  !*** ./node_modules/khroma/dist/methods/luminance.js ***!
-  \*******************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/index.js */ 16905);
-/* harmony import */ var _color_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../color/index.js */ 37197);
-/* IMPORT */
-
-
-/* MAIN */
-//SOURCE: https://planetcalc.com/7779
-const luminance = color => {
-  const {
-    r,
-    g,
-    b
-  } = _color_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].parse(color);
-  const luminance = .2126 * _utils_index_js__WEBPACK_IMPORTED_MODULE_1__["default"].channel.toLinear(r) + .7152 * _utils_index_js__WEBPACK_IMPORTED_MODULE_1__["default"].channel.toLinear(g) + .0722 * _utils_index_js__WEBPACK_IMPORTED_MODULE_1__["default"].channel.toLinear(b);
-  return _utils_index_js__WEBPACK_IMPORTED_MODULE_1__["default"].lang.round(luminance);
+const drawText = (element, textData) => {
+  const nText = textData.text.replace(_mermaid_934d9bea_js__WEBPACK_IMPORTED_MODULE_1__.H, " ");
+  const textElem = element.append("text");
+  textElem.attr("x", textData.x);
+  textElem.attr("y", textData.y);
+  textElem.attr("class", "legend");
+  textElem.style("text-anchor", textData.anchor);
+  textData.class !== void 0 && textElem.attr("class", textData.class);
+  const tspan = textElem.append("tspan");
+  tspan.attr("x", textData.x + textData.textMargin * 2);
+  tspan.text(nText);
+  return textElem;
 };
-/* EXPORT */
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (luminance);
+const drawImage = (elem, x, y, link) => {
+  const imageElement = elem.append("image");
+  imageElement.attr("x", x);
+  imageElement.attr("y", y);
+  const sanitizedLink = (0,_braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_0__.sanitizeUrl)(link);
+  imageElement.attr("xlink:href", sanitizedLink);
+};
+const drawEmbeddedImage = (element, x, y, link) => {
+  const imageElement = element.append("use");
+  imageElement.attr("x", x);
+  imageElement.attr("y", y);
+  const sanitizedLink = (0,_braintree_sanitize_url__WEBPACK_IMPORTED_MODULE_0__.sanitizeUrl)(link);
+  imageElement.attr("xlink:href", `#${sanitizedLink}`);
+};
+const getNoteRect = () => {
+  const noteRectData = {
+    x: 0,
+    y: 0,
+    width: 100,
+    height: 100,
+    fill: "#EDF2AE",
+    stroke: "#666",
+    anchor: "start",
+    rx: 0,
+    ry: 0
+  };
+  return noteRectData;
+};
+const getTextObj = () => {
+  const testObject = {
+    x: 0,
+    y: 0,
+    width: 100,
+    height: 100,
+    "text-anchor": "start",
+    style: "#666",
+    textMargin: 0,
+    rx: 0,
+    ry: 0,
+    tspan: true
+  };
+  return testObject;
+};
+
 
 /***/ })
 

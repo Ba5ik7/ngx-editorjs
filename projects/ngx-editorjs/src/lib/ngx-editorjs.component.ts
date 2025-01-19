@@ -78,7 +78,7 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
     // this.ngxOnInitForm.emit(this.formGroup);
     this.requestValue
     .pipe(takeUntil(this.destroy))
-    .subscribe(() => this.parentRequestCurrentValue());
+    .subscribe(() => this.consumerRequestedCurrentValue());
 
     this.ngxEditorjsService.adjustBlockPosition$
     .pipe(takeUntil(this.destroy))
@@ -176,7 +176,7 @@ export class NgxEditorjsComponent implements OnInit, OnDestroy {
     }
   }
 
-  parentRequestCurrentValue(): void {
+  consumerRequestedCurrentValue(): void {
     const blocks: NgxEditorjsOutputBlock[] = [];
     this.blockControlMap.forEach((block, key) => {
       blocks.push({

@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunkngx_editor_demo"] = self["webpackChunkngx_editor_demo"] || []).push([["projects_ngx-editor-demo_src_app_pages_home_home_module_ts"],{
 
-/***/ 6475:
+/***/ 10057:
 /*!****************************************************************************!*\
   !*** ./projects/ngx-editor-demo/src/app/pages/home/home-routing.module.ts ***!
   \****************************************************************************/
@@ -9,11 +9,11 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "HomeRoutingModule": () => (/* binding */ HomeRoutingModule)
+/* harmony export */   HomeRoutingModule: () => (/* binding */ HomeRoutingModule)
 /* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 60124);
-/* harmony import */ var _home_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home.component */ 21044);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 22560);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 27947);
+/* harmony import */ var _home_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home.component */ 26320);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 61699);
 
 
 
@@ -22,16 +22,17 @@ const routes = [{
   path: '',
   component: _home_component__WEBPACK_IMPORTED_MODULE_0__.HomeComponent
 }];
-class HomeRoutingModule {}
-HomeRoutingModule.ɵfac = function HomeRoutingModule_Factory(t) {
-  return new (t || HomeRoutingModule)();
-};
-HomeRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
-  type: HomeRoutingModule
-});
-HomeRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
-  imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule.forChild(routes), _angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule]
-});
+class HomeRoutingModule {
+  static #_ = this.ɵfac = function HomeRoutingModule_Factory(t) {
+    return new (t || HomeRoutingModule)();
+  };
+  static #_2 = this.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
+    type: HomeRoutingModule
+  });
+  static #_3 = this.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
+    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule.forChild(routes), _angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule]
+  });
+}
 (function () {
   (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](HomeRoutingModule, {
     imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__.RouterModule],
@@ -41,7 +42,7 @@ HomeRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1_
 
 /***/ }),
 
-/***/ 21044:
+/***/ 26320:
 /*!***********************************************************************!*\
   !*** ./projects/ngx-editor-demo/src/app/pages/home/home.component.ts ***!
   \***********************************************************************/
@@ -49,17 +50,15 @@ HomeRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1_
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "HomeComponent": () => (/* binding */ HomeComponent),
-/* harmony export */   "InputData": () => (/* binding */ InputData),
-/* harmony export */   "InputData2": () => (/* binding */ InputData2)
+/* harmony export */   HomeComponent: () => (/* binding */ HomeComponent),
+/* harmony export */   InputData: () => (/* binding */ InputData),
+/* harmony export */   InputData2: () => (/* binding */ InputData2)
 /* harmony export */ });
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 80228);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 22560);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/button */ 84522);
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/card */ 82156);
-/* harmony import */ var _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tmdjr/ngx-editorjs */ 51753);
-/* harmony import */ var _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @tmdjr/ngx-editorjs-client */ 99540);
-
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 72513);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/button */ 90895);
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/card */ 18497);
+/* harmony import */ var _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @tmdjr/ngx-editorjs-client */ 66826);
 
 
 
@@ -203,54 +202,46 @@ class HomeComponent {
     //     this.inputData = value;
     // }, 3000);
   }
+  static #_ = this.ɵfac = function HomeComponent_Factory(t) {
+    return new (t || HomeComponent)();
+  };
+  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+    type: HomeComponent,
+    selectors: [["app-home"]],
+    decls: 13,
+    vars: 1,
+    consts: [["focusOnNavigation", "", "aria-label", "Get started", "id", "homepage-header", 1, "header-background"], [1, "header-section"], [1, "header-headline"], [1, "header-start"], ["mat-raised-button", "", 3, "click"], [1, "home-main"], ["appearance", "outlined"], [3, "inputData"]],
+    template: function HomeComponent_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "header", 0)(1, "div", 1)(2, "div", 2)(3, "h1");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, "Ngx EditorJs");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "h2");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "A Custom Themeable Angular Material Component");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "div", 3)(8, "a", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function HomeComponent_Template_a_click_8_listener() {
+          return ctx.getValue();
+        });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Save Blocks");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "main", 5)(11, "mat-card", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](12, "ngx-editorjs-client", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
+      }
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](12);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("inputData", ctx.inputData);
+      }
+    },
+    dependencies: [_angular_material_button__WEBPACK_IMPORTED_MODULE_2__.MatAnchor, _angular_material_card__WEBPACK_IMPORTED_MODULE_3__.MatCard, _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_4__.NgxEditorjsClientComponent],
+    styles: [".header-background[_ngcontent-%COMP%] {\n  overflow: hidden;\n  position: relative;\n  height: 420px;\n}\n\n.header-background[_ngcontent-%COMP%]::before {\n  content: \"\";\n  position: absolute;\n  background-image: url('text_fields.svg');\n  background-size: 400px;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-repeat: no-repeat;\n  background-position: 80% 20px;\n  opacity: 0.2;\n}\n\n.header-section[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  align-items: center;\n  height: 100%;\n  text-align: center;\n}\n\n.header-headline[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 56px;\n  font-weight: bold;\n  line-height: 56px;\n  margin: 15px 5px;\n}\n.header-headline[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 300;\n  line-height: 28px;\n  margin: 15px 0 25px 0;\n}\n\n.header-start[_ngcontent-%COMP%] {\n  text-align: center;\n  margin: 15px 0 0 0;\n}\n.header-start[_ngcontent-%COMP%]   .mat-mdc-raised-button[_ngcontent-%COMP%] {\n  font-size: 15px;\n}\n\n@keyframes _ngcontent-%COMP%_rotate {\n  from {\n    transform: rotateY(45deg);\n  }\n  to {\n    transform: rotateY(0deg);\n  }\n}\n.home-main[_ngcontent-%COMP%] {\n  padding: 16px;\n  width: 75%;\n  max-width: 900px;\n  margin: auto;\n  perspective: 2500px;\n  position: relative;\n}\n.home-main[_ngcontent-%COMP%]   .mat-mdc-card[_ngcontent-%COMP%] {\n  padding: 40px;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3Byb2plY3RzL25neC1lZGl0b3ItZGVtby9zcmMvYXBwL3BhZ2VzL2hvbWUvaG9tZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxhQUFBO0FBQ0Y7O0FBRUE7RUFDRSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSx3Q0FBQTtFQUNBLHNCQUFBO0VBQ0EsTUFBQTtFQUNBLFNBQUE7RUFDQSxPQUFBO0VBQ0EsUUFBQTtFQUNBLDRCQUFBO0VBQ0EsNkJBQUE7RUFDQSxZQUFBO0FBQ0Y7O0FBRUE7RUFDRSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0FBQ0Y7O0FBR0U7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0FBQUo7QUFHRTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0EscUJBQUE7QUFESjs7QUFLQTtFQUNFLGtCQUFBO0VBQ0Esa0JBQUE7QUFGRjtBQUlFO0VBQ0UsZUFBQTtBQUZKOztBQU1BO0VBQ0U7SUFBTyx5QkFBQTtFQUZQO0VBR0E7SUFBSyx3QkFBQTtFQUFMO0FBQ0Y7QUFFQTtFQUNFLGFBQUE7RUFDQSxVQUFBO0VBQ0EsZ0JBQUE7RUFDQSxZQUFBO0VBQ0EsbUJBQUE7RUFFQSxrQkFBQTtBQURGO0FBT0U7RUFDRSxhQUFBO0FBTEoiLCJzb3VyY2VzQ29udGVudCI6WyIuaGVhZGVyLWJhY2tncm91bmQge1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGhlaWdodDogNDIwcHg7XG59XG5cbi5oZWFkZXItYmFja2dyb3VuZDo6YmVmb3JlIHtcbiAgY29udGVudDogJyc7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCcuLi8uLi8uLi9hc3NldHMvaW1nL3RleHRfZmllbGRzLnN2ZycpO1xuICBiYWNrZ3JvdW5kLXNpemU6IDQwMHB4O1xuICB0b3A6IDA7XG4gIGJvdHRvbTogMDtcbiAgbGVmdDogMDtcbiAgcmlnaHQ6IDA7XG4gIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG4gIGJhY2tncm91bmQtcG9zaXRpb246IDgwJSAyMHB4O1xuICBvcGFjaXR5OiAwLjI7XG59XG5cbi5oZWFkZXItc2VjdGlvbiB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBoZWlnaHQ6IDEwMCU7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuLmhlYWRlci1oZWFkbGluZSB7XG4gIGgxIHtcbiAgICBmb250LXNpemU6IDU2cHg7XG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgbGluZS1oZWlnaHQ6IDU2cHg7XG4gICAgbWFyZ2luOiAxNXB4IDVweDtcbiAgfVxuXG4gIGgyIHtcbiAgICBmb250LXNpemU6IDIwcHg7XG4gICAgZm9udC13ZWlnaHQ6IDMwMDtcbiAgICBsaW5lLWhlaWdodDogMjhweDtcbiAgICBtYXJnaW46IDE1cHggMCAyNXB4IDA7XG4gIH1cbn1cblxuLmhlYWRlci1zdGFydCB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgbWFyZ2luOiAxNXB4IDAgMCAwO1xuXG4gIC5tYXQtbWRjLXJhaXNlZC1idXR0b24ge1xuICAgIGZvbnQtc2l6ZTogMTVweDtcbiAgfVxufVxuXG5Aa2V5ZnJhbWVzIHJvdGF0ZSB7XG4gIGZyb20geyB0cmFuc2Zvcm06IHJvdGF0ZVkoNDVkZWcpOyB9XG4gIHRvIHsgdHJhbnNmb3JtOiByb3RhdGVZKDBkZWcpOyB9XG59XG5cbi5ob21lLW1haW4ge1xuICBwYWRkaW5nOiAxNnB4O1xuICB3aWR0aDogNzUlO1xuICBtYXgtd2lkdGg6IDkwMHB4O1xuICBtYXJnaW46IGF1dG87XG4gIHBlcnNwZWN0aXZlOiAyNTAwcHg7XG4gIFxuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIC8vISBtYXQtY2FyZCB7XG4gIC8vISAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgLy8hICBhbmltYXRpb24tbmFtZTogcm90YXRlO1xuICAvLyEgICBhbmltYXRpb24tZHVyYXRpb246IDFzO1xuICAvLyEgfVxuICAubWF0LW1kYy1jYXJkIHtcbiAgICBwYWRkaW5nOiA0MHB4O1xuICB9XG5cbiAgLy8gbmd4LWVkaXRvcmpzIHtcbiAgLy8gICBkaXNwbGF5OiBibG9jaztcbiAgLy8gICBtYXJnaW4tdG9wOiA0MHB4O1xuICAvLyB9XG59XG5cbiJdLCJzb3VyY2VSb290IjoiIn0= */"]
+  });
 }
-
-HomeComponent.ɵfac = function HomeComponent_Factory(t) {
-  return new (t || HomeComponent)();
-};
-HomeComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
-  type: HomeComponent,
-  selectors: [["app-home"]],
-  decls: 15,
-  vars: 3,
-  consts: [["focusOnNavigation", "", "aria-label", "Get started", "id", "homepage-header", 1, "header-background"], [1, "header-section"], [1, "header-headline"], [1, "header-start"], ["mat-raised-button", "", 3, "click"], [1, "home-main"], ["appearance", "outlined"], [3, "inputData", "requestValue", "valueRequested"], [3, "inputData"]],
-  template: function HomeComponent_Template(rf, ctx) {
-    if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "header", 0)(1, "div", 1)(2, "div", 2)(3, "h1");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, "Ngx EditorJs");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "h2");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "A Custom Themeable Angular Material Component");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "div", 3)(8, "a", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function HomeComponent_Template_a_click_8_listener() {
-        return ctx.getValue();
-      });
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Save Blocks");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "main", 5)(11, "mat-card", 6)(12, "ngx-editorjs", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("valueRequested", function HomeComponent_Template_ngx_editorjs_valueRequested_12_listener($event) {
-        return ctx.valueRequested($event);
-      });
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "mat-card", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](14, "ngx-editorjs-client", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
-    }
-    if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](12);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("inputData", ctx.inputData)("requestValue", ctx.requestValue);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("inputData", ctx.inputData);
-    }
-  },
-  dependencies: [_angular_material_button__WEBPACK_IMPORTED_MODULE_2__.MatAnchor, _angular_material_card__WEBPACK_IMPORTED_MODULE_3__.MatCard, _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_4__.NgxEditorjsComponent, _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_5__.NgxEditorjsClientComponent],
-  styles: [".header-background[_ngcontent-%COMP%] {\n  overflow: hidden;\n  position: relative;\n  height: 420px;\n}\n\n.header-background[_ngcontent-%COMP%]::before {\n  content: \"\";\n  position: absolute;\n  background-image: url('text_fields.svg');\n  background-size: 400px;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-repeat: no-repeat;\n  background-position: 80% 20px;\n  opacity: 0.2;\n}\n\n.header-section[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n  align-items: center;\n  height: 100%;\n  text-align: center;\n}\n\n.header-headline[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  font-size: 56px;\n  font-weight: bold;\n  line-height: 56px;\n  margin: 15px 5px;\n}\n.header-headline[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 20px;\n  font-weight: 300;\n  line-height: 28px;\n  margin: 15px 0 25px 0;\n}\n\n.header-start[_ngcontent-%COMP%] {\n  text-align: center;\n  margin: 15px 0 0 0;\n}\n.header-start[_ngcontent-%COMP%]   .mat-mdc-raised-button[_ngcontent-%COMP%] {\n  font-size: 15px;\n}\n\n.home-main[_ngcontent-%COMP%] {\n  padding: 16px;\n  width: 75%;\n  max-width: 900px;\n  margin: auto;\n}\n.home-main[_ngcontent-%COMP%]   .mat-mdc-card[_ngcontent-%COMP%] {\n  padding: 40px;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3Byb2plY3RzL25neC1lZGl0b3ItZGVtby9zcmMvYXBwL3BhZ2VzL2hvbWUvaG9tZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxhQUFBO0FBQ0Y7O0FBRUE7RUFDRSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSx3Q0FBQTtFQUNBLHNCQUFBO0VBQ0EsTUFBQTtFQUNBLFNBQUE7RUFDQSxPQUFBO0VBQ0EsUUFBQTtFQUNBLDRCQUFBO0VBQ0EsNkJBQUE7RUFDQSxZQUFBO0FBQ0Y7O0FBRUE7RUFDRSxhQUFBO0VBQ0EsdUJBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0FBQ0Y7O0FBR0U7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0FBQUo7QUFHRTtFQUNFLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0EscUJBQUE7QUFESjs7QUFLQTtFQUNFLGtCQUFBO0VBQ0Esa0JBQUE7QUFGRjtBQUlFO0VBQ0UsZUFBQTtBQUZKOztBQU1BO0VBQ0UsYUFBQTtFQUNBLFVBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7QUFIRjtBQUtFO0VBQ0UsYUFBQTtBQUhKIiwic291cmNlc0NvbnRlbnQiOlsiLmhlYWRlci1iYWNrZ3JvdW5kIHtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDQyMHB4O1xufVxuXG4uaGVhZGVyLWJhY2tncm91bmQ6OmJlZm9yZSB7XG4gIGNvbnRlbnQ6ICcnO1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnLi4vLi4vLi4vYXNzZXRzL2ltZy90ZXh0X2ZpZWxkcy5zdmcnKTtcbiAgYmFja2dyb3VuZC1zaXplOiA0MDBweDtcbiAgdG9wOiAwO1xuICBib3R0b206IDA7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiA4MCUgMjBweDtcbiAgb3BhY2l0eTogMC4yO1xufVxuXG4uaGVhZGVyLXNlY3Rpb24ge1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgaGVpZ2h0OiAxMDAlO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5oZWFkZXItaGVhZGxpbmUge1xuICBoMSB7XG4gICAgZm9udC1zaXplOiA1NnB4O1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgIGxpbmUtaGVpZ2h0OiA1NnB4O1xuICAgIG1hcmdpbjogMTVweCA1cHg7XG4gIH1cblxuICBoMiB7XG4gICAgZm9udC1zaXplOiAyMHB4O1xuICAgIGZvbnQtd2VpZ2h0OiAzMDA7XG4gICAgbGluZS1oZWlnaHQ6IDI4cHg7XG4gICAgbWFyZ2luOiAxNXB4IDAgMjVweCAwO1xuICB9XG59XG5cbi5oZWFkZXItc3RhcnQge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIG1hcmdpbjogMTVweCAwIDAgMDtcblxuICAubWF0LW1kYy1yYWlzZWQtYnV0dG9uIHtcbiAgICBmb250LXNpemU6IDE1cHg7XG4gIH1cbn1cblxuLmhvbWUtbWFpbiB7XG4gIHBhZGRpbmc6IDE2cHg7XG4gIHdpZHRoOiA3NSU7XG4gIG1heC13aWR0aDogOTAwcHg7XG4gIG1hcmdpbjogYXV0bztcblxuICAubWF0LW1kYy1jYXJkIHtcbiAgICBwYWRkaW5nOiA0MHB4O1xuICB9XG5cbiAgLy8gbmd4LWVkaXRvcmpzIHtcbiAgLy8gICBkaXNwbGF5OiBibG9jaztcbiAgLy8gICBtYXJnaW4tdG9wOiA0MHB4O1xuICAvLyB9XG59XG5cbiJdLCJzb3VyY2VSb290IjoiIn0= */"]
-});
 
 /***/ }),
 
-/***/ 89938:
+/***/ 29781:
 /*!********************************************************************!*\
   !*** ./projects/ngx-editor-demo/src/app/pages/home/home.module.ts ***!
   \********************************************************************/
@@ -258,16 +249,16 @@ HomeComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["�
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "HomeModule": () => (/* binding */ HomeModule)
+/* harmony export */   HomeModule: () => (/* binding */ HomeModule)
 /* harmony export */ });
-/* harmony import */ var _home_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home-routing.module */ 6475);
-/* harmony import */ var _home_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.component */ 21044);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/button */ 84522);
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/card */ 82156);
-/* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/divider */ 71528);
-/* harmony import */ var _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @tmdjr/ngx-editorjs */ 51753);
-/* harmony import */ var _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @tmdjr/ngx-editorjs-client */ 99540);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 22560);
+/* harmony import */ var _home_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home-routing.module */ 10057);
+/* harmony import */ var _home_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.component */ 26320);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/button */ 90895);
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/card */ 18497);
+/* harmony import */ var _angular_material_divider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/divider */ 69400);
+/* harmony import */ var _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @tmdjr/ngx-editorjs */ 34690);
+/* harmony import */ var _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @tmdjr/ngx-editorjs-client */ 66826);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 61699);
 
 
 
@@ -276,16 +267,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-class HomeModule {}
-HomeModule.ɵfac = function HomeModule_Factory(t) {
-  return new (t || HomeModule)();
-};
-HomeModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({
-  type: HomeModule
-});
-HomeModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
-  imports: [_home_routing_module__WEBPACK_IMPORTED_MODULE_0__.HomeRoutingModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_3__.MatButtonModule, _angular_material_card__WEBPACK_IMPORTED_MODULE_4__.MatCardModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_5__.MatDividerModule, _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_6__.NgxEditorjsModule, _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_7__.NgxEditorjsClientModule]
-});
+class HomeModule {
+  static #_ = this.ɵfac = function HomeModule_Factory(t) {
+    return new (t || HomeModule)();
+  };
+  static #_2 = this.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({
+    type: HomeModule
+  });
+  static #_3 = this.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({
+    imports: [_home_routing_module__WEBPACK_IMPORTED_MODULE_0__.HomeRoutingModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_3__.MatButtonModule, _angular_material_card__WEBPACK_IMPORTED_MODULE_4__.MatCardModule, _angular_material_divider__WEBPACK_IMPORTED_MODULE_5__.MatDividerModule, _tmdjr_ngx_editorjs__WEBPACK_IMPORTED_MODULE_6__.NgxEditorjsModule, _tmdjr_ngx_editorjs_client__WEBPACK_IMPORTED_MODULE_7__.NgxEditorjsClientModule]
+  });
+}
 (function () {
   (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](HomeModule, {
     declarations: [_home_component__WEBPACK_IMPORTED_MODULE_1__.HomeComponent],
@@ -295,46 +287,39 @@ HomeModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵ
 
 /***/ }),
 
-/***/ 82156:
+/***/ 18497:
 /*!**********************************************************!*\
-  !*** ./node_modules/@angular/material/fesm2020/card.mjs ***!
+  !*** ./node_modules/@angular/material/fesm2022/card.mjs ***!
   \**********************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "MAT_CARD_CONFIG": () => (/* binding */ MAT_CARD_CONFIG),
-/* harmony export */   "MatCard": () => (/* binding */ MatCard),
-/* harmony export */   "MatCardActions": () => (/* binding */ MatCardActions),
-/* harmony export */   "MatCardAvatar": () => (/* binding */ MatCardAvatar),
-/* harmony export */   "MatCardContent": () => (/* binding */ MatCardContent),
-/* harmony export */   "MatCardFooter": () => (/* binding */ MatCardFooter),
-/* harmony export */   "MatCardHeader": () => (/* binding */ MatCardHeader),
-/* harmony export */   "MatCardImage": () => (/* binding */ MatCardImage),
-/* harmony export */   "MatCardLgImage": () => (/* binding */ MatCardLgImage),
-/* harmony export */   "MatCardMdImage": () => (/* binding */ MatCardMdImage),
-/* harmony export */   "MatCardModule": () => (/* binding */ MatCardModule),
-/* harmony export */   "MatCardSmImage": () => (/* binding */ MatCardSmImage),
-/* harmony export */   "MatCardSubtitle": () => (/* binding */ MatCardSubtitle),
-/* harmony export */   "MatCardTitle": () => (/* binding */ MatCardTitle),
-/* harmony export */   "MatCardTitleGroup": () => (/* binding */ MatCardTitleGroup),
-/* harmony export */   "MatCardXlImage": () => (/* binding */ MatCardXlImage)
+/* harmony export */   MAT_CARD_CONFIG: () => (/* binding */ MAT_CARD_CONFIG),
+/* harmony export */   MatCard: () => (/* binding */ MatCard),
+/* harmony export */   MatCardActions: () => (/* binding */ MatCardActions),
+/* harmony export */   MatCardAvatar: () => (/* binding */ MatCardAvatar),
+/* harmony export */   MatCardContent: () => (/* binding */ MatCardContent),
+/* harmony export */   MatCardFooter: () => (/* binding */ MatCardFooter),
+/* harmony export */   MatCardHeader: () => (/* binding */ MatCardHeader),
+/* harmony export */   MatCardImage: () => (/* binding */ MatCardImage),
+/* harmony export */   MatCardLgImage: () => (/* binding */ MatCardLgImage),
+/* harmony export */   MatCardMdImage: () => (/* binding */ MatCardMdImage),
+/* harmony export */   MatCardModule: () => (/* binding */ MatCardModule),
+/* harmony export */   MatCardSmImage: () => (/* binding */ MatCardSmImage),
+/* harmony export */   MatCardSubtitle: () => (/* binding */ MatCardSubtitle),
+/* harmony export */   MatCardTitle: () => (/* binding */ MatCardTitle),
+/* harmony export */   MatCardTitleGroup: () => (/* binding */ MatCardTitleGroup),
+/* harmony export */   MatCardXlImage: () => (/* binding */ MatCardXlImage)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 22560);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 94666);
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/core */ 59121);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 61699);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 26575);
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/core */ 55309);
 
 
 
 
 
-/**
- * @license
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
 /** Injection token that can be used to provide the default options the card module. */
 const _c0 = ["*"];
 const _c1 = [[["mat-card-title"], ["mat-card-subtitle"], ["", "mat-card-title", ""], ["", "mat-card-subtitle", ""], ["", "matCardTitle", ""], ["", "matCardSubtitle", ""]], [["", "mat-card-image", ""], ["", "matCardImage", ""], ["", "mat-card-sm-image", ""], ["", "matCardImageSmall", ""], ["", "mat-card-md-image", ""], ["", "matCardImageMedium", ""], ["", "mat-card-lg-image", ""], ["", "matCardImageLarge", ""], ["", "mat-card-xl-image", ""], ["", "matCardImageXLarge", ""]], "*"];
@@ -352,38 +337,38 @@ class MatCard {
   constructor(config) {
     this.appearance = config?.appearance || 'raised';
   }
+  static #_ = this.ɵfac = function MatCard_Factory(t) {
+    return new (t || MatCard)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](MAT_CARD_CONFIG, 8));
+  };
+  static #_2 = this.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    type: MatCard,
+    selectors: [["mat-card"]],
+    hostAttrs: [1, "mat-mdc-card", "mdc-card"],
+    hostVars: 4,
+    hostBindings: function MatCard_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-card-outlined", ctx.appearance === "outlined")("mdc-card--outlined", ctx.appearance === "outlined");
+      }
+    },
+    inputs: {
+      appearance: "appearance"
+    },
+    exportAs: ["matCard"],
+    ngContentSelectors: _c0,
+    decls: 1,
+    vars: 0,
+    template: function MatCard_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](0);
+      }
+    },
+    styles: [".mdc-card{display:flex;flex-direction:column;box-sizing:border-box}.mdc-card::after{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;border:1px solid rgba(0,0,0,0);border-radius:inherit;content:\"\";pointer-events:none;pointer-events:none}@media screen and (forced-colors: active){.mdc-card::after{border-color:CanvasText}}.mdc-card--outlined::after{border:none}.mdc-card__content{border-radius:inherit;height:100%}.mdc-card__media{position:relative;box-sizing:border-box;background-repeat:no-repeat;background-position:center;background-size:cover}.mdc-card__media::before{display:block;content:\"\"}.mdc-card__media:first-child{border-top-left-radius:inherit;border-top-right-radius:inherit}.mdc-card__media:last-child{border-bottom-left-radius:inherit;border-bottom-right-radius:inherit}.mdc-card__media--square::before{margin-top:100%}.mdc-card__media--16-9::before{margin-top:56.25%}.mdc-card__media-content{position:absolute;top:0;right:0;bottom:0;left:0;box-sizing:border-box}.mdc-card__primary-action{display:flex;flex-direction:column;box-sizing:border-box;position:relative;outline:none;color:inherit;text-decoration:none;cursor:pointer;overflow:hidden}.mdc-card__primary-action:first-child{border-top-left-radius:inherit;border-top-right-radius:inherit}.mdc-card__primary-action:last-child{border-bottom-left-radius:inherit;border-bottom-right-radius:inherit}.mdc-card__actions{display:flex;flex-direction:row;align-items:center;box-sizing:border-box;min-height:52px;padding:8px}.mdc-card__actions--full-bleed{padding:0}.mdc-card__action-buttons,.mdc-card__action-icons{display:flex;flex-direction:row;align-items:center;box-sizing:border-box}.mdc-card__action-icons{color:rgba(0, 0, 0, 0.6);flex-grow:1;justify-content:flex-end}.mdc-card__action-buttons+.mdc-card__action-icons{margin-left:16px;margin-right:0}[dir=rtl] .mdc-card__action-buttons+.mdc-card__action-icons,.mdc-card__action-buttons+.mdc-card__action-icons[dir=rtl]{margin-left:0;margin-right:16px}.mdc-card__action{display:inline-flex;flex-direction:row;align-items:center;box-sizing:border-box;justify-content:center;cursor:pointer;user-select:none}.mdc-card__action:focus{outline:none}.mdc-card__action--button{margin-left:0;margin-right:8px;padding:0 8px}[dir=rtl] .mdc-card__action--button,.mdc-card__action--button[dir=rtl]{margin-left:8px;margin-right:0}.mdc-card__action--button:last-child{margin-left:0;margin-right:0}[dir=rtl] .mdc-card__action--button:last-child,.mdc-card__action--button:last-child[dir=rtl]{margin-left:0;margin-right:0}.mdc-card__actions--full-bleed .mdc-card__action--button{justify-content:space-between;width:100%;height:auto;max-height:none;margin:0;padding:8px 16px;text-align:left}[dir=rtl] .mdc-card__actions--full-bleed .mdc-card__action--button,.mdc-card__actions--full-bleed .mdc-card__action--button[dir=rtl]{text-align:right}.mdc-card__action--icon{margin:-6px 0;padding:12px}.mdc-card__action--icon:not(:disabled){color:rgba(0, 0, 0, 0.6)}.mat-mdc-card{border-radius:var(--mdc-elevated-card-container-shape);background-color:var(--mdc-elevated-card-container-color);border-width:0;border-style:solid;border-color:var(--mdc-elevated-card-container-color);box-shadow:var(--mdc-elevated-card-container-elevation)}.mat-mdc-card .mdc-card::after{border-radius:var(--mdc-elevated-card-container-shape)}.mat-mdc-card-outlined{border-width:var(--mdc-outlined-card-outline-width);border-style:solid;border-color:var(--mdc-outlined-card-outline-color);border-radius:var(--mdc-outlined-card-container-shape);background-color:var(--mdc-outlined-card-container-color);box-shadow:var(--mdc-outlined-card-container-elevation)}.mat-mdc-card-outlined .mdc-card::after{border-radius:var(--mdc-outlined-card-container-shape)}.mat-mdc-card-title{font-family:var(--mat-card-title-text-font);line-height:var(--mat-card-title-text-line-height);font-size:var(--mat-card-title-text-size);letter-spacing:var(--mat-card-title-text-tracking);font-weight:var(--mat-card-title-text-weight)}.mat-mdc-card-subtitle{color:var(--mat-card-subtitle-text-color);font-family:var(--mat-card-subtitle-text-font);line-height:var(--mat-card-subtitle-text-line-height);font-size:var(--mat-card-subtitle-text-size);letter-spacing:var(--mat-card-subtitle-text-tracking);font-weight:var(--mat-card-subtitle-text-weight)}.mat-mdc-card{position:relative}.mat-mdc-card-title,.mat-mdc-card-subtitle{display:block;margin:0}.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-title,.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-subtitle{padding:16px 16px 0}.mat-mdc-card-header{display:flex;padding:16px 16px 0}.mat-mdc-card-content{display:block;padding:0 16px}.mat-mdc-card-content:first-child{padding-top:16px}.mat-mdc-card-content:last-child{padding-bottom:16px}.mat-mdc-card-title-group{display:flex;justify-content:space-between;width:100%}.mat-mdc-card-avatar{height:40px;width:40px;border-radius:50%;flex-shrink:0;margin-bottom:16px;object-fit:cover}.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-subtitle,.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-title{line-height:normal}.mat-mdc-card-sm-image{width:80px;height:80px}.mat-mdc-card-md-image{width:112px;height:112px}.mat-mdc-card-lg-image{width:152px;height:152px}.mat-mdc-card-xl-image{width:240px;height:240px}.mat-mdc-card-subtitle~.mat-mdc-card-title,.mat-mdc-card-title~.mat-mdc-card-subtitle,.mat-mdc-card-header .mat-mdc-card-header-text .mat-mdc-card-title,.mat-mdc-card-header .mat-mdc-card-header-text .mat-mdc-card-subtitle,.mat-mdc-card-title-group .mat-mdc-card-title,.mat-mdc-card-title-group .mat-mdc-card-subtitle{padding-top:0}.mat-mdc-card-content>:last-child:not(.mat-mdc-card-footer){margin-bottom:0}.mat-mdc-card-actions-align-end{justify-content:flex-end}"],
+    encapsulation: 2,
+    changeDetection: 0
+  });
 }
-MatCard.ɵfac = function MatCard_Factory(t) {
-  return new (t || MatCard)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](MAT_CARD_CONFIG, 8));
-};
-MatCard.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-  type: MatCard,
-  selectors: [["mat-card"]],
-  hostAttrs: [1, "mat-mdc-card", "mdc-card"],
-  hostVars: 4,
-  hostBindings: function MatCard_HostBindings(rf, ctx) {
-    if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-card-outlined", ctx.appearance === "outlined")("mdc-card--outlined", ctx.appearance === "outlined");
-    }
-  },
-  inputs: {
-    appearance: "appearance"
-  },
-  exportAs: ["matCard"],
-  ngContentSelectors: _c0,
-  decls: 1,
-  vars: 0,
-  template: function MatCard_Template(rf, ctx) {
-    if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](0);
-    }
-  },
-  styles: [".mdc-card{display:flex;flex-direction:column;box-sizing:border-box}.mdc-card::after{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;border:1px solid rgba(0,0,0,0);border-radius:inherit;content:\"\";pointer-events:none;pointer-events:none}@media screen and (forced-colors: active){.mdc-card::after{border-color:CanvasText}}.mdc-card--outlined::after{border:none}.mdc-card__content{border-radius:inherit;height:100%}.mdc-card__media{position:relative;box-sizing:border-box;background-repeat:no-repeat;background-position:center;background-size:cover}.mdc-card__media::before{display:block;content:\"\"}.mdc-card__media:first-child{border-top-left-radius:inherit;border-top-right-radius:inherit}.mdc-card__media:last-child{border-bottom-left-radius:inherit;border-bottom-right-radius:inherit}.mdc-card__media--square::before{margin-top:100%}.mdc-card__media--16-9::before{margin-top:56.25%}.mdc-card__media-content{position:absolute;top:0;right:0;bottom:0;left:0;box-sizing:border-box}.mdc-card__primary-action{display:flex;flex-direction:column;box-sizing:border-box;position:relative;outline:none;color:inherit;text-decoration:none;cursor:pointer;overflow:hidden}.mdc-card__primary-action:first-child{border-top-left-radius:inherit;border-top-right-radius:inherit}.mdc-card__primary-action:last-child{border-bottom-left-radius:inherit;border-bottom-right-radius:inherit}.mdc-card__actions{display:flex;flex-direction:row;align-items:center;box-sizing:border-box;min-height:52px;padding:8px}.mdc-card__actions--full-bleed{padding:0}.mdc-card__action-buttons,.mdc-card__action-icons{display:flex;flex-direction:row;align-items:center;box-sizing:border-box}.mdc-card__action-icons{flex-grow:1;justify-content:flex-end}.mdc-card__action-buttons+.mdc-card__action-icons{margin-left:16px;margin-right:0}[dir=rtl] .mdc-card__action-buttons+.mdc-card__action-icons,.mdc-card__action-buttons+.mdc-card__action-icons[dir=rtl]{margin-left:0;margin-right:16px}.mdc-card__action{display:inline-flex;flex-direction:row;align-items:center;box-sizing:border-box;justify-content:center;cursor:pointer;user-select:none}.mdc-card__action:focus{outline:none}.mdc-card__action--button{margin-left:0;margin-right:8px;padding:0 8px}[dir=rtl] .mdc-card__action--button,.mdc-card__action--button[dir=rtl]{margin-left:8px;margin-right:0}.mdc-card__action--button:last-child{margin-left:0;margin-right:0}[dir=rtl] .mdc-card__action--button:last-child,.mdc-card__action--button:last-child[dir=rtl]{margin-left:0;margin-right:0}.mdc-card__actions--full-bleed .mdc-card__action--button{justify-content:space-between;width:100%;height:auto;max-height:none;margin:0;padding:8px 16px;text-align:left}[dir=rtl] .mdc-card__actions--full-bleed .mdc-card__action--button,.mdc-card__actions--full-bleed .mdc-card__action--button[dir=rtl]{text-align:right}.mdc-card__action--icon{margin:-6px 0;padding:12px}.mat-mdc-card{position:relative;border-radius:var(--mdc-elevated-card-container-shape, var(--mdc-shape-medium, 4px));background-color:var(--mdc-elevated-card-container-color, transparent);border-width:0;border-style:solid;border-color:var(--mdc-elevated-card-container-color, transparent)}.mat-mdc-card .mdc-card::after{border-radius:var(--mdc-elevated-card-container-shape, var(--mdc-shape-medium, 4px))}.mat-mdc-card-outlined{border-width:var(--mdc-outlined-card-outline-width, 1px);border-style:solid;border-color:var(--mdc-outlined-card-outline-color, transparent)}.mat-mdc-card-title,.mat-mdc-card-subtitle{display:block;margin:0}.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-title,.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-subtitle{padding:16px 16px 0}.mat-mdc-card-header{display:flex;padding:16px 16px 0}.mat-mdc-card-content{display:block;padding:0 16px}.mat-mdc-card-content:first-child{padding-top:16px}.mat-mdc-card-content:last-child{padding-bottom:16px}.mat-mdc-card-title-group{display:flex;justify-content:space-between;width:100%}.mat-mdc-card-avatar{height:40px;width:40px;border-radius:50%;flex-shrink:0;margin-bottom:16px;object-fit:cover}.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-subtitle,.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-title{line-height:normal}.mat-mdc-card-sm-image{width:80px;height:80px}.mat-mdc-card-md-image{width:112px;height:112px}.mat-mdc-card-lg-image{width:152px;height:152px}.mat-mdc-card-xl-image{width:240px;height:240px}.mat-mdc-card-subtitle~.mat-mdc-card-title,.mat-mdc-card-title~.mat-mdc-card-subtitle,.mat-mdc-card-header .mat-mdc-card-header-text .mat-mdc-card-title,.mat-mdc-card-header .mat-mdc-card-header-text .mat-mdc-card-subtitle,.mat-mdc-card-title-group .mat-mdc-card-title,.mat-mdc-card-title-group .mat-mdc-card-subtitle{padding-top:0}.mat-mdc-card-content>:last-child:not(.mat-mdc-card-footer){margin-bottom:0}.mat-mdc-card-actions-align-end{justify-content:flex-end}"],
-  encapsulation: 2,
-  changeDetection: 0
-});
-(function () {
+(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCard, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Component,
     args: [{
@@ -397,19 +382,17 @@ MatCard.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
       encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ViewEncapsulation.None,
       changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__.ChangeDetectionStrategy.OnPush,
       template: "<ng-content></ng-content>\n",
-      styles: [".mdc-card{display:flex;flex-direction:column;box-sizing:border-box}.mdc-card::after{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;border:1px solid rgba(0,0,0,0);border-radius:inherit;content:\"\";pointer-events:none;pointer-events:none}@media screen and (forced-colors: active){.mdc-card::after{border-color:CanvasText}}.mdc-card--outlined::after{border:none}.mdc-card__content{border-radius:inherit;height:100%}.mdc-card__media{position:relative;box-sizing:border-box;background-repeat:no-repeat;background-position:center;background-size:cover}.mdc-card__media::before{display:block;content:\"\"}.mdc-card__media:first-child{border-top-left-radius:inherit;border-top-right-radius:inherit}.mdc-card__media:last-child{border-bottom-left-radius:inherit;border-bottom-right-radius:inherit}.mdc-card__media--square::before{margin-top:100%}.mdc-card__media--16-9::before{margin-top:56.25%}.mdc-card__media-content{position:absolute;top:0;right:0;bottom:0;left:0;box-sizing:border-box}.mdc-card__primary-action{display:flex;flex-direction:column;box-sizing:border-box;position:relative;outline:none;color:inherit;text-decoration:none;cursor:pointer;overflow:hidden}.mdc-card__primary-action:first-child{border-top-left-radius:inherit;border-top-right-radius:inherit}.mdc-card__primary-action:last-child{border-bottom-left-radius:inherit;border-bottom-right-radius:inherit}.mdc-card__actions{display:flex;flex-direction:row;align-items:center;box-sizing:border-box;min-height:52px;padding:8px}.mdc-card__actions--full-bleed{padding:0}.mdc-card__action-buttons,.mdc-card__action-icons{display:flex;flex-direction:row;align-items:center;box-sizing:border-box}.mdc-card__action-icons{flex-grow:1;justify-content:flex-end}.mdc-card__action-buttons+.mdc-card__action-icons{margin-left:16px;margin-right:0}[dir=rtl] .mdc-card__action-buttons+.mdc-card__action-icons,.mdc-card__action-buttons+.mdc-card__action-icons[dir=rtl]{margin-left:0;margin-right:16px}.mdc-card__action{display:inline-flex;flex-direction:row;align-items:center;box-sizing:border-box;justify-content:center;cursor:pointer;user-select:none}.mdc-card__action:focus{outline:none}.mdc-card__action--button{margin-left:0;margin-right:8px;padding:0 8px}[dir=rtl] .mdc-card__action--button,.mdc-card__action--button[dir=rtl]{margin-left:8px;margin-right:0}.mdc-card__action--button:last-child{margin-left:0;margin-right:0}[dir=rtl] .mdc-card__action--button:last-child,.mdc-card__action--button:last-child[dir=rtl]{margin-left:0;margin-right:0}.mdc-card__actions--full-bleed .mdc-card__action--button{justify-content:space-between;width:100%;height:auto;max-height:none;margin:0;padding:8px 16px;text-align:left}[dir=rtl] .mdc-card__actions--full-bleed .mdc-card__action--button,.mdc-card__actions--full-bleed .mdc-card__action--button[dir=rtl]{text-align:right}.mdc-card__action--icon{margin:-6px 0;padding:12px}.mat-mdc-card{position:relative;border-radius:var(--mdc-elevated-card-container-shape, var(--mdc-shape-medium, 4px));background-color:var(--mdc-elevated-card-container-color, transparent);border-width:0;border-style:solid;border-color:var(--mdc-elevated-card-container-color, transparent)}.mat-mdc-card .mdc-card::after{border-radius:var(--mdc-elevated-card-container-shape, var(--mdc-shape-medium, 4px))}.mat-mdc-card-outlined{border-width:var(--mdc-outlined-card-outline-width, 1px);border-style:solid;border-color:var(--mdc-outlined-card-outline-color, transparent)}.mat-mdc-card-title,.mat-mdc-card-subtitle{display:block;margin:0}.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-title,.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-subtitle{padding:16px 16px 0}.mat-mdc-card-header{display:flex;padding:16px 16px 0}.mat-mdc-card-content{display:block;padding:0 16px}.mat-mdc-card-content:first-child{padding-top:16px}.mat-mdc-card-content:last-child{padding-bottom:16px}.mat-mdc-card-title-group{display:flex;justify-content:space-between;width:100%}.mat-mdc-card-avatar{height:40px;width:40px;border-radius:50%;flex-shrink:0;margin-bottom:16px;object-fit:cover}.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-subtitle,.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-title{line-height:normal}.mat-mdc-card-sm-image{width:80px;height:80px}.mat-mdc-card-md-image{width:112px;height:112px}.mat-mdc-card-lg-image{width:152px;height:152px}.mat-mdc-card-xl-image{width:240px;height:240px}.mat-mdc-card-subtitle~.mat-mdc-card-title,.mat-mdc-card-title~.mat-mdc-card-subtitle,.mat-mdc-card-header .mat-mdc-card-header-text .mat-mdc-card-title,.mat-mdc-card-header .mat-mdc-card-header-text .mat-mdc-card-subtitle,.mat-mdc-card-title-group .mat-mdc-card-title,.mat-mdc-card-title-group .mat-mdc-card-subtitle{padding-top:0}.mat-mdc-card-content>:last-child:not(.mat-mdc-card-footer){margin-bottom:0}.mat-mdc-card-actions-align-end{justify-content:flex-end}"]
+      styles: [".mdc-card{display:flex;flex-direction:column;box-sizing:border-box}.mdc-card::after{position:absolute;box-sizing:border-box;width:100%;height:100%;top:0;left:0;border:1px solid rgba(0,0,0,0);border-radius:inherit;content:\"\";pointer-events:none;pointer-events:none}@media screen and (forced-colors: active){.mdc-card::after{border-color:CanvasText}}.mdc-card--outlined::after{border:none}.mdc-card__content{border-radius:inherit;height:100%}.mdc-card__media{position:relative;box-sizing:border-box;background-repeat:no-repeat;background-position:center;background-size:cover}.mdc-card__media::before{display:block;content:\"\"}.mdc-card__media:first-child{border-top-left-radius:inherit;border-top-right-radius:inherit}.mdc-card__media:last-child{border-bottom-left-radius:inherit;border-bottom-right-radius:inherit}.mdc-card__media--square::before{margin-top:100%}.mdc-card__media--16-9::before{margin-top:56.25%}.mdc-card__media-content{position:absolute;top:0;right:0;bottom:0;left:0;box-sizing:border-box}.mdc-card__primary-action{display:flex;flex-direction:column;box-sizing:border-box;position:relative;outline:none;color:inherit;text-decoration:none;cursor:pointer;overflow:hidden}.mdc-card__primary-action:first-child{border-top-left-radius:inherit;border-top-right-radius:inherit}.mdc-card__primary-action:last-child{border-bottom-left-radius:inherit;border-bottom-right-radius:inherit}.mdc-card__actions{display:flex;flex-direction:row;align-items:center;box-sizing:border-box;min-height:52px;padding:8px}.mdc-card__actions--full-bleed{padding:0}.mdc-card__action-buttons,.mdc-card__action-icons{display:flex;flex-direction:row;align-items:center;box-sizing:border-box}.mdc-card__action-icons{color:rgba(0, 0, 0, 0.6);flex-grow:1;justify-content:flex-end}.mdc-card__action-buttons+.mdc-card__action-icons{margin-left:16px;margin-right:0}[dir=rtl] .mdc-card__action-buttons+.mdc-card__action-icons,.mdc-card__action-buttons+.mdc-card__action-icons[dir=rtl]{margin-left:0;margin-right:16px}.mdc-card__action{display:inline-flex;flex-direction:row;align-items:center;box-sizing:border-box;justify-content:center;cursor:pointer;user-select:none}.mdc-card__action:focus{outline:none}.mdc-card__action--button{margin-left:0;margin-right:8px;padding:0 8px}[dir=rtl] .mdc-card__action--button,.mdc-card__action--button[dir=rtl]{margin-left:8px;margin-right:0}.mdc-card__action--button:last-child{margin-left:0;margin-right:0}[dir=rtl] .mdc-card__action--button:last-child,.mdc-card__action--button:last-child[dir=rtl]{margin-left:0;margin-right:0}.mdc-card__actions--full-bleed .mdc-card__action--button{justify-content:space-between;width:100%;height:auto;max-height:none;margin:0;padding:8px 16px;text-align:left}[dir=rtl] .mdc-card__actions--full-bleed .mdc-card__action--button,.mdc-card__actions--full-bleed .mdc-card__action--button[dir=rtl]{text-align:right}.mdc-card__action--icon{margin:-6px 0;padding:12px}.mdc-card__action--icon:not(:disabled){color:rgba(0, 0, 0, 0.6)}.mat-mdc-card{border-radius:var(--mdc-elevated-card-container-shape);background-color:var(--mdc-elevated-card-container-color);border-width:0;border-style:solid;border-color:var(--mdc-elevated-card-container-color);box-shadow:var(--mdc-elevated-card-container-elevation)}.mat-mdc-card .mdc-card::after{border-radius:var(--mdc-elevated-card-container-shape)}.mat-mdc-card-outlined{border-width:var(--mdc-outlined-card-outline-width);border-style:solid;border-color:var(--mdc-outlined-card-outline-color);border-radius:var(--mdc-outlined-card-container-shape);background-color:var(--mdc-outlined-card-container-color);box-shadow:var(--mdc-outlined-card-container-elevation)}.mat-mdc-card-outlined .mdc-card::after{border-radius:var(--mdc-outlined-card-container-shape)}.mat-mdc-card-title{font-family:var(--mat-card-title-text-font);line-height:var(--mat-card-title-text-line-height);font-size:var(--mat-card-title-text-size);letter-spacing:var(--mat-card-title-text-tracking);font-weight:var(--mat-card-title-text-weight)}.mat-mdc-card-subtitle{color:var(--mat-card-subtitle-text-color);font-family:var(--mat-card-subtitle-text-font);line-height:var(--mat-card-subtitle-text-line-height);font-size:var(--mat-card-subtitle-text-size);letter-spacing:var(--mat-card-subtitle-text-tracking);font-weight:var(--mat-card-subtitle-text-weight)}.mat-mdc-card{position:relative}.mat-mdc-card-title,.mat-mdc-card-subtitle{display:block;margin:0}.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-title,.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-subtitle{padding:16px 16px 0}.mat-mdc-card-header{display:flex;padding:16px 16px 0}.mat-mdc-card-content{display:block;padding:0 16px}.mat-mdc-card-content:first-child{padding-top:16px}.mat-mdc-card-content:last-child{padding-bottom:16px}.mat-mdc-card-title-group{display:flex;justify-content:space-between;width:100%}.mat-mdc-card-avatar{height:40px;width:40px;border-radius:50%;flex-shrink:0;margin-bottom:16px;object-fit:cover}.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-subtitle,.mat-mdc-card-avatar~.mat-mdc-card-header-text .mat-mdc-card-title{line-height:normal}.mat-mdc-card-sm-image{width:80px;height:80px}.mat-mdc-card-md-image{width:112px;height:112px}.mat-mdc-card-lg-image{width:152px;height:152px}.mat-mdc-card-xl-image{width:240px;height:240px}.mat-mdc-card-subtitle~.mat-mdc-card-title,.mat-mdc-card-title~.mat-mdc-card-subtitle,.mat-mdc-card-header .mat-mdc-card-header-text .mat-mdc-card-title,.mat-mdc-card-header .mat-mdc-card-header-text .mat-mdc-card-subtitle,.mat-mdc-card-title-group .mat-mdc-card-title,.mat-mdc-card-title-group .mat-mdc-card-subtitle{padding-top:0}.mat-mdc-card-content>:last-child:not(.mat-mdc-card-footer){margin-bottom:0}.mat-mdc-card-actions-align-end{justify-content:flex-end}"]
     }]
-  }], function () {
-    return [{
-      type: undefined,
-      decorators: [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Inject,
-        args: [MAT_CARD_CONFIG]
-      }, {
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Optional
-      }]
-    }];
-  }, {
+  }], () => [{
+    type: undefined,
+    decorators: [{
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Inject,
+      args: [MAT_CARD_CONFIG]
+    }, {
+      type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Optional
+    }]
+  }], {
     appearance: [{
       type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Input
     }]
@@ -423,16 +406,17 @@ MatCard.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
  *
  * MatCardTitle provides no behaviors, instead serving as a purely visual treatment.
  */
-class MatCardTitle {}
-MatCardTitle.ɵfac = function MatCardTitle_Factory(t) {
-  return new (t || MatCardTitle)();
-};
-MatCardTitle.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatCardTitle,
-  selectors: [["mat-card-title"], ["", "mat-card-title", ""], ["", "matCardTitle", ""]],
-  hostAttrs: [1, "mat-mdc-card-title"]
-});
-(function () {
+class MatCardTitle {
+  static #_ = this.ɵfac = function MatCardTitle_Factory(t) {
+    return new (t || MatCardTitle)();
+  };
+  static #_2 = this.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+    type: MatCardTitle,
+    selectors: [["mat-card-title"], ["", "mat-card-title", ""], ["", "matCardTitle", ""]],
+    hostAttrs: [1, "mat-mdc-card-title"]
+  });
+}
+(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardTitle, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
     args: [{
@@ -448,31 +432,32 @@ MatCardTitle.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["
  * `<mat-card-title>`, one `<mat-card-subtitle>` and one content image of any size
  * (e.g. `<img matCardLgImage>`).
  */
-class MatCardTitleGroup {}
-MatCardTitleGroup.ɵfac = function MatCardTitleGroup_Factory(t) {
-  return new (t || MatCardTitleGroup)();
-};
-MatCardTitleGroup.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-  type: MatCardTitleGroup,
-  selectors: [["mat-card-title-group"]],
-  hostAttrs: [1, "mat-mdc-card-title-group"],
-  ngContentSelectors: _c2,
-  decls: 4,
-  vars: 0,
-  template: function MatCardTitleGroup_Template(rf, ctx) {
-    if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](2, 1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3, 2);
-    }
-  },
-  encapsulation: 2,
-  changeDetection: 0
-});
-(function () {
+class MatCardTitleGroup {
+  static #_ = this.ɵfac = function MatCardTitleGroup_Factory(t) {
+    return new (t || MatCardTitleGroup)();
+  };
+  static #_2 = this.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    type: MatCardTitleGroup,
+    selectors: [["mat-card-title-group"]],
+    hostAttrs: [1, "mat-mdc-card-title-group"],
+    ngContentSelectors: _c2,
+    decls: 4,
+    vars: 0,
+    template: function MatCardTitleGroup_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](2, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3, 2);
+      }
+    },
+    encapsulation: 2,
+    changeDetection: 0
+  });
+}
+(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardTitleGroup, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Component,
     args: [{
@@ -493,16 +478,17 @@ MatCardTitleGroup.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_
  *
  * MatCardContent provides no behaviors, instead serving as a purely visual treatment.
  */
-class MatCardContent {}
-MatCardContent.ɵfac = function MatCardContent_Factory(t) {
-  return new (t || MatCardContent)();
-};
-MatCardContent.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatCardContent,
-  selectors: [["mat-card-content"]],
-  hostAttrs: [1, "mat-mdc-card-content"]
-});
-(function () {
+class MatCardContent {
+  static #_ = this.ɵfac = function MatCardContent_Factory(t) {
+    return new (t || MatCardContent)();
+  };
+  static #_2 = this.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+    type: MatCardContent,
+    selectors: [["mat-card-content"]],
+    hostAttrs: [1, "mat-mdc-card-content"]
+  });
+}
+(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardContent, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
     args: [{
@@ -520,16 +506,17 @@ MatCardContent.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__
  *
  * MatCardSubtitle provides no behaviors, instead serving as a purely visual treatment.
  */
-class MatCardSubtitle {}
-MatCardSubtitle.ɵfac = function MatCardSubtitle_Factory(t) {
-  return new (t || MatCardSubtitle)();
-};
-MatCardSubtitle.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatCardSubtitle,
-  selectors: [["mat-card-subtitle"], ["", "mat-card-subtitle", ""], ["", "matCardSubtitle", ""]],
-  hostAttrs: [1, "mat-mdc-card-subtitle"]
-});
-(function () {
+class MatCardSubtitle {
+  static #_ = this.ɵfac = function MatCardSubtitle_Factory(t) {
+    return new (t || MatCardSubtitle)();
+  };
+  static #_2 = this.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+    type: MatCardSubtitle,
+    selectors: [["mat-card-subtitle"], ["", "mat-card-subtitle", ""], ["", "matCardSubtitle", ""]],
+    hostAttrs: [1, "mat-mdc-card-subtitle"]
+  });
+}
+(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardSubtitle, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
     args: [{
@@ -554,26 +541,26 @@ class MatCardActions {
     /** Position of the actions inside the card. */
     this.align = 'start';
   }
+  static #_ = this.ɵfac = function MatCardActions_Factory(t) {
+    return new (t || MatCardActions)();
+  };
+  static #_2 = this.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+    type: MatCardActions,
+    selectors: [["mat-card-actions"]],
+    hostAttrs: [1, "mat-mdc-card-actions", "mdc-card__actions"],
+    hostVars: 2,
+    hostBindings: function MatCardActions_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-card-actions-align-end", ctx.align === "end");
+      }
+    },
+    inputs: {
+      align: "align"
+    },
+    exportAs: ["matCardActions"]
+  });
 }
-MatCardActions.ɵfac = function MatCardActions_Factory(t) {
-  return new (t || MatCardActions)();
-};
-MatCardActions.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatCardActions,
-  selectors: [["mat-card-actions"]],
-  hostAttrs: [1, "mat-mdc-card-actions", "mdc-card__actions"],
-  hostVars: 2,
-  hostBindings: function MatCardActions_HostBindings(rf, ctx) {
-    if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassProp"]("mat-mdc-card-actions-align-end", ctx.align === "end");
-    }
-  },
-  inputs: {
-    align: "align"
-  },
-  exportAs: ["matCardActions"]
-});
-(function () {
+(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardActions, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
     args: [{
@@ -598,32 +585,33 @@ MatCardActions.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__
  *
  * MatCardHeader provides no behaviors, instead serving as a purely visual treatment.
  */
-class MatCardHeader {}
-MatCardHeader.ɵfac = function MatCardHeader_Factory(t) {
-  return new (t || MatCardHeader)();
-};
-MatCardHeader.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-  type: MatCardHeader,
-  selectors: [["mat-card-header"]],
-  hostAttrs: [1, "mat-mdc-card-header"],
-  ngContentSelectors: _c4,
-  decls: 4,
-  vars: 0,
-  consts: [[1, "mat-mdc-card-header-text"]],
-  template: function MatCardHeader_Template(rf, ctx) {
-    if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](0);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 0);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](2, 1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3, 2);
-    }
-  },
-  encapsulation: 2,
-  changeDetection: 0
-});
-(function () {
+class MatCardHeader {
+  static #_ = this.ɵfac = function MatCardHeader_Factory(t) {
+    return new (t || MatCardHeader)();
+  };
+  static #_2 = this.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    type: MatCardHeader,
+    selectors: [["mat-card-header"]],
+    hostAttrs: [1, "mat-mdc-card-header"],
+    ngContentSelectors: _c4,
+    decls: 4,
+    vars: 0,
+    consts: [[1, "mat-mdc-card-header-text"]],
+    template: function MatCardHeader_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"](_c3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](2, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](3, 2);
+      }
+    },
+    encapsulation: 2,
+    changeDetection: 0
+  });
+}
+(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardHeader, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Component,
     args: [{
@@ -644,16 +632,17 @@ MatCardHeader.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__[
  *
  * MatCardFooter provides no behaviors, instead serving as a purely visual treatment.
  */
-class MatCardFooter {}
-MatCardFooter.ɵfac = function MatCardFooter_Factory(t) {
-  return new (t || MatCardFooter)();
-};
-MatCardFooter.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatCardFooter,
-  selectors: [["mat-card-footer"]],
-  hostAttrs: [1, "mat-mdc-card-footer"]
-});
-(function () {
+class MatCardFooter {
+  static #_ = this.ɵfac = function MatCardFooter_Factory(t) {
+    return new (t || MatCardFooter)();
+  };
+  static #_2 = this.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+    type: MatCardFooter,
+    selectors: [["mat-card-footer"]],
+    hostAttrs: [1, "mat-mdc-card-footer"]
+  });
+}
+(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardFooter, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
     args: [{
@@ -675,16 +664,17 @@ MatCardFooter.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__[
  *
  * MatCardImage provides no behaviors, instead serving as a purely visual treatment.
  */
-class MatCardImage {}
-MatCardImage.ɵfac = function MatCardImage_Factory(t) {
-  return new (t || MatCardImage)();
-};
-MatCardImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatCardImage,
-  selectors: [["", "mat-card-image", ""], ["", "matCardImage", ""]],
-  hostAttrs: [1, "mat-mdc-card-image", "mdc-card__media"]
-});
-(function () {
+class MatCardImage {
+  static #_ = this.ɵfac = function MatCardImage_Factory(t) {
+    return new (t || MatCardImage)();
+  };
+  static #_2 = this.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+    type: MatCardImage,
+    selectors: [["", "mat-card-image", ""], ["", "matCardImage", ""]],
+    hostAttrs: [1, "mat-mdc-card-image", "mdc-card__media"]
+  });
+}
+(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardImage, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
     args: [{
@@ -696,16 +686,17 @@ MatCardImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["
   }], null, null);
 })();
 /** Same as `MatCardImage`, but small. */
-class MatCardSmImage {}
-MatCardSmImage.ɵfac = function MatCardSmImage_Factory(t) {
-  return new (t || MatCardSmImage)();
-};
-MatCardSmImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatCardSmImage,
-  selectors: [["", "mat-card-sm-image", ""], ["", "matCardImageSmall", ""]],
-  hostAttrs: [1, "mat-mdc-card-sm-image", "mdc-card__media"]
-});
-(function () {
+class MatCardSmImage {
+  static #_ = this.ɵfac = function MatCardSmImage_Factory(t) {
+    return new (t || MatCardSmImage)();
+  };
+  static #_2 = this.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+    type: MatCardSmImage,
+    selectors: [["", "mat-card-sm-image", ""], ["", "matCardImageSmall", ""]],
+    hostAttrs: [1, "mat-mdc-card-sm-image", "mdc-card__media"]
+  });
+}
+(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardSmImage, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
     args: [{
@@ -717,16 +708,17 @@ MatCardSmImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__
   }], null, null);
 })();
 /** Same as `MatCardImage`, but medium. */
-class MatCardMdImage {}
-MatCardMdImage.ɵfac = function MatCardMdImage_Factory(t) {
-  return new (t || MatCardMdImage)();
-};
-MatCardMdImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatCardMdImage,
-  selectors: [["", "mat-card-md-image", ""], ["", "matCardImageMedium", ""]],
-  hostAttrs: [1, "mat-mdc-card-md-image", "mdc-card__media"]
-});
-(function () {
+class MatCardMdImage {
+  static #_ = this.ɵfac = function MatCardMdImage_Factory(t) {
+    return new (t || MatCardMdImage)();
+  };
+  static #_2 = this.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+    type: MatCardMdImage,
+    selectors: [["", "mat-card-md-image", ""], ["", "matCardImageMedium", ""]],
+    hostAttrs: [1, "mat-mdc-card-md-image", "mdc-card__media"]
+  });
+}
+(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardMdImage, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
     args: [{
@@ -738,16 +730,17 @@ MatCardMdImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__
   }], null, null);
 })();
 /** Same as `MatCardImage`, but large. */
-class MatCardLgImage {}
-MatCardLgImage.ɵfac = function MatCardLgImage_Factory(t) {
-  return new (t || MatCardLgImage)();
-};
-MatCardLgImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatCardLgImage,
-  selectors: [["", "mat-card-lg-image", ""], ["", "matCardImageLarge", ""]],
-  hostAttrs: [1, "mat-mdc-card-lg-image", "mdc-card__media"]
-});
-(function () {
+class MatCardLgImage {
+  static #_ = this.ɵfac = function MatCardLgImage_Factory(t) {
+    return new (t || MatCardLgImage)();
+  };
+  static #_2 = this.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+    type: MatCardLgImage,
+    selectors: [["", "mat-card-lg-image", ""], ["", "matCardImageLarge", ""]],
+    hostAttrs: [1, "mat-mdc-card-lg-image", "mdc-card__media"]
+  });
+}
+(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardLgImage, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
     args: [{
@@ -759,16 +752,17 @@ MatCardLgImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__
   }], null, null);
 })();
 /** Same as `MatCardImage`, but extra-large. */
-class MatCardXlImage {}
-MatCardXlImage.ɵfac = function MatCardXlImage_Factory(t) {
-  return new (t || MatCardXlImage)();
-};
-MatCardXlImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatCardXlImage,
-  selectors: [["", "mat-card-xl-image", ""], ["", "matCardImageXLarge", ""]],
-  hostAttrs: [1, "mat-mdc-card-xl-image", "mdc-card__media"]
-});
-(function () {
+class MatCardXlImage {
+  static #_ = this.ɵfac = function MatCardXlImage_Factory(t) {
+    return new (t || MatCardXlImage)();
+  };
+  static #_2 = this.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+    type: MatCardXlImage,
+    selectors: [["", "mat-card-xl-image", ""], ["", "matCardImageXLarge", ""]],
+    hostAttrs: [1, "mat-mdc-card-xl-image", "mdc-card__media"]
+  });
+}
+(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardXlImage, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
     args: [{
@@ -788,16 +782,17 @@ MatCardXlImage.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__
  *
  * MatCardAvatar provides no behaviors, instead serving as a purely visual treatment.
  */
-class MatCardAvatar {}
-MatCardAvatar.ɵfac = function MatCardAvatar_Factory(t) {
-  return new (t || MatCardAvatar)();
-};
-MatCardAvatar.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
-  type: MatCardAvatar,
-  selectors: [["", "mat-card-avatar", ""], ["", "matCardAvatar", ""]],
-  hostAttrs: [1, "mat-mdc-card-avatar"]
-});
-(function () {
+class MatCardAvatar {
+  static #_ = this.ɵfac = function MatCardAvatar_Factory(t) {
+    return new (t || MatCardAvatar)();
+  };
+  static #_2 = this.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+    type: MatCardAvatar,
+    selectors: [["", "mat-card-avatar", ""], ["", "matCardAvatar", ""]],
+    hostAttrs: [1, "mat-mdc-card-avatar"]
+  });
+}
+(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardAvatar, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.Directive,
     args: [{
@@ -808,26 +803,19 @@ MatCardAvatar.ɵdir = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__[
     }]
   }], null, null);
 })();
-
-/**
- * @license
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
 const CARD_DIRECTIVES = [MatCard, MatCardActions, MatCardAvatar, MatCardContent, MatCardFooter, MatCardHeader, MatCardImage, MatCardLgImage, MatCardMdImage, MatCardSmImage, MatCardSubtitle, MatCardTitle, MatCardTitleGroup, MatCardXlImage];
-class MatCardModule {}
-MatCardModule.ɵfac = function MatCardModule_Factory(t) {
-  return new (t || MatCardModule)();
-};
-MatCardModule.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
-  type: MatCardModule
-});
-MatCardModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-  imports: [_angular_material_core__WEBPACK_IMPORTED_MODULE_1__.MatCommonModule, _angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_1__.MatCommonModule]
-});
-(function () {
+class MatCardModule {
+  static #_ = this.ɵfac = function MatCardModule_Factory(t) {
+    return new (t || MatCardModule)();
+  };
+  static #_2 = this.ɵmod = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
+    type: MatCardModule
+  });
+  static #_3 = this.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
+    imports: [_angular_material_core__WEBPACK_IMPORTED_MODULE_1__.MatCommonModule, _angular_common__WEBPACK_IMPORTED_MODULE_2__.CommonModule, _angular_material_core__WEBPACK_IMPORTED_MODULE_1__.MatCommonModule]
+  });
+}
+(() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MatCardModule, [{
     type: _angular_core__WEBPACK_IMPORTED_MODULE_0__.NgModule,
     args: [{
@@ -837,22 +825,6 @@ MatCardModule.ɵinj = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_0__[
     }]
   }], null, null);
 })();
-
-/**
- * @license
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-
-/**
- * @license
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
 
 /**
  * Generated bundle index. Do not edit.
