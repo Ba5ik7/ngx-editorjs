@@ -16,6 +16,12 @@ export const InputData2: NgxEditorjsOutputBlock[] = [
         "sortIndex": 5,
         "componentInstanceName": "NgxEditorjsParagraphBlockMediator",
         "dataClean": "Evaluation of a template expression should have no visible side effects. Use the syntax for template expressions to help avoid side effects. In general, the correct syntax prevents you from assigning a value to anything in a property binding expression. The syntax also prevents you from using increment and decrement operators."
+    },
+    {
+        "blockId": "bu23hwyltwl",
+        "sortIndex": 6,
+        "componentInstanceName": "NgxEditorjsParagraphBlockMediator",
+        "dataClean": "Evaluation of a template expression should have no visible side effects. Use the syntax for template expressions to help avoid side effects. In general, the correct syntax prevents you from assigning a value to anything in a property binding expression. The syntax also prevents you from using increment and decrement operators."
     }
 ];
 
@@ -153,7 +159,7 @@ export class HomeComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-    this.inputData = InputData;
+    this.inputData = InputData2;
     // setTimeout(() => {
     //   this.inputData = InputData2;
     // }, 1000);
